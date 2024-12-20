@@ -16,7 +16,6 @@ const CasestudingContaints = ({
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [resetChildMenu, setResetChildMenu] = useState(false);
-  console.log(CaseStudycptData, 'KK26');
   const leftColRef = useRef(null);
 
   // Hook to handle video elements in .left_col
@@ -35,48 +34,7 @@ const CasestudingContaints = ({
     setOpenSubmenu(false);
     setResetChildMenu(true);
   };
-  const handleMouseEnter = (menuItem) => {
-    if (menuItem === '/') {
-      menuItem = '/home';
-    }
 
-    return fetch(`/data/pages/${menuItem}`)
-      .then((response) => response.json())
-      .then((data) => {
-        return new Promise((resolve, reject) => {
-          try {
-            setPrefetchedData(data);
-            localStorage.setItem('prefetchedData', JSON.stringify(data));
-            resolve();
-          } catch (error) {
-            reject(error);
-          }
-        });
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        return Promise.reject(error);
-      });
-  };
-  const handleLinkClick = async (url, e = null) => {
-    // if (location.pathname === url) {
-    //   return;
-    // }
-    // if (e.ctrlKey || e.metaKey) {
-    //   return;
-    // }
-    // e.preventDefault();
-    // try {
-    //   setIsLoading(true);
-    //   setIsDone(false);
-    //   setIsFinish(false);
-    //   await handleMouseEnter(url);
-    //   setIsLoading(false);
-    //   navigate(url);
-    // } catch (error) {
-    //   console.error("Error handling link click:", error);
-    // }
-  };
 
   const handleSmoothScroll = () => {
     window.scrollTo({

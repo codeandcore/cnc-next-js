@@ -36,7 +36,6 @@ export default async function IndustryPage() {
     const homePage = await fetchHomepageData();
     const contactData = await fetchContactData();
     const yoastData =  contactData?.yoast_head_json
-console.log("contactData",contactData);
 
 
   return (

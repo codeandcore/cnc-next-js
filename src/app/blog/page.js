@@ -65,7 +65,6 @@ export default async function BlogPage() {
     const contactData = await fetchContactData();
     const catData=await fetchCategoryData()
 const yoastData=pageData?.yoast_head_json
-console.log("pageData",pageData);
 
  
   return (

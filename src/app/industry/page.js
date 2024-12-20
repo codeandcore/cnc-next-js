@@ -2,6 +2,7 @@
 import BASE_URL from '@/config';
 import React from 'react';
 import Head from '../head';
+// import "../../components/industrycomponents/ServicesList.css"
 import "../../components/industrycomponents/ServicesList.css"
 import OurAwards from '@/components/homecomponents/OurAwards';
 import HireUs from '@/components/homecomponents/HireUs';
@@ -10,6 +11,7 @@ import IndustrysList from '@/components/industrycomponents/IndustrysList';
 import OurApproach from '@/components/servicescomponents/OurApproach';
 import CaseStudies from '@/components/homecomponents/CaseStudies';
 import ClientsSay from '@/components/homecomponents/ClientsSay';
+
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {

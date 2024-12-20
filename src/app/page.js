@@ -13,6 +13,7 @@ import BASE_URL from '@/config';
 import Head from './head';
 import Highlights from '@/components/homecomponents/Highlights';
 import ClientsSay from '@/components/homecomponents/ClientsSay';
+import "../components/homecomponents/Banner.css"
 
 function stripHtmlTags(str) {
   if (!str) return '';

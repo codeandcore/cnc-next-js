@@ -78,16 +78,8 @@ const ProjectCountries = ({ countries_title, countries_list }) => {
   };
   const handleNextClick = () => {
     if (!thumbsCarouselRef.current || !mainCarouselRef.current) return;
-  
-    const totalItems = countries_list.length; // Total items
-    const newIndex = thumbsIndex + 1; // Increment index
-  
-    if (newIndex < totalItems) {
-      setThumbsIndex(newIndex); 
-  
-      thumbsCarouselRef.current.to(5, 300); // Update thumbs carousel
-      mainCarouselRef.current.to(newIndex, 0);    // Update main carousel
-    }
+    thumbsCarouselRef.current.next(300); // Update thumbs carousel
+    mainCarouselRef.current.next(0);    // Update main carousel
   };
   const handlePrevClick = () => {
     if (thumbsCarouselRef.current) {
@@ -98,9 +90,9 @@ const ProjectCountries = ({ countries_title, countries_list }) => {
     }
   };
 
-  useEffect(() => {
-    handleTranslated();
-  }, [mainCarouselRef]);
+  // useEffect(() => {
+  //   handleTranslated();
+  // }, [mainCarouselRef]);
   return (
     <div className="project_contries">
       <div className="wrapper d_flex d_flex_jc">

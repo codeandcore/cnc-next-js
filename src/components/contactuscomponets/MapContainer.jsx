@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-// import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const MapContainer = ({ latitude, longitude }) => {
   const containerStyle = {
@@ -120,25 +120,24 @@ const MapContainer = ({ latitude, longitude }) => {
   };
 
   return (
-    <></>
-    // <LoadScript googleMapsApiKey="AIzaSyCgyqxIH4ckL8EAkXPisbmcM-5vJJPK5oo">
-    //   <GoogleMap
-    //     mapContainerStyle={containerStyle}
-    //     center={center}
-    //     zoom={20}
-    //     options={{
-    //       styles: darkMapStyle,
-    //       mapTypeId: 'hybrid',
-    //       mapTypeControl: true,
-    //       mapTypeControlOptions: {
-    //         position: window.google?.maps ?  window.google.maps?.ControlPosition.TOP_RIGHT : "",
-    //         mapTypeIds: ['roadmap', 'satellite', 'terrain', 'hybrid'],
-    //       },
-    //     }}
-    //   >
-    //     <Marker position={center} icon={icon} />
-    //   </GoogleMap>
-    // </LoadScript>
+    <LoadScript googleMapsApiKey="AIzaSyCgyqxIH4ckL8EAkXPisbmcM-5vJJPK5oo">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={20}
+        options={{
+          styles: darkMapStyle,
+          mapTypeId: 'hybrid',
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            position: window.google?.maps ?  window.google.maps?.ControlPosition.TOP_RIGHT : "",
+            mapTypeIds: ['roadmap', 'satellite', 'terrain', 'hybrid'],
+          },
+        }}
+      >
+        <Marker position={center} icon={icon} />
+      </GoogleMap>
+    </LoadScript>
   );
 };
 

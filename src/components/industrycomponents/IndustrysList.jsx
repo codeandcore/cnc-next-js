@@ -160,7 +160,7 @@ const IndustrysList = ({
                 )}
                 <h3>{service.title}</h3>
                 <div className="btnsimple">
-                  <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
+                  <img src={"/assets/images/arrow_ss1.svg"} alt="Read More" />
                 </div>
               </div>
               <div
@@ -198,7 +198,7 @@ const IndustrysList = ({
                           >
                             <em>Read More</em>
                             <div>
-                              <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
+                              <img src={"/assets/images/arrow_ss1.svg"} alt="Read More" />
                             </div>
                           </Link>
                         )}
