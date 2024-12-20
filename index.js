@@ -5,6 +5,7 @@ const cache = require("./cache");
 const generateJson = require("./api/generateJson");
 
 const app = express();
+console.log("hello");
 
 // Middleware to parse JSON
 app.use(express.json({ limit: "100mb" }));
