@@ -11,11 +11,11 @@ import OurApproach from '@/components/servicescomponents/OurApproach';
 import CaseStudies from '@/components/homecomponents/CaseStudies';
 import ClientsSay from '@/components/homecomponents/ClientsSay';
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-        ? `/data/pages/industry`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/industry`
             : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/710`
   
     const response = await fetch(apiUrl);
@@ -28,7 +28,7 @@ const fetchPageData = async () => {
   async function fetchHomepageData() {
     const res = await fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -39,7 +39,7 @@ const fetchPageData = async () => {
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `/data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');

@@ -8,7 +8,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-            ? `/data/pages/blog`
+            ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/blog`
             : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
   
     const response = await fetch(apiUrl);
@@ -21,7 +21,7 @@ const fetchPageData = async () => {
 const fetchHireUsData = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/pages/home`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
 
   
@@ -35,7 +35,7 @@ const fetchHireUsData = async () => {
 const fetchContactData = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/pages/contactus`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   
     const response = await fetch(apiUrl);

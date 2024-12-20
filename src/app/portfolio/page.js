@@ -7,11 +7,11 @@ import CasestudingExploreData from '@/components/casestudingcomponents/Casestudi
 import OurAwards from '@/components/homecomponents/OurAwards';
 import HireUs from '@/components/homecomponents/HireUs';
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-          ? `/data/pages/portfolio`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/portfolio`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=portfolio`
   
     const response = await fetch(apiUrl);
@@ -37,7 +37,7 @@ const fetchIntialData = async () => {
   async function fetchHomepageData() {
     const res = await fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -48,7 +48,7 @@ const fetchIntialData = async () => {
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `/data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');

@@ -8,10 +8,10 @@ import ServicesDetailsBanner from "@/components/servicesdetailscomponents/Servic
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `/data/pages/${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
   
     const response = await fetch(apiURL, {
@@ -26,7 +26,7 @@ async function fetchData(slug) {
   async function fetchHomeData() {
     const res = await   fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -36,7 +36,7 @@ async function fetchData(slug) {
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `/data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');

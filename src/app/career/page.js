@@ -6,11 +6,11 @@ import Perksandbenefits from '@/components/careercomponents/Perksandbenefits';
 import JobOpenings from '@/components/careercomponents/JobOpenings';
 import SolvingIndustriesChallenges from '@/components/careercomponents/SolvingIndustriesChallenges';
 import Life from '@/components/homecomponents/Life';
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/pages/career`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/career`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`
   
     const response = await fetch(apiUrl);
@@ -22,7 +22,7 @@ const fetchPageData = async () => {
   const fetchLifeCNCData = async () => {
     const res = await   fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');

@@ -11,10 +11,10 @@ import HireUs from "../../components/homecomponents/HireUs";
 import Head from "../head";
 
 const fetchPageData = async () => {
-  const env = process.env.NODE_ENV;
+  const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   const apiUrl =
     env !== "development"
-      ? "/data/pages/about-us"
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/about-us`
       : "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/389";
 
   const response = await fetch(apiUrl);

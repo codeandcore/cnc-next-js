@@ -6,11 +6,11 @@ import ReviewClientsay from '@/components/Reviewcomponents/ReviewClientsay';
 import ReviewAwards from '@/components/Reviewcomponents/ReviewAwards';
 
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-          ? `/data/pages/review`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/review`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2896`
   
     const response = await fetch(apiUrl);

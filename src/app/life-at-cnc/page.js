@@ -9,11 +9,11 @@ import Linkedinlife from '@/components/Lifecomponents/Linkedinlife';
 import Socialmedialife from '@/components/Lifecomponents/Socialmedialife';
 import FestivalCelebration from '@/components/Lifecomponents/FestivalCelebration';
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchhomePage = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/pages/life-at-cnc`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/life-at-cnc`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1665`
     const response = await fetch(apiUrl);
     if (!response.ok) {
@@ -26,7 +26,7 @@ const fetchhomePage = async () => {
 const fetchYoutubeMedia = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/youtube-feeds`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/youtube-feeds`
     : `https://cnc-website-new.vercel.app/data/youtube-feeds`
     const response = await fetch(apiUrl);
     if (!response.ok) {
@@ -38,7 +38,7 @@ const fetchYoutubeMedia = async () => {
   async function fetchHomehomePage() {
     const res = await fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -49,7 +49,7 @@ const fetchYoutubeMedia = async () => {
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `/data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');

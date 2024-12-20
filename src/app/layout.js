@@ -12,7 +12,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchGeneralSettings() {
   const generalSettingRes = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/general-setting`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`
 )
   if (!generalSettingRes.ok) {

@@ -12,12 +12,12 @@ import TechnoList from '@/components/technologiescomponents/TechnoList';
 import HireUs from '@/components/homecomponents/HireUs';
 
 
-const env = process.env.NODE_ENV;
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   
 async function fetchPageData() {
     const res = await fetch(
       env !== "development"
-          ? `/data/pages/technologies`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/technologies`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1842`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -27,7 +27,7 @@ async function fetchPageData() {
   async function fetchHomepageData() {
     const res = await fetch(
       env !== "development"
-          ? `/data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -38,7 +38,7 @@ async function fetchPageData() {
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `/data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');
