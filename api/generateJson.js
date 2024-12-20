@@ -6,7 +6,7 @@ const axios = require('axios');
 const { kv } = require('@vercel/kv');
 const cache = require('../cache');
 
-console.log('generateJson.js loaded');
+console.log('generateJson.js loaded---');
 
 const router = express.Router();
 router.use(bodyParser.json({ limit: "500mb" }));
