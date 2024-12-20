@@ -17,7 +17,6 @@ const ChatBoard = ({ isChatOpen, toggleChatBoard }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}`);
   };
 
   const handleChatClick = (e) => {

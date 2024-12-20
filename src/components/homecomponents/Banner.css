@@ -11,6 +11,10 @@
   margin-bottom: 32px;
   letter-spacing: 2px;
 }
+.banner p {
+  width: 100%;
+  max-width: 830px;
+}
 .banner .left_col {
   width: calc(100% - 409px);
   position: relative;

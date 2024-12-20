@@ -47,16 +47,12 @@ const BlogDetailContent = ({
   }, [blogData]); // Run this whenever blogData changes
 
   const handleSmoothScroll = (id, index) => {
-    console.log(id);
     
     setActiveTocItem(index);
 
     const element = document.getElementById(id);
-    console.log("id",element);
     
-    if (element) {
-      console.log("elemt",element);
-      
+    if (element) {      
       window.scrollTo({
         top: element.offsetTop,
         behavior: 'smooth',

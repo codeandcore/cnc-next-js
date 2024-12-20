@@ -13,7 +13,8 @@ async function fetchGeneralSettings() {
   const generalSettingRes = await fetch(
     env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
+      { cache: "no-store" } 
 )
   if (!generalSettingRes.ok) {
     throw new Error('Failed to fetch general settings');

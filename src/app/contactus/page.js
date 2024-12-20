@@ -15,7 +15,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
     const res = await fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
+        { cache: "no-store" } 
   )
     if (!res.ok) throw new Error('Failed to fetch homepage data');
     return res.json();
@@ -26,7 +27,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
     const res = await  fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,
+        { cache: "no-store" } 
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');
     return res.json();
