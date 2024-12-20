@@ -6,7 +6,7 @@ import AwardsLogo from '../careercomponents/AwardsLogo';
 import dynamic from 'next/dynamic';
 import he from 'he';
 import CasestudingExploreData from './CasestudingExploreData';
-const Select = dynamic(() => import('react-select'), { ssr: false });
+// const Select = dynamic(() => import('react-select'), { ssr: false });
 const CasestudingBanner = ({
   casestuding_banner_image,
   banner_background_image_mobile,
