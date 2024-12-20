@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useCallback } from 'react';
 import './CasestudingBanner.css';
-import 'react-select2-wrapper/css/select2.css'; // import Select2 CSS
+// import 'react-select2-wrapper/css/select2.css'; // import Select2 CSS
 import AwardsLogo from '../careercomponents/AwardsLogo';
 import dynamic from 'next/dynamic';
 import he from 'he';
@@ -120,7 +120,7 @@ console.log("hasmorepages",hasMorePages);
         <div className="wrap d_flex d_flex_js">
           <div className="selectcol">
             <h3>Industries</h3>
-            <Select
+            {/* <Select
             options={options}
             value={selectedIndustry}
             placeholder="All Industry"
@@ -129,7 +129,7 @@ console.log("hasmorepages",hasMorePages);
             }}
             classNamePrefix="select2" 
               // styles={customStyles} // Apply custom styles
-        />
+        /> */}
           </div>
           <div className="selectcol">
             <h3>Services</h3>

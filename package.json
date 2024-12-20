@@ -10,7 +10,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.20.3",
     "@vercel/kv": "^3.0.0",
     "axios": "^1.7.9",
     "file-loader": "^6.2.0",
@@ -25,7 +24,6 @@
     "react-helmet-async": "^2.0.5",
     "react-masonry-css": "^1.0.16",
     "react-owl-carousel": "^2.3.3",
-    "react-select2-wrapper": "^1.0.4-beta6",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "webpack": "^5.97.1"

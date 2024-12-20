@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import './CasestudingBanner.css';
-import 'react-select2-wrapper/css/select2.css'; // import Select2 CSS
-import Select2 from 'react-select2-wrapper';
+// import 'react-select2-wrapper/css/select2.css'; // import Select2 CSS
+// import Select2 from 'react-select2-wrapper';
 import AwardsLogo from '../careercomponents/AwardsLogo';
 import he from 'he';
 const CasestudingBanner = ({
@@ -146,13 +146,13 @@ const CasestudingBanner = ({
                     industryTaxonomyName.slice(1)}
                 </h3>
               )}
-              <Select2
+              {/* <Select2
                 data={generateIndustryOptions()} // Pass the dynamically generated options
                 options={{ placeholder: 'All Industries' }}
                 onChange={(event) =>
                   handleTaxonomyChange(event.target.value, industryTaxonomyName)
                 }
-              />
+              /> */}
             </div>
           )}
           {ServicesTaxonomyeData && (
