@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
     </head>
       <body>
         <Suspense fallback={<Loading />}>
-        <NextTopLoader />
+          <NextTopLoader showSpinner={false} height={5} />
         <ScrollToTop />
           <Header
             logo={generalSetting.header_white_logo}

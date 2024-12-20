@@ -6,6 +6,7 @@ import Perksandbenefits from '@/components/careercomponents/Perksandbenefits';
 import JobOpenings from '@/components/careercomponents/JobOpenings';
 import SolvingIndustriesChallenges from '@/components/careercomponents/SolvingIndustriesChallenges';
 import Life from '@/components/homecomponents/Life';
+import Head from '../head';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
@@ -33,9 +34,10 @@ const fetchPageData = async () => {
 export default async function CareerPage() {
     const CareerpageData = await fetchPageData();
     const CNCLifeData = await fetchLifeCNCData();
-
+    const yoastData =  CareerpageData?.yoast_head_json
     return (
-      
+      <>
+       <Head yoastData={yoastData} />
     <div className='main_wrapper'>
        {CareerpageData && (CareerpageData.acf.career_banner_background_image || CareerpageData.acf.career_banner_title || CareerpageData.acf.career_banner_description ||   CareerpageData.acf.career_openings_label
         || CareerpageData.acf.career_right_side_banner_title || CareerpageData.acf.learn_more_about_codeandcore || CareerpageData.acf.banner_clients_list)&&(
@@ -89,7 +91,8 @@ export default async function CareerPage() {
           life_codeandcore_bottom_text={CNCLifeData?.acf.life_codeandcore_bottom_text}
         ></Life>
              )}
-    </div>
+        </div>
+        </>
   );
 };
 

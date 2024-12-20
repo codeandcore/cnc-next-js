@@ -2334,3 +2334,12 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   transform: translateX(-100%);
   transition: opacity 300ms, transform 300ms;
 } */
+
+#nprogress .bar {
+  background: repeating-linear-gradient(
+      to right,
+      #9966ff 0%,
+      #aecfff 50%,
+      #9966ff 100%
+  ) !important;
+}
