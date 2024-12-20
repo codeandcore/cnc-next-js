@@ -46,7 +46,6 @@ export default async function Page({ params }) {
   const slug = (await params).id
     const data = await fetchData(slug)
     const portfolioData= data?.id ? data : data[0]
-    console.log("portfolioData",portfolioData);
     
   const yoastData = data ? data?.yoast_head_json : data?.[0]?.yoast_head_json
   const HomePage = await fetchHomeData()
