@@ -12,6 +12,7 @@
   "dependencies": {
     "@vercel/kv": "^3.0.0",
     "axios": "^1.7.9",
+    "express": "^4.21.2",
     "file-loader": "^6.2.0",
     "fs": "^0.0.1-security",
     "he": "^1.2.0",
