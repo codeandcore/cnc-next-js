@@ -1,6 +1,6 @@
 
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 // import "../../components/industrycomponents/ServicesList.css"
 import "../../components/industrycomponents/ServicesList.css"
@@ -11,6 +11,7 @@ import IndustrysList from '@/components/industrycomponents/IndustrysList';
 import OurApproach from '@/components/servicescomponents/OurApproach';
 import CaseStudies from '@/components/homecomponents/CaseStudies';
 import ClientsSay from '@/components/homecomponents/ClientsSay';
+import Loading from '@/components/Loading';
 
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -63,7 +64,7 @@ export default async function IndustryPage() {
       : null;
 
   return (
-    <>
+<Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
       {IndustryData && (IndustryData.acf.banner_gallery || IndustryData.acf.banner_title || IndustryData.acf.banner_subtitle || IndustryData.acf.banner_clients_list 
@@ -136,7 +137,7 @@ export default async function IndustryPage() {
           />
         )}
     </div>
-      </>
+      </Suspense>
   );
 };
 

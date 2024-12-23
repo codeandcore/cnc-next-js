@@ -7,8 +7,9 @@ import OurApproach from '@/components/servicescomponents/OurApproach';
 import ServicesBanner from '@/components/servicescomponents/ServicesBanner';
 import ServicesList from '@/components/servicescomponents/ServicesList';
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
+import Loading from '@/components/Loading';
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -58,7 +59,7 @@ export default async function ServicePage() {
     : null;
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
     <div className='main_wrapper'>
       {serviceData && (serviceData.acf.banner_background_image || serviceData.acf.banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_clients_list || serviceData.acf.banner_subtitle || serviceData.acf.banner_title) && (
@@ -127,7 +128,7 @@ export default async function ServicePage() {
           />
         )}
       </div>
-      </>
+      </Suspense>
   );
 };
 

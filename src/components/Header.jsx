@@ -75,30 +75,6 @@ const Header = ({
     //   });
   };
 
-  const handleLinkClick = async (url, urlc, e = null) => {
-    // setIsFinish(false);
-    // setIsDone(false);
-    // setIsLoading(true);
-    // setTimeout(() => {
-    //   setIsDone(true);
-    //   setTimeout(() => {
-    //     setIsFinish(true);
-    //   }, 1000);
-    // }, 100);
-    // if (router.pathname === url) {
-    //   return;
-    // }
-    // if (e.ctrlKey || e.metaKey) {
-    //   return;
-    // }
-    // e.preventDefault();
-    // try {
-    //   await handleMouseEnter(urlc);
-    //   router.push(url); // Use router.push for navigation
-    // } catch (error) {
-    //   console.error('Error handling link click:', error);
-    // }
-  };
 
   const handleMenuToggle = () => {
     setMenuOpen((prev) => !prev);
@@ -129,7 +105,6 @@ const Header = ({
     resetChildMenu,
     menuTitle,
     handleSmoothScroll,
-    handleLinkClick,
     handleMouseEnter,
   ) => {
     switch (subMenuType) {
@@ -142,7 +117,6 @@ const Header = ({
         services_menu={services_menu}
         menuTitle={menuTitle}
         handleSmoothScroll={handleSmoothScroll}
-        handleLinkClick={handleLinkClick}
         handleMouseEnter={handleMouseEnter}
       />
         
@@ -155,7 +129,6 @@ const Header = ({
           industry_menu={industry_menu}
           menuTitle={menuTitle}
           handleSmoothScroll={handleSmoothScroll}
-          handleLinkClick={handleLinkClick}
           handleMouseEnter={handleMouseEnter}
         />
       
@@ -249,7 +222,6 @@ const Header = ({
               onClick={(e) => {
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick('/', '/', e);
               }}
               className={`brand ${router.pathname === '/' ? 'current' : ''}`}
             >
@@ -286,7 +258,6 @@ const Header = ({
                       onClick={(e) => {
                         closeMenu();
                         handleSmoothScroll();
-                        handleLinkClick(column.menu.url, column.menu.url, e);
                       }}
                       className={`${
                         router.pathname === column.menu.url ? 'current' : ''
@@ -304,7 +275,6 @@ const Header = ({
                         resetChildMenu,
                         column.menu.title,
                         handleSmoothScroll,
-                        handleLinkClick,
                         handleMouseEnter,
                       )}
                   </li>
@@ -318,7 +288,6 @@ const Header = ({
               onClick={(e) => {
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick(button_url, button_url, e);
               }}
               className="btn"
             >

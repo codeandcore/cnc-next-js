@@ -1,11 +1,12 @@
 
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 import CasestudingBanner from '@/components/casestudingcomponents/CasestudingBanner';
 import CasestudingExploreData from '@/components/casestudingcomponents/CasestudingExploreData';
 import OurAwards from '@/components/homecomponents/OurAwards';
 import HireUs from '@/components/homecomponents/HireUs';
+import Loading from '@/components/Loading';
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -71,7 +72,7 @@ export default async function portfolioPage() {
       : null;
 
   return (
-    <>
+<Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   <div className="main_wrapper">
       {CaseStudypageData && (
@@ -127,7 +128,7 @@ export default async function portfolioPage() {
           />
         )}
     </div>
-      </>
+      </Suspense>
   );
 };
 

@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 import he from 'he';
 import HireUs from '@/components/homecomponents/HireUs';
 import BASE_URL from '@/config';
 import SitemapList from '@/components/sitemapcomponents/SitemapList';
+import Loading from '@/components/Loading';
 
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -52,7 +53,7 @@ export default async function page() {
       ? homePage?.acf
                 : null;
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
 <SitemapList pageData={pageData}/>
  {hireUsData &&
@@ -69,7 +70,7 @@ export default async function page() {
             contactData={contactData}
           />
         )}
-      </>
+      </Suspense>
   );
 };
 

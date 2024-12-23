@@ -1,12 +1,13 @@
 
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 import ContactBanner from '@/components/contactuscomponets/ContactBanner';
 import ContactForm from '@/components/contactuscomponets/ContactForm';
 import ProjectCountries from '@/components/contactuscomponets/ProjectContries';
 import "../../components/homecomponents/Banner.css"
 import "../../components/careercomponents/CareerPopup.css"
+import Loading from '@/components/Loading';
 
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -41,7 +42,7 @@ export default async function IndustryPage() {
 
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
    <div className='main_wrapper'>
       {contactData && (contactData.acf.banner_background_image || contactData.acf.banner_background_video || contactData.acf.banner_title || contactData.acf.banner_subtitle || contactData.acf.banner_statistic_expertise || contactData.acf.banner_statistic_industry || contactData.acf.banner_statistic_projects || pageData.acf.banner_rating_platform_list)  && (
@@ -97,7 +98,7 @@ export default async function IndustryPage() {
      />
   )}
     </div> 
-      </>
+      </Suspense>
   );
 };
 

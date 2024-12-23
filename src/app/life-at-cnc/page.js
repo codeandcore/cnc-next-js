@@ -1,6 +1,6 @@
 
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 import HireUs from '@/components/homecomponents/HireUs';
 import Life from '@/components/homecomponents/Life';
@@ -8,6 +8,7 @@ import HappyHours from '@/components/Lifecomponents/HappyHours';
 import Linkedinlife from '@/components/Lifecomponents/Linkedinlife';
 import Socialmedialife from '@/components/Lifecomponents/Socialmedialife';
 import FestivalCelebration from '@/components/Lifecomponents/FestivalCelebration';
+import Loading from '@/components/Loading';
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchhomePage = async () => {
@@ -71,7 +72,7 @@ export default async function portfolioPage() {
                 : null;
     
   return (
-    <>
+<Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
        {homePage && (homePage.acf.life_codeandcore_title || homePage.acf.life_codeandcore_button_text || homePage.acf.life_codeandcore_highlights || homePage.acf.life_codeandcore_bottom_text ) && ( 
@@ -130,7 +131,7 @@ export default async function portfolioPage() {
           />
         )}
     </div>
-      </>
+      </Suspense>
   );
 };
 

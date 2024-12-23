@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import AboutBanner from "../../components/aboutuscomponents/AboutBanner";
 import WhoWeAre from "../../components/aboutuscomponents/WhoWeAre";
 import VisionImage from "../../components/aboutuscomponents/VisionImage";
@@ -9,6 +9,7 @@ import NewLook from "../../components/aboutuscomponents/NewLook";
 import RecognitionsAwards from "../../components/aboutuscomponents/RecognitionsAwards";
 import HireUs from "../../components/homecomponents/HireUs";
 import Head from "../head";
+import Loading from "@/components/Loading";
 
 const fetchPageData = async () => {
   const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -36,7 +37,7 @@ export default async function AboutUsPage() {
       : null;
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={pageData?.yoast_head_json} />
     <div className="main_wrapper">
       {pageData?.acf?.about_banner_title && (
@@ -107,6 +108,6 @@ export default async function AboutUsPage() {
         />
       )}
       </div>
-      </>
+      </Suspense>
   );
 }
