@@ -98,7 +98,29 @@ const Header = ({
     // } catch (error) {
     //   console.error('Error handling link click:', error);
     // }
+
+    try {
+      const submenus = document.querySelectorAll(".submenu");
+      submenus.forEach((submenu) => {
+        submenu.style.display = 'none';
+      });
+  
+      if (typeof handleLinkClick === 'function') {
+        handleLinkClick(url, name, e);
+      }
+  
+      setTimeout(() => {
+        submenus.forEach((submenu) => {
+          submenu.style.display = ''; 
+        });
+      }, 100);
+  
+    } catch (error) {
+      console.error('Error handling menu click:', error);
+    }
   };
+
+  
 
   const handleMenuToggle = () => {
     setMenuOpen((prev) => !prev);
@@ -214,6 +236,7 @@ const Header = ({
       setHeaderClass('header-white');
     }
   }, [pathname]);
+  
 
   useEffect(() => {
     setResetChildMenu(false); // Reset the resetChildMenu flag after the menu has been closed
@@ -226,11 +249,27 @@ const Header = ({
     logoImage = header_black_logo.url;
   }
 
+  const handleNavigation = (url, e, keepMenuOpen = false) => {
+    window.scrollTo({
+      top: 0, 
+      behavior: "auto",
+    });
+
+    if (!keepMenuOpen) {
+      setMenuOpen(false);
+      setOpenSubmenu(null);
+    }
+
+    const cleanUrl = url.replace(/\/+/g, '/').replace(/^\/|\/$/g, '');
+    router.push(`/${cleanUrl}`);
+  };
+
   return (
     <>
       {additional_css && <style>{additional_css}</style>}
 
       <header
+       
         className={`d-flex ${headerActive ? 'fixed' : ''} ${
           headerIsactive ? 'isactive' : ''
         } ${headerClass}`}
@@ -263,6 +302,7 @@ const Header = ({
           )}
           <div className={`menucol ${toggleIsactive ? 'open' : ''}`}>
             <Link
+            
               href="/"
               onClick={() => {
                 closeMenu();
@@ -282,16 +322,11 @@ const Header = ({
                     } ${column.sub_menu_type !== 'none' ? 'drop' : ''}`}
                   >
                     <Link
+                      onClick={(e) => handleNavigation(column.menu.url, e)}
                       href={column.menu.url}
-                      onClick={(e) => {
-                        closeMenu();
-                        handleSmoothScroll();
-                        handleLinkClick(column.menu.url, column.menu.url, e);
-                      }}
                       className={`${
-                        router.pathname === column.menu.url ? 'current' : ''
+                        pathname === column.menu.url ? "current" : ""
                       }`}
-                      onMouseEnter={() => handleMouseEnter(column.menu.url)}
                     >
                       {column.menu.title}
                     </Link>
@@ -306,6 +341,7 @@ const Header = ({
                         handleSmoothScroll,
                         handleLinkClick,
                         handleMouseEnter,
+                        handleNavigation
                       )}
                   </li>
                 ))}
