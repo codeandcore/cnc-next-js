@@ -84,11 +84,6 @@ const IndustryMenu = ({
                 closeSubmenu();
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick(
-                  `industry${industry_menu.industry_title.url}`,
-                  industry_menu.industry_title.url,
-                  e,
-                );
               }}
             >
               {industry_menu.industry_title.title}
@@ -112,11 +107,7 @@ const IndustryMenu = ({
                         closeSubmenu();
                         closeMenu();
                         handleSmoothScroll();
-                        handleLinkClick(
-                          `industry${menu.menu_item.url}`,
-                          menu.menu_item.url,
-                          e,
-                        );
+                    
                       }}
                     >
                       <span>
