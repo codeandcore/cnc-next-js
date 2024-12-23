@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './menu.css';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const IndustryMenu = ({
   isOpen,
@@ -16,18 +17,19 @@ const IndustryMenu = ({
   const [activeChildmenu, setActiveChildmenu] = useState(null);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [industryContent, SetIndustryContent] = useState(null);
+  const pathname = usePathname();
   
   const handleChildToggle = (submenu) => {
-    // console.log(submenu);
     setActiveChildmenu((prev) => (prev === submenu ? null : submenu));
   };
+  
   const handleSubmenuToggle = (menuName) => {
     setOpenSubmenu((prev) => (prev === menuName ? null : menuName));
   };
+  
   useEffect(() => {
-    SetIndustryContent(industry_menu?.industry_content); // Set content only after component mounts
+    SetIndustryContent(industry_menu?.industry_content);
   }, [industry_menu?.industry_content]);
-
 
   useEffect(() => {
     if (!isOpen) {
@@ -35,15 +37,28 @@ const IndustryMenu = ({
       setOpenSubmenu(null);
     }
   }, [isOpen]);
+  
   useEffect(() => {
     if (resetChildMenu) {
-      handleChildToggle(null); // Reset the child menu when closeMenu is called
+      handleChildToggle(null);
       setOpenSubmenu(null);
     }
   }, [resetChildMenu]);
 
-  
+  const isLinkActive = (url) => {
+    const normalizedPathname = pathname.replace(/\/$/, '').toLowerCase();
+    const normalizedUrl = url.replace(/\/$/, '').toLowerCase();
+    
+    const fullPath = normalizedUrl.startsWith('/') ? normalizedUrl : `/industry${normalizedUrl}`;
+    
+    return normalizedPathname === fullPath;
+  };
 
+  const getActiveLinkStyle = (url) => ({
+      color: isLinkActive(url) ? 'black' : '',
+      fontWeight: isLinkActive(url) ? '700' : '',
+  });
+  
   return (
     <>
       <span
@@ -63,7 +78,8 @@ const IndustryMenu = ({
           {industry_menu.industry_title && (
             <Link
               href={`/industry${industry_menu.industry_title.url}`}
-              className="link"
+              // className="link"
+              
               onClick={(e) => {
                 closeSubmenu();
                 closeMenu();
@@ -74,41 +90,43 @@ const IndustryMenu = ({
                   e,
                 );
               }}
-              // onMouseEnter={() => handleMouseEnter(industry_menu.industry_title.url)}
             >
               {industry_menu.industry_title.title}
             </Link>
           )}
           <p
-            dangerouslySetInnerHTML={{ __html:industryContent }}
+            dangerouslySetInnerHTML={{ __html: industryContent }}
           ></p>
         </div>
         <div className="right_col d_flex">
           {industry_menu.industry_menu && (
             <ul>
-              {industry_menu.industry_menu.map((menu, index) => (
-                <li key={index}>
-                  <Link
-                    href={`/industry${menu.menu_item.url}`}
-                    onClick={(e) => {
-                      closeSubmenu();
-                      closeMenu();
-                      handleSmoothScroll();
-                      handleLinkClick(
-                        `industry${menu.menu_item.url}`,
-                        menu.menu_item.url,
-                        e,
-                      );
-                    }}
-                    // onMouseEnter={() => handleMouseEnter(menu.menu_item.url)}
-                  >
-                    <span>
-                      <img src={menu.icon.url} alt={menu.icon.alt} />
-                    </span>
-                    {menu.menu_item.title}
-                  </Link>
-                </li>
-              ))}
+              {industry_menu.industry_menu.map((menu, index) => {
+                const fullUrl = `/industry${menu.menu_item.url}`;
+                return (
+                  <li key={index} >
+                    <Link
+                      style={getActiveLinkStyle(fullUrl)}
+                      href={fullUrl}
+                      onClick={(e) => {
+                        closeSubmenu();
+                        closeMenu();
+                        handleSmoothScroll();
+                        handleLinkClick(
+                          `industry${menu.menu_item.url}`,
+                          menu.menu_item.url,
+                          e,
+                        );
+                      }}
+                    >
+                      <span>
+                        <img src={menu.icon.url} alt={menu.icon.alt} />
+                      </span>
+                      {menu.menu_item.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           )}
           <div className="img">

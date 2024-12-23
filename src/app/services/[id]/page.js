@@ -2,6 +2,7 @@ import Head from "@/app/head";
 import BlogDetailContent from "@/components/blogdetailcomponents/BlogDetailContent";
 import Highlights from "@/components/homecomponents/Highlights";
 import HireUs from "@/components/homecomponents/HireUs";
+import Loading from "@/components/Loading";
 import DigitalSolution from "@/components/servicesdetailscomponents/DigitalSolution";
 import ExploreDone from "@/components/servicesdetailscomponents/ExploreDone";
 import HowWeHelp from "@/components/servicesdetailscomponents/HowWeHelp";
@@ -9,6 +10,7 @@ import QuestionsAnswered from "@/components/servicesdetailscomponents/QuestionsA
 import ServicesDetailsBanner from "@/components/servicesdetailscomponents/ServicesDetailsBanner";
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
+import { Suspense } from "react";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -62,7 +64,7 @@ export default async function Page({ params }) {
   
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
       {serviceData && (serviceData.acf.industry_banner_background_image || serviceData.acf.industry_banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_title || serviceData.acf.banner_subtitle || serviceData.acf.banner_clients_list) && (
@@ -127,6 +129,6 @@ export default async function Page({ params }) {
           />
         )}
     </div>
-  </>
+  </Suspense>
       );
   }

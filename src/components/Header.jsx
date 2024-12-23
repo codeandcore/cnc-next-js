@@ -151,7 +151,6 @@ const Header = ({
     resetChildMenu,
     menuTitle,
     handleSmoothScroll,
-    handleLinkClick,
     handleMouseEnter,
   ) => {
     switch (subMenuType) {
@@ -164,7 +163,6 @@ const Header = ({
         services_menu={services_menu}
         menuTitle={menuTitle}
         handleSmoothScroll={handleSmoothScroll}
-        handleLinkClick={handleLinkClick}
         handleMouseEnter={handleMouseEnter}
       />
         
@@ -177,7 +175,6 @@ const Header = ({
           industry_menu={industry_menu}
           menuTitle={menuTitle}
           handleSmoothScroll={handleSmoothScroll}
-          handleLinkClick={handleLinkClick}
           handleMouseEnter={handleMouseEnter}
         />
       
@@ -288,7 +285,6 @@ const Header = ({
               onClick={(e) => {
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick('/', '/', e);
               }}
               className={`brand ${router.pathname === '/' ? 'current' : ''}`}
             >
@@ -339,7 +335,6 @@ const Header = ({
                         resetChildMenu,
                         column.menu.title,
                         handleSmoothScroll,
-                        handleLinkClick,
                         handleMouseEnter,
                         handleNavigation
                       )}
@@ -354,7 +349,6 @@ const Header = ({
               onClick={(e) => {
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick(button_url, button_url, e);
               }}
               className="btn"
             >

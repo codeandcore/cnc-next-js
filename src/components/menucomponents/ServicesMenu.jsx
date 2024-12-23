@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './menu.css';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const ServicesMenu = ({
   isOpen,
@@ -22,21 +23,31 @@ const ServicesMenu = ({
   const handleSubmenuToggle = (menuName) => {
     setOpenSubmenu((prev) => (prev === menuName ? null : menuName));
   };
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isOpen) {
-      handleChildToggle(null); // Reset the child menu when the ServicesMenu is closed
+      handleChildToggle(null);
       setOpenSubmenu(null);
     }
   }, [isOpen]);
 
   useEffect(() => {
     if (resetChildMenu) {
-      handleChildToggle(null); // Reset the child menu when closeMenu is called
+      handleChildToggle(null);
       setOpenSubmenu(null);
     }
   }, [resetChildMenu]);
 
+  const isLinkActive = (url) => {
+    const fullPath = url.startsWith('/') ? url : `/services${url}`;
+    return pathname === fullPath;
+  };
+
+  const getActiveLinkStyle = (url) => ({
+    color: isLinkActive(url) ? 'black' : '',
+    fontWeight: isLinkActive(url) ? '700' : '',
+  });
   
   return (
     <>
@@ -58,15 +69,11 @@ const ServicesMenu = ({
             <Link
               href={`${services_menu.technology_title.url}`}
               className="link"
+              style={getActiveLinkStyle(services_menu.technology_title.url)}
               onClick={(e) => {
                 closeSubmenu();
                 closeMenu();
                 handleSmoothScroll();
-                // handleLinkClick(
-                //   `${services_menu.technology_title.url}`,
-                //   services_menu.technology_title.url,
-                //   e,
-                // );
               }}
               onMouseEnter={() =>
                 handleMouseEnter(services_menu.technology_title.url)
@@ -81,6 +88,7 @@ const ServicesMenu = ({
                 <li key={index}>
                   <Link
                     href={`/technologies/${menu.link.post_name}`}
+                    style={getActiveLinkStyle(`/technologies/${menu.link.post_name}`)}
                     onClick={(e) => {
                       closeSubmenu();
                       closeMenu();
@@ -91,9 +99,6 @@ const ServicesMenu = ({
                         e,
                       );
                     }}
-                    // onMouseEnter={() =>
-                    //   handleMouseEnter(`/${menu.link.post_name}`)
-                    // }
                   >
                     <img src={menu.icon.url} alt={menu.icon.title} />
                   </Link>
@@ -107,8 +112,8 @@ const ServicesMenu = ({
             {services_menu.first_menu_title && (
               <h3>
                 <Link
-
                   href={`/services${services_menu.first_menu_title.url}`}
+                  style={getActiveLinkStyle(`/services${services_menu.first_menu_title.url}`)}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
@@ -150,8 +155,8 @@ const ServicesMenu = ({
                   {services_menu.first_menu.map((menu, index) => (
                     <li key={index}>
                       <Link
-
                         href={`/services${menu.menu_item.url}`}
+                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
@@ -180,6 +185,7 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.second_menu_title.url}`}
+                  style={getActiveLinkStyle(`/services${services_menu.second_menu_title.url}`)}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
@@ -222,6 +228,7 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
+                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
@@ -250,6 +257,7 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.third_menu_title.url}`}
+                  style={getActiveLinkStyle(`/services${services_menu.third_menu_title.url}`)}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
@@ -292,12 +300,13 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
+                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
                           handleSmoothScroll();
                           handleLinkClick(
-                            `/services${menu.menu_item.url}`,
+                            `services${menu.menu_item.url}`,
                             menu.menu_item.url,
                             e,
                           );
@@ -320,6 +329,7 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.fourth_menu_title.url}`}
+                  style={getActiveLinkStyle(`/services${services_menu.fourth_menu_title.url}`)}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
@@ -362,6 +372,7 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
+                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();

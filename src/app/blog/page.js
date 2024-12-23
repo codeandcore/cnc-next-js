@@ -1,8 +1,9 @@
 import BlogList from '@/components/blogcomponents/BlogList';
 import HireUs from '@/components/homecomponents/HireUs';
 import BASE_URL from '@/config';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
+import Loading from '@/components/Loading';
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -68,7 +69,7 @@ const yoastData=pageData?.yoast_head_json
 
  
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
     <div className='main_wrapper'>
       {pageData && (pageData.acf.blog_heading || pageData.acf.blog_content || pageData.acf.blog_all_categories_label) &&(
@@ -95,7 +96,7 @@ const yoastData=pageData?.yoast_head_json
           />
         )}
       </div>
-      </>
+      </Suspense>
   );
 };
 

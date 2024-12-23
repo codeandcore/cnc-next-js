@@ -10,6 +10,8 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import NextTopLoader from 'nextjs-toploader';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchGeneralSettings() {
+  console.log("entering generalsetting");
+  
   const generalSettingRes = await fetch(
     env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
@@ -33,7 +35,7 @@ export default async function RootLayout({ children }) {
     </head>
       <body>
         <Suspense fallback={<Loading />}>
-          <NextTopLoader showSpinner={false} height={5} />
+          <NextTopLoader showSpinner={false} height={5}  options={{ minimum: 0.3, speed: 400, trickleSpeed: 200 }}/>
         <ScrollToTop />
           <Header
             logo={generalSetting.header_white_logo}

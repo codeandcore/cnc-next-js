@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from '../head';
 import ReviewBanner from '@/components/Reviewcomponents/ReviewBanner';
 import ReviewClientsay from '@/components/Reviewcomponents/ReviewClientsay';
 import ReviewAwards from '@/components/Reviewcomponents/ReviewAwards';
+import Loading from '@/components/Loading';
 
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -27,7 +28,7 @@ export default async function page() {
     const yoastData =  ReviewpageData?.yoast_head_json
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   {ReviewpageData && (ReviewpageData.acf.banner_title || ReviewpageData.acf.banner_description || ReviewpageData.acf.right_side_title || ReviewpageData.acf.discover_more )&&(
       <ReviewBanner
@@ -53,7 +54,7 @@ export default async function page() {
           awards_listing_rtl={ReviewpageData.acf.awards_listing_rtl}
          />
       )}
-      </>
+      </Suspense>
   );
 };
 

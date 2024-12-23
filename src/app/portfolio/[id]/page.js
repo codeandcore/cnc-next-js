@@ -1,9 +1,11 @@
+import { Suspense } from "react";
 import Head from "@/app/head";
 import CasestudingContaints from "@/components/casestudingdetailcomponets/CasestudingContaints";
 import PortfolioFeatures from "@/components/casestudingdetailcomponets/PortfolioFeatures";
 import ExploreWork from "@/components/homecomponents/ExploreWork";
 import HireUs from "@/components/homecomponents/HireUs";
 import ProjectLogoMarquee from "@/components/homecomponents/ProjectLogoMarquee";
+import Loading from "@/components/Loading";
 import BASE_URL from "@/config";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -58,7 +60,7 @@ export default async function Page({ params }) {
     : null;
   
   return (
-    <>
+<Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
       {portfolioData && (
@@ -99,6 +101,6 @@ export default async function Page({ params }) {
           />
         )}
     </div>
-  </>
+  </Suspense>
       );
   }
