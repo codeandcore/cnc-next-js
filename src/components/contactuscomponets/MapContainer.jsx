@@ -130,7 +130,7 @@ const MapContainer = ({ latitude, longitude }) => {
           mapTypeId: 'hybrid',
           mapTypeControl: true,
           mapTypeControlOptions: {
-            position: window.google?.maps ?  window.google.maps?.ControlPosition.TOP_RIGHT : "",
+            position: window.google?.maps ?  window.google.maps?.ControlPosition?.TOP_RIGHT : "",
             mapTypeIds: ['roadmap', 'satellite', 'terrain', 'hybrid'],
           },
         }}
