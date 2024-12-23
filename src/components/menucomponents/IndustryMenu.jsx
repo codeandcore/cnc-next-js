@@ -41,9 +41,7 @@ const IndustryMenu = ({
       setOpenSubmenu(null);
     }
   }, [resetChildMenu]);
-
   
-
   return (
     <>
       <span
@@ -68,11 +66,6 @@ const IndustryMenu = ({
                 closeSubmenu();
                 closeMenu();
                 handleSmoothScroll();
-                handleLinkClick(
-                  `industry${industry_menu.industry_title.url}`,
-                  industry_menu.industry_title.url,
-                  e,
-                );
               }}
               // onMouseEnter={() => handleMouseEnter(industry_menu.industry_title.url)}
             >
@@ -94,11 +87,6 @@ const IndustryMenu = ({
                       closeSubmenu();
                       closeMenu();
                       handleSmoothScroll();
-                      handleLinkClick(
-                        `industry${menu.menu_item.url}`,
-                        menu.menu_item.url,
-                        e,
-                      );
                     }}
                     // onMouseEnter={() => handleMouseEnter(menu.menu_item.url)}
                   >

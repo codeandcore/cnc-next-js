@@ -3,12 +3,10 @@ import ExploreWork from "@/components/homecomponents/ExploreWork";
 import HireUs from "@/components/homecomponents/HireUs";
 import HealthcareSector from "@/components/industrycomponents/HealthcareSector";
 import HealthcareSolution from "@/components/industrycomponents/HealthcareSolution";
-import Loading from "@/components/Loading";
 import QuestionsAnswered from "@/components/servicesdetailscomponents/QuestionsAnswered";
 import ServicesDetailsBanner from "@/components/servicesdetailscomponents/ServicesDetailsBanner";
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
-import { Suspense } from "react";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -62,7 +60,7 @@ export default async function Page({ params }) {
     : null;
   
   return (
-    <Suspense fallback={<Loading />}>
+    <>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
       {industryData && (
@@ -135,6 +133,6 @@ export default async function Page({ params }) {
           />
         )}
     </div>
-     </Suspense>
+     </>
       );
   }

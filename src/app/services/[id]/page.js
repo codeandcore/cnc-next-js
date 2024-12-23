@@ -64,7 +64,7 @@ export default async function Page({ params }) {
   
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
       {serviceData && (serviceData.acf.industry_banner_background_image || serviceData.acf.industry_banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_title || serviceData.acf.banner_subtitle || serviceData.acf.banner_clients_list) && (
@@ -129,6 +129,6 @@ export default async function Page({ params }) {
           />
         )}
     </div>
-  </Suspense>
+  </>
       );
   }
