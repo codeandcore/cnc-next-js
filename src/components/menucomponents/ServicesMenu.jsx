@@ -40,8 +40,15 @@ const ServicesMenu = ({
   }, [resetChildMenu]);
 
   const isLinkActive = (url) => {
-    const fullPath = url.startsWith('/') ? url : `/${url}`;
-    return pathname === fullPath;
+    const normalizeUrl = (path) => {
+      return '/' + path.replace(/^\/+|\/+$/g, '');
+    };
+
+    const normalizedPathname = normalizeUrl(pathname);
+    const normalizedUrl = normalizeUrl(url);
+
+    return normalizedPathname === normalizedUrl || 
+           normalizedPathname.startsWith(normalizedUrl + '/');
   };
 
   const getActiveLinkStyle = (url) => ({
@@ -87,7 +94,7 @@ const ServicesMenu = ({
             <Link
               href={`${services_menu.technology_title.url}`}
               className="link"
-              style={getActiveLinkStyle(services_menu.technology_title.url)}
+              style={getActiveLinkStyle(`/services${services_menu.technology_title.url}`)}
               onClick={(e) => {
                 closeSubmenu();
                 closeMenu();
