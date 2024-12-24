@@ -47,7 +47,6 @@ const ChatBoard = ({
     setErrors(errorsObj);
 
     if (!errorsObj.name && !errorsObj.email && !errorsObj.code) {
-      console.log(`Name: ${name}, Email: ${email}`);
       // Proceed with form submission
       setThankyou(true);
     }

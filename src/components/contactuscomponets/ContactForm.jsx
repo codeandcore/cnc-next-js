@@ -121,7 +121,6 @@ const ContactForm = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm(formData);
-    console.log('validationErrors', validationErrors);
     const queryParams1 = new URLSearchParams(location.search);
     formData.ip = userIp;
     formData.country = userCountry;

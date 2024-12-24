@@ -82,7 +82,6 @@ const CasestudingBanner = ({
     setPage(1);
     setCaseStudycptData([]); // Clear previous data
   };
-console.log("hasmorepages",hasMorePages);
 
   return (
     <>

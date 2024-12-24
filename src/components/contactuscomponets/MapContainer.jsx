@@ -6,10 +6,7 @@ const MapContainer = ({ latitude, longitude }) => {
   const containerStyle = {
     width: '100%',
     height: '100%',
-  };
-
-  console.log("latitude",latitude);
-  
+  };  
   const center = {
     lat: Number(latitude),
     lng: Number(longitude)

@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchGeneralSettings() {  
-  
+
   const generalSettingRes = await fetch(
     env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
@@ -26,14 +26,8 @@ async function fetchGeneralSettings() {
 export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
   return (
-    <html lang="en">
-   <head>
-    <meta charSet="utf-8" />  
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-      <body>
         <Suspense fallback={<Loading />}>
-          <NextTopLoader showSpinner={false} height={5}  options={{ minimum: 0.3, speed: 400, trickleSpeed: 200 }}/>
+          <NextTopLoader color='false' zIndex={99999999} showSpinner={false} height={5}  />
         <ScrollToTop />
           <Header
             logo={generalSetting.header_white_logo}
@@ -48,7 +42,6 @@ export default async function RootLayout({ children }) {
           <main>{children}</main>
           <Footer ApiData={generalSetting}/>
         </Suspense>
-      </body>
-    </html>
+    
   );
 }

@@ -2339,35 +2339,16 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   pointer-events: none; /* Avoid interaction */
 }
 
-#nprogress .bar {
-  background: repeating-linear-gradient(
-    to right,
-    #9966ff 0%,
-    #aecfff 50%,
-    #9966ff 100%
-  ) !important;
-  height: 5px;
-  left: 0;
-  position: fixed;
-  top: 0;
+#nprogress .bar {animation: gradient 1s infinite; animation-fill-mode: forwards; animation-timing-function: linear; background: repeating-linear-gradient(90deg, #96f 0, #aecfff 50%, #96f); background-position: 0 100% ; background-size: 200% auto ; height: 5px; left: 0; opacity: 1; position: fixed; top: 0; transform-origin: top center; transition: all .3s ease; width: 100%; z-index: 99999999999; height: 5px;
   transform: scaleX(1) !important; /* Start with no progress */
-  opacity: 1 !important;
-  transition: transform 1s linear, opacity 0.3s ease-out !important; /* Smooth animation */
-  transform-origin: left center !important;
+  opacity: 1;
+}
+@keyframes gradient { 
+  0%   { background-position: 0 0 ; }
+  100% { background-position: -200% 0 ; }
 }
 
 #nprogress .bar.complete {
-  opacity: 0 !important; /* Fade out when complete */
-  transition: opacity 0.3s ease-out !important;
-}
-#nprogress::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(150, 142, 158, 0.3) !important;
-  z-index: 1030 !important; 
-  pointer-events: none; 
+  opacity: 0; /* Fade out when complete */
+  transition: opacity 0.3s ease-out;
 }

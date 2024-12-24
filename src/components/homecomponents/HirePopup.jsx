@@ -113,7 +113,6 @@ const HirePopup = ({
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     const validationErrors = validateForm(formData); // Validate the form data after setting the state
     setErrors(validationErrors);
     const queryParams1 = new URLSearchParams(location.search);
@@ -185,7 +184,7 @@ const HirePopup = ({
   };
   useEffect(() => {
     setCaptcha(generateCaptcha());
-    getUserIp();
+    // getUserIp();
     // Update jobtitle in formData whenever title prop changes
     setFormData((prevFormData) => ({
       ...prevFormData,

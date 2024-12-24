@@ -1,21 +1,28 @@
 import React from 'react';
+
 import Link from 'next/link';
 import ExploreWork from '@/components/homecomponents/ExploreWork';
 import HireUs from '@/components/homecomponents/HireUs';
-import Head from 'next/head';
+import Head from './head';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const Custom404 = async () => {
   const HomePage = await fetchHomepageData()
   const GeneralSetting = await fetchGeneralSettings()
   return (
     <>
-       <Head>
-        <title>404 - Page Not Found</title>
-        <meta
-          name="description"
-          content='The page you are looking for does not exist.'
-        />
-      </Head>
+       <Header
+            logo={GeneralSetting?.header_white_logo}
+            header_black_logo={GeneralSetting?.header_black_logo}
+            button_text={GeneralSetting?.header_button_text}
+            button_url={GeneralSetting?.header_button_url}
+            main_menu={GeneralSetting?.main_menu}
+            industry_menu={GeneralSetting?.industry_menu}
+            services_menu={GeneralSetting?.services_menu}
+            additional_css={GeneralSetting?.additional_css}
+          />
+
       <div className="main_wrapper">
       <div className="error_sec">
         <div className="wrapper d_flex d_flex_at">
@@ -34,7 +41,7 @@ const Custom404 = async () => {
             {GeneralSetting.error_content && (
               <div dangerouslySetInnerHTML={{ __html: GeneralSetting.error_content }}></div>
             )}
-            <Link legacyBehavior href="/">
+            <Link legacyBehavior href="/" className='btn'>
               <a className="btn">Back to Home</a>
             </Link>
           </div>
@@ -75,7 +82,8 @@ const Custom404 = async () => {
           hireus_list={HomePage.acf.hireus_list}
         />
       )}
-    </div>
+      </div>
+      <Footer ApiData={GeneralSetting}/>
     </>
   );
 };

@@ -187,18 +187,18 @@ const IndustrysList = ({
                         ></p>
                         {item.link && (
                           <Link
-                            href={`/industry/${item.link.post_name}`}
+                            href={`/services/${item.link.post_name}`}
                             onClick={(e) => {
                               closeMenu();
                               handleSmoothScroll();
-                              // handleLinkClick(`/industry/${item.link.post_name}`, item.link.post_name, e);
+                              // handleLinkClick(`/services/${item.link.post_name}`, item.link.post_name, e);
                             }}
-                            // onMouseEnter={() => handleMouseEnter(item.link.post_name)}
+                           
                             className="btnarrow btn"
                           >
                             <em>Read More</em>
                             <div>
-                              <img src={"/assets/images/arrow_ss1.svg"} alt="Read More" />
+                              <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
                             </div>
                           </Link>
                         )}
