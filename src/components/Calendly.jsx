@@ -38,7 +38,6 @@ const Calendly = ({
 
   const handleClick = (e) => {
     handleCalendlyPopup(e); // Call Calendly popup function
-    onClose(); // Call toggleChatBoard function
   };
 
   return (

@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import './JobOpenings.css';
-import CareerPopup from '../../components/careercomponents/CareerPopup';
 import he from 'he';
 import BASE_URL from '../../config';
+import CareerPopup from './CareerPopup';
 
 const JobOpenings = ({
   jon_opening_title,

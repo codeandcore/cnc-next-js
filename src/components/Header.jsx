@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import IndustryMenu from '../components/menucomponents/IndustryMenu';
-import ServicesMenu from '../components/menucomponents/ServicesMenu';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import ServicesMenu from './menucomponents/ServicesMenu';
+import IndustryMenu from './menucomponents/IndustryMenu';
 
 const Header = ({
   logo,

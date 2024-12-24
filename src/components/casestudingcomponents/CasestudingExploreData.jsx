@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import './CasestudingExploreData.css';
-import ExploreData from '../../components/servicesdetailscomponents/ExploreData';
+import ExploreData from '../servicesdetailscomponents/ExploreData';
 
 const CasestudingExploreData = ({
   CaseStudycptData,

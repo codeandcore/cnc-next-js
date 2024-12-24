@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import './ExploreDone.css';
-import ExploreData from '../../components/servicesdetailscomponents/ExploreData';
+import ExploreData from './ExploreData';
 
 const ExploreDone = ({
   portfolio_title,
