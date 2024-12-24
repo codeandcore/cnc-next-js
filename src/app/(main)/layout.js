@@ -27,7 +27,7 @@ export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
   return (
         <Suspense fallback={<Loading />}>
-          <NextTopLoader showSpinner={false} height={5}  options={{ minimum: 0.3, speed: 400, trickleSpeed: 200 }}/>
+          <NextTopLoader color='false' zIndex={99999999} showSpinner={false} height={5}  />
         <ScrollToTop />
           <Header
             logo={generalSetting.header_white_logo}

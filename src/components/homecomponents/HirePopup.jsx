@@ -184,7 +184,7 @@ const HirePopup = ({
   };
   useEffect(() => {
     setCaptcha(generateCaptcha());
-    getUserIp();
+    // getUserIp();
     // Update jobtitle in formData whenever title prop changes
     setFormData((prevFormData) => ({
       ...prevFormData,
