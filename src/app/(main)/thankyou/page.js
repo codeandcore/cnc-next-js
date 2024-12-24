@@ -1,146 +1,100 @@
-"use client"
 
-import Head from 'next/head';
+import React, { Suspense } from 'react';
+import Head from '@/app/head';
+import he from 'he';
 import HireUs from '@/components/homecomponents/HireUs';
+import BASE_URL from '@/config';
+import Loading from '@/components/Loading';
+import Link from 'next/link';
 import ExploreWork from '@/components/homecomponents/ExploreWork';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
-const Thankyou = () => {
-  const navigate = useRouter();
-  const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
-  const [pageData, setPageData] = useState({
-    generalSettings: null,
-    homepageData: null
-  });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [generalSettings, homepageData] = await Promise.all([
-          fetch(
-            env !== "development"
-              ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-              : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
-            { cache: "no-store" }
-          ).then(res => {
-            if (!res.ok) throw new Error('Failed to fetch general settings');
-            return res.json();
-          }),
-          fetch(
-            env !== "development"
-              ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-              : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
-            { cache: "no-store" }
-          ).then(res => {
-            if (!res.ok) throw new Error('Failed to fetch homepage data');
-            return res.json();
-          })
-        ]);
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 
-        setPageData({
-          generalSettings,
-          homepageData
-        });
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+async function fetchhomePage() {
+  const res = await fetch(
+    env !== "development"
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
+)
+  if (!res.ok) throw new Error('Failed to fetch homepage data');
+  return res.json();
+}
 
-    fetchData();
-  }, []); 
-  if (!pageData.generalSettings) {
-    return null;
+const fetchGeneralSetting = async () => {
+    const apiUrl =
+    env !== "development"
+    ? `/data/general-setting`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`
+    const response = await fetch(apiUrl,{ cache: "no-store" } );
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    return response.json();
+};
+
+  async function fetchContactData() {
+    const res = await  fetch(
+      env !== "development"
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
+  )
+    if (!res.ok) throw new Error('Failed to fetch contact data');
+    return res.json();
   }
 
+export default async function terms() {
+  const homepage= await fetchhomePage()
+    const GeneralSetting = await fetchGeneralSetting();
+    const contactData = await fetchContactData();
+    const yoastData =  GeneralSetting?.yoast_head_json
+
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>Thank You</title>
-      </Head>
-      <div className="main_wrapper">
-        <div className="error_sec thankyou_sec">
-          <div className="wrapper d_flex">
-            <div className="left_col">
-              <div className="img_col">
-                {pageData.generalSettings.thankyou_image_title && (
-                  <span 
-                    dangerouslySetInnerHTML={{ 
-                      __html: pageData.generalSettings.thankyou_image_title 
-                    }}
-                  />
-                )}
-                {pageData.generalSettings.thankyou_image && (
-                  <img 
-                    src={pageData.generalSettings.thankyou_image.url} 
-                    alt={pageData.generalSettings.thankyou_image.title} 
-                  />
-                )}
-              </div>
+<Suspense fallback={<Loading />}>
+  <Head yoastData={yoastData} />
+  <div className='main_wrapper'>
+      <div className='error_sec thankyou_sec'>
+        <div className='wrapper d_flex '>
+          <div className='left_col'>
+          <div className='img_col'>
+          {GeneralSetting.thankyou_image_title && (<span dangerouslySetInnerHTML={{ __html: GeneralSetting.thankyou_image_title }}></span>)}
+          {GeneralSetting.thankyou_image && (<img src={GeneralSetting.thankyou_image.url} alt={GeneralSetting.thankyou_image.title} />)}
+          </div>
+          </div>
+          <div className='right_col'>
+          {GeneralSetting.thankyou_title && (<h1 dangerouslySetInnerHTML={{ __html: GeneralSetting.thankyou_title }}></h1>)}
+            {GeneralSetting.thankyou_content && (<p dangerouslySetInnerHTML={{ __html: GeneralSetting.thankyou_content }}></p>)}
+            <Link className="btn" href="/"><em>Back to Home</em></Link>
+            {GeneralSetting.thankyou_social_links && (
+            <div className='social_icon d_flex d_flex_js'>
+              {GeneralSetting.thankyou_social_links.map((page, index) => (
+                <a href={page.url} target='_blank' rel="noreferrer"><img src={page.icon.url} alt={page.icon.title} /></a>
+              ))}
             </div>
-            <div className="right_col">
-              {pageData.generalSettings.thankyou_title && (
-                <h1 
-                  dangerouslySetInnerHTML={{ 
-                    __html: pageData.generalSettings.thankyou_title 
-                  }}
-                />
-              )}
-              {pageData.generalSettings.thankyou_content && (
-                <p 
-                  dangerouslySetInnerHTML={{ 
-                    __html: pageData.generalSettings.thankyou_content 
-                  }}
-                />
-              )}
-              <button
-                className="btn"
-                onClick={() => navigate.push("/")}
-                style={{
-                  color: 'white',
-                  fontSize: '17px',
-                  fontWeight: '600',
-                  cursor: 'pointer'
-                }}
-              >
-                <em>Back to Home</em>
-              </button>
-              {pageData.generalSettings.thankyou_social_links && (
-                <div className="social_icon d_flex d_flex_js">
-                  {pageData.generalSettings.thankyou_social_links.map((page, index) => (
-                    <a 
-                      href={page.url} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      key={index}
-                    >
-                      <img src={page.icon.url} alt={page.icon.title} />
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
-        <ExploreWork 
-          title={pageData.generalSettings.thankyou_portfolio_title}
-          subtitle={pageData.generalSettings.thankyou_portfolio_subtitle}
-          button={pageData.generalSettings.thankyou_portfolio_button}
-          items={pageData.generalSettings.thankyou_portfolio_list}
-        />
-        {pageData.homepageData && (
-          <HireUs
-            hireus_title={pageData.homepageData?.acf.hireus_title}
-            hireus_subtitle={pageData.homepageData?.acf.hireus_subtitle}
-            hireus_button_text={pageData.homepageData?.acf.hireus_button_text}
-            hireus_list={pageData.homepageData?.acf.hireus_list}
-          />
-        )}
       </div>
-    </>
+    
+      <ExploreWork
+      title = {GeneralSetting.thankyou_portfolio_title}
+      subtitle = {GeneralSetting.thankyou_portfolio_subtitle}
+      button = {GeneralSetting.thankyou_portfolio_button}
+      items = {GeneralSetting.thankyou_portfolio_list}
+      ></ExploreWork>
+      
+      {homepage && (homepage?.acf.hireus_title || homepage?.acf.hireus_subtitle || homepage?.acf.hireus_button_text || homepage?.acf.hireus_list) &&(
+        <HireUs
+        BASE_URL={BASE_URL}
+        hireus_title={homepage?.acf.hireus_title}
+        hireus_subtitle={homepage?.acf.hireus_subtitle}
+        hireus_button_text={homepage?.acf.hireus_button_text}
+        hireus_list={homepage?.acf.hireus_list}
+        contactData={contactData}
+        ></HireUs>
+        )}
+    </div>
+      </Suspense>
   );
 };
 
-export default Thankyou;
