@@ -8,12 +8,12 @@ const Head = ({ yoastData }) => {
       />
       <link
         rel="icon"
-        href="https://cnc-website-new.vercel.app/favicon.ico"
+        href="https://new-cnc-next.vercel.app/favicon.ico"
         sizes="32x32"
       />
       <link
         rel="apple-touch-icon"
-        href="https://cnc-website-new.vercel.app/favicon.ico"
+        href="https://new-cnc-next.vercel.app/favicon.ico"
       />
       <title>{yoastData?.og_title || "Codeandcore - Web development studio"}</title>
       

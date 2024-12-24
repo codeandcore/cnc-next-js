@@ -2360,7 +2360,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   opacity: 0 !important; /* Fade out when complete */
   transition: opacity 0.3s ease-out !important;
 }
-#nprogress::after {
+/* #nprogress::after {
   content: '';
   position: fixed;
   top: 0;
@@ -2370,4 +2370,4 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   background: rgba(150, 142, 158, 0.3) !important;
   z-index: 1030 !important; 
   pointer-events: none; 
-}
+} */
