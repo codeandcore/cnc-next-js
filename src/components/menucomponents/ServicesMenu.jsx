@@ -40,7 +40,7 @@ const ServicesMenu = ({
   }, [resetChildMenu]);
 
   const isLinkActive = (url) => {
-    const fullPath = url.startsWith('/') ? url : `/services${url}`;
+    const fullPath = url.startsWith('/') ? url : `/${url}`;
     return pathname === fullPath;
   };
 
@@ -48,7 +48,25 @@ const ServicesMenu = ({
     color: isLinkActive(url) ? 'black' : '',
     fontWeight: isLinkActive(url) ? '700' : '',
   });
-  
+
+  const handleNavigation = async (url, e) => {
+    const submenus = document.getElementsByClassName("submenu");
+    Array.from(submenus).forEach(submenu => {
+      submenu.style.display = 'none';
+    });
+    
+    handleSmoothScroll();    
+    if (handleLinkClick) {
+      handleLinkClick(e);
+    }
+    
+    setTimeout(() => {
+      Array.from(submenus).forEach(submenu => {
+        submenu.style.display = 'flex';
+      });
+    }, 100);
+  };
+
   return (
     <>
       <span
@@ -74,6 +92,7 @@ const ServicesMenu = ({
                 closeSubmenu();
                 closeMenu();
                 handleSmoothScroll();
+                handleNavigation(services_menu.technology_title.url, e)
               }}
               onMouseEnter={() =>
                 handleMouseEnter(services_menu.technology_title.url)
@@ -93,7 +112,7 @@ const ServicesMenu = ({
                       closeSubmenu();
                       closeMenu();
                       handleSmoothScroll();
-                  
+                      handleNavigation(`/technologies/${menu.link.post_name}`, e)
                     }}
                   >
                     <img src={menu.icon.url} alt={menu.icon.title} />
@@ -114,6 +133,7 @@ const ServicesMenu = ({
                     closeSubmenu();
                     closeMenu();
                     handleSmoothScroll();
+                    handleNavigation(`/services${services_menu.first_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
                     __html: services_menu.first_menu_title.title,
@@ -152,6 +172,7 @@ const ServicesMenu = ({
                           closeSubmenu();
                           closeMenu();
                           handleSmoothScroll();
+                          handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
                           __html: menu.menu_item.title,
@@ -176,6 +197,7 @@ const ServicesMenu = ({
                     closeSubmenu();
                     closeMenu();
                     handleSmoothScroll();
+                    handleNavigation(`/services${services_menu.second_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
                     __html: services_menu.second_menu_title.title,
@@ -214,6 +236,7 @@ const ServicesMenu = ({
                           closeSubmenu();
                           closeMenu();
                           handleSmoothScroll();
+                          handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
                           __html: menu.menu_item.title,
@@ -238,6 +261,7 @@ const ServicesMenu = ({
                     closeSubmenu();
                     closeMenu();
                     handleSmoothScroll();
+                    handleNavigation(`/services${services_menu.third_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
                     __html: services_menu.third_menu_title.title,
@@ -276,6 +300,7 @@ const ServicesMenu = ({
                           closeSubmenu();
                           closeMenu();
                           handleSmoothScroll();
+                          handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
                           __html: menu.menu_item.title,
@@ -300,6 +325,7 @@ const ServicesMenu = ({
                     closeSubmenu();
                     closeMenu();
                     handleSmoothScroll();
+                    handleNavigation(`/services${services_menu.fourth_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
                     __html: services_menu.fourth_menu_title.title,
@@ -338,6 +364,7 @@ const ServicesMenu = ({
                           closeSubmenu();
                           closeMenu();
                           handleSmoothScroll();
+                          handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
                           __html: menu.menu_item.title,
