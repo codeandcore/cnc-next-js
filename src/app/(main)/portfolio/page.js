@@ -98,12 +98,6 @@ export default async function portfolioPage() {
         />
       )}
 
-        {/* <div className='loader_blog' style={{ display: isLoadk ? 'block' : 'none' }}>
-            <img src={"/assets/images/rotate-right.png"} alt='rotate-right' />
-        </div> */}
-       
-     
-
       {homePage && (
         <OurAwards
           className="ourawardgray"

@@ -1,12 +1,10 @@
 'use client'
 import React, { useState, useEffect, useCallback } from 'react';
 import './CasestudingBanner.css';
-// import 'react-select2-wrapper/css/select2.css'; // import Select2 CSS
 import AwardsLogo from '../careercomponents/AwardsLogo';
-import dynamic from 'next/dynamic';
+import Select from 'react-select';
 import he from 'he';
 import CasestudingExploreData from './CasestudingExploreData';
-// const Select = dynamic(() => import('react-select'), { ssr: false });
 const CasestudingBanner = ({
   casestuding_banner_image,
   banner_background_image_mobile,
@@ -23,7 +21,11 @@ const CasestudingBanner = ({
 }) => {
 
   const [backgroundhomebanner, setBackgroundhomebanner] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState("all");
+  const [selectedIndustry, setSelectedIndustry] = useState({
+    value: "All Industry",
+    label: "All Industry",
+    id: "all"
+});
   const [selectedService, setSelectedService] = useState("all");
   const [CaseStudycptData, setCaseStudycptData] = useState([]);
   const [hasMorePages, setHasMorePages] = useState(false);
@@ -64,7 +66,6 @@ const CasestudingBanner = ({
       setCaseStudycptData((prevData) =>
         page === 1 ? data.data : [...prevData, ...data.data]
       ); // Reset data if page is 1
-
       setPerPage(8)
     } catch (error) {
       setIsLoadk(false);
@@ -119,7 +120,7 @@ const CasestudingBanner = ({
         <div className="wrap d_flex d_flex_js">
           <div className="selectcol">
             <h3>Industries</h3>
-            {/* <Select
+            <Select
             options={options}
             value={selectedIndustry}
             placeholder="All Industry"
@@ -128,7 +129,7 @@ const CasestudingBanner = ({
             }}
             classNamePrefix="select2" 
               // styles={customStyles} // Apply custom styles
-        /> */}
+        />
           </div>
           <div className="selectcol">
             <h3>Services</h3>
