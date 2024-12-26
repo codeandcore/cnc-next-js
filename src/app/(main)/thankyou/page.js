@@ -68,7 +68,7 @@ export default async function terms() {
             {GeneralSetting.thankyou_social_links && (
             <div className='social_icon d_flex d_flex_js'>
               {GeneralSetting.thankyou_social_links.map((page, index) => (
-                <a href={page.url} target='_blank' rel="noreferrer"><img src={page.icon.url} alt={page.icon.title} /></a>
+                <a key={index} href={page.url} target='_blank' rel="noreferrer"><img src={page.icon.url} alt={page.icon.title} /></a>
               ))}
             </div>
             )}
