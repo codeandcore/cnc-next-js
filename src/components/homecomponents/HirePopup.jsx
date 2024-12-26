@@ -1,10 +1,13 @@
-'use client';
+'use client'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import syncIcon  from "../../../public/assets/images/sync.png"
+import rightRotate from "../../../public/assets/images/rotate-right.png"
+import BASE_URL from '@/config';
 
 const HirePopup = ({
-  BASE_URL,
   isVisible,
   onClose,
   title,
@@ -26,69 +29,100 @@ const HirePopup = ({
     projectDescription: '',
     service: [],
     budget: '',
+    code: '',
   });
-
+  
   const [errors, setErrors] = useState({});
   const [showChooseYour, setShowChooseYour] = useState(false);
   const [showProjectBudget, setShowProjectBudget] = useState(false);
-  const location = useRouter;
+  const location = useRouter();
   const [userIp, setUserIp] = useState('');
   const [userCountry, setUserCountry] = useState('');
   const [captcha, setCaptcha] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+      case 'phone':
+        const phoneRegex = /^\d{9,10}$/;
+        return phoneRegex.test(value);
+      case 'website':
+        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+        return urlRegex.test(value);
+      case 'projectDescription':
+        return value.trim().length >= 3
+      default:
+        return value.trim().length > 0;
+    }
+  };
+
+  const checkAllFieldsFilled = (data) => {
+    const requiredFields = ['name', 'email', 'phone', 'website', 'projectDescription'];
+    
+    // Check if all required fields are present and pass validation
+    const allFieldsValid = requiredFields.every(field => {
+      const value = data[field].trim();
+      return value !== '' && validateField(field, value);
+    });
+
+    // Update showChooseYour based on validation result
+    setShowChooseYour(allFieldsValid);
+    return allFieldsValid;
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    let updatedFormData;
+
+    console.log(name)
+
+    if (type === 'checkbox') {
+      const updatedServices = checked
+        ? [...formData.service, value]
+        : formData.service.filter((service) => service !== value);
+      updatedFormData = {
+        ...formData,
+        service: updatedServices,
+      };
+    } else if (type === 'radio') {
+      updatedFormData = {
+        ...formData,
+        budget: value,
+      };
+    } else {
+      updatedFormData = {
+        ...formData,
+        [name]: value,
+      };
+    }
+
+    setFormData(updatedFormData);
+    
+    // Clear error for the field being changed
+    setErrors(prev => ({
+      ...prev,
+      [name]: '',
+    }));
+
+    // Check and update visibility of additional sections
+    checkAllFieldsFilled(updatedFormData);
+  };
+
   const handleRegenerateCaptcha = () => {
     setCaptcha(generateCaptcha());
   };
+
   const generateCaptcha = () => {
-    const characters =
-      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
     for (let i = 0; i < 4; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
       result += characters[randomIndex];
     }
     return result;
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      const updatedServices = checked
-        ? [...formData.service, value]
-        : formData.service.filter((service) => service !== value);
-      setFormData({
-        ...formData,
-        service: updatedServices,
-      });
-    } else if (type === 'radio') {
-      setFormData({
-        ...formData,
-        budget: value,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
-  };
-  const handleTextareaKeyPress = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    if (value.length > 2) {
-      setShowChooseYour(true);
-    } else {
-      setShowChooseYour(false);
-      setShowProjectBudget(false);
-      setFormData((prevData) => ({
-        ...prevData,
-        service: [], // Clear the service array
-      }));
-    }
   };
 
   const getUserIp = () => {
@@ -111,15 +145,56 @@ const HirePopup = ({
         console.log(err);
       });
   };
+
+  const validateForm = (data) => {
+    let errors = {};
+
+    if (!data.code || !data.code.trim()) {
+      errors.code = 'Captcha code is required';
+    } else if (data.code !== captcha) {
+      errors.code = 'Captcha code is incorrect';
+    }
+    if (!data.name || !data.name.trim()) {
+      errors.name = 'Name is required';
+    }
+    if (!data.email || !data.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!validateField('email', data.email)) {
+      errors.email = 'Invalid email format';
+    }
+    if (!data.phone || !data.phone.trim()) {
+      errors.phone = 'Phone is required';
+    } else if (!validateField('phone', data.phone)) {
+      errors.phone = 'Phone number should be 9 to 10 digits';
+    }
+    if (!data.website || !data.website.trim()) {
+      errors.website = 'Website is required';
+    } else if (!validateField('website', data.website)) {
+      errors.website = 'Invalid website URL';
+    }
+    if (!data.projectDescription || !data.projectDescription.trim()) {
+      errors.projectDescription = 'Project description is required';
+    }
+    if (data.service.length === 0) {
+      errors.checkbox = 'At least one service must be selected';
+    }
+    if (!data.budget) {
+      errors.budget = 'Please select a budget option';
+    }
+
+    return errors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm(formData); // Validate the form data after setting the state
+    const validationErrors = validateForm(formData);
     setErrors(validationErrors);
     const queryParams1 = new URLSearchParams(location.search);
     formData.ip = userIp;
     formData.country = userCountry;
     formData.source = queryParams1.get('source');
     formData.from_page = location.pathname;
+
     if (Object.keys(validationErrors).length === 0) {
       setLoading(true);
       try {
@@ -149,49 +224,6 @@ const HirePopup = ({
     }
   };
 
-  const validateForm = (data) => {
-    let errors = {};
-
-    if (!data.code || !data.code.trim()) {
-      errors.code = 'Captcha code is required';
-    } else if (data.code !== captcha) {
-      errors.code = 'Captcha code is incorrect';
-    }
-    if (!data.name || !data.name.trim()) {
-      errors.name = 'Name is required';
-    }
-    if (!data.email || !data.email.trim()) {
-      errors.email = 'Email is required';
-    }
-    if (!data.phone || !data.phone.trim()) {
-      errors.phone = 'Phone is required';
-    } else if (!/^\d{9,10}$/.test(data.phone)) {
-      errors.phone = 'Phone number should be 9 to 10 digits';
-    }
-    // if (!data.website || !data.website.trim()) {
-    //   errors.website = "Website is required";
-    // }
-
-    if (data.service.length === 0) {
-      errors.checkbox = 'At least one service must be selected';
-    }
-    // Add validation for radio buttons
-    if (!data.budget) {
-      errors.budget = 'Please select a budget option';
-    }
-
-    return errors;
-  };
-  useEffect(() => {
-    setCaptcha(generateCaptcha());
-    // getUserIp();
-    // Update jobtitle in formData whenever title prop changes
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      title: title,
-    }));
-  }, [title]);
-  //Function to handle smooth scrolling
   const handleSmoothScroll = () => {
     const section = document.querySelector('.hire_popup .contents');
     if (section) {
@@ -202,11 +234,37 @@ const HirePopup = ({
     }
   };
 
+  useEffect(() => {
+    setCaptcha(generateCaptcha());
+    getUserIp();
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      title: title,
+    }));
+  }, [title]);
+
+  const clearFormData = () =>{
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      industry: '',
+      website: '',
+      title: title,
+      projectDescription: '',
+      service: [],
+      budget: '',
+      code: '',
+    })
+    setShowChooseYour(false)
+  }
+
   return (
     <section className={`hire_popup ${className} ${isVisible ? 'open' : ''} `}>
-      <div className="bg" onClick={onClose}></div>
+      <div className="bg" onClick={() => {clearFormData(),onClose()}}></div>
       <div className="inner">
-        <div className="close" onClick={onClose}>
+        <div className="close" onClick={() => {clearFormData(),onClose()}}>
           x
         </div>
         <form onSubmit={handleSubmit}>
@@ -226,6 +284,7 @@ const HirePopup = ({
                   onChange={handleChange}
                   className={`in ${errors.name ? 'error' : ''}`}
                 />
+                {errors.name && <span className="error-msg">{errors.name}</span>}
                 <input
                   type="email"
                   id="email"
@@ -235,6 +294,7 @@ const HirePopup = ({
                   onChange={handleChange}
                   className={`in ${errors.email ? 'error' : ''}`}
                 />
+                {errors.email && <span className="error-msg">{errors.email}</span>}
               </div>
               <div className="colin d_flex">
                 <input
@@ -245,8 +305,8 @@ const HirePopup = ({
                   value={formData.phone}
                   onChange={handleChange}
                   className={`in ${errors.phone ? 'error' : ''}`}
-                  pattern="[0-9]{9,10}"
                 />
+                {errors.phone && <span className="error-msg">{errors.phone}</span>}
                 <input
                   type="text"
                   placeholder="Please add your website here"
@@ -255,13 +315,18 @@ const HirePopup = ({
                   onChange={handleChange}
                   className={`in ${errors.website ? 'error' : ''}`}
                 />
+                {errors.website && <span className="error-msg">{errors.website}</span>}
               </div>
               <textarea
                 placeholder="Tell us more about your project :"
                 name="projectDescription"
-                onChange={handleTextareaKeyPress}
-                className="in"
+                value={formData.projectDescription}
+                onChange={handleChange}
+                className={`in ${errors.projectDescription ? 'error' : ''}`}
               ></textarea>
+              {errors.projectDescription && (
+                <span className="error-msg">{errors.projectDescription}</span>
+              )}
             </div>
             {contact_form_service_list && showChooseYour && (
               <div className="choose_your">
@@ -292,9 +357,7 @@ const HirePopup = ({
             )}
             {contact_form_budget_list && showChooseYour && (
               <div className="project_budget">
-                {contact_form_budget_label && (
-                  <h3>{contact_form_budget_label}</h3>
-                )}
+                {contact_form_budget_label && <h3>{contact_form_budget_label}</h3>}
                 <div className="col d_flex d_flex_js">
                   {contact_form_budget_list.map((service, index) => {
                     const checkboxId = `radio${index + 1}`;
@@ -304,7 +367,7 @@ const HirePopup = ({
                           type="radio"
                           id={checkboxId}
                           name="budget"
-                          checked={formData.budget[checkboxId]}
+                          checked={formData.budget === service.label}
                           onChange={handleChange}
                           value={service.label}
                         />
@@ -312,31 +375,29 @@ const HirePopup = ({
                       </label>
                     );
                   })}
-                  {errors.budget && (
-                    <span className="error-msg">{errors.budget}</span>
-                  )}
+                  {errors.budget && <span className="error-msg">{errors.budget}</span>}
                 </div>
-                <div className="captcha-container">
+                <div style={{position:'relative'}} className="captcha-container">
                   <input
                     type="text"
                     id="code"
                     placeholder="Input this code"
                     name="code"
-                    className={`in ${errors.code ? 'error' : ''}`}
+                    className={`in ${errors.code ? "error" : ""}`}
                     value={formData.code}
                     onChange={handleChange}
                   />
-                  <div className="captcha">{captcha}</div>
-                  <button
-                    type="button"
-                    className="regenerate-btn"
-                    onClick={handleRegenerateCaptcha}
-                  >
-                    <img
-                      src={'/assets/images/rotate-right.png'}
+                  <div style={{display:'flex',columnGap:'10px',alignItems:'center',position:'absolute',right:'0px',top:'16px'}}>
+                  <div style={{backgroundColor:'#000',width:'65px',textAlign:'center',letterSpacing:'2px',color:'white'}} className="captcha">{captcha}</div>
+                    <Image
+                      style={{cursor:"pointer"}}
+                      onClick={handleRegenerateCaptcha}
+                      src={rightRotate}
                       alt="rotate-right"
+                      width={20}  
+                      height={20} 
                     />
-                  </button>
+                  </div>
                 </div>
                 <input
                   type="hidden"
@@ -351,11 +412,11 @@ const HirePopup = ({
                   disabled={loading}
                 >
                   {loading ? (
-                    <span
-                      className="loaderdata"
-                      style={{ display: loading ? 'inline-flex' : 'none' }}
-                    >
-                      <img src={'/assets/images/sync.png'} alt="rotate-right" />
+                    <span className="loaderdata" style={{ display: "inline-flex",padding:'17px 0px' }}>
+                      <Image  
+                        className='hp_rotate_img'
+                        width={25}  
+                        height={25} src={syncIcon} alt="rotate-right" />
                     </span>
                   ) : (
                     <em>Submit</em>

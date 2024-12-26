@@ -6,10 +6,11 @@ import dynamic from 'next/dynamic';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import BASE_URL from '@/config';
 const MapContainer = dynamic(() => import('./MapContainer'), { ssr: false });
 
 const ContactForm = ({
-  BASE_URL,
+  // BASE_URL,
   contact_form_location_label,
   contact_form_location_address,
   contact_form_email_label,

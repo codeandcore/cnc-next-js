@@ -2352,3 +2352,10 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   opacity: 0; /* Fade out when complete */
   transition: opacity 0.3s ease-out;
 }
+.hp_rotate_img{
+  animation: mymove 1.5s infinite;
+}
+@keyframes mymove {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
