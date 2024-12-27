@@ -73,7 +73,7 @@ const HirePopup = ({
       //   if (!value.trim()) return 'Website is required';
       //   return !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(value) ? 'Invalid website URL' : '';
       case 'projectDescription':
-        return !value.trim() ? 'Project description is required' : '';
+        return value.length <= 3 ? 'Project description is required' : '';
       case 'service':
         return value.length === 0 ? 'At least one service must be selected' : '';
       case 'budget':
@@ -360,7 +360,7 @@ const HirePopup = ({
                       </label>
                     ))}
                     {errors.service && (
-                      <span className="error-msg" style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.service}</span>
+                      <span className="error-msg" >{errors.service}</span>
                     )}
                   </div>
                 )}
@@ -386,7 +386,7 @@ const HirePopup = ({
                       </label>
                     );
                   })}
-                  {errors.budget && <span className="error-msg" style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.budget}</span>}
+                  {errors.budget && <span className="error-msg">{errors.budget}</span>}
                 </div>
                 <div style={{position:'relative'}} className="captcha-container">
                   <input
@@ -409,7 +409,7 @@ const HirePopup = ({
                       height={20} 
                     />
                   </div>
-                  {errors.code && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.code}</span>}
+                  {errors.code && <span className='captcha_err' style={{color:'red'}}>{errors.code}</span>}
                 </div>
                 <input
                   type="hidden"
@@ -422,6 +422,7 @@ const HirePopup = ({
                  onClick={handleSmoothScroll}
                  className="btn sub"
                  disabled={loading}
+                 style={{marginTop:'15px'}}
                >
                  {loading ? (
                    <span className="loaderdata" style={{ display: "inline-flex",padding:'17px 0px' }}>
@@ -472,9 +473,17 @@ const HirePopup = ({
                 .input-wrapper{
                   width :calc(50% - 17px);
                 }
+                 .captcha_err{
+                    font-size:16px;
+                  }
                 @media only screen and (min-width: 300px) and (max-width: 1023px) {
                    .input-wrapper{
                     width :calc(100% - 0px);
+                  }
+                @media only screen and (min-width: 300px) and (max-width: 767px) {
+                    .captcha_err{
+                    font-size:11px;
+                    padding-bottom:10px;
                   }
                 }
 

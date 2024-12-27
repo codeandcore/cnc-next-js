@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import './OurApproach.css';
+import he from "he";
 
 const OurApproach = ({
   our_approach_title='',
@@ -16,7 +17,6 @@ const OurApproach = ({
   if (!our_approach_list || our_approach_list.length === 0) {
     return null; // Or a loading indicator
   }
-  
 
   return (
     <div className="our_approach">
@@ -48,6 +48,8 @@ const OurApproach = ({
         {our_approach_list && (
           <div className="bottom_col">
             {our_approach_list.map((tab, index) => (
+              console.log("tab?.content",tab?.content),
+              
               <div
                 key={index}
                 className={`colin d_flex ${activeTab === index ? 'active' : ''}`}
@@ -58,7 +60,7 @@ const OurApproach = ({
                 </div>
                 <div className="text">
                   <h3>{tab.title}</h3>
-                {tab.content ?  <p dangerouslySetInnerHTML={{ __html: tab.content }}></p> : <p>dh</p>}
+                  <p dangerouslySetInnerHTML={{ __html: he.decode(tab?.content) }}></p>
                 </div>
               </div>
             ))}

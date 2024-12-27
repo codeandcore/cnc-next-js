@@ -18,13 +18,6 @@ const ServicesList = ({
   const servicesListRef = useRef(null);
   const servicesRefs = useRef([]);
   const observerRef = useRef(null);
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setToggleIsactive(false);
-    setOpenSubmenu(false);
-    setResetChildMenu(true);
-  };
-
 
   const handleSmoothScroll = () => {
     window.scrollTo({
@@ -134,7 +127,7 @@ const ServicesList = ({
                 </div>
                 {service.icon && (
                   <div className="text">
-                    {service.list.map((item, childindex) => (
+                    {service?.list.map((item, childindex) => (
                       <div className="col d_flex" key={childindex}>
                         <span>
                           {childindex + 1 < 10
@@ -149,11 +142,9 @@ const ServicesList = ({
                           <Link
                             href={`/services/${item.link.post_name}`}
                             onClick={(e) => {
-                              closeMenu();
                               handleSmoothScroll();
                               // handleLinkClick(`/services/${item.link.post_name}`, item.link.post_name, e);
                             }}
-                           
                             className="btnarrow btn"
                           >
                             <em>Read More</em>

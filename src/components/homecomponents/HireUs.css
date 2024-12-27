@@ -138,6 +138,7 @@
   max-width: calc(100% - 100px);
   margin: 0 auto;
   overflow-y: auto;
+  overflow-x: hidden;
   /* height: 35vh; */
 }
 .hire_popup .top_ban {
@@ -238,7 +239,7 @@
   color: red;
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: 13px;
 }
 .hire_popup .close {
   position: absolute;

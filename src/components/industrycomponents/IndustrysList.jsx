@@ -6,65 +6,12 @@ const IndustrysList = ({
   service_title,
   service_content,
   service_list,
-  service_view_all_button,
-  setPrefetchedData,
-  setIsLoading,
-  setIsDone,
-  setIsFinish,
 }) => {
   const [expandedIndex, setExpandedIndex] = useState(-1);
   const [visibleCount, setVisibleCount] = useState(5);
   const servicesListRef = useRef(null);
   const servicesRefs = useRef([]);
   const observerRef = useRef(null);
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setToggleIsactive(false);
-    setOpenSubmenu(false);
-    setResetChildMenu(true);
-  };
-  const handleMouseEnter = (menuItem) => {
-    if (menuItem === '/') {
-      menuItem = '/home';
-    }
-
-    return fetch(`/data/pages/${menuItem}`)
-      .then((response) => response.json())
-      .then((data) => {
-        return new Promise((resolve, reject) => {
-          try {
-            setPrefetchedData(data);
-            localStorage.setItem('prefetchedData', JSON.stringify(data));
-            resolve();
-          } catch (error) {
-            reject(error);
-          }
-        });
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        return Promise.reject(error);
-      });
-  };
-  const handleLinkClick = async (url, urlc, e = null) => {
-    // if (location.pathname === url) {
-    //   return;
-    // }
-    // if (e.ctrlKey || e.metaKey) {
-    //   return;
-    // }
-    // e.preventDefault();
-    // try {
-    //   setIsLoading(true);
-    //   setIsDone(false);
-    //   setIsFinish(false);
-    //   await handleMouseEnter(urlc);
-    //   setIsLoading(false);
-    //   navigate(url);
-    // } catch (error) {
-    //   console.error("Error handling link click:", error);
-    // }
-  };
 
   const handleSmoothScroll = () => {
     window.scrollTo({
@@ -187,9 +134,8 @@ const IndustrysList = ({
                         ></p>
                         {item.link && (
                           <Link
-                            href={`/services/${item.link.post_name}`}
+                            href={`/industry/${item.link.post_name}`}
                             onClick={(e) => {
-                              closeMenu();
                               handleSmoothScroll();
                               // handleLinkClick(`/services/${item.link.post_name}`, item.link.post_name, e);
                             }}
