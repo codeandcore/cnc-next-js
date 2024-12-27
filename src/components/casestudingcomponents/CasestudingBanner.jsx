@@ -2,9 +2,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './CasestudingBanner.css';
 import AwardsLogo from '../careercomponents/AwardsLogo';
-import Select from 'react-select';
 import he from 'he';
 import CasestudingExploreData from './CasestudingExploreData';
+import dynamic from 'next/dynamic';
+const Select = dynamic(() => import('react-select'), { ssr: false });
 const CasestudingBanner = ({
   casestuding_banner_image,
   banner_background_image_mobile,
