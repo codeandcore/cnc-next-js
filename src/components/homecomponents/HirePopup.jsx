@@ -49,9 +49,9 @@ const HirePopup = ({
       case 'phone':
         const phoneRegex = /^\d{9,10}$/;
         return phoneRegex.test(value);
-      case 'website':
-        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-        return urlRegex.test(value);
+      // case 'website':
+      //   const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+      //   return urlRegex.test(value);
       case 'projectDescription':
         return value.trim().length >= 3;
       default:
@@ -69,9 +69,9 @@ const HirePopup = ({
       case 'phone':
         if (!value.trim()) return 'Phone is required';
         return !/^\d{9,10}$/.test(value) ? 'Phone number should be 9-10 digits' : '';
-      case 'website':
-        if (!value.trim()) return 'Website is required';
-        return !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(value) ? 'Invalid website URL' : '';
+      // case 'website':
+      //   if (!value.trim()) return 'Website is required';
+      //   return !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(value) ? 'Invalid website URL' : '';
       case 'projectDescription':
         return !value.trim() ? 'Project description is required' : '';
       case 'service':
@@ -87,7 +87,7 @@ const HirePopup = ({
   };
 
   const checkAllFieldsFilled = (data) => {
-    const requiredFields = ['name', 'email', 'phone', 'website', 'projectDescription'];
+    const requiredFields = ['name', 'email', 'phone', 'projectDescription'];
     const allFieldsValid = requiredFields.every(field => {
       const value = data[field].trim();
       return value !== '' && validateField(field, value);
@@ -285,7 +285,7 @@ const HirePopup = ({
                     onChange={handleChange}
                     className={`in ${errors.name ? 'error' : ''}`}
                   />
-                  {errors.name && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.name}</span>}
+                  {/* {errors.name && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.name}</span>} */}
                 </div>
                 <div className="input-wrapper">
                   <input
@@ -297,13 +297,13 @@ const HirePopup = ({
                     onChange={handleChange}
                     className={`in ${errors.email ? 'error' : ''}`}
                   />
-                  {errors.email && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.email}</span>}
+                  {/* {errors.email && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.email}</span>} */}
                 </div>
               </div>
               <div className="colin d_flex">
                 <div className="input-wrapper">
                   <input
-                    type="number"
+                    type="tel"
                     id="phone"
                     placeholder="Phone Number*"
                     name="phone"
@@ -312,18 +312,18 @@ const HirePopup = ({
                     maxLength={10}
                     className={`in ${errors.phone ? 'error' : ''}`}
                   />
-                  {errors.phone && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.phone}</span>}
+                  {/* {errors.phone && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.phone}</span>} */}
                 </div>
                 <div className="input-wrapper">
                   <input
                     type="text"
-                    placeholder="Please add your website here*"
+                    placeholder="Please add your website here"
                     name="website"
                     value={formData.website}
                     onChange={handleChange}
                     className={`in ${errors.website ? 'error' : ''}`}
                   />
-                  {errors.website && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.website}</span>}
+                  {/* {errors.website && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.website}</span>} */}
                 </div>
               </div>
               <div >
@@ -334,9 +334,9 @@ const HirePopup = ({
                   onChange={handleChange}
                   className={`in ${errors.projectDescription ? 'error' : ''}`}
                 ></textarea>
-                {errors.projectDescription && (
+                {/* {errors.projectDescription && (
                   <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.projectDescription}</span>
-                )}
+                )} */}
               </div>
             </div>
             {contact_form_service_list && showChooseYour && (
