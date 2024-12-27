@@ -28,12 +28,6 @@ const CasestudingContaints = ({
     }
   }, [CaseStudycptData]); // Run the effect when CaseStudycptData changes
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setToggleIsactive(false);
-    setOpenSubmenu(false);
-    setResetChildMenu(true);
-  };
 
 
   const handleSmoothScroll = () => {
@@ -49,7 +43,6 @@ const CasestudingContaints = ({
         <Link
           href={`/portfolio/`}
           onClick={(e) => {
-            closeMenu();
             handleSmoothScroll();
             // handleLinkClick(`/portfolio/`, e);
           }}

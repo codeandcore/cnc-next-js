@@ -12,9 +12,6 @@ const CasestudingBanner = ({
   casestuding_banner_title,
   casestuding_banner_description,
   IndustryTaxonomyeData,
-  ServicesTaxonomyeData,
-  onIndustryChange,
-  onServiceChange,
   career_awards_logo_new,
   isLoadingk,
   BASE_URL,
@@ -120,16 +117,16 @@ const CasestudingBanner = ({
         <div className="wrap d_flex d_flex_js">
           <div className="selectcol">
             <h3>Industries</h3>
-            <Select
-            options={options}
-            value={selectedIndustry}
-            placeholder="All Industry"
-            onChange={(e) => {
-              handleIndustryChange(e)
-            }}
-            classNamePrefix="select2" 
-              // styles={customStyles} // Apply custom styles
-        />
+              <Select
+                isSearchable={false}
+                options={options}
+                value={selectedIndustry}
+                placeholder="All Industry"
+                onChange={(e) => {
+                  handleIndustryChange(e)
+                }}
+                classNamePrefix="select2" 
+              />
           </div>
           <div className="selectcol">
             <h3>Services</h3>
