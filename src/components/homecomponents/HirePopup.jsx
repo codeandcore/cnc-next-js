@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import syncIcon  from "../../../public/assets/images/sync.png"
+import syncIcon from "../../../public/assets/images/sync.png"
 import rightRotate from "../../../public/assets/images/rotate-right.png"
 import BASE_URL from '@/config';
 
@@ -49,32 +49,60 @@ const HirePopup = ({
       case 'phone':
         const phoneRegex = /^\d{9,10}$/;
         return phoneRegex.test(value);
-      case 'website':
-        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-        return urlRegex.test(value);
+      // case 'website':
+      //   const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+      //   return urlRegex.test(value);
       case 'projectDescription':
-        return value.trim().length >= 3
+        return value.trim().length >= 3;
       default:
         return value.trim().length > 0;
     }
   };
 
+  const getErrorMessage = (name, value) => {
+    switch (name) {
+      case 'name':
+        return !value.trim() ? 'Name is required' : '';
+      case 'email':
+        if (!value.trim()) return 'Email is required';
+        return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Invalid email format' : '';
+      case 'phone':
+        if (!value.trim()) return 'Phone is required';
+        return !/^\d{9,10}$/.test(value) ? 'Phone number should be 9-10 digits' : '';
+      // case 'website':
+      //   if (!value.trim()) return 'Website is required';
+      //   return !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(value) ? 'Invalid website URL' : '';
+      case 'projectDescription':
+        return value.length <= 3 ? 'Project description is required' : '';
+      case 'service':
+        return value.length === 0 ? 'At least one service must be selected' : '';
+      case 'budget':
+        return !value ? 'Please select a budget option' : '';
+      case 'code':
+        if (!value.trim()) return 'Captcha code is required';
+        return value !== captcha ? 'Incorrect captcha code' : '';
+      default:
+        return '';
+    }
+  };
+
   const checkAllFieldsFilled = (data) => {
-    const requiredFields = ['name', 'email', 'phone', 'website', 'projectDescription'];
-    
-    // Check if all required fields are present and pass validation
+    const requiredFields = ['name', 'email', 'phone', 'projectDescription'];
     const allFieldsValid = requiredFields.every(field => {
       const value = data[field].trim();
       return value !== '' && validateField(field, value);
     });
-
-    // Update showChooseYour based on validation result
     setShowChooseYour(allFieldsValid);
     return allFieldsValid;
   };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    if (name === "phone" && value.length > 10) {
+      return; 
+    }
+
     let updatedFormData;
     if (type === 'checkbox') {
       const updatedServices = checked
@@ -98,13 +126,14 @@ const HirePopup = ({
 
     setFormData(updatedFormData);
     
-    // Clear error for the field being changed
+    // Validate field on change and show error message
+    const errorMessage = getErrorMessage(name, type === 'checkbox' ? updatedFormData.service : value);
     setErrors(prev => ({
       ...prev,
-      [name]: '',
+      [name]: errorMessage
     }));
 
-    // Check and update visibility of additional sections
+    // Check if all fields are valid
     checkAllFieldsFilled(updatedFormData);
   };
 
@@ -144,42 +173,15 @@ const HirePopup = ({
   };
 
   const validateForm = (data) => {
-    let errors = {};
-
-    if (!data.code || !data.code.trim()) {
-      errors.code = 'Captcha code is required';
-    } else if (data.code !== captcha) {
-      errors.code = 'Captcha code is incorrect';
-    }
-    if (!data.name || !data.name.trim()) {
-      errors.name = 'Name is required';
-    }
-    if (!data.email || !data.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!validateField('email', data.email)) {
-      errors.email = 'Invalid email format';
-    }
-    if (!data.phone || !data.phone.trim()) {
-      errors.phone = 'Phone is required';
-    } else if (!validateField('phone', data.phone)) {
-      errors.phone = 'Phone number should be 9 to 10 digits';
-    }
-    if (!data.website || !data.website.trim()) {
-      errors.website = 'Website is required';
-    } else if (!validateField('website', data.website)) {
-      errors.website = 'Invalid website URL';
-    }
-    if (!data.projectDescription || !data.projectDescription.trim()) {
-      errors.projectDescription = 'Project description is required';
-    }
-    if (data.service.length === 0) {
-      errors.checkbox = 'At least one service must be selected';
-    }
-    if (!data.budget) {
-      errors.budget = 'Please select a budget option';
-    }
-
-    return errors;
+    const newErrors = {};
+    Object.keys(data).forEach(field => {
+      const value = field === 'service' ? data[field] : data[field].toString();
+      const errorMessage = getErrorMessage(field, value);
+      if (errorMessage) {
+        newErrors[field] = errorMessage;
+      }
+    });
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
@@ -240,7 +242,7 @@ const HirePopup = ({
     }));
   }, [title]);
 
-  const clearFormData = () =>{
+  const clearFormData = () => {
     setFormData({
       name: '',
       email: '',
@@ -253,9 +255,10 @@ const HirePopup = ({
       service: [],
       budget: '',
       code: '',
-    })
-    setShowChooseYour(false)
-  }
+    });
+    setShowChooseYour(false);
+    setErrors({});
+  };
 
   return (
     <section className={`hire_popup ${className} ${isVisible ? 'open' : ''} `}>
@@ -269,61 +272,72 @@ const HirePopup = ({
             <h2>{title}</h2>
             <p dangerouslySetInnerHTML={{ __html: content }}></p>
           </div>
-          <div className="contents">
+          <div style={{height : showChooseYour === true ? '50vh':'35vh'}} className="contents">
             <div className="middle_ban">
               <div className="colin d_flex">
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Name & Company*"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`in ${errors.name ? 'error' : ''}`}
-                />
-                {errors.name && <span className="error-msg">{errors.name}</span>}
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Your Email*"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`in ${errors.email ? 'error' : ''}`}
-                />
-                {errors.email && <span className="error-msg">{errors.email}</span>}
+                <div className="input-wrapper">
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Name & Company*"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={`in ${errors.name ? 'error' : ''}`}
+                  />
+                  {/* {errors.name && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.name}</span>} */}
+                </div>
+                <div className="input-wrapper">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email*"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`in ${errors.email ? 'error' : ''}`}
+                  />
+                  {/* {errors.email && <span style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.email}</span>} */}
+                </div>
               </div>
               <div className="colin d_flex">
-                <input
-                  type="text"
-                  id="phone"
-                  placeholder="Phone Number"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`in ${errors.phone ? 'error' : ''}`}
-                />
-                {errors.phone && <span className="error-msg">{errors.phone}</span>}
-                <input
-                  type="text"
-                  placeholder="Please add your website here"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
-                  className={`in ${errors.website ? 'error' : ''}`}
-                />
-                {errors.website && <span className="error-msg">{errors.website}</span>}
+                <div className="input-wrapper">
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number*"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    maxLength={10}
+                    className={`in ${errors.phone ? 'error' : ''}`}
+                  />
+                  {/* {errors.phone && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.phone}</span>} */}
+                </div>
+                <div className="input-wrapper">
+                  <input
+                    type="text"
+                    placeholder="Please add your website here"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    className={`in ${errors.website ? 'error' : ''}`}
+                  />
+                  {/* {errors.website && <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.website}</span>} */}
+                </div>
               </div>
-              <textarea
-                placeholder="Tell us more about your project :"
-                name="projectDescription"
-                value={formData.projectDescription}
-                onChange={handleChange}
-                className={`in ${errors.projectDescription ? 'error' : ''}`}
-              ></textarea>
-              {errors.projectDescription && (
-                <span className="error-msg">{errors.projectDescription}</span>
-              )}
+              <div >
+                <textarea
+                  placeholder="Tell us more about your project :*"
+                  name="projectDescription"
+                  value={formData.projectDescription}
+                  onChange={handleChange}
+                  className={`in ${errors.projectDescription ? 'error' : ''}`}
+                ></textarea>
+                {/* {errors.projectDescription && (
+                  <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.projectDescription}</span>
+                )} */}
+              </div>
             </div>
             {contact_form_service_list && showChooseYour && (
               <div className="choose_your">
@@ -345,8 +359,8 @@ const HirePopup = ({
                         {service.label}
                       </label>
                     ))}
-                    {errors.checkbox && (
-                      <span className="error-msg">{errors.checkbox}</span>
+                    {errors.service && (
+                      <span className="error-msg" >{errors.service}</span>
                     )}
                   </div>
                 )}
@@ -385,7 +399,7 @@ const HirePopup = ({
                     onChange={handleChange}
                   />
                   <div style={{display:'flex',columnGap:'10px',alignItems:'center',position:'absolute',right:'0px',top:'16px'}}>
-                  <div style={{backgroundColor:'#000',width:'65px',textAlign:'center',letterSpacing:'2px',color:'white'}} className="captcha">{captcha}</div>
+                    <div style={{backgroundColor:'#000',width:'65px',textAlign:'center',letterSpacing:'2px',color:'white'}} className="captcha">{captcha}</div>
                     <Image
                       style={{cursor:"pointer"}}
                       onClick={handleRegenerateCaptcha}
@@ -395,6 +409,7 @@ const HirePopup = ({
                       height={20} 
                     />
                   </div>
+                  {errors.code && <span className='captcha_err' style={{color:'red'}}>{errors.code}</span>}
                 </div>
                 <input
                   type="hidden"
@@ -403,29 +418,81 @@ const HirePopup = ({
                   name="title"
                 />
                 <button
-                  type="submit"
-                  onClick={handleSmoothScroll}
-                  className="btn sub"
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <span className="loaderdata" style={{ display: "inline-flex",padding:'17px 0px' }}>
-                      <Image  
-                        className='hp_rotate_img'
-                        width={25}  
-                        height={25} src={syncIcon} alt="rotate-right" />
-                    </span>
-                  ) : (
-                    <em>Submit</em>
-                  )}
-                </button>
-              </div>
-            )}
-          </div>
-        </form>
-      </div>
-    </section>
-  );
+                 type="submit"
+                 onClick={handleSmoothScroll}
+                 className="btn sub"
+                 disabled={loading}
+                 style={{marginTop:'15px'}}
+               >
+                 {loading ? (
+                   <span className="loaderdata" style={{ display: "inline-flex",padding:'17px 0px' }}>
+                     <Image  
+                       className='hp_rotate_img'
+                       width={25}  
+                       height={25} 
+                       src={syncIcon} 
+                       alt="rotate-right" 
+                     />
+                   </span>
+                 ) : (
+                   <em>Submit</em>
+                 )}
+               </button>
+             </div>
+           )}
+         </div>
+       </form>
+     </div>
+           <style>
+            {
+              `
+                .contents::-webkit-scrollbar {
+                    width: 5px;
+                  }
+
+                  /* Track */
+                  ::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 5px grey; 
+                    border-radius: 10px;
+                  }
+                  
+                  /* Handle */
+                  ::-webkit-scrollbar-thumb {
+                    background: #1f2770; 
+                    border-radius: 10px;
+                  }
+
+                  /* Handle on hover */
+                  ::-webkit-scrollbar-thumb:hover {
+                    background: #1f2770; 
+                  }
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+                .input-wrapper{
+                  width :calc(50% - 17px);
+                }
+                 .captcha_err{
+                    font-size:16px;
+                  }
+                @media only screen and (min-width: 300px) and (max-width: 1023px) {
+                   .input-wrapper{
+                    width :calc(100% - 0px);
+                  }
+                @media only screen and (min-width: 300px) and (max-width: 767px) {
+                    .captcha_err{
+                    font-size:11px;
+                    padding-bottom:10px;
+                  }
+                }
+
+              `
+            }
+           </style>
+     
+   </section>
+ );
 };
 
 export default HirePopup;
