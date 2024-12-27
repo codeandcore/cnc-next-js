@@ -13,7 +13,7 @@ import BASE_URL from "@/config";
 import { Suspense } from "react";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
-async function fetchData(slug) {
+  async function fetchData(slug) {
   const apiURL=  env !== "development"
   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
@@ -50,7 +50,7 @@ async function fetchData(slug) {
 
 export default async function Page({ params }) {
   const slug = (await params).id
-  const data = await fetchData(slug)
+  const data = await fetchData(slug)  
   const serviceData = data?.id ? data : data[0]   
   const homePage = await fetchHomeData();
   const contactData = await fetchContactData();
@@ -62,15 +62,14 @@ export default async function Page({ params }) {
     ? homePage?.acf
     : null;
   
-
   return (
     <>
   <Head yoastData={yoastData} />
   <div className='main_wrapper'>
-      {serviceData && (serviceData.acf.industry_banner_background_image || serviceData.acf.industry_banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_title || serviceData.acf.banner_subtitle || serviceData.acf.banner_clients_list) && (
+      {serviceData && (serviceData.acf.banner_background_image || serviceData.acf.banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_title || serviceData.acf.banner_subtitle || serviceData.acf.banner_clients_list) && (
           <ServicesDetailsBanner
-          industry_banner_background_image = {serviceData.acf.industry_banner_background_image}
-          industry_banner_background_image_mobile = {serviceData.acf.industry_banner_background_image_mobile}
+          industry_banner_background_image = {serviceData.acf.banner_background_image}
+          industry_banner_background_image_mobile = {serviceData.acf.banner_background_image_mobile}
           banner_background_video = {serviceData.acf.banner_background_video}
           banner_title = {serviceData.acf.banner_title}
           banner_subtitle = {serviceData.acf.banner_subtitle}

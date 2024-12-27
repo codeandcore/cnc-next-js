@@ -22,6 +22,7 @@ const DigitalSolution = ({
       setIsPlaying(false);
     }
   };
+console.log("digital_solution_title",digital_solution_content);
 
   const playButtonText = isPlaying ? 'Pause' : 'Play';
 
@@ -35,9 +36,9 @@ const DigitalSolution = ({
             ></h2>
           )}
           {digital_solution_content && (
-            <p
+            <div
               dangerouslySetInnerHTML={{ __html: digital_solution_content }}
-            ></p>
+            ></div>
           )}
         </div>
 

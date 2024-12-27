@@ -113,7 +113,7 @@
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  z-index: 100;
+  z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -268,7 +268,7 @@ body .select2__option--is-selected::after {
 body .select2__menu {
   max-height: 200px; /* Ensure a max-height for scrolling */
   overflow-y: auto !important; 
-  pointer-events: auto; /* Enable vertical scrolling */
+  pointer-events: auto !important;  
 }
 
 /* Custom Scrollbar */

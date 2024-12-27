@@ -76,9 +76,6 @@ const HirePopup = ({
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     let updatedFormData;
-
-    console.log(name)
-
     if (type === 'checkbox') {
       const updatedServices = checked
         ? [...formData.service, value]

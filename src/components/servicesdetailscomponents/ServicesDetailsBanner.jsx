@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import './ServicesDetailsBanner.css';
-
+import he from "he";
 const ServicesDetailsBanner = ({
   banner_background_image,
   industry_banner_background_image_mobile,
@@ -10,7 +10,7 @@ const ServicesDetailsBanner = ({
   banner_subtitle,
   banner_clients_list,
 }) => {
-  const [backgroundhomebanner, setBackgroundhomebanner] = useState('');
+  const [backgroundhomebanner, setBackgroundhomebanner] = useState('');  
   useEffect(() => {
     if (window.innerWidth > 768) {
       setBackgroundhomebanner(banner_background_image?.url || '');
@@ -18,6 +18,10 @@ const ServicesDetailsBanner = ({
       setBackgroundhomebanner(industry_banner_background_image_mobile?.url || '');
     }
   }, [banner_background_image, industry_banner_background_image_mobile]);
+
+
+  console.log("banner_title");
+  
   return (
     <div
       className="servicesdetails_banner"
@@ -43,10 +47,10 @@ const ServicesDetailsBanner = ({
       <div className="wrapper ">
         <div className="inner d_flex">
           <div className="col_left">
-            <h1 dangerouslySetInnerHTML={{ __html: banner_title }}></h1>
-            <div dangerouslySetInnerHTML={{ __html: banner_subtitle }}></div>
+            <div  dangerouslySetInnerHTML={{ __html:he.decode(banner_title)}}></div>
+            <div dangerouslySetInnerHTML={{ __html:he.decode(banner_subtitle) }}></div>
             <div className="inner d_flex">
-              {banner_clients_list.map((client, index) => (
+              {banner_clients_list && banner_clients_list?.map((client, index) => (
                 <a
                   href={client.url}
                   target="_blank"
@@ -59,7 +63,7 @@ const ServicesDetailsBanner = ({
                   <span className="lt"></span>
                   <span className="lb"></span>
                   {client.logo && (
-                    <img src={client.logo.url} alt={client.logo.name} />
+                    <img src={client?.logo.url} alt={client.logo.name} />
                   )}
                 </a>
               ))}
