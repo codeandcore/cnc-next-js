@@ -7,6 +7,9 @@
   color: var(--white);
   margin-bottom: 14px;
 }
+.our_approach .bottom_col .text{
+  color: #fff;
+}
 .our_approach .top_col {
   align-items: flex-end;
   padding-bottom: 55px;

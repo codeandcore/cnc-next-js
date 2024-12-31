@@ -112,7 +112,6 @@ const CareerPopup = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm(formData);
-    console.log(formData);
     setErrors(validationErrors);
     const queryParams1 = new URLSearchParams(location.search);
     formData.jobtitle = title;

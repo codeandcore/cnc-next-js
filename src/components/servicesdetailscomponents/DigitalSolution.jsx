@@ -22,8 +22,6 @@ const DigitalSolution = ({
       setIsPlaying(false);
     }
   };
-console.log("digital_solution_title",digital_solution_content);
-
   const playButtonText = isPlaying ? 'Pause' : 'Play';
 
   return (

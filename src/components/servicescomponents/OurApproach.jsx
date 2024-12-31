@@ -60,7 +60,7 @@ const OurApproach = ({
                 </div>
                 <div className="text">
                   <h3>{tab.title}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: he.decode(tab?.content) }}></p>
+                  <div dangerouslySetInnerHTML={{ __html: he.decode(tab?.content) }}></div>
                 </div>
               </div>
             ))}
