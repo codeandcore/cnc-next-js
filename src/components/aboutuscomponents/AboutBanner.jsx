@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import './AboutBanner.css';
+import '../homecomponents/Banner.css'
+
 
 const AboutBanner = ({
   about_banner_mobile_background_image,

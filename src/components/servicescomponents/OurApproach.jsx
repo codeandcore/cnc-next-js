@@ -48,8 +48,6 @@ const OurApproach = ({
         {our_approach_list && (
           <div className="bottom_col">
             {our_approach_list.map((tab, index) => (
-              console.log("tab?.content",tab?.content),
-              
               <div
                 key={index}
                 className={`colin d_flex ${activeTab === index ? 'active' : ''}`}
