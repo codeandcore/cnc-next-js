@@ -188,6 +188,7 @@ const ChatBoard = ({
           <Calendly
             schedule_icon={schedule_icon.url}
             onClose={toggleChatBoard}
+            isChat={true}
             className="btn-schedule"
             url="https://calendly.com/mayur_soni/hire_dev"
             buttonText={schedule_title}

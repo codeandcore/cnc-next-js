@@ -235,7 +235,7 @@ const HirePopup = ({
 
   useEffect(() => {
     setCaptcha(generateCaptcha());
-    getUserIp();
+    // getUserIp();
     setFormData((prevFormData) => ({
       ...prevFormData,
       title: title,

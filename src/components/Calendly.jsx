@@ -5,6 +5,7 @@ const Calendly = ({
   url,
   className,
   buttonText = 'Let’s talk',
+  isChat,
   onClose,
   schedule_icon,
 }) => {
@@ -38,6 +39,9 @@ const Calendly = ({
 
   const handleClick = (e) => {
     handleCalendlyPopup(e); // Call Calendly popup function
+    if (isChat) {
+      onClose()
+    }
   };
 
   return (

@@ -86,7 +86,7 @@ const CareerPopup = ({
 
   useEffect(() => {
     setCaptcha(generateCaptcha());
-    getUserIp();
+    // getUserIp();
   }, []);
 
   useEffect(() => {
