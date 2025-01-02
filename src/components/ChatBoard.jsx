@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import Calendly from './Calendly';
+import "../components/careercomponents/CareerPopup.css"
 import Link from 'next/link';
 
 const ChatBoard = ({

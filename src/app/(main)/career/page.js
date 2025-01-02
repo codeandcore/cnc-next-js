@@ -7,6 +7,7 @@ import SolvingIndustriesChallenges from '@/components/careercomponents/SolvingIn
 import Life from '@/components/homecomponents/Life';
 import Head from '@/app/head';
 import Loading from '@/components/Loading';
+import "../../../components/homecomponents/Banner.css"
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
