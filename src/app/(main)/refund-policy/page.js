@@ -58,7 +58,7 @@ export default async function page() {
     <div className='policy-page refund_policy'>
           <div className='wrapper'>
               <div className='title'>
-              {pageData.title && <h1>{pageData.title.rendered}</h1>}
+             {pageData.title && <h1 dangerouslySetInnerHTML={{ __html: he.decode(pageData.title.rendered) }}></h1>}
               </div>
               {pageData.acf.content_editor && <div className='inner' dangerouslySetInnerHTML={{ __html: he.decode(pageData.acf.content_editor) }}>
               </div>
