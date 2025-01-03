@@ -41,7 +41,7 @@ async function fetchhomePage() {
   }
 
 export default async function page() {
-    const pageData = await fetchPageData();
+  const pageData = await fetchPageData();  
     const homePage = await fetchhomePage();
     const contactData = await fetchContactData();
     const yoastData =  pageData?.yoast_head_json
@@ -58,7 +58,7 @@ export default async function page() {
    <div className='policy-page Warranty_page'>
         <div className='wrapper'>
             <div className='title'>
-            {pageData.title && <h1>{pageData.title.rendered}</h1>}
+            {pageData.title && <h1 dangerouslySetInnerHTML={{ __html: he.decode(pageData.title.rendered) }}></h1>}
             </div>
             {pageData.acf.content_editor && <div className='inner' dangerouslySetInnerHTML={{ __html: he.decode(pageData.acf.content_editor) }}>
             </div>
