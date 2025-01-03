@@ -94,7 +94,6 @@ const StackTechnologies = ({
                         key={itemIndex}
                         onClick={(e) => {
                           closeMenu();
-                          handleSmoothScroll();
                         }}
                       >
                         <Image
@@ -122,7 +121,6 @@ const StackTechnologies = ({
                         key={itemIndex_i}
                         onClick={(e) => {
                           closeMenu();
-                          handleSmoothScroll();
                         }}
                       >
                         <Image

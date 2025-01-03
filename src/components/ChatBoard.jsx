@@ -54,48 +54,132 @@ const ChatBoard = ({
       setThankyou(true);
     }
   };
-
   const steps = [
     {
-      id: '1',
-      message: 'What is your name?',
-      trigger: 'name',
+      id: 'welcome',
+      message: 'Hey there! I’m here to help with anything you need. What’s your name?',
+      trigger: 'getName',
     },
     {
-      id: 'name',
+      id: 'getName',
       user: true,
-      trigger: '3',
+      validator: (value) => {
+        if (!value.trim()) {
+          return 'Please enter a valid name.';
+        }
+        return true;
+      },
+      trigger: 'personalizedGreeting',
     },
     {
-      id: '3',
-      message: 'Hi {previousValue}! What is your gender?',
-      trigger: 'gender',
+      id: 'personalizedGreeting',
+      message: 'Hey {previousValue}, what’s on your mind? Tell me what you need.',
+      trigger: 'projectType',
     },
     {
-      id: 'gender',
+      id: 'projectType',
       options: [
-        { value: 'male', label: 'Male', trigger: '4' },
-        { value: 'female', label: 'Female', trigger: '4' },
+        { value: 'fullTimeDeveloper', label: 'Hire a full time developer', trigger: 'contactMethod' },
+        { value: 'fixedPriceProject', label: 'Fixed price project', trigger: 'contactMethod' },
+        { value: 'hourly', label: 'Hire us hourly', trigger: 'contactMethod' },
+        { value: 'craftTeam', label: 'Craft your own team', trigger: 'contactMethod' },
+        { value: 'siteMaintenance', label: 'Site maintenance', trigger: 'contactMethod' },
+        { value: 'applyJob', label: 'Apply for job', trigger: 'applyForJob' },
+        { value: 'somethingElse', label: 'Something else', trigger: 'contactMethod' },
       ],
     },
     {
-      id: '4',
-      message: 'Please give me your email',
-      trigger: '5',
+      id: 'contactMethod',
+      message: 'How would you prefer we contact you, email or phone?',
+      trigger: 'contactPreference',
     },
     {
-      id: '5',
+      id: 'contactPreference',
+      options: [
+        { value: 'email', label: 'Email', trigger: 'askEmail' },
+        { value: 'phone', label: 'Phone', trigger: 'askPhoneNumber' },
+      ],
+    },
+    {
+      id: 'askEmail',
+      message: 'Please share your email, and an expert will reach out to you.',
+      trigger: 'getEmail',
+    },
+    {
+      id: 'getEmail',
       user: true,
-      trigger: 'end-message', // Trigger the end message step
+      validator: (value) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          return 'Please enter a valid email address.';
+        }
+        return true;
+      },
+      trigger: 'thankYou',
     },
     {
-      id: 'end-message',
-      message: `${thank_you_message}`,
+      id: 'askPhoneNumber',
+      message: 'Please share your phone number so we can contact you.',
+      trigger: 'getPhoneNumber',
+    },
+    {
+      id: 'getPhoneNumber',
+      user: true,
+      validator: (value) => {
+        const phoneRegex = /^\+?[1-9]\d{1,14}$/; // E.164 format
+        if (!phoneRegex.test(value)) {
+          return 'Please enter a valid phone number.';
+        }
+        return true;
+      },
+      trigger: 'askPreferredTime',
+    },
+    {
+      id: 'askPreferredTime',
+      message: 'What is your preferable US time?',
+      trigger: 'preferredTimeOptions',
+    },
+    {
+      id: 'preferredTimeOptions',
+      options: [
+        { value: 'morning', label: 'Morning', trigger: 'thankYou' },
+        { value: 'afternoon', label: 'Afternoon', trigger: 'thankYou' },
+        { value: 'evening', label: 'Evening', trigger: 'thankYou' },
+      ],
+    },
+    {
+      id: 'applyForJob',
+      message: 'Awesome! We have several openings right now. Feel free to apply on our careers page, and our amazing HR team will get back to you soon!',
+      trigger: 'shareCareersLink',
+    },
+    {
+      id: 'shareCareersLink',
+      component: (
+        <CareersLink />
+      ),
+      end: true,
+    },
+    {
+      id: 'endMessage',
+      message: 'Thanks for letting us know! Someone from our team will assist you soon.',
+      end: true,
+    },
+    {
+      id: 'thankYou',
+      message: 'Alright, we’ll be in touch soon! In the meantime, feel free to explore our latest projects and the technologies we specialize in.',
       end: true,
     },
   ];
   
-
+  function CareersLink() {
+    return (
+      <>
+      <div className='rsc-link'>
+        <a href="https://new-cnc-next.vercel.app/career" target="_blank" rel="noopener noreferrer">https://new-cnc-next.vercel.app/career</a>
+      </div>
+      </>
+    );
+  }
 
   const handleChatClick = (e) => {
     e.preventDefault();
@@ -179,7 +263,7 @@ const ChatBoard = ({
 
         {showInner &&
           <ThemeProvider theme={theme}>
-            <ChatBot width={"360px"} height="450px" steps={steps} style={{ right: '29px', color: "#fff" }} headerTitle="User" headerFontColor="#ffff"  hideHeader={false} 
+            <ChatBot width={"100%"} height="395px" steps={steps} style={{ margin: '0 auto', color: "#fff" }} headerTitle="We are online" headerFontColor="#ffff" hideHeader={true} 
             hideCloseButton={false}   />
           </ThemeProvider>}
         {/* <div
