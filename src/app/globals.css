@@ -1151,6 +1151,9 @@ body .togglemenu {
 .chat-board .hide .user {
   display: none;
 }
+.rsc-header-title {
+  color: #fff !important;  /* Use !important to override other styles */
+}
 
 body .owl-carousel.owl-theme .owl-nav {
   display: flex;

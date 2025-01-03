@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Calendly from './Calendly';
 import "../components/careercomponents/CareerPopup.css"
 import Link from 'next/link';
+import ChatBot from "react-simple-chatbot";
+import { ThemeProvider } from "styled-components";
 
 const ChatBoard = ({
   isChatOpen,
@@ -53,9 +55,51 @@ const ChatBoard = ({
     }
   };
 
+  const steps = [
+    {
+      id: '1',
+      message: 'What is your name?',
+      trigger: 'name',
+    },
+    {
+      id: 'name',
+      user: true,
+      trigger: '3',
+    },
+    {
+      id: '3',
+      message: 'Hi {previousValue}! What is your gender?',
+      trigger: 'gender',
+    },
+    {
+      id: 'gender',
+      options: [
+        { value: 'male', label: 'Male', trigger: '4' },
+        { value: 'female', label: 'Female', trigger: '4' },
+      ],
+    },
+    {
+      id: '4',
+      message: 'Please give me your email',
+      trigger: '5',
+    },
+    {
+      id: '5',
+      user: true,
+      trigger: 'end-message', // Trigger the end message step
+    },
+    {
+      id: 'end-message',
+      message: `${thank_you_message}`,
+      end: true,
+    },
+  ];
+  
+
+
   const handleChatClick = (e) => {
     e.preventDefault();
-    setShowInner(true);
+    setShowInner(!showInner);
     setIsChatActive(true);
   };
 
@@ -66,6 +110,8 @@ const ChatBoard = ({
         !chatBoardRef.current.contains(event.target)
       ) {
         toggleChatBoard(); // Close the chat board
+        setShowInner(false)
+        setIsChatActive(false)
       }
     };
 
@@ -99,7 +145,17 @@ const ChatBoard = ({
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  const theme = {
+    background: "#f5f8fb",
+    fontFamily: "Arial, Helvetica, sans-serif",
+    headerBgColor:"linear-gradient(92.06deg, rgb(112, 124, 202) 42.78%, rgb(142, 144, 231) 100%);",
+    headerFontColor: "#fff" ,
+    headerFontSize: "15px",
+    botBubbleColor: "#6167f8",
+    botFontColor: "#fff",
+    userBubbleColor: "#fff",
+    userFontColor: "#4a4a4a",
+  };
   return (
     <>
       <div
@@ -109,18 +165,24 @@ const ChatBoard = ({
         <img
           src={"/assets/images/ChatClose.svg"}
           className="close"
-          onClick={toggleChatBoard}
+          onClick={()=>{toggleChatBoard(),    setShowInner(false), setIsChatActive(false)}}
           alt="close"
         />
         {/* <Link to="/"  className="chat-logo" ><img src={FooterLogo} alt="logo"/></Link> */}
         <Link href="/" className="chat-logo">
-  <img src={chatbot_logo.url} alt="logo" />
-</Link>
-        <h2>{chatbot_title}</h2>
+         <img src={chatbot_logo.url} alt="logo" />
+        </Link>
+        <h3>{chatbot_title}</h3>
         <div className={`peragrapth ${showInner ? 'hide' : ''}`}>
           {chatbot_subtitle}
         </div>
-        <div
+
+        {showInner &&
+          <ThemeProvider theme={theme}>
+            <ChatBot width={"360px"} height="450px" steps={steps} style={{ right: '29px', color: "#fff" }} headerTitle="User" headerFontColor="#ffff"  hideHeader={false} 
+            hideCloseButton={false}   />
+          </ThemeProvider>}
+        {/* <div
           className={`inner ${showInner ? 'show' : ''} ${thankyou ? 'hide' : ''}`}
         >
           <form onSubmit={handleSubmit} className="chat-form">
@@ -170,7 +232,7 @@ const ChatBoard = ({
           <div className="thankyou">
             <p>{thank_you_message}</p>
           </div>
-        </div>
+        </div> */}
         <div className="threebtn">
           <a
             href="javascript:void(0)"
