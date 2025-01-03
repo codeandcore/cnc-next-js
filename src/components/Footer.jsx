@@ -163,7 +163,7 @@ const Footer = ({ ApiData }) => {
                     <Link
                       href={link.menu_link}
                       onClick={(e) => {
-                        handleSmoothScroll();
+                        // handleSmoothScroll();
                         // handleLinkClick(link.menu_link, e);
                       }}
                       className={`${router.pathname === link.menu_link ? 'current' : ''}`}
@@ -263,9 +263,9 @@ const Footer = ({ ApiData }) => {
               <li key={index}>
                 <Link
                   href={menuItem.url}
-                  onClick={(e) => {
-                    handleSmoothScroll();
-                  }}
+                  // onClick={(e) => {
+                  //   handleSmoothScroll();
+                  // }}
                   className={`${router.pathname === menuItem.url ? 'current' : ''}`}
                 >
                   {menuItem.label}

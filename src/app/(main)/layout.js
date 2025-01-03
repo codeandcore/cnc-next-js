@@ -26,9 +26,10 @@ async function fetchGeneralSettings() {
 export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
   return (
+    <>
+    <ScrollToTop />
         <Suspense fallback={<Loading />}>
           <NextTopLoader color='false' zIndex={99999999} showSpinner={false} height={5}  />
-        <ScrollToTop />
           <Header
             logo={generalSetting.header_white_logo}
             header_black_logo={generalSetting.header_black_logo}
@@ -42,6 +43,6 @@ export default async function RootLayout({ children }) {
           <main>{children}</main>
           <Footer ApiData={generalSetting}/>
         </Suspense>
-    
+        </>
   );
 }
