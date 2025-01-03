@@ -20,10 +20,8 @@ const SitemapList = ({ pageData }) => {
                              className={activeSection === item ? 'active' : ''} 
                               >
                                <Link 
-                               href={`#${item}`}
+                               href={`#`}
                                 onClick={(e) => {e.preventDefault();setActiveSection(item);}} 
-                                smooth
-                                
                                 >{item}</Link>
                              </li>
                            ))}

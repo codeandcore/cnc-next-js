@@ -8,6 +8,7 @@ import ProjectCountries from '@/components/contactuscomponets/ProjectContries';
 import "@/components/homecomponents/Banner.css"
 import "@/components/careercomponents/CareerPopup.css"
 import Loading from '@/components/Loading';
+import Link from 'next/link';
 
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -87,7 +88,7 @@ export default async function IndustryPage() {
           {contactData.acf.developer_title && ( <h2>{contactData.acf.developer_title}</h2> )}
           {contactData.acf.developer_subtitle && ( <p>{contactData.acf.developer_subtitle}</p> )}
           </div>
-          {contactData.acf.developer_button && (<a href={contactData.acf.developer_button.url} className="btn btnarrow"><em>{contactData.acf.developer_button.title}</em> <div><img src={"/assets/images/ellipse_arr.png"} alt={contactData.acf.developer_button.title}/></div></a>)}
+          {contactData.acf.developer_button && (<Link href={contactData.acf.developer_button.url} className="btn btnarrow"><em>{contactData.acf.developer_button.title}</em> <div><img src={"/assets/images/ellipse_arr.png"} alt={contactData.acf.developer_button.title}/></div></Link>)}
         </div>
       </div>
   )}

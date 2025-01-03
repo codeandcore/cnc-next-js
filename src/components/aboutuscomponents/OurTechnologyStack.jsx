@@ -98,7 +98,6 @@ const OurTechnologyStack = ({
                     href={`/technologies/${icon.a_t_link.post_name}`}
                     onClick={(e) => {
                       closeMenu();
-                      handleSmoothScroll();
                       // handleLinkClick(`/technologies/${icon.a_t_link.post_name}`, icon.a_t_link.post_name, e);
                     }}
                     // onMouseEnter={() => handleMouseEnter(icon.a_t_link.post_name)} key={idx}

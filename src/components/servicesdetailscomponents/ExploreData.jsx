@@ -100,7 +100,6 @@ const ExploreData = ({
                 href={`/portfolio/${item.slug}`}
                 onClick={(e) => {
                   closeMenu();
-                  handleSmoothScroll();
                   //  handleLinkClick(`/portfolio/${item.slug}`, item.slug, e);
                 }}
                 //  onMouseEnter={() => handleMouseEnter(item.slug)}

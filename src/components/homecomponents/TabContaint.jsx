@@ -80,7 +80,6 @@ const TabContaint = ({ service_list }) => {
                         key={idx_s}
                         onClick={(e) => {
                           closeMenu();
-                          handleSmoothScroll();
                         }}
                       >
                         {item_service.post_title}
@@ -97,7 +96,6 @@ const TabContaint = ({ service_list }) => {
                       className="btn btnarrow"
                       onClick={(e) => {
                         closeMenu();
-                        handleSmoothScroll();
                       }}
                       // onMouseEnter={() => handleMouseEnter(`/${item.button_url.post_name}`)}
                     >

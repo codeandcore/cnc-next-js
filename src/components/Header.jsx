@@ -284,7 +284,6 @@ const Header = ({
               href="/"
               onClick={(e) => {
                 closeMenu();
-                handleSmoothScroll();
               }}
               className={`brand ${router.pathname === '/' ? 'current' : ''}`}
             >
@@ -302,7 +301,6 @@ const Header = ({
               href="/"
               onClick={() => {
                 closeMenu();
-                handleSmoothScroll();
               }}
               className="brandmobile"
             >
@@ -348,7 +346,6 @@ const Header = ({
               href={button_url}
               onClick={(e) => {
                 closeMenu();
-                handleSmoothScroll();
               }}
               className="btn"
             >

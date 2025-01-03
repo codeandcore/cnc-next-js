@@ -40,10 +40,12 @@ const Custom404 = async () => {
             )}
             {GeneralSetting.error_content && (
               <div dangerouslySetInnerHTML={{ __html: GeneralSetting.error_content }}></div>
-            )}
-            <Link legacyBehavior href="/" className='btn'>
-              <a className="btn">Back to Home</a>
-            </Link>
+              )}
+
+            <Link href="/" className='btn'>
+                  Back to Home
+                </Link>
+
           </div>
         </div>
       </div>
@@ -55,8 +57,8 @@ const Custom404 = async () => {
             {GeneralSetting.error_like_pages_list && (
               <div className="inner d_flex d_flex_jc">
                 {GeneralSetting.error_like_pages_list.map((page, index) => (
-                  <Link legacyBehavior key={index} href={`/${page.post_name}`}>
-                    <a className="btn">{page.post_title}</a>
+                  <Link className="btn" key={index} href={`/${page.post_name}`}>
+                    {page.post_title}
                   </Link>
                 ))}
               </div>

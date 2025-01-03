@@ -23,9 +23,6 @@ const Technodetailcontaints = ({
       <div className="wrapper">
         <Link
           href="/technologies"
-          onClick={(e) => {
-            handleSmoothScroll();
-          }}
           className="btn btnarrow"
         >
           <div>

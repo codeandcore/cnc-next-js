@@ -2,6 +2,7 @@
 import React from 'react';
 import './ExploreDone.css';
 import ExploreData from './ExploreData';
+import Link from 'next/link';
 
 const ExploreDone = ({
   portfolio_title,
@@ -21,9 +22,9 @@ const ExploreDone = ({
           )}
         </div>
         {portfolio_button && (
-          <a href={portfolio_button.url} className="btn">
+          <Link href={portfolio_button.url} className="btn">
             {portfolio_button.title}
-          </a>
+          </Link>
         )}
         {portfolio_list && (
           <ExploreData CaseStudycptData={portfolio_list}></ExploreData>

@@ -69,10 +69,7 @@ const IndustryMenu = ({
     const submenus = document.getElementsByClassName("submenu");
     Array.from(submenus).forEach(submenu => {
       submenu.style.display = 'none';
-    });
-    
-    handleSmoothScroll();
-    
+    });    
     await router.push(cleanUrl);
     
     if (handleLinkClick) {

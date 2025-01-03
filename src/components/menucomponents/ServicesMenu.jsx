@@ -62,7 +62,6 @@ const ServicesMenu = ({
       submenu.style.display = 'none';
     });
     
-    handleSmoothScroll();    
     if (handleLinkClick) {
       handleLinkClick(e);
     }
@@ -98,7 +97,6 @@ const ServicesMenu = ({
               onClick={(e) => {
                 closeSubmenu();
                 closeMenu();
-                handleSmoothScroll();
                 handleNavigation(services_menu.technology_title.url, e)
               }}
               onMouseEnter={() =>
@@ -118,7 +116,6 @@ const ServicesMenu = ({
                     onClick={(e) => {
                       closeSubmenu();
                       closeMenu();
-                      handleSmoothScroll();
                       handleNavigation(`/technologies/${menu.link.post_name}`, e)
                     }}
                   >

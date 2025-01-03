@@ -44,11 +44,7 @@ const TechnoList = ({
                     <div className="all_link d_flex d_flex_js">
                       {techno.programing_language.map((program, pindex) => (
                         <Link
-                        href={`/technologies/${program.link.post_name}`}
-                          onClick={(e) => {
-                            handleSmoothScroll();
-                            // handleLinkClick(`/technologies/${program.link.post_name}`, program.link.post_name, e);
-                          }}
+                        href={`/technologies/${program.link.post_name}`}                    
                           key={pindex}
                           // onMouseEnter={() => handleMouseEnter(program.link.post_name)}
                         >

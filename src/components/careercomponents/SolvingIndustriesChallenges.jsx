@@ -27,7 +27,6 @@ const SolvingIndustriesChallenges = ({
                 href={industry.page_link}
                 className={`col col${index + 1}`}
                 key={index}
-                onClick={handleSmoothScroll}
               >
                 {industry.sic_image && (
                   <img src={industry.sic_image.url} alt={industry.si_label} />
@@ -56,7 +55,6 @@ const SolvingIndustriesChallenges = ({
                   href={industry.page_link}
                   className={`col col${index + 3}`}
                   key={index}
-                  onClick={handleSmoothScroll}
                 >
                   {industry.sic_image && (
                     <img src={industry.sic_image.url} alt={industry.si_label} />
@@ -85,7 +83,6 @@ const SolvingIndustriesChallenges = ({
                 <Link
                   href={sic_button_link}
                   className="btn ball"
-                  onClick={handleSmoothScroll}
                 >
                   <em>
                     <span

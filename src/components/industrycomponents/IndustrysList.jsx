@@ -135,11 +135,6 @@ const IndustrysList = ({
                         {item.link && (
                           <Link
                             href={`/industry/${item.link.post_name}`}
-                            onClick={(e) => {
-                              handleSmoothScroll();
-                              // handleLinkClick(`/services/${item.link.post_name}`, item.link.post_name, e);
-                            }}
-                           
                             className="btnarrow btn"
                           >
                             <em>Read More</em>

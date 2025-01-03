@@ -42,10 +42,6 @@ const CasestudingContaints = ({
       <div className="wrapper">
         <Link
           href={`/portfolio/`}
-          onClick={(e) => {
-            handleSmoothScroll();
-            // handleLinkClick(`/portfolio/`, e);
-          }}
           // onMouseEnter={() => handleMouseEnter('portfolio')}
           className="btn btnarrow"
         >
