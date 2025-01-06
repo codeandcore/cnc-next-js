@@ -2,9 +2,14 @@
 import React, { useState, useRef } from 'react';
 import dynamic from "next/dynamic";
 import './YearOfGrowing.css';
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+var $ = require("jquery");
+if (typeof window !== "undefined") {
+  window.$ = window.jQuery = require("jquery");
+}
 
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
 const CustomDots = ({ year_of_growing, activeIndex, handleClick }) => {
   return (
     <>
@@ -25,8 +30,7 @@ const CustomDots = ({ year_of_growing, activeIndex, handleClick }) => {
   );
 };
 
-const YearOfGrowing = React.memo(
-  ({
+const YearOfGrowing =({
     a_y_left_side_title,
     a_y_right_side_description,
     year_of_growing,
@@ -34,15 +38,6 @@ const YearOfGrowing = React.memo(
   }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const carouselRef = useRef(null);
-    var $ = require("jquery");
-    if (typeof window !== "undefined") {
-    window.$ = window.jQuery = require("jquery");
-    }
-    
-    const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
-    ssr: false,
-    });
-
     const handleDotClick = (index) => {
       if (carouselRef.current) {
         carouselRef.current.to(index);
@@ -69,13 +64,23 @@ const YearOfGrowing = React.memo(
     const handleSliderDrag = (event) => {
       setActiveIndex(event.page.index);
     };
+    const handleTranslated = (e) => {
+      if (e?.item) {
+        const index = e.item.index;
+        setActiveIndex(index);
+      }
+    };
     const options1 = {
       items: 1,
-      nav: false,
       loop: false,
+      margin: 0,
+      nav: false,
+      center: true,
       dots: false,
-      // autoHeight: true, // Part of options object
-      onDragged: handleSliderDrag,
+      touchDrag: false,
+      mouseDrag: false,
+      onTranslated: handleTranslated,
+      startPosition: activeIndex
     };
     const liferenderMarquee = () => {
       if (a_y_codeandcore_highlights && a_y_codeandcore_highlights.length > 0) {
@@ -119,18 +124,17 @@ const YearOfGrowing = React.memo(
                 <img src={"/assets/images/arrow_ss1.svg"} alt="Next" />{' '}
               </div>
             </div>
-            {year_of_growing && (
               <div className="year_of_contants">
-                <OwlCarousel className="owl-theme" ref={carouselRef }
-                  {...options1}>
-                  {year_of_growing.map((item, index) => (
-                    <div className="col d_flex d_flex_at" key={index}>
+                <OwlCarousel className="owl-theme" {...options1}  ref={carouselRef}
+                  >
+                  {year_of_growing?.map((item, index) => (
+                  <div className="col d_flex d_flex_at" key={index}>
                       <div className="left">
                         <h3>
-                          {item.a_yog_title.replace(/<\/?br\s*\/?>/gi, ' ')}
+                          {item?.a_yog_title.replace(/<\/?br\s*\/?>/gi, ' ')}
                         </h3>
                         <p>
-                          {item.a_yog_content.replace(/<\/?br\s*\/?>/gi, ' ')}
+                          {item?.a_yog_content.replace(/<\/?br\s*\/?>/gi, ' ')}
                         </p>
                       </div>
                       <div className="right">
@@ -138,10 +142,9 @@ const YearOfGrowing = React.memo(
                         <img src={item.a_yog_image.url} />
                       </div>
                     </div>
-                  ))}
+                ))}
                 </OwlCarousel>
               </div>
-            )}
           </div>
         </div>
         {a_y_codeandcore_highlights && (
@@ -154,7 +157,7 @@ const YearOfGrowing = React.memo(
         )}
       </div>
     );
-  },
-);
+  }
+
 
 export default YearOfGrowing;
