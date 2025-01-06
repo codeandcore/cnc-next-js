@@ -16,6 +16,7 @@ const CasestudingBanner = ({
   career_awards_logo_new,
   isLoadingk,
   BASE_URL,
+  portfolio_API
 }) => {
 
   const [backgroundhomebanner, setBackgroundhomebanner] = useState('');
@@ -56,7 +57,7 @@ const CasestudingBanner = ({
     setIsLoadk(true);
     try {
       const response = await fetch(
-        `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/case-study-list?page=${page}&per_page=${perPage}&industry=${selectedIndustry?.id}&services=${selectedService}`
+        `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${selectedIndustry?.id}&services=${selectedService}`
       );
       const data = await response.json();
       setIsLoadk(false);

@@ -200,7 +200,7 @@ const CasestudingContaints = ({
                   {CaseStudycptData.acf.case_technology_used.map(
                     (technology, index) => (
                       <li key={index}>
-                        <a href={technology.technology_link}>
+                        <a href={`/technologies/${technology.technology_link.post_name}`}>
                           <img
                             src={technology.c_technology_logo.url}
                             alt="TECHNOLOGY USED"

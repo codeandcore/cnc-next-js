@@ -12,8 +12,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/portfolio/?slug=${slug}`
-
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`
+  
     const response = await fetch(apiURL, {
       cache: 'no-store', // Adjust cache as needed
     });

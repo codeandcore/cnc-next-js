@@ -15,7 +15,7 @@ const fetchPageData = async () => {
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/portfolio`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=portfolio`
   
-    const response = await fetch(apiUrl,{ cache: "no-store" } );
+  const response = await fetch(apiUrl, { cache: "no-store" });  
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -77,24 +77,25 @@ export default async function portfolioPage() {
   <div className="main_wrapper">
       {CaseStudypageData && (
         <CasestudingBanner
-          banner_background_image_mobile={
-            CaseStudypageData?.acf?.banner_background_image_mobile
-          }
-          casestuding_banner_image={
-            CaseStudypageData.acf.casestuding_banner_image
-          }
-          casestuding_banner_video={
-            CaseStudypageData.acf.casestuding_banner_video
-          }
-          casestuding_banner_title={
-            CaseStudypageData.acf.casestuding_banner_title
-          }
-          casestuding_banner_description={
-            CaseStudypageData.acf.casestuding_banner_description
-          }
-          IndustryTaxonomyeData={IntialData?.industries}
-          ServicesTaxonomyeData={IntialData?.services}
-          career_awards_logo_new={CaseStudypageData.acf.banner_clients_list}
+            banner_background_image_mobile={
+              CaseStudypageData?.acf?.banner_background_image_mobile
+            }
+            casestuding_banner_image={
+              CaseStudypageData.acf.casestuding_banner_image
+            }
+            casestuding_banner_video={
+              CaseStudypageData.acf.casestuding_banner_video
+            }
+            casestuding_banner_title={
+              CaseStudypageData.acf.casestuding_banner_title
+            }
+            casestuding_banner_description={
+              CaseStudypageData.acf.casestuding_banner_description
+            }
+            IndustryTaxonomyeData={IntialData?.industries}
+            ServicesTaxonomyeData={IntialData?.services}
+            career_awards_logo_new={CaseStudypageData.acf.banner_clients_list}
+            portfolio_API={"case-study-list"}
         />
       )}
 

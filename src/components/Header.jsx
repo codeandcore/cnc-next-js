@@ -214,22 +214,29 @@ const Header = ({
 
   
   useEffect(() => {
+    console.log("pathname",pathname.startsWith('/casestudy/:slug'))
     if (!pathname) {
       return; // Exit early if router.pathname is not yet available
     }
+    
     if (
       pathname.startsWith('/blog') ||
       pathname.startsWith('/portfolio') ||
      pathname.startsWith('/technologies') ||
     pathname.startsWith('/refund-policy') ||
-     pathname.startsWith('/warranty') ||
-   pathname.startsWith('/privacy-policy') ||
+    pathname.startsWith('/warranty') ||
+    pathname.startsWith('/privacy-policy') ||
      pathname.startsWith('/terms') ||
       pathname.startsWith('/portfolio/:slug') ||
+      pathname.startsWith('/casestudy/:slug') ||
     pathname.startsWith('/sitemap')
     ) {
       setHeaderClass('header-black'); // Update header class
-    } else {
+    }
+   else if (pathname.includes("/casestudy")) {
+      setHeaderClass('header-black');
+    }
+    else {
       setHeaderClass('header-white');
     }
   }, [pathname]);
