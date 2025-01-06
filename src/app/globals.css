@@ -1197,6 +1197,7 @@ body .rsc-content::-webkit-scrollbar-thumb {
   font-weight: normal !important;
   text-decoration: underline !important;
   font-weight: 500 !important;
+  padding: 4px 0px 0px 0px !important; 
 }
 body .owl-carousel.owl-theme .owl-nav {
   display: flex;

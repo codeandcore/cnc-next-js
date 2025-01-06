@@ -126,9 +126,9 @@ const ChatBoard = ({
       id: 'getPhoneNumber',
       user: true,
       validator: (value) => {
-        const phoneRegex = /^\+?[1-9]\d{1,14}$/; // E.164 format
+        const phoneRegex = /^\+?[1-9]\d{9,14}$/; // E.164 format with a minimum of 10 digits
         if (!phoneRegex.test(value)) {
-          return 'Please enter a valid phone number.';
+          return 'Please enter a valid phone number with at least 10 digits.';
         }
         return true;
       },
@@ -167,6 +167,13 @@ const ChatBoard = ({
     {
       id: 'thankYou',
       message: 'Alright, we’ll be in touch soon! In the meantime, feel free to explore our latest projects and the technologies we specialize in.',
+      trigger: 'refLinks',
+    },
+    {
+      id: 'refLinks',
+      component: (
+        <AfterThankyouLinks />
+      ),
       end: true,
     },
   ];
@@ -175,11 +182,28 @@ const ChatBoard = ({
     return (
       <>
       <div className='rsc-link'>
-        <a href="https://new-cnc-next.vercel.app/career" target="_blank" rel="noopener noreferrer">https://new-cnc-next.vercel.app/career</a>
+          <a href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/career`} target="_blank" rel="noopener noreferrer">{`${process.env.NEXT_PUBLIC_VERCEL_URL}/career`}</a>
       </div>
       </>
     );
   }
+
+  function AfterThankyouLinks() {
+    return (
+      <>
+      <div className='rsc-link'>
+          <a href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/portfolio`} target="_blank" rel="noopener noreferrer">{`${process.env.NEXT_PUBLIC_VERCEL_URL}/portfolio`}</a>
+        </div>
+        <div className='rsc-link'>
+          <a href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/technologies`} target="_blank" rel="noopener noreferrer">{`${process.env.NEXT_PUBLIC_VERCEL_URL}/technologies`}</a>
+      </div>
+      <div className='rsc-link'>
+          <a href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/services`} target="_blank" rel="noopener noreferrer">{`${process.env.NEXT_PUBLIC_VERCEL_URL}/services`}</a>
+      </div>
+      </>
+    );
+  }
+
 
   const handleChatClick = (e) => {
     e.preventDefault();
@@ -240,6 +264,12 @@ const ChatBoard = ({
     userBubbleColor: "#fff",
     userFontColor: "#4a4a4a",
   };
+
+  const handleEnd = ({ steps}) => {    
+    const { getName, projectType, getPhoneNumber,getEmail,preferredTimeOptions } = steps;
+    console.log("getname",getName?.value);
+    
+  }
   return (
     <>
       <div
@@ -264,7 +294,7 @@ const ChatBoard = ({
         {showInner &&
           <ThemeProvider theme={theme}>
             <ChatBot width={"100%"} height="395px" steps={steps} style={{ margin: '0 auto', color: "#fff" }} headerTitle="We are online" headerFontColor="#ffff" hideHeader={true} 
-            hideCloseButton={false}   />
+            hideCloseButton={false} handleEnd={handleEnd}    />
           </ThemeProvider>}
         {/* <div
           className={`inner ${showInner ? 'show' : ''} ${thankyou ? 'hide' : ''}`}
