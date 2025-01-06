@@ -28,7 +28,7 @@ const Technodetailcontaints = ({
           <div>
             <img src={"/assets/images/ellipse_arr.png"} />
           </div>
-          <em>Back to TECHNOLOGIES</em>
+          <em>BACK TO TECHNOLOGIES</em>
         </Link>
         <div className="project_title d_flex ">
           <div className="left_col">
