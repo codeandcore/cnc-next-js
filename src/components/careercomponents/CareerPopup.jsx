@@ -192,10 +192,10 @@ const CareerPopup = ({
         <form onSubmit={handleSubmit}>
           <div className="top_ban">
             <h2
-              dangerouslySetInnerHTML={{
-                __html: he.decode(CareerpageData.acf.jon_opening_title),
-              }}
-            ></h2>
+              // dangerouslySetInnerHTML={{
+              //   __html: he.decode(CareerpageData.acf.jon_opening_title),
+              // }}
+            >{`Applying for ${title}` }</h2>
             <p
               dangerouslySetInnerHTML={{
                 __html: he.decode(CareerpageData.acf.job_form_content),
