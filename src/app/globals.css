@@ -234,10 +234,13 @@ img {
 }
 .btn-secondary {
   color: #000 !important;
+  background-color: #fff;
 }
 
 .btn-secondary:after {
   background-image: url(/assets/images/btn_bg2.png) !important;
+  width: 300px;
+  height: 300px;
 }
 @keyframes rotate-animation {
   0% {
