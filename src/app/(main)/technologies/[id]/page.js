@@ -5,6 +5,7 @@ import HireUs from "@/components/homecomponents/HireUs";
 import Loading from "@/components/Loading";
 import Technodetailcontaints from "@/components/technologiescomponents/Technodetailcontaints";
 import BASE_URL from "@/config";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -46,6 +47,9 @@ async function fetchData(slug) {
 export default async function Page({ params }) {
   const slug = (await params).id
   const data = await fetchData(slug)
+    if (!data || (Array.isArray(data) && data.length === 0) || Object.keys(data).length === 0) {
+      notFound();
+    }
   const technoData=data?.id ? data : data[0]
   const yoastData =technoData?.yoast_head_json
   const HomePage = await fetchHomeData()
@@ -56,8 +60,6 @@ export default async function Page({ params }) {
     : HomePage && HomePage?.acf
     ? HomePage?.acf
     : null;
-  
-
   
   return (
     <Suspense fallback={<Loading />}>

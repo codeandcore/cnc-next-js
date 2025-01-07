@@ -4,6 +4,7 @@ import Highlights from "@/components/homecomponents/Highlights";
 import HireUs from "@/components/homecomponents/HireUs";
 import Loading from "@/components/Loading";
 import BASE_URL from "@/config";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
@@ -47,6 +48,9 @@ async function fetchData(slug) {
 export default async function Page({ params }) {
   const slug = (await params).id
   const blogData = await fetchData(slug)
+  if (!blogData || (Array.isArray(blogData) && blogData.length === 0) || Object.keys(blogData).length === 0) {
+      notFound();
+  }
   const yoastData = blogData ? blogData?.yoast_head_json : blogData?.[0]?.yoast_head_json
   const HomePage = await fetchHomeData()
   const contactData = await fetchContactData();

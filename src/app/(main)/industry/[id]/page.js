@@ -7,6 +7,7 @@ import QuestionsAnswered from "@/components/servicesdetailscomponents/QuestionsA
 import ServicesDetailsBanner from "@/components/servicesdetailscomponents/ServicesDetailsBanner";
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
+import { notFound } from "next/navigation";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -48,6 +49,9 @@ async function fetchData(slug) {
 export default async function Page({ params }) {
   const slug = (await params).id
   const data = await fetchData(slug)
+    if (!data || (Array.isArray(data) && data.length === 0) || Object.keys(data).length === 0) {
+      notFound();
+    }
   const yoastData = data ? data?.yoast_head_json : data?.[0]?.yoast_head_json
   const HomePage = await fetchHomeData()
   const contactData = await fetchContactData();
