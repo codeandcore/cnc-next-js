@@ -35,34 +35,36 @@ const BlogList = ({
   const [specialBlogElements,setSpecialBlogElements]=useState([])
   const loadingRef = useRef(false);
   const blogsListRef = useRef(null);
-
-  const fetchBlogs = (category = null, page = 1) => {
+  const fetchBlogs = async (category = null, page = 1) => {
     if (loadingRef.current) return;
     setisLoadingk(true);
     loadingRef.current = true;
-    let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
-    if (category) {
-      url += `&categories=${category}`;
+  
+    try {
+      let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
+      if (category) {
+        url += `&categories=${category}`;
+      }
+  
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const total_posts = response.headers.get('X-Wp-Total');
+      const total = response.headers.get('X-Wp-Totalpages');
+      setTotalPosts(parseInt(total_posts));
+      setTotalPages(parseInt(total));
+  
+      const data = await response.json();
+      setBlogsData(data);
+    } catch (error) {
+      console.error('Error fetching data from WordPress API:', error);
+    } finally {
+      setisLoadingk(false);
+      loadingRef.current = false;
     }
-    fetch(url)
-      .then((response) => {
-        const total_posts = response.headers.get('X-Wp-Total');
-        const total = response.headers.get('X-Wp-Totalpages');
-        setTotalPosts(parseInt(total_posts));
-        setTotalPages(parseInt(total));
-        return response.json();
-      })
-      .then((data) => {
-        setBlogsData(data);
-        loadingRef.current = false;
-      })
-      .catch((error) => {
-        console.error('Error fetching data from WordPress API:', error);
-        loadingRef.current = false;
-      })
-      .finally(() => {
-        setisLoadingk(false);
-      });
   };
 
   const fetchspecialBlogs = () => {
