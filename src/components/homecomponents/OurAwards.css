@@ -8,9 +8,7 @@
 .our_awards .wrapper {
   justify-content: center;
 }
-.our_awards h2 {
-  text-transform: uppercase;
-}
+
 .our_awards p {
   color: var(--darktheme);
   margin-top: 16px;

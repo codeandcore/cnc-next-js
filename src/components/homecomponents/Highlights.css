@@ -1,6 +1,5 @@
 .our_highlights{padding: 82px 0px;}
 .our_highlights.perpalbg{background-color: var(--lightblue);}
-.our_highlights h2{text-transform: uppercase;}
 
 .our_highlights p { color: var(--darktheme); max-width: calc(100% - 135px); }
 .our_highlights .inner{max-width: calc(100% - 159px); margin: 0 auto; margin-right: 0; position: relative;margin-top: 34px;}
