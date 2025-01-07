@@ -6,15 +6,14 @@
   border-top: 1px dashed var(--black);
   padding-top: 50px;
   padding-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 57px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 .blog-item {
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  width: 495px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -22,6 +21,7 @@
   height: 172px;
   overflow: hidden;
   width: 100%;
+  display: block;
 }
 .blog-item .blog_img img{
   object-fit: cover; 
@@ -67,7 +67,7 @@
   margin-bottom: 130px;
 }
 .special-layout{
-  padding-left: 44px;
+  padding: 44px;
   display: flex;
   align-items: center;
   background-repeat: no-repeat;
@@ -239,6 +239,7 @@ line-height: normal;
   .blog_row .blog_list {
     padding: 0 25px 50px;
   }
+  .blog_section .wrapper .blogItemList{gap: 30px;}
 }
 @media only screen and (max-width: 1599px) {
   .blog_row .blog_list .blog-content h3 a {
@@ -247,6 +248,10 @@ line-height: normal;
   .blog_row .blog_list .blog_small .blog-content h3 a {
     font-size: 22px;
   }
+  .blog-content h3{padding-top: 15px;}
+  .blog-item a{font-size: 16px;}
+  .special-layout{padding: 25px;}
+  .special-layout .special-content .special-blog-title{font-size: 28px;}
 }
 @media only screen and (max-width: 1279px) {
   .blog_row .blog_list .blog_small .blog_img {
@@ -274,6 +279,11 @@ line-height: normal;
   }
   .blog_row .blog_list {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .blog_section .wrapper .blogItemList{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (max-width: 767px) {
@@ -328,5 +338,16 @@ line-height: normal;
   }
   .blog_row:nth-child(2n) {
     background-color: var(--lightblue);
+  }
+  .blog_main{padding-bottom: 30px;}
+  .blog-item{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .blog_section .wrapper .blogItemList{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
