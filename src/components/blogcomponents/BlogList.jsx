@@ -69,10 +69,8 @@ const BlogList = ({
     fetch('https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all',  { cache: "no-store" } )
     .then(response => response.json())
       .then(data => {
-        console.log("data",data);
         setSpecialBlogElements(data?.advertise_repeater)
     })
-     
   }
 
   useEffect(() => {
