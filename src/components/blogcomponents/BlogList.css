@@ -1,15 +1,89 @@
-.blog_section {
+.blog_main{
+  background-color: #EFF1FF;
 }
-.blog_section .wrapper {
+.blog_section .wrapper .blogItemList {
   border-top: 1px dashed var(--black);
   padding-top: 50px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 57px;
+}
+.blog-item {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 495px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.blog-item .blog_img{
+  height: 172px;
+  overflow: hidden;
+  width: 100%;
+}
+.blog-item .blog_img img{
+  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+}
+.blog-item a{
+  color: #424242;
+}
+
+.blog-item .col-left a{display: flex;}
+
+.blog-item .date{
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.blog-item .date::before{
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: #424242;
+  margin: 0 15px;
+}
+.blog-item .date img{
+  width: 13px;
+  margin-right: 7px;
+}
+.blog-item .blog-content{
+  padding: 25px 20px;
 }
 .blog_row {
   margin: 0 -44px;
   display: flex;
 }
+.blog-content h3{
+  padding-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+}
 .blog_row:last-child {
   margin-bottom: 130px;
+}
+.special-layout{
+  padding-left: 44px;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.special-layout .special-content .special-blog-title{
+  font-size: 34px;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.blog_info span{
+color: #6A65F6;
+font-size: 12px;
+font-weight: 700;
+line-height:19.84px
 }
 .blog_row:nth-child(odd) .blog_list:last-child {
   border: 0;
@@ -31,6 +105,14 @@
   overflow: hidden;
   display: block;
   transition: 0.2s ease all;
+}
+.pagination-section{
+  padding-bottom:50px;
+}
+.special-content p{
+font-size: 14px;
+line-height: normal;
+
 }
 /* .blog_row .blog_list .blog_img:hover{box-shadow: 0px 0px 10px #00000091;} */
 .blog_row .blog_list .blog_img img {

@@ -211,6 +211,7 @@ img {
   width: fit-content;
   transition: 0.3s ease all;
 }
+
 .btn:after {
   position: absolute;
   width: 190px;
@@ -230,6 +231,13 @@ img {
   font-style: normal;
   position: relative;
   z-index: 4;
+}
+.btn-secondary {
+  color: #000 !important;
+}
+
+.btn-secondary:after {
+  background-image: url(/assets/images/btn_bg2.png) !important;
 }
 @keyframes rotate-animation {
   0% {
