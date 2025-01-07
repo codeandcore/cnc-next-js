@@ -45,7 +45,6 @@ const BlogList = ({
     }
     fetch(url)
       .then((response) => {
-
         const total_posts = response.headers.get('X-Wp-Total');
         const total = response.headers.get('X-Wp-Totalpages');
         setTotalPosts(parseInt(total_posts));
@@ -132,6 +131,7 @@ const BlogList = ({
     fetchBlogs(category, 1);
   };
   const handlePageChange = (page) => {
+    setBlogsData([]); 
     fetchBlogs(currentCategory, page);
   };
 
@@ -249,9 +249,9 @@ const BlogList = ({
                     <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
                   </Link>*/}
                   <div className="special-content">
-                    <h2 className="special-blog-title" style={{ color: specialContent?.fontColor }}>
+                    <h3 className="special-blog-title" style={{ color: specialContent?.fontColor }}>
                       {specialContent.title}
-                    </h2>
+                    </h3>
                     <p className="content" style={{ color: specialContent?.fontColor }}>{specialContent.content}</p>
                     <Link
                       href={specialContent?.btn.url}
