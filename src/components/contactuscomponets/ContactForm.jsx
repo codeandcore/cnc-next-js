@@ -65,7 +65,7 @@ const ContactForm = ({
 
   useEffect(() => {
     setCaptcha(generateCaptcha());
-    // getUserIp();
+    getUserIp();
   }, []);
 
   const handleRegenerateCaptcha = () => {
