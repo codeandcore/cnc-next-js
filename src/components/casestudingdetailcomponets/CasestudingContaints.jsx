@@ -123,62 +123,10 @@ const CasestudingContaints = ({
 
         <div className="about_client ">
         <div className="industry_col">
-            <div className="ndustry d_flex">
-              {CaseStudycptData?.acf?.industries_detail &&
-                CaseStudycptData?.acf?.industries_detail.length > 0 && (
-                  <>
-                    <h3>Industry</h3>
-                    <div className="industry-group indu-list">
-                      {CaseStudycptData?.acf?.industries_detail.map(
-                        (industry, index) => (
-                          <div key={index}>
-                            <span>
-                              <img
-                                src={industry.industries_icon.url}
-                                alt="industry"
-                              />
-                              {industry.industries_title}
-                            </span>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                    {/* <span><img src={CaseStudycptData.industries.map(industry => industry.image)} alt="industry"/>{CaseStudycptData.industries.map(industry => industry.name).join(', ')}</span> */}
-                  </>
-                )}
-
-              {CaseStudycptData?.acf?.services_detail &&
-                CaseStudycptData.acf.services_detail.length > 0 && (
-                  <>
-                    <h3>Services</h3>
-                    {/* <span><img src={RealEstate} alt="service"/>{CaseStudycptData.services.map(services => services.name).join(', ')}</span> */}
-                    <div className="service-group">
-                      {CaseStudycptData.acf.services_detail.map(
-                        (service, index) => (
-                          <div key={index}>
-                            <span>
-                              <img
-                                src={service.services_icon.url}
-                                alt="service"
-                              />
-                              {service.services_title}
-                            </span>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </>
-                )}
+            <div className="ndustry">
+              
             </div>
-            {CaseStudycptData?.acf?.cases_location && (
-              <div className="location d_flex d_flex_js">
-                <img
-                  src={CaseStudycptData.acf.location_icon.url}
-                  alt="location"
-                />{' '}
-                {CaseStudycptData.acf.cases_location}
-              </div>
-            )}
+
             {CaseStudycptData?.acf?.case_technology_used && (
               <div className="technology">
                 <h4>TECHNOLOGY USED</h4>
@@ -199,7 +147,7 @@ const CasestudingContaints = ({
               </div>
             )}
           </div>
-          <div className="left_col" ref={leftColRef}>
+          {/* <div className="left_col" ref={leftColRef}>
             {CaseStudycptData?.content && (
               <div
                 dangerouslySetInnerHTML={{
@@ -207,7 +155,7 @@ const CasestudingContaints = ({
                 }}
               ></div>
             )}
-          </div>
+          </div> */}
           
         </div>
       </div>

@@ -112,7 +112,8 @@
 }
 .about_client .industry_col {
   background-color: var(--lightblue);
-  padding: 11px 24px 19px;
+  padding: 50px;
+  border-radius: 40px;
 }
 .about_client .ndustry {
   border-bottom: 1px dashed var(--black);
