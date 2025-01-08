@@ -200,6 +200,13 @@
 .portfolio-image-section{padding: 70px 0;}
 .portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px;}
 
+/* pain-area-section */
+.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover;}
+.pain-area-section h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
+.pain-area-section .pain-area-inner{display: flex; align-items: center; flex-wrap: wrap;}
+.pain-area-section .pain-area-content{width: 50%; padding-right: 30px; line-height: 1.8;}
+.pain-area-section .pain-area-img{width: 50%; text-align: right;}
+
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
