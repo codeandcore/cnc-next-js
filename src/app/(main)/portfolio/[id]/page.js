@@ -8,6 +8,7 @@ import ProjectLogoMarquee from "@/components/homecomponents/ProjectLogoMarquee";
 import Loading from "@/components/Loading";
 import BASE_URL from "@/config";
 import { notFound } from "next/navigation";
+import IntialGoals from "@/components/casestudingdetailcomponets/IntialGoals";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -72,12 +73,13 @@ export default async function Page({ params }) {
         CaseStudycptData ={portfolioData}
         ></CasestudingContaints>
       )}
-      {portfolioData && (portfolioData?.acf?.feature_section_title || portfolioData?.acf?.features_detail )&& (
+      {/* {portfolioData && (portfolioData?.acf?.feature_section_title || portfolioData?.acf?.features_detail )&& (
        <PortfolioFeatures
        feature_section_title={portfolioData?.acf?.feature_section_title}
        features_detail={portfolioData.acf.features_detail}
        ></PortfolioFeatures>
-      )}
+      )} */}
+        
       {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
       <ExploreWork
       title = {portfolioData.acf.portfolio_title}
@@ -85,7 +87,8 @@ export default async function Page({ params }) {
       button = {portfolioData.acf.portfolio_button}
       items = {portfolioData.acf.case_study_portfolio_list}
       ></ExploreWork>
-      )}
+        )}
+        <IntialGoals />
       {HomePage && (HomePage.acf.banner_clients_list)&& (
         <ProjectLogoMarquee   banner_clients_list={HomePage.acf.banner_clients_list}></ProjectLogoMarquee>
         
