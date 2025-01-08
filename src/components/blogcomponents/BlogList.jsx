@@ -5,6 +5,7 @@ import './BlogPageTitle.css'
 import Link from 'next/link';
 import moment from 'moment';
 import Pagination from './Pagination';
+import { ReplaceDomain } from '@/ReplaceDomain';
 
 const BlogList = ({
   blog_heading,
@@ -35,44 +36,45 @@ const BlogList = ({
   const [specialBlogElements,setSpecialBlogElements]=useState([])
   const loadingRef = useRef(false);
   const blogsListRef = useRef(null);
-
-  const fetchBlogs = (category = null, page = 1) => {
+  const [specialIndexOffset, setSpecialIndexOffset] = useState(0);
+  const fetchBlogs = async (category = null, page = 1) => {
     if (loadingRef.current) return;
     setisLoadingk(true);
     loadingRef.current = true;
-    let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
-    if (category) {
-      url += `&categories=${category}`;
+  
+    try {
+      let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
+      if (category) {
+        url += `&categories=${category}`;
+      }
+  
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const total_posts = response.headers.get('X-Wp-Total');
+      const total = response.headers.get('X-Wp-Totalpages');
+      setTotalPosts(parseInt(total_posts));
+      setTotalPages(parseInt(total));
+  
+      const data = await response.json();
+      setBlogsData(data);
+    } catch (error) {
+      console.error('Error fetching data from WordPress API:', error);
+    } finally {
+      setisLoadingk(false);
+      loadingRef.current = false;
     }
-    fetch(url)
-      .then((response) => {
-        const total_posts = response.headers.get('X-Wp-Total');
-        const total = response.headers.get('X-Wp-Totalpages');
-        setTotalPosts(parseInt(total_posts));
-        setTotalPages(parseInt(total));
-        return response.json();
-      })
-      .then((data) => {
-        setBlogsData(data);
-        loadingRef.current = false;
-      })
-      .catch((error) => {
-        console.error('Error fetching data from WordPress API:', error);
-        loadingRef.current = false;
-      })
-      .finally(() => {
-        setisLoadingk(false);
-      });
   };
 
   const fetchspecialBlogs = () => {
     fetch('https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all',  { cache: "no-store" } )
     .then(response => response.json())
       .then(data => {
-        console.log("data",data);
         setSpecialBlogElements(data?.advertise_repeater)
     })
-     
   }
 
   useEffect(() => {
@@ -99,6 +101,16 @@ const BlogList = ({
     setBlogsData([]); 
     fetchBlogs(currentCategory, page);
   };
+
+
+
+  useEffect(() => {
+    // Calculate the total number of special items in the current blogData
+    if (Array.isArray(blogData) && blogData.length > 0) {
+      const pageOffset = ((currentPage - 1) % 2) * 2
+      setSpecialIndexOffset(pageOffset);
+    }
+  }, [blogData,currentPage]);
 
   if (!isClient) return null;
   return (
@@ -151,8 +163,8 @@ const BlogList = ({
           <div className='blogItemList'>
             {blogData.map((blog, index) => {
               if ((index + 1) % 6 === 0) {
-                const specialIndex = (Math.floor(index / 6) % specialBlogElements.length);
-                const specialContent = specialBlogElements[specialIndex];
+                const specialIndex = (specialIndexOffset + Math.floor(index / 6)) % specialBlogElements.length;
+                const specialContent = specialBlogElements[specialIndex];                
                 return (<div key={index} className="blog-item special-layout" style={{ backgroundImage: `url(${specialContent?.background_image?.url})` }}>             
                   <div className="special-content">
                     <h3 className="special-blog-title" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>
@@ -161,7 +173,7 @@ const BlogList = ({
                     <p className="content" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>{specialContent?.subtitle
                     }</p>
                     <Link
-                      href={specialContent?.button?.url}
+                      href={specialContent?.button?.url || ""}
                       style={{ color: specialContent?.button_type === "Primary" ? "#ffff" : "#424242" }}
                       className={`btn  ${specialContent?.button_type==="Primary" ? "" : "btn-secondary"}`}
                     >
@@ -176,7 +188,7 @@ const BlogList = ({
                     className={`blog-item`}
                   >
                     <Link
-                      href={`/blog/${blog.slug}`}
+                      href={`/blog/${blog.slug}` || ""}
                       className="blog_img"
                     >
                       <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
@@ -184,7 +196,7 @@ const BlogList = ({
                     <div className="blog-content">
                       <div className="blog_info d_flex">
                         <div className="col-left d_flex">
-                          <a href={blog.link}>
+                          <a href={`/blog/${blog.slug}`}>
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: blog.categories_names,
