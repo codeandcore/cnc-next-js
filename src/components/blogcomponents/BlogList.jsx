@@ -5,6 +5,7 @@ import './BlogPageTitle.css'
 import Link from 'next/link';
 import moment from 'moment';
 import Pagination from './Pagination';
+import { ReplaceDomain } from '@/ReplaceDomain';
 
 const BlogList = ({
   blog_heading,
@@ -184,7 +185,7 @@ const BlogList = ({
                     <div className="blog-content">
                       <div className="blog_info d_flex">
                         <div className="col-left d_flex">
-                          <a href={blog.link}>
+                          <a href={blog.slug}>
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: blog.categories_names,
