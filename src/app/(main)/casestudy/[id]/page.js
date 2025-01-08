@@ -8,6 +8,13 @@ import ProjectLogoMarquee from "@/components/homecomponents/ProjectLogoMarquee";
 import Loading from "@/components/Loading";
 import BASE_URL from "@/config";
 import { notFound } from "next/navigation";
+import PortfolioFeaturedImage from "@/components/casestudingdetailcomponets/PortfolioFeaturedImage";
+import DavelopmentApproach from "@/components/casestudingdetailcomponets/DavelopmentApproach";
+import DeliverableOutline from "@/components/casestudingdetailcomponets/DeliverableOutline";
+import ChallengesSection from "@/components/casestudingdetailcomponets/ChallengesSection";
+import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
+import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
+import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -63,47 +70,85 @@ export default async function Page({ params }) {
     : null;
   
   return (
-<Suspense fallback={<Loading />}>
-  <Head yoastData={yoastData} />
-  <div className='main_wrapper'>
-      {portfolioData && (
-        <CasestudingContaints
-        CaseStudycptData ={portfolioData}
-        ></CasestudingContaints>
-      )}
-      {portfolioData && (portfolioData?.acf?.feature_section_title || portfolioData?.acf?.features_detail )&& (
-       <PortfolioFeatures
-       feature_section_title={portfolioData?.acf?.feature_section_title}
-       features_detail={portfolioData.acf.features_detail}
-       ></PortfolioFeatures>
-      )}
-      {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
-      <ExploreWork
-      title = {portfolioData.acf.portfolio_title}
-      subtitle = {portfolioData.acf.portfolio_subtitle}
-      button = {portfolioData.acf.portfolio_button}
-      items = {portfolioData.acf.case_study_portfolio_list}
-      ></ExploreWork>
-      )}
-      {HomePage && (HomePage.acf.banner_clients_list)&& (
-        <ProjectLogoMarquee   banner_clients_list={HomePage.acf.banner_clients_list}></ProjectLogoMarquee>
+    <Suspense fallback={<Loading />}>
+      <Head yoastData={yoastData} />
+      <div className='main_wrapper'>
+        {portfolioData && (
+          <CasestudingContaints
+            CaseStudycptData={portfolioData}
+          ></CasestudingContaints>
+        )}
+
+        {portfolioData && portfolioData?.acf?.initial_goal_title
+          && portfolioData?.acf?.initial_goal_content  && portfolioData?.acf?.initial_goal_image
+          && <IntialGoals content={portfolioData?.acf?.initial_goal_content
+          } title={portfolioData?.acf?.initial_goal_title} image={portfolioData?.acf?.initial_goal_image
+          } />}
         
+        {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
+        {portfolioData && portfolioData?.acf?.pain_area_title
+          && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
+
+        {portfolioData && portfolioData?.acf?.development_approach_title
+          && portfolioData?.acf?.development_approach_content && portfolioData?.acf?.development_approach_image
+          && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
+          } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
+          } />}
+        {portfolioData && portfolioData?.acf?.deliverables_outlined_title
+          && portfolioData?.acf?.deliverables_outlined_list?.length !== 0
+          && <DeliverableOutline items={portfolioData?.acf?.deliverables_outlined_list
+          } title={portfolioData?.acf?.deliverables_outlined_title} />}
+        
+        {portfolioData && portfolioData?.acf?.challenges_faced_title
+          && portfolioData?.acf?.challenges_faced_content
+          && portfolioData?.acf?.challenges_faced_image
+          && <ChallengesSection content={portfolioData?.acf?.challenges_faced_content
+          } title={portfolioData?.acf?.challenges_faced_title} image={portfolioData?.acf?.challenges_faced_image
+          } />}
+        
+        {portfolioData && portfolioData?.acf?.solution_title
+          && portfolioData?.acf?.solution_content
+          && <SolutionSection content={portfolioData?.acf?.solution_content
+          } title={portfolioData?.acf?.solution_title} reviewLogo={portfolioData?.acf?.testimonial_stars} authorname={portfolioData?.acf?.testimony_name} review_content={portfolioData?.acf?.testimonial_content} authorImage={portfolioData?.acf?.testimony_photo} />}
+        
+        {portfolioData && portfolioData?.acf?.unique_elements_title
+          && portfolioData?.acf?.unique_elements_list?.length!==0
+          && <UniqueElements title={portfolioData?.acf?.unique_elements_title} items={portfolioData?.acf?.unique_elements_list} />}
+        
+
+            {portfolioData && portfolioData?.acf?.success_story_title
+          && portfolioData?.acf?.success_story_content
+          && <SuccesStory title={portfolioData?.acf?.success_story_title} items={portfolioData?.acf?.success_story_list} content={portfolioData?.acf?.success_story_content} />}
+
+        {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
+          <ExploreWork
+            title={portfolioData.acf.portfolio_title}
+            subtitle={portfolioData.acf.portfolio_subtitle}
+            button={portfolioData.acf.portfolio_button}
+            items={portfolioData.acf.case_study_portfolio_list}
+          ></ExploreWork>
+        )}
+
+        
+
+        {HomePage && (HomePage.acf.banner_clients_list) && (
+          <ProjectLogoMarquee banner_clients_list={HomePage.acf.banner_clients_list}></ProjectLogoMarquee>
         )}
         {hireUsData &&
-        (hireUsData.hireus_title ||
-          hireUsData.hireus_subtitle ||
-          hireUsData.hireus_button_text ||
-          hireUsData.hireus_list) && (
-          <HireUs
-            BASE_URL={BASE_URL}
-            hireus_title={hireUsData.hireus_title}
-            hireus_subtitle={hireUsData.hireus_subtitle}
-            hireus_button_text={hireUsData.hireus_button_text}
-            hireus_list={hireUsData.hireus_list}
-            contactData={contactData}
-          />
-        )}
-    </div>
-  </Suspense>
+          (hireUsData.hireus_title ||
+            hireUsData.hireus_subtitle ||
+            hireUsData.hireus_button_text ||
+            hireUsData.hireus_list) && (
+            <HireUs
+              BASE_URL={BASE_URL}
+              hireus_title={hireUsData.hireus_title}
+              hireus_subtitle={hireUsData.hireus_subtitle}
+              hireus_button_text={hireUsData.hireus_button_text}
+              hireus_list={hireUsData.hireus_list}
+              contactData={contactData}
+            />
+          )}
+      </div>
+    </Suspense>
       );
   }
