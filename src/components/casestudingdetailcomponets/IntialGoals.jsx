@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 import './PortfolioFeatures.css';
 
 const IntialGoals = ({ feature_section_title, features_detail }) => {
-  // State to track active feature
-
-  // Function to handle tab click
-
   return (
-
     <div className="intial-goal">
       <div className='wrapper'>
         <div className='intial-inner'>
@@ -22,15 +17,7 @@ const IntialGoals = ({ feature_section_title, features_detail }) => {
         </div>
       </div>
     </div>
-
   );
 };
 
 export default IntialGoals;
-
-// {CaseStudycptData?.featured_image_url && (
-//   <img
-//     src={CaseStudycptData.featured_image_url}
-//     alt={CaseStudycptData.title.rendered}
-//   />
-// )}

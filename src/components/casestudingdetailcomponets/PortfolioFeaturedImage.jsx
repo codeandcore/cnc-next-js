@@ -11,10 +11,12 @@ const PortfolioFeaturedImage = ({ featured_image_url }) => {
 
     <div className="portfolio-image-section">
         <div className='wrapper'>
-            <img
-            src={featured_image_url}
-            alt={"portfolio-image"}
-            />
+            <div className='image-inner'>
+                <img
+                 src={featured_image_url}
+                 alt={"portfolio-image"}
+                />
+            </div>
         </div>
     </div>
 
