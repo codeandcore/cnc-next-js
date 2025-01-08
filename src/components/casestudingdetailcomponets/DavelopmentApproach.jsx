@@ -20,4 +20,4 @@ const DavelopmentApproach = ({ content,title,image }) => {
   );
 };
 
-export default DavelopmentApproach;
+export default DavelopmentApproach; 
