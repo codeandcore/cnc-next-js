@@ -117,7 +117,7 @@ export default async function Page({ params }) {
           && portfolioData?.acf?.initial_goal_content  && portfolioData?.acf?.initial_goal_image
           && <IntialGoals content={portfolioData?.acf?.initial_goal_content
           } title={portfolioData?.acf?.initial_goal_title} image={portfolioData?.acf?.initial_goal_image
-          } />}
+          } />} 
         
         {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
         {portfolioData && portfolioData?.acf?.pain_area_title

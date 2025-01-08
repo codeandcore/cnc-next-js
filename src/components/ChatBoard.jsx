@@ -5,6 +5,7 @@ import "../components/careercomponents/CareerPopup.css"
 import Link from 'next/link';
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
+import BASE_URL from '@/config';
 
 const ChatBoard = ({
   isChatOpen,
@@ -24,36 +25,11 @@ const ChatBoard = ({
   whatsapp_icon,
   schedule_icon,
 }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [captcha, setCaptcha] = useState('');
-  const [formData, setFormData] = useState({ code: '' });
+
   const [showInner, setShowInner] = useState(false);
-  const [thankyou, setThankyou] = useState(false);
   const [isChatActive, setIsChatActive] = useState(false);
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    code: false,
-  }); // Track errors
   const chatBoardRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const errorsObj = {
-      name: name === '',
-      email: email === '' || !/\S+@\S+\.\S+/.test(email), // Simple email validation
-      code: formData.code === '' || formData.code !== captcha,
-    };
-
-    setErrors(errorsObj);
-
-    if (!errorsObj.name && !errorsObj.email && !errorsObj.code) {
-      // Proceed with form submission
-      setThankyou(true);
-    }
-  };
   const steps = [
     {
       id: 'welcome',
@@ -204,6 +180,9 @@ const ChatBoard = ({
     );
   }
 
+  const handleSubmit = async (e) => {
+   
+  };
 
   const handleChatClick = (e) => {
     e.preventDefault();
@@ -232,27 +211,6 @@ const ChatBoard = ({
     };
   }, [isChatOpen, toggleChatBoard]);
 
-  const generateCaptcha = () => {
-    const characters =
-      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result = '';
-    for (let i = 0; i < 4; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      result += characters[randomIndex];
-    }
-    return result;
-  };
-
-  useEffect(() => {
-    setCaptcha(generateCaptcha());
-  }, []);
-
-  const handleRegenerateCaptcha = () => {
-    setCaptcha(generateCaptcha());
-  };
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
   const theme = {
     background: "#f5f8fb",
     fontFamily: "Arial, Helvetica, sans-serif",
@@ -265,9 +223,37 @@ const ChatBoard = ({
     userFontColor: "#4a4a4a",
   };
 
-  const handleEnd = ({ steps}) => {    
+  const handleEnd =async ({ steps}) => {    
     const { getName, projectType, getPhoneNumber,getEmail,preferredTimeOptions } = steps;
-    console.log("getname",getName?.value);
+    e.preventDefault();
+    formData.ip = userIp;
+    formData.country = userCountry;
+    formData.username = getName?.value;
+    formData.projectType = projectType?.value;
+    formData.email = getEmail?.value ?? "";
+    formData.phone = getPhoneNumber?.value ?? "";
+    formData.preferredTimeOptions = getPhoneNumber?.preferredTimeOptions;
+    
+      try {
+        const response = await fetch(
+          `${BASE_URL}/wp-json/custom/v1/chat-data-submit`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          },
+        );
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        window.location.href = '/thankyou';
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    
     
   }
   return (
