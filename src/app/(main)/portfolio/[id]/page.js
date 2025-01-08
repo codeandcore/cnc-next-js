@@ -15,6 +15,8 @@ import DavelopmentApproach from "@/components/casestudingdetailcomponets/davelop
 import DeliverableOutline from "@/components/casestudingdetailcomponets/DeliverableOutline";
 import ChallengesSection from "@/components/casestudingdetailcomponets/ChallengesSection";
 import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
+import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
+import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -80,14 +82,13 @@ export default async function Page({ params }) {
             CaseStudycptData={portfolioData}
           ></CasestudingContaints>
         )}
-        {/* {portfolioData && (portfolioData?.acf?.feature_section_title || portfolioData?.acf?.features_detail )&& (
-       <PortfolioFeatures
-       feature_section_title={portfolioData?.acf?.feature_section_title}
-       features_detail={portfolioData.acf.features_detail}
-       ></PortfolioFeatures>
-      )} */}
 
-        <IntialGoals />
+        {portfolioData && portfolioData?.acf?.initial_goal_title
+          && portfolioData?.acf?.initial_goal_content  && portfolioData?.acf?.initial_goal_image
+          && <IntialGoals content={portfolioData?.acf?.initial_goal_content
+          } title={portfolioData?.acf?.initial_goal_title} image={portfolioData?.acf?.initial_goal_image
+          } />}
+        
         {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
         {portfolioData && portfolioData?.acf?.pain_area_title
           && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
@@ -114,7 +115,15 @@ export default async function Page({ params }) {
           && <SolutionSection content={portfolioData?.acf?.solution_content
           } title={portfolioData?.acf?.solution_title} reviewLogo={portfolioData?.acf?.testimonial_stars} authorname={portfolioData?.acf?.testimony_name} review_content={portfolioData?.acf?.testimonial_content} authorImage={portfolioData?.acf?.testimony_photo} />}
         
+        {portfolioData && portfolioData?.acf?.unique_elements_title
+          && portfolioData?.acf?.unique_elements_list!==0
+          && <UniqueElements title={portfolioData?.acf?.unique_elements_title} items={portfolioData?.acf?.unique_elements_list} />}
         
+
+            {portfolioData && portfolioData?.acf?.success_story_title
+          && portfolioData?.acf?.success_story_content
+          && <SuccesStory title={portfolioData?.acf?.success_story_title} items={portfolioData?.acf?.success_story_list} content={portfolioData?.acf?.success_story_content} />}
+
         {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
           <ExploreWork
             title={portfolioData.acf.portfolio_title}
@@ -124,6 +133,7 @@ export default async function Page({ params }) {
           ></ExploreWork>
         )}
 
+        
 
         {HomePage && (HomePage.acf.banner_clients_list) && (
           <ProjectLogoMarquee banner_clients_list={HomePage.acf.banner_clients_list}></ProjectLogoMarquee>
