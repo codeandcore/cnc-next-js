@@ -9,7 +9,7 @@ const UniqueElements = ({ title, items }) => {
         <div className='unique-inner'>
             <h2>{title}</h2>
             <div className='repeter-images'>
-                {items?.map((list,index) => {
+                {items && items?.length!==0 && items?.map((list,index) => {
                     return (
                         <div className='images-item' key={index}>
                             <div className='mainItemDiv'>

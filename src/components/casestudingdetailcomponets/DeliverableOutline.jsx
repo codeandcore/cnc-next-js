@@ -10,7 +10,7 @@ const DeliverableOutline = ({ title, items }) => {
           <div className='delevery-content'>
             <h2>{title}</h2>
             <div className='items-repeter'>
-                {items?.map((list,index) => {
+                {items && items?.length!==0 && items?.map((list,index) => {
                     return (
                         <div className='repeterItem' key={index}>
                             <span className='countItem'>0{index + 1}</span>
