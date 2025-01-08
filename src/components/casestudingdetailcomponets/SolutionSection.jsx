@@ -21,7 +21,7 @@ const SolutionSection = ({ title, content, authorname, review_content, reviewLog
                       </div>
                       <div className='author-details'>
                           <div className='author-photo'><img src={authorImage?.url}></img></div>
-                          <p>{authorname}</p>
+                          <span>{authorname}</span>
                       </div>
                       
           </div>

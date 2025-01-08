@@ -207,7 +207,7 @@
 .pain-area-section .pain-area-content{width: 50%; padding-right: 30px; line-height: 1.8;}
 .pain-area-section .pain-area-content p{line-height: 1.8;}
 .pain-area-section .pain-area-img{width: 50%; text-align: right;}
-.pain-area-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.pain-area-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
 .pain-area-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 /* developing-section */
@@ -217,7 +217,7 @@
 .developing-section .developing-content{width: 50%; padding-right: 30px; line-height: 1.8;}
 .developing-section .developing-content p{line-height: 1.8;}
 .developing-section .developing-img{width: 50%; text-align: center;}
-.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
 .developing-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 /* delevery-outline */
@@ -229,11 +229,23 @@
 
 /* challenging-section */
 .challenging-section{padding: 70px 0;}
-.challenging-section h2{text-transform: capitalize; margin-bottom: 15px;}
+.challenging-section h2{text-transform: capitalize;}
+.challenging-section .challenging-inner .challenging-img .pain-area-img{width: 100%; max-width: 700px;}
 .challenging-section .challenging-inner{display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
 .challenging-section .challenging-inner .challenging-content{line-height: 1.8;}
-.challenging-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.challenging-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
 .challenging-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
+
+.solution-section .solution-inner{padding: 60px; background-color: #EFF1FF; border-radius: 20px;display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
+.solution-section h2{margin-bottom: 15px;}
+.solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
+.solution-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
+.solution-section .review{background-color: #fff; padding: 60px 40px; border-radius: 20px; margin-top: 50px;}
+.solution-section .review .review-content{padding: 25px 0;}
+.solution-section .review .review-content p{color: #424242; font-weight: 500; line-height: 1.8;}
+.solution-section .review .author-details{display: flex; align-items: center;}
+.solution-section .review .author-details .author-photo{width: 48px; height: 48px; border-radius: 100%; overflow: hidden; margin-right: 15px;}
+.solution-section .review .author-details span{font-size: 21px; font-weight: bold;}
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
