@@ -214,7 +214,6 @@ const Header = ({
 
   
   useEffect(() => {
-    console.log("pathname",pathname.startsWith('/casestudy/:slug'))
     if (!pathname) {
       return; // Exit early if router.pathname is not yet available
     }

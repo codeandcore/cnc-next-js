@@ -7,6 +7,16 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import moment from 'moment';
+var $ = require("jquery");
+if (typeof window !== "undefined") {
+  window.$ = window.jQuery = require("jquery");
+}
+
+// This is for Next.js. On Rect JS remove this line
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
 const Highlights = ({
   className,
   our_blogs_title,
@@ -17,17 +27,7 @@ const Highlights = ({
   setIsDone,
   setIsFinish,
 }) => {
-  var $ = require("jquery");
-  if (typeof window !== "undefined") {
-  window.$ = window.jQuery = require("jquery");
-  }
-  
-  // This is for Next.js. On Rect JS remove this line
-  const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
-  ssr: false,
-  });
-  const [isNextDisabled, setIsNextDisabled] = useState(false);
-  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
+
   const owlCarouselRef = useRef(null);
   const [ref, isVisible] = UseOnScreen({ threshold: 0.1 });
 
@@ -35,14 +35,8 @@ const Highlights = ({
     if (owlCarouselRef.current && owlCarouselRef.current.props) {
       const itemCount = owlCarouselRef.current.props.children.length - 3;
       const currentIndex = owlCarouselRef.current.currentPosition;
-
-      // Update button states based on current index
-      setIsPrevDisabled(currentIndex === 0);
-      setIsNextDisabled(currentIndex === itemCount);
     }
   };
-
-
   const options = {
     items: 4,
     loop: false,
@@ -50,6 +44,7 @@ const Highlights = ({
     dots: false,
     autoWidth: true,
     onTranslated: handleTranslated,
+    startPosition: 0
   };
 
   // const handleNext = () => {
@@ -59,16 +54,7 @@ const Highlights = ({
   //     handleTranslated();
   //   }
   // };
-  const dateFormatCnc = (postDate) => {
-    const date = new Date(postDate);
 
-    const day = String(date.getDate()).padStart(2, '0'); // "06"
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // "09"
-    const year = date.getFullYear(); // "2023"
-
-    const formattedDate = `${day}-${month}-${year}`;
-    return formattedDate;
-  };
 
   // const handlePrev = () => {
   //   if (owlCarouselRef.current) {
@@ -85,8 +71,8 @@ const Highlights = ({
   return (
     <div
       className="our_highlights"
-      //  ref={ref}
-      //  className={`our_highlights ${className} ${isVisible ? 'On-screen' : ''}`}
+    //  ref={ref}
+    //  className={`our_highlights ${className} ${isVisible ? 'On-screen' : ''}`}
     >
       <div className="wrapper">
         {our_blogs_title && <h2>{our_blogs_title}</h2>}
@@ -108,44 +94,36 @@ const Highlights = ({
       </div>
       <div className="inner">
         {our_blogs && our_blogs.length > 0 ? (
-           <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
+          <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
             {our_blogs.map((item, index) => (
-                <div className="col" key={index}>
-                  <Link href={`/blog/${item.post_name}`} className="img">
-                    <div
-                      className="bg"
-                      style={{
-                        backgroundImage: `url(${item.featured_image_url})`,
-                      }}
-                    ></div>
-                  </Link>
-                  <div className="text">
-                    <div className="btn_col d_flex">
-                      <Link href={`/blog/${item.post_name}`} className="btnmix">
-                        <em
+              <div className="col" key={index}>
+                <Link href={`/blog/${item.post_name}`} className="img">
+                  <img src={item.featured_image_url} alt={item?.title?.rendered} />
+                </Link>
+                <div className="text">
+                  <div className="btn_col d_flex">
+                    <div className="col-left d_flex">
+                      <a href={`/blog/${item.post_name}`}>
+                        <span
                           dangerouslySetInnerHTML={{
-                            __html: item.categories_names,
+                            __html: item?.categories_names,
                           }}
-                        ></em>
-                      </Link>
-                      <span className="date">
-                        <img src={'/assets/images/date.svg'} alt="Date Icon" />{' '}
-                        {dateFormatCnc(item.post_date)}
-                      </span>
+                        ></span>
+                      </a>
+                      <div className="date">
+                        <img src={"/assets/images/dateIcon.svg"} alt="date_icon" />{moment(item?.date).format('D.M.YYYY')}
+                      </div>
                     </div>
-                    <Link href={`/blog/${item.post_name}`} className="link">
+                  </div>
+                  <h3>
+                  <Link href={`/blog/${item.post_name}`}>
                       {item.post_title}
                     </Link>
-                    <label className="d_flex">
-                      By{' '}
-                      <Link href={`/blog/${item.post_name}`}>
-                        {item.author_name}
-                      </Link>
-                      <span>{item.relative_modified_date}</span>
-                    </label>
-                  </div>
+                  </h3>
+   
                 </div>
-        
+              </div>
+
             ))}
           </OwlCarousel>
         ) : (

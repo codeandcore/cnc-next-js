@@ -87,7 +87,7 @@ const OurTechnologyStack = ({
                 className={`${expandedIndex === index ? 'active' : ''}`}
                 onClick={() => toggleWrap(index)}
               >
-                {category.a_t_title} <img src={"/assets/images/pluceicon.png"} alt="Pluce Icon" />
+                {category.a_t_title} <img src={"/assets/images/pluceicon.svg"} alt="Pluce Icon" />
               </h3>
               <div
                 className={` all_link d_flex ${expandedIndex === index ? 'expanded' : ''}`}
