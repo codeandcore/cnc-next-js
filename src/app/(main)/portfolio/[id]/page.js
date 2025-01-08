@@ -146,7 +146,7 @@ export default async function Page({ params }) {
           } title={portfolioData?.acf?.solution_title} reviewLogo={portfolioData?.acf?.testimonial_stars} authorname={portfolioData?.acf?.testimony_name} review_content={portfolioData?.acf?.testimonial_content} authorImage={portfolioData?.acf?.testimony_photo} />}
         
         {portfolioData && portfolioData?.acf?.unique_elements_title
-          && portfolioData?.acf?.unique_elements_list!==0
+          && portfolioData?.acf?.unique_elements_list?.length!==0
           && <UniqueElements title={portfolioData?.acf?.unique_elements_title} items={portfolioData?.acf?.unique_elements_list} />}
         
 
