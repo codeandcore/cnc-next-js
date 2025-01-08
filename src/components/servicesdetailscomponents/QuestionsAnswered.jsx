@@ -26,7 +26,7 @@ const QuestionsAnswered = ({ qa_title_content, qa_list }) => {
                   className={`${expandedIndex === index ? 'active' : ''}`}
                   onClick={() => toggleWrap(index)}
                 >
-                  {item.question} <img src={"/assets/images/pluceicon.svg"} alt="plus icon" />
+                  {item.question} <img src={"/assets/images/pluceicon.png"} alt="plus icon" />
                 </h3>
                 <p
                   className={`${expandedIndex === index ? 'expanded' : ''}`}

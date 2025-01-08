@@ -53,30 +53,24 @@ const CasestudingBanner = ({
     setPage((prevPage) => prevPage + 1);
   };
 
-  const fetchData = async () => {
+  const fetchData =  async () => {
     setIsLoadk(true);
     try {
       const response = await fetch(
         `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${selectedIndustry?.id}&services=${selectedService}`
       );
-      const clonedResponse = response.clone();
-      const data = await clonedResponse.json();
-  
+      const data = await response.json();
       setIsLoadk(false);
       setHasMorePages(data.current_page < data.total_pages);
       setCaseStudycptData((prevData) =>
         page === 1 ? data.data : [...prevData, ...data.data]
       ); // Reset data if page is 1
-      setPerPage(8);
+      setPerPage(8)
     } catch (error) {
       setIsLoadk(false);
       console.error("Error fetching case study data:", error);
     }
   };
-  
-  useEffect(() => {
-    fetchData();
-  }, [page, selectedIndustry]);
 
   useEffect(() => {
     fetchData();

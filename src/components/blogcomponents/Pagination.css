@@ -27,6 +27,7 @@
 
 .pagination-numbers {
   display: flex;
+  gap: 15px;
 }
 
 .page-number {

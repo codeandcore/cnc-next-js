@@ -5,14 +5,13 @@ import './BlogPageTitle.css'
 import Link from 'next/link';
 import moment from 'moment';
 import Pagination from './Pagination';
-import { ReplaceDomain } from '@/ReplaceDomain';
 
 const BlogList = ({
   blog_heading,
   blog_content,
   blog_all_categories_label,
   BASE_URL,
-  catData,
+  catData
 }) => {
   const [isLoadingk, setisLoadingk] = useState(true);
   const [isClient, setIsClient] = useState(false);
@@ -33,58 +32,94 @@ const BlogList = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPosts, setTotalPosts] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [specialBlogElements,setSpecialBlogElements]=useState([])
   const loadingRef = useRef(false);
   const blogsListRef = useRef(null);
-  const [specialIndexOffset, setSpecialIndexOffset] = useState(0);
-  const fetchBlogs = async (category = null, page = 1) => {
+
+  const fetchBlogs = (category = null, page = 1) => {
     if (loadingRef.current) return;
     setisLoadingk(true);
     loadingRef.current = true;
-  
-    try {
-      let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
-      if (category) {
-        url += `&categories=${category}`;
-      }
-  
-      const response = await fetch(url);
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
-      const total_posts = response.headers.get('X-Wp-Total');
-      const total = response.headers.get('X-Wp-Totalpages');
-      setTotalPosts(parseInt(total_posts));
-      setTotalPages(parseInt(total));
-  
-      const data = await response.json();
-      setBlogsData(data);
-    } catch (error) {
-      console.error('Error fetching data from WordPress API:', error);
-    } finally {
-      setisLoadingk(false);
-      loadingRef.current = false;
+    let url = `${BASE_URL}/wp-json/wp/v2/posts?per_page=12&page=${page}`;
+    if (category) {
+      url += `&categories=${category}`;
     }
-  };
+    fetch(url)
+      .then((response) => {
 
-  const fetchspecialBlogs = () => {
-    fetch('https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all',  { cache: "no-store" } )
-    .then(response => response.json())
-      .then(data => {
-        setSpecialBlogElements(data?.advertise_repeater)
-    })
-  }
+        const total_posts = response.headers.get('X-Wp-Total');
+        const total = response.headers.get('X-Wp-Totalpages');
+        setTotalPosts(parseInt(total_posts));
+        setTotalPages(parseInt(total));
+        return response.json();
+      })
+      .then((data) => {
+        // const transformedData = [];
+        // for (let i = 0; i < data.length; i += 3) {
+        //   const mainPost = {
+        //     id: data[i].id,
+        //     slug: data[i].slug,
+        //     categories_names: data[i].categories_names,
+        //     title: data[i].title.rendered,
+        //     image: data[i].featured_image_url || "/assets/images/blogImg1.png",
+        //     date: new Date(data[i].date).toLocaleDateString('en-GB'),
+        //     author: data[i].author_name || 'Codeandcore',
+        //     duration: data[i].human_time_diff,
+        //     link: data[i].link,
+        //     innerdata: [],
+        //   };
+
+        //   for (let j = 1; j <= 2; j++) {
+        //     if (i + j < data.length) {
+        //       mainPost.innerdata.push({
+        //         id: data[i + j].id,
+        //         slug: data[i + j].slug,
+        //         categories_names: data[i + j].categories_names,
+        //         title: data[i + j].title.rendered,
+        //         image: data[i + j].featured_image_url || "/assets/images/blogImg1.png",
+        //         date: new Date(data[i + j].date).toLocaleDateString('en-GB'),
+        //         author: data[i + j].author_name || 'Codeandcore',
+        //         duration: data[i + j].human_time_diff,
+        //         link: data[i + j].link,
+        //       });
+        //     }
+        //   }
+        //   transformedData.push(mainPost);
+        // }
+        setBlogsData(data);
+        loadingRef.current = false;
+      })
+      .catch((error) => {
+        console.error('Error fetching data from WordPress API:', error);
+        loadingRef.current = false;
+      })
+      .finally(() => {
+        setisLoadingk(false);
+      });
+  };
 
   useEffect(() => {
     fetchBlogs();
-   
   }, [BASE_URL]);
 
-  useEffect(() => {
-    fetchspecialBlogs()
-  },[])
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (blogsListRef.current) {
+  //       const servicesListBottom =
+  //         blogsListRef.current.getBoundingClientRect().bottom + 100;
+  //       const windowBottom = window.innerHeight;
+  //       if (
+  //         servicesListBottom <= windowBottom &&
+  //         !loadingRef.current &&
+  //         currentPage < totalPages
+  //       ) {
+  //         setCurrentPage((prevPage) => prevPage + 1);
+  //       }
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [currentPage, totalPages]);
 
   useEffect(() => {
     fetchBlogs(currentCategory, currentPage);
@@ -97,20 +132,64 @@ const BlogList = ({
     fetchBlogs(category, 1);
   };
   const handlePageChange = (page) => {
-    handleSmoothScroll()
-    setBlogsData([]); 
     fetchBlogs(currentCategory, page);
   };
 
+  const specialBlogContents = [
+    {
+      backgroundImage: "/assets/images/special-blog-bg1.png",
+      title: "Get In Touch with Us",
+      content: "We’re here to answer your questions and bring your ideas to life. Reach out today!",
+      fontColor: "#FFFFFF",
+      btn: {
+        type:"primary",
+        url: "/contactus",
+        label: "Contact Us",
+        backgroundColor: "",
+        fontColor: "#FFFFFF"
+      }
+    },
+    {
+      backgroundImage: "/assets/images/special-blog-bg2.png",
+      title: "Powering the future",
+      content: "Discover the cutting-edge technologies that drive our solutions.",
+      fontColor: "#424242",
+      btn: {
+        type:"secondary",
+        url: "/technologies",
+        label: "Our Technologies",
+        backgroundColor: "",
+        fontColor: "#000000"
+      }
+    },
+    {
+      backgroundImage: "/assets/images/special-blog-bg1.png",
+      title: "Innovation in Action",
+      content: "Explore the projects that showcase our passion for design and technology.",
+      fontColor: "#FFFFFF",
+      btn: {
+        type:"primary",
+        url: "/portfolio",
+        label: "Our Portfolio",
+        backgroundColor: "",
+        fontColor: "#FFFFFF"
+      }
+    },
+    {
+      backgroundImage: "/assets/images/special-blog-bg2.png",
+      title: "Talk to Us Today",
+      content: "Have a question or a project in mind? Let’s make your ideas happen!Let’s start a conversation!",
+      fontColor: "#424242",
+      btn: {
+        type:"secondary",
+        url: "/contactus",
+        label: "Contact Us",
+        backgroundColor: "",
+        fontColor: "#000000"
+      }
+    },
+  ];
 
-
-  useEffect(() => {
-    // Calculate the total number of special items in the current blogData
-    if (Array.isArray(blogData) && blogData.length > 0) {
-      const pageOffset = ((currentPage - 1) % 2) * 2
-      setSpecialIndexOffset(pageOffset);
-    }
-  }, [blogData,currentPage]);
 
   if (!isClient) return null;
   return (
@@ -162,22 +241,28 @@ const BlogList = ({
         <div className="wrapper">
           <div className='blogItemList'>
             {blogData.map((blog, index) => {
-              if ((index + 1) % 6 === 0) {
-                const specialIndex = (specialIndexOffset + Math.floor(index / 6)) % specialBlogElements.length;
-                const specialContent = specialBlogElements[specialIndex];                
-                return (<div key={index} className="blog-item special-layout" style={{ backgroundImage: `url(${specialContent?.background_image?.url})` }}>             
+              if ((index + 1) % 3 === 0) {
+                const specialIndex = (Math.floor(index / 3) % specialBlogContents.length);
+                const specialContent = specialBlogContents[specialIndex];
+                return (<div key={index} className="blog-item special-layout" style={{ backgroundImage: `url(${specialContent?.backgroundImage})` }}>
+                  {/* <Link href={`/blog/${blog.slug}`} className="blog_img">
+                    <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
+                  </Link>*/}
                   <div className="special-content">
-                    <h3 className="special-blog-title" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>
-                      {specialContent?.title}
-                    </h3>
-                    <p className="content" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>{specialContent?.subtitle
-                    }</p>
+                    <h2 className="special-blog-title" style={{ color: specialContent?.fontColor }}>
+                      {specialContent.title}
+                    </h2>
+                    <p className="content" style={{ color: specialContent?.fontColor }}>{specialContent.content}</p>
                     <Link
-                      href={specialContent?.button?.url || ""}
-                      style={{ color: specialContent?.button_type === "Primary" ? "#ffff" : "#424242" }}
-                      className={`btn  ${specialContent?.button_type==="Primary" ? "" : "btn-secondary"}`}
+                      href={specialContent?.btn.url}
+                      style={{
+                        // color: specialContent?.btn?.fontColor
+                        color:"#ffff"
+                      }}
+                      className={`btn  ${specialContent?.btn?.type==="primary" ? "" : "btn-secondary"}`}
+                     
                     >
-                      <em>{specialContent?.button?.title}</em>
+                      <em>{specialContent?.btn.label}</em>
                     </Link>
                   </div>
                 </div>)
@@ -188,7 +273,7 @@ const BlogList = ({
                     className={`blog-item`}
                   >
                     <Link
-                      href={`/blog/${blog.slug}` || ""}
+                      href={`/blog/${blog.slug}`}
                       className="blog_img"
                     >
                       <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
@@ -196,7 +281,7 @@ const BlogList = ({
                     <div className="blog-content">
                       <div className="blog_info d_flex">
                         <div className="col-left d_flex">
-                          <a href={`/blog/${blog.slug}`}>
+                          <a href={blog.link}>
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: blog.categories_names,

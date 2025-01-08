@@ -20,10 +20,9 @@
   height: 90px;
   border: 1px solid var(--black);
   border-radius: 180px;
-  padding: 10px;
 }
 .casestuding_containts .pro_logo img {
-  height: 100%;
+  max-width: 220px;
 }
 .casestuding_containts label {
   display: block;
@@ -47,11 +46,13 @@
 }
 .casestuding_containts .case li {
   color: var(--darktheme);
-  font-size: 18px;
+  font-size: 21.5px;
   font-weight: 500;
+  padding: 0px 20px;
   border-right: 2px solid var(--darktheme);
   line-height: 13px;
-  padding: 0 15px;
+  padding: 5px 20px;
+  margin: 7px 0;
 }
 .casestuding_containts .case li:last-child {
   padding-right: 0px;
@@ -67,10 +68,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  top: -1px;
 }
 .case_awward {
   align-items: flex-end;
-  margin-top: 10px;
+  margin-top: 42px;
 }
 .case_awward .awward a:not(:last-child) {
   margin-right: 15px;
@@ -111,9 +113,9 @@
   margin-top: 30px;
 }
 .about_client .industry_col {
+  width: 408px;
   background-color: var(--lightblue);
-  padding: 50px;
-  border-radius: 40px;
+  padding: 11px 24px 19px;
 }
 .about_client .ndustry {
   border-bottom: 1px dashed var(--black);
@@ -144,6 +146,8 @@
 .about_client .location img {
   width: 25px;
   margin-right: 11px;
+}
+.about_client .technology {
 }
 .about_client .technology h4 {
   font-size: 26px;
@@ -187,65 +191,6 @@
 .about_client .left_col p img {
   height: auto !important;
 }
-
-/* Intial goal */
-.intial-goal{background-color: #000; padding: 70px 0;}
-.intial-goal .intial-inner{display: flex; align-items: center; flex-wrap: wrap;}
-.intial-goal .intial-goal-content{width: 60.5%; padding-right: 30px;}
-.intial-goal .intial-goal-content h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
-.intial-goal .intial-goal-content p{line-height: 1.8;}
-.intial-goal .intial-goal-img{width: 39.5%; text-align: center;}
-
-/* Full banner */
-.portfolio-image-section{padding: 70px 0;}
-.portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px;}
-
-/* pain-area-section */
-.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover; background-repeat: no-repeat;}
-.pain-area-section h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
-.pain-area-section .pain-area-inner{display: flex; align-items: center; flex-wrap: wrap;}
-.pain-area-section .pain-area-content{width: 50%; padding-right: 30px; line-height: 1.8;}
-.pain-area-section .pain-area-content p{line-height: 1.8;}
-.pain-area-section .pain-area-img{width: 50%; text-align: right;}
-.pain-area-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
-.pain-area-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
-
-/* developing-section */
-.developing-section{padding: 70px 0;}
-.developing-section h2{text-transform: capitalize; margin-bottom: 15px;}
-.developing-section .developing-inner{display: flex; align-items: center; flex-wrap: wrap;}
-.developing-section .developing-content{width: 50%; padding-right: 30px; line-height: 1.8;}
-.developing-section .developing-content p{line-height: 1.8;}
-.developing-section .developing-img{width: 50%; text-align: center;}
-.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
-.developing-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
-
-/* delevery-outline */
-.delevery-outline{background-color: #EFF1FF; padding: 70px 0;}
-.delevery-outline h2{text-transform: capitalize; margin-bottom: 50px;}
-.delevery-outline .delevery-content .items-repeter{display: grid; grid-template-columns: repeat(3, 1fr);  gap: 44px;} 
-.delevery-outline .delevery-content .repeterItem p{color: #424242; font-weight: 500; line-height: 1.8;}
-.delevery-outline .delevery-content .repeterItem .countItem{width: 70px; height: 70px; border-radius: 100%; padding: 5px; display: flex; align-items: center; justify-content: center; color: #fff; background-color: #6A65F6; font-size: 36px; font-weight: bold; margin-bottom: 36px;}
-
-/* challenging-section */
-.challenging-section{padding: 70px 0;}
-.challenging-section h2{text-transform: capitalize;}
-.challenging-section .challenging-inner .challenging-img .pain-area-img{width: 100%; max-width: 700px;}
-.challenging-section .challenging-inner{display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
-.challenging-section .challenging-inner .challenging-content{line-height: 1.8;}
-.challenging-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
-.challenging-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
-
-.solution-section .solution-inner{padding: 60px; background-color: #EFF1FF; border-radius: 20px;display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
-.solution-section h2{margin-bottom: 15px;}
-.solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
-.solution-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
-.solution-section .review{background-color: #fff; padding: 60px 40px; border-radius: 20px; margin-top: 50px;}
-.solution-section .review .review-content{padding: 25px 0;}
-.solution-section .review .review-content p{color: #424242; font-weight: 500; line-height: 1.8;}
-.solution-section .review .author-details{display: flex; align-items: center;}
-.solution-section .review .author-details .author-photo{width: 48px; height: 48px; border-radius: 100%; overflow: hidden; margin-right: 15px;}
-.solution-section .review .author-details span{font-size: 21px; font-weight: bold;}
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
@@ -324,6 +269,7 @@
     line-height: 60px;
   }
   .about_client .industry_col {
+    width: 260px;
     padding: 11px 20px 20px;
   }
   .about_client .left_col {
@@ -442,6 +388,7 @@
     margin: 0 5px 10px;
   }
   .about_client .industry_col {
+    width: calc(100% + 40px);
     padding: 15px 20px;
     margin: 0 -20px;
   }

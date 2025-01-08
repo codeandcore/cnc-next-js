@@ -18,6 +18,9 @@ const ServicesDetailsBanner = ({
       setBackgroundhomebanner(industry_banner_background_image_mobile?.url || '');
     }
   }, [banner_background_image, industry_banner_background_image_mobile]);
+
+
+  console.log("banner_title");
   
   return (
     <div
