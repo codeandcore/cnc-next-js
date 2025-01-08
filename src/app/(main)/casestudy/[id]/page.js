@@ -129,8 +129,7 @@ export default async function Page({ params }) {
           ></ExploreWork>
         )}
 
-        
-
+      
         {HomePage && (HomePage.acf.banner_clients_list) && (
           <ProjectLogoMarquee banner_clients_list={HomePage.acf.banner_clients_list}></ProjectLogoMarquee>
         )}
