@@ -36,6 +36,7 @@ const BlogList = ({
   const [specialBlogElements,setSpecialBlogElements]=useState([])
   const loadingRef = useRef(false);
   const blogsListRef = useRef(null);
+  const [specialIndexOffset, setSpecialIndexOffset] = useState(0);
   const fetchBlogs = async (category = null, page = 1) => {
     if (loadingRef.current) return;
     setisLoadingk(true);
@@ -101,6 +102,16 @@ const BlogList = ({
     fetchBlogs(currentCategory, page);
   };
 
+
+
+  useEffect(() => {
+    // Calculate the total number of special items in the current blogData
+    if (Array.isArray(blogData) && blogData.length > 0) {
+      const pageOffset = ((currentPage - 1) % 2) * 2
+      setSpecialIndexOffset(pageOffset);
+    }
+  }, [blogData,currentPage]);
+
   if (!isClient) return null;
   return (
     <div className="blog_main" ref={blogsListRef}>
@@ -152,8 +163,8 @@ const BlogList = ({
           <div className='blogItemList'>
             {blogData.map((blog, index) => {
               if ((index + 1) % 6 === 0) {
-                const specialIndex = (Math.floor(index / 6) % specialBlogElements.length);
-                const specialContent = specialBlogElements[specialIndex];
+                const specialIndex = (specialIndexOffset + Math.floor(index / 6)) % specialBlogElements.length;
+                const specialContent = specialBlogElements[specialIndex];                
                 return (<div key={index} className="blog-item special-layout" style={{ backgroundImage: `url(${specialContent?.background_image?.url})` }}>             
                   <div className="special-content">
                     <h3 className="special-blog-title" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>
@@ -162,7 +173,7 @@ const BlogList = ({
                     <p className="content" style={{ color:specialContent?.button_type==="Primary" ? "#ffff" :"#424242"}}>{specialContent?.subtitle
                     }</p>
                     <Link
-                      href={specialContent?.button?.url}
+                      href={specialContent?.button?.url || ""}
                       style={{ color: specialContent?.button_type === "Primary" ? "#ffff" : "#424242" }}
                       className={`btn  ${specialContent?.button_type==="Primary" ? "" : "btn-secondary"}`}
                     >
@@ -177,7 +188,7 @@ const BlogList = ({
                     className={`blog-item`}
                   >
                     <Link
-                      href={`/blog/${blog.slug}`}
+                      href={`/blog/${blog.slug}` || ""}
                       className="blog_img"
                     >
                       <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
