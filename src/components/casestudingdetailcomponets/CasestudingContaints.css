@@ -201,12 +201,39 @@
 .portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px;}
 
 /* pain-area-section */
-.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover;}
+.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover; background-repeat: no-repeat;}
 .pain-area-section h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
 .pain-area-section .pain-area-inner{display: flex; align-items: center; flex-wrap: wrap;}
 .pain-area-section .pain-area-content{width: 50%; padding-right: 30px; line-height: 1.8;}
+.pain-area-section .pain-area-content p{line-height: 1.8;}
 .pain-area-section .pain-area-img{width: 50%; text-align: right;}
+.pain-area-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.pain-area-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
+/* developing-section */
+.developing-section{padding: 70px 0;}
+.developing-section h2{text-transform: capitalize; margin-bottom: 15px;}
+.developing-section .developing-inner{display: flex; align-items: center; flex-wrap: wrap;}
+.developing-section .developing-content{width: 50%; padding-right: 30px; line-height: 1.8;}
+.developing-section .developing-content p{line-height: 1.8;}
+.developing-section .developing-img{width: 50%; text-align: center;}
+.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.developing-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
+
+/* delevery-outline */
+.delevery-outline{background-color: #EFF1FF; padding: 70px 0;}
+.delevery-outline h2{text-transform: capitalize; margin-bottom: 50px;}
+.delevery-outline .delevery-content .items-repeter{display: grid; grid-template-columns: repeat(3, 1fr);  gap: 44px;} 
+.delevery-outline .delevery-content .repeterItem p{color: #424242; font-weight: 500; line-height: 1.8;}
+.delevery-outline .delevery-content .repeterItem .countItem{width: 70px; height: 70px; border-radius: 100%; padding: 5px; display: flex; align-items: center; justify-content: center; color: #fff; background-color: #6A65F6; font-size: 36px; font-weight: bold; margin-bottom: 36px;}
+
+/* challenging-section */
+.challenging-section{padding: 70px 0;}
+.challenging-section h2{text-transform: capitalize; margin-bottom: 15px;}
+.challenging-section .challenging-inner{display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
+.challenging-section .challenging-inner .challenging-content{line-height: 1.8;}
+.challenging-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.7; margin-bottom: 10px; padding-left: 25px;}
+.challenging-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
