@@ -9,7 +9,7 @@ const IntialGoals = ({ feature_section_title, features_detail }) => {
 
   return (
 
-    <section className="intial-goal">
+    <div className="intial-goal">
       <div className='wrapper'>
         <div className='intial-inner'>
           <div className='intial-goal-content'>
@@ -21,7 +21,7 @@ const IntialGoals = ({ feature_section_title, features_detail }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
   );
 };
