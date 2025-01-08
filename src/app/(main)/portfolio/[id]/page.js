@@ -10,6 +10,8 @@ import BASE_URL from "@/config";
 import { notFound } from "next/navigation";
 import IntialGoals from "@/components/casestudingdetailcomponets/IntialGoals";
 import PortfolioFeaturedImage from "@/components/casestudingdetailcomponets/PortfolioFeaturedImage";
+import PainAreaSection from "@/components/casestudingdetailcomponets/PainAreaSection";
+import DavelopmentApproach from "@/components/casestudingdetailcomponets/davelopmentApproach";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -64,6 +66,7 @@ export default async function Page({ params }) {
     : HomePage && HomePage?.acf
     ? HomePage?.acf
     : null;
+ console.log("portfoluioDaya",portfolioData);
   
   return (
 <Suspense fallback={<Loading />}>
@@ -82,8 +85,17 @@ export default async function Page({ params }) {
       )} */}
         
         <IntialGoals />
-      {portfolioData?.featured_image_url &&    <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
+        {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
+        {portfolioData && portfolioData?.acf?.pain_area_title
+          && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
         
+        {portfolioData && portfolioData?.acf?.development_approach_title
+        && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.development_approach_image
+        && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
+        } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
+        } />   }
+  
+  
       {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
       <ExploreWork
       title = {portfolioData.acf.portfolio_title}
