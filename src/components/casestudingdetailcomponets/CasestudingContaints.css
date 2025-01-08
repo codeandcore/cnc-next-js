@@ -20,9 +20,10 @@
   height: 90px;
   border: 1px solid var(--black);
   border-radius: 180px;
+  padding: 10px;
 }
 .casestuding_containts .pro_logo img {
-  max-width: 220px;
+  height: 100%;
 }
 .casestuding_containts label {
   display: block;
@@ -46,13 +47,11 @@
 }
 .casestuding_containts .case li {
   color: var(--darktheme);
-  font-size: 21.5px;
+  font-size: 18px;
   font-weight: 500;
-  padding: 0px 20px;
   border-right: 2px solid var(--darktheme);
   line-height: 13px;
-  padding: 5px 20px;
-  margin: 7px 0;
+  padding: 0 15px;
 }
 .casestuding_containts .case li:last-child {
   padding-right: 0px;
@@ -68,11 +67,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -1px;
 }
 .case_awward {
   align-items: flex-end;
-  margin-top: 42px;
+  margin-top: 10px;
 }
 .case_awward .awward a:not(:last-child) {
   margin-right: 15px;
@@ -113,7 +111,6 @@
   margin-top: 30px;
 }
 .about_client .industry_col {
-  width: 408px;
   background-color: var(--lightblue);
   padding: 11px 24px 19px;
 }
@@ -269,7 +266,6 @@
     line-height: 60px;
   }
   .about_client .industry_col {
-    width: 260px;
     padding: 11px 20px 20px;
   }
   .about_client .left_col {
@@ -388,7 +384,6 @@
     margin: 0 5px 10px;
   }
   .about_client .industry_col {
-    width: calc(100% + 40px);
     padding: 15px 20px;
     margin: 0 -20px;
   }

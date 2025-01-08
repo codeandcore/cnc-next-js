@@ -36,7 +36,7 @@ const CasestudingContaints = ({
       behavior: 'auto',
     });
   };
-
+  
   return (
     <div className="casestuding_containts">
       <div className="wrapper">
@@ -119,24 +119,10 @@ const CasestudingContaints = ({
             }}
           ></label>
         )}
-        {CaseStudycptData?.featured_image_url && (
-          <img
-            src={CaseStudycptData.featured_image_url}
-            alt={CaseStudycptData.title.rendered}
-          />
-        )}
+      
 
-        <div className="about_client d_flex">
-          <div className="left_col" ref={leftColRef}>
-            {CaseStudycptData?.content && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: CaseStudycptData.content.rendered,
-                }}
-              ></div>
-            )}
-          </div>
-          <div className="industry_col">
+        <div className="about_client ">
+        <div className="industry_col">
             <div className="ndustry d_flex">
               {CaseStudycptData?.acf?.industries_detail &&
                 CaseStudycptData?.acf?.industries_detail.length > 0 && (
@@ -213,6 +199,16 @@ const CasestudingContaints = ({
               </div>
             )}
           </div>
+          <div className="left_col" ref={leftColRef}>
+            {CaseStudycptData?.content && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: CaseStudycptData.content.rendered,
+                }}
+              ></div>
+            )}
+          </div>
+          
         </div>
       </div>
     </div>
