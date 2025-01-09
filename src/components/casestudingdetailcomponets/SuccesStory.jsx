@@ -19,7 +19,7 @@ const SuccesStory = ({ title, items,content }) => {
                                     </div>
                                     <div className='itemContent'>
                                         <h3>{list?.number}</h3>
-                                        <p>{list?.sub_title}</p>
+                                        <span>{list?.sub_title}</span>
                                     </div>
                                 </div>
                             </div>

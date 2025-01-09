@@ -11,12 +11,12 @@ import { notFound } from "next/navigation";
 import IntialGoals from "@/components/casestudingdetailcomponets/IntialGoals";
 import PortfolioFeaturedImage from "@/components/casestudingdetailcomponets/PortfolioFeaturedImage";
 import PainAreaSection from "@/components/casestudingdetailcomponets/PainAreaSection";
-import DavelopmentApproach from "@/components/casestudingdetailcomponets/davelopmentApproach";
 import DeliverableOutline from "@/components/casestudingdetailcomponets/DeliverableOutline";
 import ChallengesSection from "@/components/casestudingdetailcomponets/ChallengesSection";
 import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
 import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
 import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
+import DavelopmentApproach from "@/components/casestudingdetailcomponets/DavelopmentApproach";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
