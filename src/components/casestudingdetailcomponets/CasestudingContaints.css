@@ -226,9 +226,9 @@
 .developing-section h2{text-transform: capitalize; margin-bottom: 15px;}
 .developing-section .developing-inner{display: flex; align-items: center; flex-wrap: wrap;}
 .developing-section .developing-content{width: 50%; padding-right: 30px; line-height: 1.8;}
-.developing-section .developing-content p{line-height: 1.8;}
+.developing-section .developing-content p{line-height: 1.8; color: #424242;}
 .developing-section .developing-img{width: 50%; text-align: center;}
-.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
+.developing-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
 .developing-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 /* delevery-outline */
