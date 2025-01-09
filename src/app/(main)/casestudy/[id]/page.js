@@ -94,7 +94,7 @@ export default async function Page({ params }) {
           && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
           } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
           } />}
-        {portfolioData && portfolioData?.acf?.deliverables_outlined_title
+        {portfolioData && portfolioData?.acf?.deliverables_outlined_title && portfolioData?.acf?.deliverables_outlined_list
           && portfolioData?.acf?.deliverables_outlined_list?.length !== 0
           && <DeliverableOutline items={portfolioData?.acf?.deliverables_outlined_list
           } title={portfolioData?.acf?.deliverables_outlined_title} />}
@@ -111,7 +111,7 @@ export default async function Page({ params }) {
           && <SolutionSection content={portfolioData?.acf?.solution_content
           } title={portfolioData?.acf?.solution_title} reviewLogo={portfolioData?.acf?.testimonial_stars} authorname={portfolioData?.acf?.testimony_name} review_content={portfolioData?.acf?.testimonial_content} authorImage={portfolioData?.acf?.testimony_photo} />}
         
-        {portfolioData && portfolioData?.acf?.unique_elements_title
+        {portfolioData && portfolioData?.acf?.unique_elements_title && portfolioData?.acf?.unique_elements_list
           && portfolioData?.acf?.unique_elements_list?.length!==0
           && <UniqueElements title={portfolioData?.acf?.unique_elements_title} items={portfolioData?.acf?.unique_elements_list} />}
         

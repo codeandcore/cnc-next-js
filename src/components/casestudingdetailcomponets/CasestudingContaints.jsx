@@ -44,8 +44,7 @@ const CasestudingContaints = ({
       top: 0, // Adjust the value as needed
       behavior: 'auto',
     });
-  };
-console.log("CaseStudycptData",CaseStudycptData);
+  };  
   
   return (
     <div className="casestuding_containts">
@@ -137,11 +136,12 @@ console.log("CaseStudycptData",CaseStudycptData);
               <h3>About The Client</h3>
               <div className='items-details'>
                 <h4>Industry :</h4>
-                <ul className="d_flex">
+                <ul className="d_flex industryList">
                 {CaseStudycptData?.industries?.map((caseItem, index) => (
                   <li key={index}>
                     <Link target='blank'
-                      href={`${ReplaceDomain(baseUrl,`${baseUrl}/industry/${caseItem?.slug}`)}`}
+                      href={""}
+                      // href={`${ReplaceDomain(baseUrl,`${baseUrl}/industry/${caseItem?.slug}`)}`}
                     >
                       {caseItem?.name}
                       </Link>
@@ -151,25 +151,25 @@ console.log("CaseStudycptData",CaseStudycptData);
               </div>
               <div className='items-details'>
                 <h4>Sector :</h4>
-                <p>Sustainable Fashion</p>
+                <span>Sustainable Fashion</span>
               </div>
               <div className='items-details'>
                 <h4>Niche :</h4>
-                <p>Apparel and Textiles</p>
+                <span>Apparel and Textiles</span>
               </div>
               <div className='items-details'>
                 <h4>Country :</h4>
                 <div className='map-data'>
                   <img src={CaseStudycptData?.acf?.location_icon?.url} alt={CaseStudycptData?.acf?.location_icon?.title}></img>
-                  <p>{CaseStudycptData?.acf?.cases_location}</p>
+                  <span>{CaseStudycptData?.acf?.cases_location}</span>
               </div>
               </div>
             </div>
 
             {CaseStudycptData?.acf?.case_technology_used && (
               <div className="technology">
-                <h4>TECHNOLOGY USED</h4>
-                <ul className="d_flex d_flex_js">
+                <h4>Technologies:</h4>
+                <ul className="technologyList">
                   {CaseStudycptData.acf.case_technology_used.map(
                     (technology, index) => (                      
                       <li key={index}>
@@ -180,6 +180,10 @@ console.log("CaseStudycptData",CaseStudycptData);
                     ),
                   )}
                 </ul>
+                <div className='teamSize'>
+                  <h4>Team Size :</h4>
+                  <span>6 Members (Backend developer-2, Frontend developer-1, GSAP animator-1, QA-1, Project manager-1)</span>
+                </div>
               </div>
             )}
           </div>
