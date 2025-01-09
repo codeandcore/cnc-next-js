@@ -11,7 +11,6 @@ import { notFound } from "next/navigation";
 import IntialGoals from "@/components/casestudingdetailcomponets/IntialGoals";
 import PortfolioFeaturedImage from "@/components/casestudingdetailcomponets/PortfolioFeaturedImage";
 import PainAreaSection from "@/components/casestudingdetailcomponets/PainAreaSection";
-import DavelopmentApproach from "@/components/casestudingdetailcomponets/davelopmentApproach";
 import DeliverableOutline from "@/components/casestudingdetailcomponets/DeliverableOutline";
 import ChallengesSection from "@/components/casestudingdetailcomponets/ChallengesSection";
 import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
@@ -123,11 +122,11 @@ export default async function Page({ params }) {
         {portfolioData && portfolioData?.acf?.pain_area_title
           && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
 
-        {portfolioData && portfolioData?.acf?.development_approach_title
+        {/* {portfolioData && portfolioData?.acf?.development_approach_title
           && portfolioData?.acf?.development_approach_content && portfolioData?.acf?.development_approach_image
           && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
           } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
-          } />}
+          } />} */}
         {portfolioData && portfolioData?.acf?.deliverables_outlined_title
           && portfolioData?.acf?.deliverables_outlined_list?.length !== 0
           && <DeliverableOutline items={portfolioData?.acf?.deliverables_outlined_list
