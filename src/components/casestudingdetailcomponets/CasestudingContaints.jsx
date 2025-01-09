@@ -45,7 +45,6 @@ const CasestudingContaints = ({
       behavior: 'auto',
     });
   };  
-  console.log("CaseStudycptData",CaseStudycptData);
   
   return (
     <div className="casestuding_containts">
