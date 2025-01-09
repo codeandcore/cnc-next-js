@@ -7,13 +7,13 @@ const DavelopmentApproach = ({ content,title,image }) => {
     <div className="developing-section">
       <div className='wrapper'>
         <div className='developing-inner'>
-          <div className='developing-content'>
+          {title && <div className='developing-content'>
             <h2>{title}</h2>
-            <div className='' dangerouslySetInnerHTML={{ __html: content}}></div>
-          </div>
-          <div className='developing-img'>
+            <div className='' dangerouslySetInnerHTML={{ __html: content }}></div>
+          </div>}
+         {image?.url && <div className='developing-img'>
             <img src={image?.url} />
-          </div>
+          </div>}
         </div>
       </div>
     </div>

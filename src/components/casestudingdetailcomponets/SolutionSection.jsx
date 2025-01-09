@@ -9,10 +9,10 @@ const SolutionSection = ({ title, content, authorname, review_content, reviewLog
       <div className='wrapper'>
         <div className='solution-inner'>
           <div className='solution-content'>
-            <h2>{title}</h2>
-            <div className='' dangerouslySetInnerHTML={{ __html: content}}></div>
+          {title &&  <h2>{title}</h2>}
+          {content && <div className='' dangerouslySetInnerHTML={{ __html: content}}></div>}
           </div>
-                  <div className='review'>
+                 {review_content && reviewLogo && authorImage &&  <div className='review'>
                       <div className='imgObj'><img src="/assets/images/quest-icon.svg" alt="" /></div>
                       <div className='review-logo'>
                       <img src={reviewLogo?.url} alt={title} />
@@ -25,7 +25,7 @@ const SolutionSection = ({ title, content, authorname, review_content, reviewLog
                           <span>{authorname}</span>
                       </div>
                       
-          </div>
+                  </div>}
         </div>
       </div>
     </div>

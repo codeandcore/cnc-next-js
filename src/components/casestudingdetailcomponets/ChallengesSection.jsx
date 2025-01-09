@@ -9,13 +9,13 @@ const ChallengesSection = ({ title,content,image }) => {
         <div className='challenging-inner'>
           <div className='challenging-img'>
             <h2>{title}</h2>
-            <div className='pain-area-img'>
+           {image?.url && <div className='pain-area-img'>
               <img src={image?.url} alt={title} />
-            </div>
+            </div>}
           </div>
-          <div className='challenging-content'>
+         {content && <div className='challenging-content'>
             <div className='' dangerouslySetInnerHTML={{ __html: content}}></div>
-          </div>
+          </div>}
         </div>
       </div>
     </div>

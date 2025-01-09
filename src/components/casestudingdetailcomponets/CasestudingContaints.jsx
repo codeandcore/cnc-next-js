@@ -134,7 +134,7 @@ const CasestudingContaints = ({
         <div className="industry_col">
             <div className="project-details">
               <h3>{CaseStudycptData.acf.about_project_title}</h3>
-              <div className='items-details'>
+          {CaseStudycptData?.industries && CaseStudycptData?.industries?.length!==0 &&    <div className='items-details'>
                 <h4>Industry :</h4>
                 <ul className="d_flex industryList">
                 {CaseStudycptData?.industries?.map((caseItem, index) => (
@@ -147,7 +147,7 @@ const CasestudingContaints = ({
                   </li>
                 ))}
               </ul>
-              </div>
+              </div>}
               {CaseStudycptData?.acf?.sector && <div className='items-details'>
                 <h4>Sector :</h4>
                 <span>{CaseStudycptData?.acf?.sector}</span>

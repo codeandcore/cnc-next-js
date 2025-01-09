@@ -17,7 +17,7 @@ const PortfolioFeatures = ({ feature_section_title, features_detail }) => {
         {feature_section_title && <h2>{feature_section_title}</h2>}
         <div className="wrap d_flex d_flex_at">
           <ul className="left_col">
-            {features_detail.map((feature, index) => (
+            {features_detail?.length!==0 && features_detail.map((feature, index) => (
               <li
                 key={index}
                 className={index === activeFeatureIndex ? 'active' : ''}

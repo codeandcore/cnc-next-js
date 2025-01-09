@@ -8,7 +8,7 @@ const SuccesStory = ({ title, items,content }) => {
       <div className='wrapper'>
         <div className='succes-inner'>
             <div className='success-output'>
-                <h2>{title}</h2>
+              {title &&  <h2>{title}</h2>}
                 <div className='success-item-list'>
                     {items?.map((list,index) => {
                         return (
@@ -17,10 +17,10 @@ const SuccesStory = ({ title, items,content }) => {
                                     <div className='itemImage'>
                                         <img src={list?.icon?.url}></img>
                                     </div>
-                                    <div className='itemContent'>
+                               {list?.sub_title &&  <div className='itemContent'>
                                         <h3>{list?.number}</h3>
                                         <span>{list?.sub_title}</span>
-                                    </div>
+                                    </div>}
                                 </div>
                             </div>
                     )
@@ -28,9 +28,8 @@ const SuccesStory = ({ title, items,content }) => {
                     )}                       
                 </div>
              </div>
-            <div className='success-content' dangerouslySetInnerHTML={{ __html: content}}>
-                      
-            </div>
+          {content && <div className='success-content' dangerouslySetInnerHTML={{ __html: content }}>        
+          </div>}
           </div>
         </div>
       </div>
