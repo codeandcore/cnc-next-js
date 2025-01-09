@@ -18,39 +18,71 @@ import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
-  const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`
-  
+  const apiURL =
+    env !== "development"
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`;
+
+  try {
     const response = await fetch(apiURL, {
-      cache: 'no-store', // Adjust cache as needed
+      cache: "no-store", // Adjust cache as needed
     });
+
     if (!response.ok) {
-      throw new Error('Failed to fetch data');
+      console.error(`Error fetching data for slug: ${slug}`);
+      throw new Error("Failed to fetch data");
     }
-    return response.json();
+
+    const data = await response.json(); // Parse the body once here
+    return data;
+  } catch (error) {
+    console.error("Error in fetchData:", error);
+    throw error;
   }
-  
-  async function fetchHomeData() {
-    const res = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch homepage data');
-    return res.json();
 }
-  
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
+
+async function fetchHomeData() {
+  const apiURL =
+    env !== "development"
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
+
+  try {
+    const response = await fetch(apiURL, { cache: "no-store" });
+
+    if (!response.ok) {
+      console.error("Error fetching homepage data");
+      throw new Error("Failed to fetch homepage data");
+    }
+
+    const data = await response.json(); // Parse the body once here
+    return data;
+  } catch (error) {
+    console.error("Error in fetchHomeData:", error);
+    throw error;
   }
-  
+}
+
+async function fetchContactData() {
+  const apiURL =
+    env !== "development"
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
+
+  try {
+    const response = await fetch(apiURL, { cache: "no-store" });
+    if (!response.ok) {
+      console.error("Error fetching contact data");
+      throw new Error("Failed to fetch contact data");
+    }
+
+    const data = await response.json(); // Parse the body once here
+    return data;
+  } catch (error) {
+    console.error("Error in fetchContactData:", error);
+    throw error;
+  }
+}
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -94,7 +126,7 @@ export default async function Page({ params }) {
           && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
           } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
           } />}
-        {portfolioData && portfolioData?.acf?.deliverables_outlined_title
+        {portfolioData && portfolioData?.acf?.deliverables_outlined_title && portfolioData?.acf?.deliverables_outlined_list
           && portfolioData?.acf?.deliverables_outlined_list?.length !== 0
           && <DeliverableOutline items={portfolioData?.acf?.deliverables_outlined_list
           } title={portfolioData?.acf?.deliverables_outlined_title} />}
@@ -111,7 +143,7 @@ export default async function Page({ params }) {
           && <SolutionSection content={portfolioData?.acf?.solution_content
           } title={portfolioData?.acf?.solution_title} reviewLogo={portfolioData?.acf?.testimonial_stars} authorname={portfolioData?.acf?.testimony_name} review_content={portfolioData?.acf?.testimonial_content} authorImage={portfolioData?.acf?.testimony_photo} />}
         
-        {portfolioData && portfolioData?.acf?.unique_elements_title
+        {portfolioData && portfolioData?.acf?.unique_elements_title && portfolioData?.acf?.unique_elements_list
           && portfolioData?.acf?.unique_elements_list?.length!==0
           && <UniqueElements title={portfolioData?.acf?.unique_elements_title} items={portfolioData?.acf?.unique_elements_list} />}
         
