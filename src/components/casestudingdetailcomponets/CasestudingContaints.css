@@ -134,8 +134,8 @@
 .about_client .technology ul.technologyList{display: flex; flex-wrap: wrap; gap: 20px;}
 .about_client .technology ul.technologyList li a{font-size: 21px; line-height: normal; position: relative; padding: 13px 30px; border-radius: 80px; overflow: hidden; background-color: #fff; color: var(--black);font-weight: 500;}
 .about_client .technology ul.technologyList li a:hover{color: #fff; background-color: #6A65F6;}
-.about_client .technology .teamSize{display: flex; align-items: center; margin-top: 30px; font-size: 21px; color: #424242;}
-.about_client .technology .teamSize h4{margin-bottom: 0; margin-right: 20px; color: #000;}
+.about_client .technology .teamSize{display: flex; margin-top: 30px; font-size: 21px; color: #424242;}
+.about_client .technology .teamSize h4{margin-bottom: 0; margin-right: 20px; color: #000; white-space: nowrap;}
 
 .about_client .ndustry {
   border-bottom: 1px dashed var(--black);
@@ -246,7 +246,7 @@
 .challenging-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 .solution-section .solution-inner{padding: 60px; background-color: #EFF1FF; border-radius: 20px;display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
-.solution-section h2{margin-bottom: 15px;}
+.solution-section h2{margin-bottom: 15px; align-items: flex-start;}
 .solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
 .solution-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 .solution-section .review{background-color: #fff; padding: 60px 40px; border-radius: 20px; margin-top: 50px;}
@@ -280,6 +280,11 @@
 .succes-story .success-item-list .images-item{width: 125px; text-align: center;}
 .succes-story .success-item-list .images-item .itemImage{width: 124px; height: 124px; display: flex; align-items: center; justify-content: center; border-radius: 100%; border: 2px solid #6A65F6; background-color: #fff; box-shadow: 0 0 14px rgba(97, 102, 248, 0.25); margin-bottom: 15px;}
 .succes-story .success-item-list .images-item .itemContent h3{font-size: 24px; color: #424242;}
+
+@media only screen and (max-width: 1750px) {
+  .about_client .industry_col{padding: 30px;}
+  .about_client .project-details h3{font-size: 40px;}
+}
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
