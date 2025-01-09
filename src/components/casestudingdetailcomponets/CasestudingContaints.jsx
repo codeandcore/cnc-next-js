@@ -122,23 +122,22 @@ const CasestudingContaints = ({
       
 
         <div className="about_client ">
-        <div className="industry_col">
-            <div className="ndustry">
+        {/* <div className="industry_col">
+            <div className="industry">
               
             </div>
 
             {CaseStudycptData?.acf?.case_technology_used && (
               <div className="technology">
-                <h4>TECHNOLOGY USED</h4>
+                <h4>Technologies :</h4>
                 <ul className="d_flex d_flex_js">
                   {CaseStudycptData.acf.case_technology_used.map(
                     (technology, index) => (
+                      console.log("technology",technology),
+                      
                       <li key={index}>
                         <a href={`/technologies/${technology.technology_link.post_name}`}>
-                          <img
-                            src={technology.c_technology_logo.url}
-                            alt="TECHNOLOGY USED"
-                          />
+                          
                         </a>
                       </li>
                     ),
@@ -146,7 +145,7 @@ const CasestudingContaints = ({
                 </ul>
               </div>
             )}
-          </div>
+          </div> */}
           {/* <div className="left_col" ref={leftColRef}>
             {CaseStudycptData?.content && (
               <div
