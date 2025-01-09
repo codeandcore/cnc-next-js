@@ -15,6 +15,7 @@ import ChallengesSection from "@/components/casestudingdetailcomponets/Challenge
 import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
 import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
 import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
+import IntialGoals from "@/components/casestudingdetailcomponets/IntialGoals";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
