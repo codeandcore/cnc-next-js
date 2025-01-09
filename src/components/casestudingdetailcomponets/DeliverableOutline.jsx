@@ -6,6 +6,7 @@ const DeliverableOutline = ({ title, items }) => {
   return (
     <div className="delevery-outline">
       <div className='wrapper'>
+      <div className='imgObj'><img src="/assets/images/circle-check-icon.svg" alt="" /></div>
         <div className='delevery-inner'>
           <div className='delevery-content'>
             <h2>{title}</h2>

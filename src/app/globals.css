@@ -267,6 +267,7 @@ img {
   padding: 0;
   color: var(--darktheme);
   background-color: transparent;
+  text-transform: uppercase;
 }
 .btn.btnarrow::after {
   display: none;
