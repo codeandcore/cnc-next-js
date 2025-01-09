@@ -149,21 +149,21 @@ const CasestudingContaints = ({
                 ))}
               </ul>
               </div>
-              <div className='items-details'>
+              {CaseStudycptData?.acf?.sector && <div className='items-details'>
                 <h4>Sector :</h4>
                 <span>{CaseStudycptData?.acf?.sector}</span>
-              </div>
-              <div className='items-details'>
+              </div>}
+             {CaseStudycptData?.acf?.niche && <div className='items-details'>
                 <h4>Niche :</h4>
                 <span>{CaseStudycptData?.acf?.niche}</span>
-              </div>
-              <div className='items-details'>
+              </div>}
+              {CaseStudycptData?.acf?.cases_location && <div className='items-details'>
                 <h4>Country :</h4>
                 <div className='map-data'>
                   <img src={CaseStudycptData?.acf?.location_icon?.url} alt={CaseStudycptData?.acf?.location_icon?.title}></img>
                   <span>{CaseStudycptData?.acf?.cases_location}</span>
               </div>
-              </div>
+              </div>}
             </div>
 
             {CaseStudycptData?.acf?.case_technology_used && (
@@ -180,10 +180,10 @@ const CasestudingContaints = ({
                     ),
                   )}
                 </ul>
-                <div className='teamSize'>
+               {CaseStudycptData?.acf?.team_size && <div className='teamSize'>
                   <h4>Team Size :</h4>
                   <span>{CaseStudycptData?.acf?.team_size}</span>
-                </div>
+                </div>}
               </div>
             )}
           </div>
