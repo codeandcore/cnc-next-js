@@ -104,7 +104,7 @@ export default async function Page({ params }) {
   return (
     <Suspense fallback={<Loading />}>
       <Head yoastData={yoastData} />
-      <div className='main_wrapper'>
+      <div className='main_wrapper casestudyMain'>
         {portfolioData && (
           <CasestudingContaints
             CaseStudycptData={portfolioData}

@@ -19,8 +19,6 @@
   font-size: 64px;
 }
 .casestuding_containts .pro_logo {
-  width: 330px;
-  height: 90px;
   border: 1px solid var(--black);
   border-radius: 180px;
   padding: 15px 30px;
@@ -448,19 +446,17 @@
     margin-left: 0;
   }
   .casestuding_containts h1 {
-    max-width: 480px;
-    font-size: 32px;
+    max-width: 100%;
+    font-size: 26px;
     margin-bottom: 15px;
   }
   .about_client .left_col h2 {
     margin-bottom: 5px;
   }
   .casestuding_containts .pro_logo img {
-    max-width: 70px;
+    max-width: 90px;
   }
   .casestuding_containts .pro_logo {
-    width: 120px;
-    height: 45px;
     margin: 0 auto;
     margin-left: 0;
     margin-bottom: 5px;
@@ -505,9 +501,7 @@
     line-height: 24px;
     margin: 10px 0 20px;
   }
-  .about_client {
-    padding: 20px 0 0px;
-  }
+  
   .about_client .left_col {
     width: 100%;
   }
@@ -525,7 +519,7 @@
     margin-left: -5px;
   }
   .about_client .industry_col {
-    padding: 15px 20px;
+    padding: 15px;
   }
   .casestuding_containts > .wrapper > img {
     margin-top: 15px;
@@ -551,11 +545,55 @@
   .succes-story h2{margin-bottom: 20px;}
   .succes-story .succes-inner .success-output{padding-right: 0; padding-bottom: 20px;}
   .succes-story .success-item-list{justify-content: center;}
-}
-
-@media only screen and (max-width: 575px) {
+  .casestuding_containts .pro_logo { padding: 5px 10px; }
+  .about_client .project-details h3{font-size: 20px;}
+  .about_client .technology ul.technologyList{gap: 5px;}
+  .about_client .technology ul.technologyList li a{font-size: 14px; padding: 10px 15px;}
+  .portfolio-image-section .image-inner {border-radius: 15px;}
+  .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li, .about_client .project-details ul li{font-size: 14px; line-height: 20px;}
+  .intial-goal .intial-goal-img{width: 40%; margin-left: auto;}
+  .developing-section ul li, .challenging-section ul li, .solution-section ul li, .pain-area-section ul li, .succes-story ul li{padding-left: 16px;}
+  .developing-section ul li::before, .challenging-section ul li::before, .solution-section ul li::before, .pain-area-section ul li::before, .succes-story ul li::before{width: 7px; height: 7px; top: 6px;}
+  .delevery-outline .delevery-content .repeterItem .countItem{width: 45px; height: 45px; margin-bottom: 10px; font-size: 20px;}
+  .solution-section .solution-inner{border-radius: 0;}
+  .solution-section .solution-inner{margin: 0 -20px;}
+  .solution-section .review{margin-top: 15px; padding: 20px;}  
+  .solution-section .review .imgObj { position: absolute; bottom: calc(100% - 16px); right: 30px; width: 30px; }
+  .solution-section .review .review-content{padding: 10px 0;}
+  .solution-section .review .review-logo{width: 40%;}
+  .solution-section .review .author-details span{font-size: 14px;}
+  .solution-section .solution-inner { padding: 24px; }
   .delevery-outline .delevery-content .items-repeter{ grid-template-columns: repeat(1, 1fr);}
   .delevery-outline .imgObj{display: none;}
   .solution-section .solution-inner{padding: 20px;}
-  .solution-section .review .imgObj {bottom: calc(100% - 24px); right: 29px; width: 50px; }
+  .casestudyMain h2, .casestudyMain .h2{font-size: 20px !important; margin-bottom: 7px;}
+  .unique-elements .repeter-images .images-item, .unique-elements .repeter-images .images-item .mainItemDiv{border-radius: 10px;}
+  .unique-elements .repeter-images .images-item .itemContent p{display: none;}
+  .unique-elements .repeter-images .images-item .mainItemDiv::before{height: 58%; bottom: 0; top: auto; opacity: 1;}
+  .unique-elements .repeter-images .images-item .itemContent h3{font-size: 15px; margin-bottom: 0;}
+  .unique-elements .repeter-images .images-item .itemContent{ transform: translateY(0);}
+  .succes-story .success-item-list .images-item{width: 77px;}
+  .succes-story .success-item-list{gap: 10px;}
+  .succes-story .success-item-list .images-item .itemImage{width: 70px; height: 70px;}
+  .succes-story .success-item-list .images-item .itemContent h3{font-size: 16px;}
+  .succes-story .success-item-list .images-item .itemImage{margin-bottom: 7px;}
+  .succes-story .success-item-list .images-item .itemContent span{font-size: 12px;}
+  .succes-story{padding-bottom: 15px;}
+  .delevery-outline .delevery-content .repeterItem .countItem{margin-bottom: 5px;}
+}
+
+@media only screen and (max-width: 575px) {
+  .casestuding_containts .pro_logo{position: absolute; top: 0; right: 15px; margin-bottom: 0;}
+}
+
+@media only screen and (max-width: 359px) {
+  .casestuding_containts h1{width: 100%;}
+  .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li, .about_client .project-details ul li{font-size: 12px;}
+  .casestuding_containts .btnarrow em{display: none;}
+  .casestuding_containts .pro_logo img{max-width: 80px;}
+  .casestuding_containts h1{margin-bottom: 5px;}
+  .about_client, .intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 20px 0;}
+  .about_client .project-details .items-details h4{width: 65px; margin-right: 5px;}
+  .portfolio-image-section .image-inner {border-radius: 0px; border: 1px solid #e1e1e1; }
+  .pain-area-section h2{margin-bottom: 5px;}
 }
