@@ -13,6 +13,7 @@ const SolutionSection = ({ title, content, authorname, review_content, reviewLog
             <div className='' dangerouslySetInnerHTML={{ __html: content}}></div>
           </div>
                   <div className='review'>
+                      <div className='imgObj'><img src="/assets/images/quest-icon.svg" alt="" /></div>
                       <div className='review-logo'>
                       <img src={reviewLogo?.url} alt={title} />
                       </div>
