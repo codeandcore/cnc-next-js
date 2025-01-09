@@ -16,6 +16,7 @@ import ChallengesSection from "@/components/casestudingdetailcomponets/Challenge
 import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSection";
 import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
 import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
+import DavelopmentApproach from "@/components/casestudingdetailcomponets/DavelopmentApproach";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -122,11 +123,11 @@ export default async function Page({ params }) {
         {portfolioData && portfolioData?.acf?.pain_area_title
           && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
 
-        {/* {portfolioData && portfolioData?.acf?.development_approach_title
+        {portfolioData && portfolioData?.acf?.development_approach_title
           && portfolioData?.acf?.development_approach_content && portfolioData?.acf?.development_approach_image
           && <DavelopmentApproach content={portfolioData?.acf?.development_approach_content
           } title={portfolioData?.acf?.development_approach_title} image={portfolioData?.acf?.development_approach_image
-          } />} */}
+          } />}
         {portfolioData && portfolioData?.acf?.deliverables_outlined_title
           && portfolioData?.acf?.deliverables_outlined_list?.length !== 0
           && <DeliverableOutline items={portfolioData?.acf?.deliverables_outlined_list
