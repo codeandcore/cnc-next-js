@@ -1,6 +1,9 @@
 .casestuding_containts {
   padding-top: 181px;
 }
+.casestuding_containts .project_title{
+  align-items: flex-start;
+}
 .casestuding_containts .btnarrow {
   margin-bottom: 30px;
 }
@@ -20,10 +23,11 @@
   height: 90px;
   border: 1px solid var(--black);
   border-radius: 180px;
-  padding: 10px;
+  padding: 15px 30px;
 }
 .casestuding_containts .pro_logo img {
-  height: 100%;
+  width: 100%;
+  max-width: 200px;
 }
 
 .casestuding_containts label {
@@ -43,7 +47,6 @@
   justify-content: flex-start;
 }
 .casestuding_containts .case ul {
-  width: calc(100% - 46px);
   justify-content: flex-start;
 }
 .casestuding_containts .case li {
@@ -249,7 +252,7 @@
 
 .solution-section .solution-inner{padding: 60px; background-color: #EFF1FF; border-radius: 20px;display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px; align-items: flex-start;}
 .solution-section h2{margin-bottom: 15px; align-items: flex-start;}
-.solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
+.solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
 .solution-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 .solution-section .review{background-color: #fff; padding: 60px 40px; border-radius: 20px; margin-top: 50px; position: relative;}
 .solution-section .review .review-content{padding: 25px 0;}
@@ -275,47 +278,55 @@
 .succes-story{padding-bottom: 70px;}
 .succes-story h2{margin-bottom: 50px;}
 .succes-story .succes-inner{display: flex; flex-wrap: wrap;}
-.succes-story ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px;}
+.succes-story ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
 .succes-story ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 .succes-story .succes-inner .success-output{width: 100%; max-width: 35%; padding-right: 30px;}
 .succes-story .succes-inner .success-content{width: 100%; max-width: 65%;}
 .succes-story .success-item-list{display: flex; gap: 40px;}
 .succes-story .success-item-list .images-item{width: 125px; text-align: center;}
-.succes-story .success-item-list .images-item .itemImage{width: 124px; height: 124px; display: flex; align-items: center; justify-content: center; border-radius: 100%; border: 2px solid #6A65F6; background-color: #fff; box-shadow: 0 0 14px rgba(97, 102, 248, 0.25); margin-bottom: 15px;}
+.succes-story .success-item-list .images-item .itemImage{width: 124px; height: 124px; display: flex; align-items: center; justify-content: center; border-radius: 100%; border: 2px solid #6A65F6; background-color: #fff; box-shadow: 0 0 14px rgba(97, 102, 248, 0.25); margin-bottom: 15px;padding: 15px;}
 .succes-story .success-item-list .images-item .itemContent h3{font-size: 24px; color: #424242;}
 .succes-story .success-item-list .images-item .itemContent span{    text-transform: capitalize; width: 100%; max-width: 90px; display: block; margin: 0 auto;}
 
 @media only screen and (max-width: 1750px) {
   .about_client .industry_col{padding: 30px;}
-  .about_client .project-details h3{font-size: 40px;}
+  .about_client .project-details h3{font-size: 36px;}
+  .about_client ,.intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 50px 0;}
+  .unique-elements .repeter-images .images-item .mainItemDiv{height: 23.4375vw;}
 }
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
     max-width: 640px;
-    font-size: 55px;
+    font-size: 50px;
   }
   .casestuding_containts .pro_logo {
-    width: 370px;
-    height: 110px;
+    width: auto;
+    height: auto;
   }
-  .casestuding_containts .pro_logo img {
-    max-width: 230px;
-  }
+  .casestuding_containts .pro_logo img{max-width: 170px;}
   .casestuding_containts .btnarrow {
     margin-bottom: 10px;
   }
+  .casestuding_containts{
+    padding-top: 140px;
+  }
+  .about_client .project-details{max-width: 30%;}
+  .about_client .technology{max-width: calc(60% - 30px);}
+  .about_client .project-details h3{font-size: 32px;}
+  .about_client .technology ul.technologyList li:last-child{flex-basis: auto;}
+  .delevery-outline .imgObj{bottom: 94%;}
+  .succes-story .success-item-list .images-item .itemImage{width: 115px; height: 115px;}
+  .succes-story{padding-bottom: 30px  ;}
 }
-@media only screen and (max-width: 1399px) {
+
+
+@media only screen and (max-width: 1400px) {
   .casestuding_containts .btnarrow {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
   }
   .casestuding_containts h1 {
     max-width: 560px;
-  }
-  .casestuding_containts .pro_logo {
-    width: 260px;
-    height: 80px;
   }
   .casestuding_containts .pro_logo img {
     max-width: 150px;
@@ -362,35 +373,70 @@
     width: 20px;
     margin-right: 6px;
   }
-  .about_client .technology h4 {
-    font-size: 20px;
-    line-height: 60px;
-  }
-  .about_client .industry_col {
-    padding: 11px 20px 20px;
-  }
   .about_client .left_col {
     width: calc(100% - 320px);
   }
+  .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li{font-size: 16px;}
+  .about_client .technology ul.technologyList{gap: 10px;}
+  .solution-section .solution-inner{padding: 30px;}
+  .unique-elements .repeter-images .images-item{padding: 24px;}
+  .succes-story .success-item-list{gap: 20px;}
+  .succes-story .success-item-list .images-item{width: 100px;}
+  .succes-story .success-item-list .images-item .itemImage{width: 100px; height: 100px;}
 }
+
+@media only screen and (max-width: 1199px) {
+  .about_client .industry_col{border-radius: 20px;}
+  .casestuding_containts h1{font-size: 40px;}
+  .casestuding_containts .pro_logo img{max-width: 130px;}
+  .about_client .project-details{max-width: 40%;}
+  .about_client .project-details h3{font-size: 30px;}
+  .delevery-outline h2{margin-bottom: 30px;}
+  .delevery-outline .delevery-content .items-repeter{gap: 30px;}
+  .delevery-outline .delevery-content .repeterItem .countItem{margin-bottom: 20px;}
+  .solution-section .review{padding: 40px 20px;}
+  .succes-story .succes-inner .success-output{max-width: 40%;}
+  .succes-story .succes-inner .success-content{max-width: 60%;}
+  .unique-elements .repeter-images .images-item{padding: 15px;}
+  .unique-elements .repeter-images .images-item .itemContent{padding: 10px;}
+  .unique-elements .repeter-images .images-item .itemContent h3{font-size: 20px;}
+  .unique-elements .repeter-images .images-item .itemContent p{line-height: normal;}
+  .succes-story .success-item-list .images-item .itemContent span{font-size: 13px;}
+}
+
 @media only screen and (max-width: 1023px) {
   .casestuding_containts h1 {
     max-width: 480px;
   }
-  .casestuding_containts .pro_logo {
-    width: 180px;
-    height: 60px;
-  }
-  .casestuding_containts .pro_logo img {
-    max-width: 100px;
-  }
   .about_client .left_col {
     width: calc(100% - 280px);
   }
-  .about_client {
-    padding: 40px 0 30px;
-  }
 }
+
+@media only screen and (max-width: 991px) {
+  .about_client, .intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 30px 0;}
+  .casestuding_containts{padding-top: 110px;}
+  .casestuding_containts .pro_logo{padding: 10px 20px;}
+  .about_client .industry_col{padding: 20px;}
+  .about_client .project-details{max-width: 44%;    padding-right: 20px; margin-right: 20px;}
+  .about_client .technology{max-width: calc(56% - 30px);}
+  .about_client .project-details h3 {font-size: 26px;}
+  .about_client .technology ul.technologyList li a{padding: 10px 20px;}
+  .about_client .technology .teamSize{flex-wrap: wrap;}
+  .about_client .technology .teamSize h4{margin-bottom: 5px; margin-right: 0;}
+  .pain-area-section .pain-area-content{width: 100%; padding-right: 0; padding-bottom: 20px;}
+  .pain-area-section .pain-area-img{width: 100%;}
+  .developing-section .developing-content, .developing-section .developing-img{width: 100%; padding-right: 0;}
+  .delevery-outline .imgObj { bottom: 96%; width: 90px; right: 32px;}
+  .delevery-outline .delevery-content .items-repeter{grid-template-columns: repeat(2, 1fr); gap: 20px;}
+  .challenging-section .challenging-inner, .solution-section .solution-inner{grid-template-columns: repeat(1, 1fr); gap: 20px;}
+  .challenging-section .challenging-inner .challenging-img .pain-area-img{max-width: 380px;}
+  .unique-elements .repeter-images{gap: 20px;}
+  .unique-elements .repeter-images .images-item{border-radius: 15px;}
+  .succes-story .success-item-list{flex-wrap: wrap;}
+  .explorework_sec .top_title .leftcol{width: 100%;}
+}
+
 @media only screen and (max-width: 767px) {
   .casestuding_containts {
     padding-top: 85px;
@@ -474,19 +520,12 @@
   }
   .about_client .technology h4 {
     font-size: 18px;
-    line-height: 50px;
   }
   .about_client .technology ul {
     margin-left: -5px;
   }
-  .about_client .technology ul li {
-    width: 47px;
-    margin-bottom: 10px;
-    margin: 0 5px 10px;
-  }
   .about_client .industry_col {
     padding: 15px 20px;
-    margin: 0 -20px;
   }
   .casestuding_containts > .wrapper > img {
     margin-top: 15px;
@@ -494,4 +533,29 @@
   .about_client .left_col p {
     padding-right: 0px;
   }
+  .about_client .project-details{
+    max-width: 100%;
+    padding-right: 0;margin-right: 0;
+    border-right:none;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgb(0 0 0 / 20%);
+  }
+  .about_client .technology{max-width: 100%;}
+  .about_client .technology .teamSize{margin-top: 15px;}
+  .intial-goal .intial-goal-content, .intial-goal .intial-goal-img{width: 100%;}
+  .intial-goal .intial-goal-content{padding-right: 0; padding-bottom: 20px;}
+  .unique-elements .repeter-images{grid-template-columns: repeat(1, 1fr);}
+  .unique-elements .repeter-images .images-item .mainItemDiv{height: auto;}
+  .succes-story .succes-inner .success-output, .succes-story .succes-inner .success-content{max-width: 100%;}
+  .succes-story h2{margin-bottom: 20px;}
+  .succes-story .succes-inner .success-output{padding-right: 0; padding-bottom: 20px;}
+  .succes-story .success-item-list{justify-content: center;}
+}
+
+@media only screen and (max-width: 575px) {
+  .delevery-outline .delevery-content .items-repeter{ grid-template-columns: repeat(1, 1fr);}
+  .delevery-outline .imgObj{display: none;}
+  .solution-section .solution-inner{padding: 20px;}
+  .solution-section .review .imgObj {bottom: calc(100% - 24px); right: 29px; width: 50px; }
 }
