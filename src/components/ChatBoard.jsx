@@ -225,15 +225,15 @@ const ChatBoard = ({
 
   const handleEnd =async ({ steps}) => {    
     const { getName, projectType, getPhoneNumber,getEmail,preferredTimeOptions } = steps;
-    e.preventDefault();
-    formData.ip = userIp;
-    formData.country = userCountry;
-    formData.username = getName?.value;
-    formData.projectType = projectType?.value;
-    formData.email = getEmail?.value ?? "";
-    formData.phone = getPhoneNumber?.value ?? "";
-    formData.preferredTimeOptions = getPhoneNumber?.preferredTimeOptions;
-    
+    let formData = {
+      ip: "",
+      country :"",
+      username :getName?.value,
+      projectType :projectType?.value,
+      email : getEmail?.value ?? "",
+      phone : getPhoneNumber?.value ?? "",
+      preferredTimeOptions : preferredTimeOptions?.value,
+    }
       try {
         const response = await fetch(
           `${BASE_URL}/wp-json/custom/v1/chat-data-submit`,
@@ -253,7 +253,7 @@ const ChatBoard = ({
       } catch (error) {
         console.error('Error submitting form:', error);
       }
-    
+
     
   }
   return (
