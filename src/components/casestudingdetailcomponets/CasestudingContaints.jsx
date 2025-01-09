@@ -45,6 +45,7 @@ const CasestudingContaints = ({
       behavior: 'auto',
     });
   };  
+  console.log("CaseStudycptData",CaseStudycptData);
   
   return (
     <div className="casestuding_containts">
@@ -133,29 +134,28 @@ const CasestudingContaints = ({
         <div className="about_client ">
         <div className="industry_col">
             <div className="project-details">
-              <h3>About The Client</h3>
+              <h3>{CaseStudycptData.acf.about_project_title}</h3>
               <div className='items-details'>
                 <h4>Industry :</h4>
                 <ul className="d_flex industryList">
                 {CaseStudycptData?.industries?.map((caseItem, index) => (
                   <li key={index}>
-                    <Link target='blank'
-                      href={""}
-                      // href={`${ReplaceDomain(baseUrl,`${baseUrl}/industry/${caseItem?.slug}`)}`}
+                    <a target='blank'
+                      href={`/industry/${caseItem?.slug}`}
                     >
                       {caseItem?.name}
-                      </Link>
+                      </a>
                   </li>
                 ))}
               </ul>
               </div>
               <div className='items-details'>
                 <h4>Sector :</h4>
-                <span>Sustainable Fashion</span>
+                <span>{CaseStudycptData?.acf?.sector}</span>
               </div>
               <div className='items-details'>
                 <h4>Niche :</h4>
-                <span>Apparel and Textiles</span>
+                <span>{CaseStudycptData?.acf?.niche}</span>
               </div>
               <div className='items-details'>
                 <h4>Country :</h4>
@@ -182,7 +182,7 @@ const CasestudingContaints = ({
                 </ul>
                 <div className='teamSize'>
                   <h4>Team Size :</h4>
-                  <span>6 Members (Backend developer-2, Frontend developer-1, GSAP animator-1, QA-1, Project manager-1)</span>
+                  <span>{CaseStudycptData?.acf?.team_size}</span>
                 </div>
               </div>
             )}
