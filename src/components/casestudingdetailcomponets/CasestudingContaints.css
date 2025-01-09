@@ -85,7 +85,7 @@
 }
 
 .about_client {
-  padding: 50px 0 120px;
+  padding: 50px 0 70px;
   align-items: flex-start;
 }
 .about_client .left_col {
@@ -115,7 +115,28 @@
   background-color: var(--lightblue);
   padding: 50px;
   border-radius: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
+.about_client .project-details{width: 100%; max-width: 25%; padding-right: 30px; margin-right: 30px; border-right: 1px dashed rgb(0 0 0 / 20%)}
+.about_client .project-details h3{font-size: 48px; margin-bottom: 15px; color: var(--black);}
+.about_client .project-details a{color: #424242; font-weight: 500; font-size: 21px;}
+.about_client .project-details span{font-weight: 500; font-size: 21px; color: #424242;}
+.about_client .project-details ul li{font-size: 21px;}
+.about_client .project-details ul.industryList li{position: relative; margin-right: 5px;}
+.about_client .project-details ul.industryList li:not(:last-child)::after{content: ', ';}
+.about_client .project-details .items-details{display: flex;}
+.about_client .project-details .items-details:not(:last-child){margin-bottom: 12px;}
+.about_client .project-details .items-details h4{font-size: 21px; width: 120px;}
+.about_client .project-details .items-details .map-data{display: flex; align-items: center;}
+.about_client .project-details .items-details .map-data img{width: 15px; margin-right: 5px;}
+.about_client .technology{width: 100%; max-width: calc(75% - 30px);}
+.about_client .technology ul.technologyList{display: flex; flex-wrap: wrap; gap: 20px;}
+.about_client .technology ul.technologyList li a{font-size: 21px; line-height: normal; position: relative; padding: 13px 30px; border-radius: 80px; overflow: hidden; background-color: #fff; color: var(--black);font-weight: 500;}
+.about_client .technology ul.technologyList li a:hover{color: #fff; background-color: #6A65F6;}
+.about_client .technology .teamSize{display: flex; align-items: center; margin-top: 30px; font-size: 21px; color: #424242;}
+.about_client .technology .teamSize h4{margin-bottom: 0; margin-right: 20px; color: #000;}
+
 .about_client .ndustry {
   border-bottom: 1px dashed var(--black);
   padding-bottom: 15px;
@@ -147,22 +168,9 @@
   margin-right: 11px;
 }
 .about_client .technology h4 {
-  font-size: 26px;
-  line-height: 69px;
-  font-weight: 900;
-}
-.about_client .technology ul {
-}
-.about_client .technology ul li {
-  width: 22%;
-  margin-bottom: 15px;
-  margin-right: 4%;
-}
-.about_client .technology ul li img {
-  display: block;
-}
-.about_client .technology ul li:nth-child(4n) {
-  margin-right: 0px;
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .about_client .ndustry .industry-group,
 .about_client .ndustry .service-group {

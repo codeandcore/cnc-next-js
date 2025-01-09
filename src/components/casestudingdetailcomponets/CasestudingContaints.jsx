@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CasestudingContaints.css';
 import Link from 'next/link';
+import { ReplaceDomain } from '@/ReplaceDomain';
 
 
 const CasestudingContaints = ({
@@ -17,6 +18,14 @@ const CasestudingContaints = ({
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [resetChildMenu, setResetChildMenu] = useState(false);
   const leftColRef = useRef(null);
+  const [baseUrl, setBaseUrl] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const url = window.location.origin; // Extracts the base URL
+      setBaseUrl(url);
+    }
+  }, []);
 
   // Hook to handle video elements in .left_col
   useEffect(() => {
@@ -35,7 +44,7 @@ const CasestudingContaints = ({
       top: 0, // Adjust the value as needed
       behavior: 'auto',
     });
-  };
+  };  
   
   return (
     <div className="casestuding_containts">
@@ -122,30 +131,62 @@ const CasestudingContaints = ({
       
 
         <div className="about_client ">
-        {/* <div className="industry_col">
-            <div className="industry">
-              
+        <div className="industry_col">
+            <div className="project-details">
+              <h3>About The Client</h3>
+              <div className='items-details'>
+                <h4>Industry :</h4>
+                <ul className="d_flex industryList">
+                {CaseStudycptData?.industries?.map((caseItem, index) => (
+                  <li key={index}>
+                    <Link target='blank'
+                      href={""}
+                      // href={`${ReplaceDomain(baseUrl,`${baseUrl}/industry/${caseItem?.slug}`)}`}
+                    >
+                      {caseItem?.name}
+                      </Link>
+                  </li>
+                ))}
+              </ul>
+              </div>
+              <div className='items-details'>
+                <h4>Sector :</h4>
+                <span>Sustainable Fashion</span>
+              </div>
+              <div className='items-details'>
+                <h4>Niche :</h4>
+                <span>Apparel and Textiles</span>
+              </div>
+              <div className='items-details'>
+                <h4>Country :</h4>
+                <div className='map-data'>
+                  <img src={CaseStudycptData?.acf?.location_icon?.url} alt={CaseStudycptData?.acf?.location_icon?.title}></img>
+                  <span>{CaseStudycptData?.acf?.cases_location}</span>
+              </div>
+              </div>
             </div>
 
             {CaseStudycptData?.acf?.case_technology_used && (
               <div className="technology">
-                <h4>Technologies :</h4>
-                <ul className="d_flex d_flex_js">
+                <h4>Technologies:</h4>
+                <ul className="technologyList">
                   {CaseStudycptData.acf.case_technology_used.map(
-                    (technology, index) => (
-                      console.log("technology",technology),
-                      
+                    (technology, index) => (                      
                       <li key={index}>
                         <a href={`/technologies/${technology.technology_link.post_name}`}>
-                          
+                          {technology?.technology_link?.post_title}
                         </a>
                       </li>
                     ),
                   )}
                 </ul>
+                <div className='teamSize'>
+                  <h4>Team Size :</h4>
+                  <span>6 Members (Backend developer-2, Frontend developer-1, GSAP animator-1, QA-1, Project manager-1)</span>
+                </div>
               </div>
             )}
-          </div> */}
+          </div>
           {/* <div className="left_col" ref={leftColRef}>
             {CaseStudycptData?.content && (
               <div
