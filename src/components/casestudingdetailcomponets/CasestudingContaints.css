@@ -114,6 +114,11 @@
   background-color: var(--lightblue);
   padding: 50px;
   border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.about_client .industry_col .project-details .items-details {
+  display: flex;
 }
 .about_client .ndustry {
   border-bottom: 1px dashed var(--black);

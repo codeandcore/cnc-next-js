@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CasestudingContaints.css';
 import Link from 'next/link';
+import { ReplaceDomain } from '@/ReplaceDomain';
 
 
 const CasestudingContaints = ({
@@ -17,6 +18,14 @@ const CasestudingContaints = ({
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [resetChildMenu, setResetChildMenu] = useState(false);
   const leftColRef = useRef(null);
+  const [baseUrl, setBaseUrl] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const url = window.location.origin; // Extracts the base URL
+      setBaseUrl(url);
+    }
+  }, []);
 
   // Hook to handle video elements in .left_col
   useEffect(() => {
@@ -36,6 +45,7 @@ const CasestudingContaints = ({
       behavior: 'auto',
     });
   };
+console.log("CaseStudycptData",CaseStudycptData);
   
   return (
     <div className="casestuding_containts">
@@ -123,8 +133,37 @@ const CasestudingContaints = ({
 
         <div className="about_client ">
         <div className="industry_col">
-            <div className="ndustry">
-              
+            <div className="project-details">
+              <h3>About The Client</h3>
+              <div className='items-details'>
+                <h4>Industry :</h4>
+                <ul className="d_flex">
+                {CaseStudycptData?.industries?.map((caseItem, index) => (
+                  <li key={index}>
+                    <Link target='blank'
+                      href={`${ReplaceDomain(baseUrl,`${baseUrl}/industry/${caseItem?.slug}`)}`}
+                    >
+                      {caseItem?.name}
+                      </Link>
+                  </li>
+                ))}
+              </ul>
+              </div>
+              <div className='items-details'>
+                <h4>Sector :</h4>
+                <p>Sustainable Fashion</p>
+              </div>
+              <div className='items-details'>
+                <h4>Niche :</h4>
+                <p>Apparel and Textiles</p>
+              </div>
+              <div className='items-details'>
+                <h4>Country :</h4>
+                <div className='map-data'>
+                  <img src={CaseStudycptData?.acf?.location_icon?.url} alt={CaseStudycptData?.acf?.location_icon?.title}></img>
+                  <p>{CaseStudycptData?.acf?.cases_location}</p>
+              </div>
+              </div>
             </div>
 
             {CaseStudycptData?.acf?.case_technology_used && (
@@ -132,13 +171,10 @@ const CasestudingContaints = ({
                 <h4>TECHNOLOGY USED</h4>
                 <ul className="d_flex d_flex_js">
                   {CaseStudycptData.acf.case_technology_used.map(
-                    (technology, index) => (
+                    (technology, index) => (                      
                       <li key={index}>
                         <a href={`/technologies/${technology.technology_link.post_name}`}>
-                          <img
-                            src={technology.c_technology_logo.url}
-                            alt="TECHNOLOGY USED"
-                          />
+                          {technology?.technology_link?.post_title}
                         </a>
                       </li>
                     ),
