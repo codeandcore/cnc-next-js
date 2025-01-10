@@ -76,7 +76,7 @@ const ExploreData = ({
         {CaseStudycptData.map((item, index) => (
           <div key={index} className="colin">
             <div className="top_col d_flex">
-              <h3>{item.case_study_post_title}</h3>
+              <h3>{item?.title}</h3>
               <div className="case d_flex">
                 {item.acf.tag_logo && (
                   <span>
