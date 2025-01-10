@@ -59,68 +59,74 @@ const CasestudingContaints = ({
           </div>
           <em>Back to Portfolio</em>
         </Link>
-        <div className="project_title d_flex">
-          {CaseStudycptData?.acf?.detail_post_title && (
-            <h1>{CaseStudycptData?.acf?.detail_post_title}</h1>
-          )}
+
+        <div className='mainProjectHeader'>
+          <div className="project_title">
+            {CaseStudycptData?.acf?.detail_post_title && (
+              <h1>{CaseStudycptData?.acf?.detail_post_title}</h1>
+            )}
+
+            {CaseStudycptData?.acf?.tag_logo  &&
+            <div className="case_awward d_flex">
+              <div className="case d_flex">
+                {CaseStudycptData?.acf?.tag_logo && (
+                  <span>
+                    <img
+                      src={CaseStudycptData?.acf.tag_logo.url}
+                      alt={CaseStudycptData?.acf.tag_logo.name}
+                    />
+                  </span>
+                )}
+                {CaseStudycptData?.case_study_tags && (
+                  <ul className="d_flex">
+                    {CaseStudycptData.case_study_tags.map((caseItem, index) => (
+                      <li key={index}>{caseItem.name}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {CaseStudycptData?.acf?.award_logo && (
+                /* <div className='awward'>
+                      {CaseStudycptData.acf.award_logo.map((logoawd, index) => (
+                        logoawd.logo_url ? ( 
+                        <a href={logoawd.logo_url}><img src={logoawd.c_al_logo.url} key={index} alt={logoawd.c_al_logo.name}/></a>
+                        ) : null
+                      ))}        
+                  </div> */
+                <div className="awward">
+                  {CaseStudycptData.acf.award_logo.map((logoawd, index) =>
+                    logoawd.c_al_logo && logoawd.c_al_logo.url ? ( // Check if logo exists
+                      logoawd.logo_url ? ( // If URL exists, wrap in a link
+                        <a href={logoawd.logo_url} key={index} target="_blank">
+                          <img
+                            src={logoawd.c_al_logo.url}
+                            alt={logoawd.c_al_logo.name}
+                          />
+                        </a>
+                      ) : (
+                        // If no URL, just display the logo
+                        <img
+                          src={logoawd.c_al_logo.url}
+                          key={index}
+                          alt={logoawd.c_al_logo.name}
+                        />
+                      )
+                    ) : null, // If no logo, render nothing
+                  )}
+                </div>
+              )}
+            </div>}
+          </div>
           {CaseStudycptData?.acf?.c_right_side_logo && (
-            <div className="pro_logo d_flex d_flex_jc">
-              <img
-                src={CaseStudycptData?.acf?.c_right_side_logo.url}
-                alt={CaseStudycptData?.acf?.c_right_side_logo.name}
-              />
-            </div>
+              <div className="pro_logo d_flex d_flex_jc">
+                <img
+                  src={CaseStudycptData?.acf?.c_right_side_logo.url}
+                  alt={CaseStudycptData?.acf?.c_right_side_logo.name}
+                />
+              </div>
           )}
         </div>
-        {CaseStudycptData?.acf?.tag_logo  && <div className="case_awward d_flex">
-          <div className="case d_flex">
-            {CaseStudycptData?.acf?.tag_logo && (
-              <span>
-                <img
-                  src={CaseStudycptData?.acf.tag_logo.url}
-                  alt={CaseStudycptData?.acf.tag_logo.name}
-                />
-              </span>
-            )}
-            {CaseStudycptData?.case_study_tags && (
-              <ul className="d_flex">
-                {CaseStudycptData.case_study_tags.map((caseItem, index) => (
-                  <li key={index}>{caseItem.name}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-          {CaseStudycptData?.acf?.award_logo && (
-            /* <div className='awward'>
-                  {CaseStudycptData.acf.award_logo.map((logoawd, index) => (
-                    logoawd.logo_url ? ( 
-                     <a href={logoawd.logo_url}><img src={logoawd.c_al_logo.url} key={index} alt={logoawd.c_al_logo.name}/></a>
-                    ) : null
-                  ))}        
-              </div> */
-            <div className="awward">
-              {CaseStudycptData.acf.award_logo.map((logoawd, index) =>
-                logoawd.c_al_logo && logoawd.c_al_logo.url ? ( // Check if logo exists
-                  logoawd.logo_url ? ( // If URL exists, wrap in a link
-                    <a href={logoawd.logo_url} key={index} target="_blank">
-                      <img
-                        src={logoawd.c_al_logo.url}
-                        alt={logoawd.c_al_logo.name}
-                      />
-                    </a>
-                  ) : (
-                    // If no URL, just display the logo
-                    <img
-                      src={logoawd.c_al_logo.url}
-                      key={index}
-                      alt={logoawd.c_al_logo.name}
-                    />
-                  )
-                ) : null, // If no logo, render nothing
-              )}
-            </div>
-          )}
-        </div>}
+
         {CaseStudycptData?.acf.cases_short_description && (
           <label
             dangerouslySetInnerHTML={{

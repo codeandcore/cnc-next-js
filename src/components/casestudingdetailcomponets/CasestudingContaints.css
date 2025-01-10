@@ -1,9 +1,6 @@
 .casestuding_containts {
   padding-top: 181px;
 }
-.casestuding_containts .project_title{
-  align-items: flex-start;
-}
 .casestuding_containts .btnarrow {
   margin-bottom: 30px;
 }
@@ -13,19 +10,29 @@
 .casestuding_containts .btnarrow img {
   transform: rotate(180deg);
 }
+.mainProjectHeader{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end;
+  gap: 30px;
+  padding-bottom: 35px;
+}
 .casestuding_containts h1 {
   color: var(--black);
-  max-width: 960px;
   font-size: 64px;
+  margin-bottom: 24px;
 }
 .casestuding_containts .pro_logo {
   border: 1px solid var(--black);
   border-radius: 180px;
   padding: 15px 30px;
+  height: 148px;
+  width: 100%;
+  max-width: 430px;
 }
 .casestuding_containts .pro_logo img {
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
+  max-height: 100%;
 }
 
 .casestuding_containts label {
@@ -46,6 +53,7 @@
 }
 .casestuding_containts .case ul {
   justify-content: flex-start;
+  width:calc(100% - 46px);
 }
 .casestuding_containts .case li {
   color: var(--darktheme);
@@ -54,6 +62,7 @@
   border-right: 2px solid var(--darktheme);
   line-height: 13px;
   padding: 0 15px;
+  margin: 5px 0;
 }
 .casestuding_containts .case li:last-child {
   padding-right: 0px;
@@ -72,7 +81,6 @@
 }
 .case_awward {
   align-items: flex-end;
-  margin-top: 10px;
 }
 .case_awward .awward a:not(:last-child) {
   margin-right: 15px;
@@ -86,7 +94,7 @@
 }
 
 .about_client {
-  padding: 50px 0 70px;
+  padding: 35px 0;
   align-items: flex-start;
 }
 .about_client .left_col {
@@ -200,7 +208,7 @@
 }
 
 /* Intial goal */
-.intial-goal{background-color: #000; padding: 70px 0;}
+.intial-goal{background-color: #000; padding: 70px 0; margin: 35px 0;}
 .intial-goal .intial-inner{display: flex; align-items: center; flex-wrap: wrap;}
 .intial-goal .intial-goal-content{width: 60.5%; padding-right: 30px;}
 .intial-goal .intial-goal-content h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
@@ -208,11 +216,11 @@
 .intial-goal .intial-goal-img{width: 39.5%; text-align: center;}
 
 /* Full banner */
-.portfolio-image-section{padding: 70px 0;}
+.portfolio-image-section{padding: 35px 0;}
 .portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px;}
 
 /* pain-area-section */
-.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover; background-repeat: no-repeat;}
+.pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover; background-repeat: no-repeat; margin: 35px 0;}
 .pain-area-section h2{color: #fff; text-transform: capitalize; margin-bottom: 15px;}
 .pain-area-section .pain-area-inner{display: flex; align-items: center; flex-wrap: wrap;}
 .pain-area-section .pain-area-content{width: 50%; padding-right: 30px; line-height: 1.8;}
@@ -222,7 +230,7 @@
 .pain-area-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 /* developing-section */
-.developing-section{padding: 70px 0;}
+.developing-section{padding: 35px 0;}
 .developing-section h2{text-transform: capitalize; margin-bottom: 15px;}
 .developing-section .developing-inner{display: flex; align-items: center; flex-wrap: wrap;}
 .developing-section .developing-content{width: 50%; padding-right: 30px; line-height: 1.8;}
@@ -232,7 +240,7 @@
 .developing-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
 /* delevery-outline */
-.delevery-outline{background-color: #EFF1FF; padding: 70px 0; position: relative;}
+.delevery-outline{background-color: #EFF1FF; padding: 70px 0; position: relative; margin: 35px 0;} 
 .delevery-outline h2{text-transform: capitalize; margin-bottom: 50px;}
 .delevery-outline .delevery-content .items-repeter{display: grid; grid-template-columns: repeat(3, 1fr);  gap: 44px;} 
 .delevery-outline .delevery-content .repeterItem p{color: #424242; font-weight: 500; line-height: 1.8;}
@@ -240,7 +248,7 @@
 .delevery-outline .imgObj { position: absolute; bottom: 100%; right: 152px; }
 
 /* challenging-section */
-.challenging-section{padding: 70px 0;}
+.challenging-section{padding: 35px 0;}
 .challenging-section h2{text-transform: capitalize;}
 .challenging-section .challenging-inner .challenging-img .pain-area-img{width: 100%; max-width: 700px;}
 .challenging-section .challenging-inner{display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px;}
@@ -248,6 +256,7 @@
 .challenging-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
 .challenging-section ul li::before{background: #8462d3; background: linear-gradient(90deg, #8462d3 3%, #4396ea); border-radius: 50%; content: ''; height: 10px; left: 0; margin: auto; position: absolute; top: 11px; width: 10px;}
 
+.solution-section{padding: 35px 0;}
 .solution-section .solution-inner{padding: 60px; background-color: #EFF1FF; border-radius: 20px;display: grid; grid-template-columns: repeat(2, 1fr);  gap: 44px; align-items: flex-start;}
 .solution-section h2{margin-bottom: 15px; align-items: flex-start;}
 .solution-section ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
@@ -260,7 +269,7 @@
 .solution-section .review .author-details span{font-size: 21px; font-weight: bold;}
 .solution-section .review .imgObj{position: absolute; bottom: calc(100% - 38px); right: 80px;}
 
-.unique-elements{padding: 70px 0;}
+.unique-elements{padding: 35px 0;}
 .unique-elements h2{text-transform: capitalize; margin-bottom: 30px;}
 .unique-elements .repeter-images{display: grid; grid-template-columns: repeat(2, 1fr);  gap: 45px;}
 .unique-elements .repeter-images .images-item{background-color: #EFF1FF; border-radius: 20px; padding: 36px;}
@@ -273,7 +282,7 @@
 .unique-elements .repeter-images .images-item:hover .itemContent{transform: translateY(0); transition-delay: 0.1s;}
 
 /* succes-story */
-.succes-story{padding-bottom: 70px;}
+.succes-story{padding: 35px 0 70px;}
 .succes-story h2{margin-bottom: 50px;}
 .succes-story .succes-inner{display: flex; flex-wrap: wrap;}
 .succes-story ul li{font-size: 18px; font-weight: 400; position: relative; line-height: 1.8; margin-bottom: 15px; padding-left: 25px; color: #424242;}
@@ -289,20 +298,17 @@
 @media only screen and (max-width: 1750px) {
   .about_client .industry_col{padding: 30px;}
   .about_client .project-details h3{font-size: 36px;}
-  .about_client ,.intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 50px 0;}
+  .mainProjectHeader{padding-bottom: 25px;}
+  .about_client, .portfolio-image-section, .developing-section, .challenging-section, .solution-section, .unique-elements{padding: 25px 0;}
+  .intial-goal, .pain-area-section, .delevery-outline{margin: 25px 0; padding: 40px 0;}
+  .succes-story{padding: 25px 0 50px;}
   .unique-elements .repeter-images .images-item .mainItemDiv{height: 23.4375vw;}
 }
 
 @media only screen and (max-width: 1599px) {
   .casestuding_containts h1 {
-    max-width: 640px;
     font-size: 50px;
   }
-  .casestuding_containts .pro_logo {
-    width: auto;
-    height: auto;
-  }
-  .casestuding_containts .pro_logo img{max-width: 170px;}
   .casestuding_containts .btnarrow {
     margin-bottom: 10px;
   }
@@ -315,19 +321,13 @@
   .about_client .technology ul.technologyList li:last-child{flex-basis: auto;}
   .delevery-outline .imgObj{bottom: 94%;}
   .succes-story .success-item-list .images-item .itemImage{width: 115px; height: 115px;}
-  .succes-story{padding-bottom: 30px  ;}
+  .casestuding_containts .pro_logo{max-width: 320px;height: 120px;}
 }
 
 
 @media only screen and (max-width: 1400px) {
   .casestuding_containts .btnarrow {
     margin-bottom: 20px;
-  }
-  .casestuding_containts h1 {
-    max-width: 560px;
-  }
-  .casestuding_containts .pro_logo img {
-    max-width: 150px;
   }
   .case_awward .awward img {
     max-width: 150px;
@@ -381,12 +381,13 @@
   .succes-story .success-item-list{gap: 20px;}
   .succes-story .success-item-list .images-item{width: 100px;}
   .succes-story .success-item-list .images-item .itemImage{width: 100px; height: 100px;}
+  .casestuding_containts .pro_logo{max-width: 300px; height: 100px;}
+  .casestuding_containts .pro_logo img{width: 150px;}
 }
 
 @media only screen and (max-width: 1199px) {
   .about_client .industry_col{border-radius: 20px;}
   .casestuding_containts h1{font-size: 40px;}
-  .casestuding_containts .pro_logo img{max-width: 130px;}
   .about_client .project-details{max-width: 40%;}
   .about_client .project-details h3{font-size: 30px;}
   .delevery-outline h2{margin-bottom: 30px;}
@@ -400,19 +401,20 @@
   .unique-elements .repeter-images .images-item .itemContent h3{font-size: 20px;}
   .unique-elements .repeter-images .images-item .itemContent p{line-height: normal;}
   .succes-story .success-item-list .images-item .itemContent span{font-size: 13px;}
+  .casestuding_containts h1{margin-bottom: 10px;}
 }
 
 @media only screen and (max-width: 1023px) {
-  .casestuding_containts h1 {
-    max-width: 480px;
-  }
   .about_client .left_col {
     width: calc(100% - 280px);
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .about_client, .intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 30px 0;}
+  .mainProjectHeader{padding-bottom: 15px;}
+  .about_client, .portfolio-image-section, .developing-section, .challenging-section, .solution-section, .unique-elements{padding: 15px 0;}
+  .intial-goal, .pain-area-section, .delevery-outline{margin: 15px 0; padding: 30px 0;}
+  .succes-story{padding: 15px 0 30px;}
   .casestuding_containts{padding-top: 110px;}
   .casestuding_containts .pro_logo{padding: 10px 20px;}
   .about_client .industry_col{padding: 20px;}
@@ -425,6 +427,7 @@
   .pain-area-section .pain-area-content{width: 100%; padding-right: 0; padding-bottom: 20px;}
   .pain-area-section .pain-area-img{width: 100%;}
   .developing-section .developing-content, .developing-section .developing-img{width: 100%; padding-right: 0;}
+  .developing-section .developing-content{padding-bottom: 25px;}
   .delevery-outline .imgObj { bottom: 96%; width: 90px; right: 32px;}
   .delevery-outline .delevery-content .items-repeter{grid-template-columns: repeat(2, 1fr); gap: 20px;}
   .challenging-section .challenging-inner, .solution-section .solution-inner{grid-template-columns: repeat(1, 1fr); gap: 20px;}
@@ -433,6 +436,8 @@
   .unique-elements .repeter-images .images-item{border-radius: 15px;}
   .succes-story .success-item-list{flex-wrap: wrap;}
   .explorework_sec .top_title .leftcol{width: 100%;}
+  .casestuding_containts .pro_logo { max-width: 200px; height: 80px; }
+  .casestuding_containts .pro_logo img { width: 100px; }
 }
 
 @media only screen and (max-width: 767px) {
@@ -448,17 +453,8 @@
   .casestuding_containts h1 {
     max-width: 100%;
     font-size: 26px;
-    margin-bottom: 15px;
   }
   .about_client .left_col h2 {
-    margin-bottom: 5px;
-  }
-  .casestuding_containts .pro_logo img {
-    max-width: 90px;
-  }
-  .casestuding_containts .pro_logo {
-    margin: 0 auto;
-    margin-left: 0;
     margin-bottom: 5px;
   }
   .case_awward {
@@ -545,14 +541,13 @@
   .succes-story h2{margin-bottom: 20px;}
   .succes-story .succes-inner .success-output{padding-right: 0; padding-bottom: 20px;}
   .succes-story .success-item-list{justify-content: center;}
-  .casestuding_containts .pro_logo { padding: 5px 10px; }
   .about_client .project-details h3{font-size: 20px;}
   .about_client .technology ul.technologyList{gap: 5px;}
   .about_client .technology ul.technologyList li a{font-size: 14px; padding: 10px 15px;}
   .portfolio-image-section .image-inner {border-radius: 15px;}
   .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li, .about_client .project-details ul li{font-size: 14px; line-height: 20px;}
   .intial-goal .intial-goal-img{width: 40%; margin-left: auto;}
-  .developing-section ul li, .challenging-section ul li, .solution-section ul li, .pain-area-section ul li, .succes-story ul li{padding-left: 16px;}
+  .developing-section ul li, .challenging-section ul li, .solution-section ul li, .pain-area-section ul li, .succes-story ul li{padding-left: 16px; margin-bottom: 10px;}
   .developing-section ul li::before, .challenging-section ul li::before, .solution-section ul li::before, .pain-area-section ul li::before, .succes-story ul li::before{width: 7px; height: 7px; top: 6px;}
   .delevery-outline .delevery-content .repeterItem .countItem{width: 45px; height: 45px; margin-bottom: 10px; font-size: 20px;}
   .solution-section .solution-inner{border-radius: 0;}
@@ -563,7 +558,6 @@
   .solution-section .review .review-logo{width: 40%;}
   .solution-section .review .author-details span{font-size: 14px;}
   .solution-section .solution-inner { padding: 24px; }
-  .delevery-outline .delevery-content .items-repeter{ grid-template-columns: repeat(1, 1fr);}
   .delevery-outline .imgObj{display: none;}
   .solution-section .solution-inner{padding: 20px;}
   .casestudyMain h2, .casestudyMain .h2{font-size: 20px !important; margin-bottom: 7px;}
@@ -580,19 +574,21 @@
   .succes-story .success-item-list .images-item .itemContent span{font-size: 12px;}
   .succes-story{padding-bottom: 15px;}
   .delevery-outline .delevery-content .repeterItem .countItem{margin-bottom: 5px;}
+  .casestuding_containts .btnarrow em{display: none;}
+  .casestuding_containts .pro_logo { max-width: 150px; height: 50px; padding: 5px 10px;}
+  .casestuding_containts .pro_logo img { width: 70px; }
 }
 
 @media only screen and (max-width: 575px) {
   .casestuding_containts .pro_logo{position: absolute; top: 0; right: 15px; margin-bottom: 0;}
+  .delevery-outline .delevery-content .items-repeter{ grid-template-columns: repeat(1, 1fr);}
+  .casestuding_containts .pro_logo{ max-width: 100px; height: 38px;}
 }
 
 @media only screen and (max-width: 359px) {
   .casestuding_containts h1{width: 100%;}
   .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li, .about_client .project-details ul li{font-size: 12px;}
-  .casestuding_containts .btnarrow em{display: none;}
-  .casestuding_containts .pro_logo img{max-width: 80px;}
   .casestuding_containts h1{margin-bottom: 5px;}
-  .about_client, .intial-goal, .portfolio-image-section, .pain-area-section, .developing-section, .delevery-outline, .challenging-section, .unique-elements{padding: 20px 0;}
   .about_client .project-details .items-details h4{width: 65px; margin-right: 5px;}
   .portfolio-image-section .image-inner {border-radius: 0px; border: 1px solid #e1e1e1; }
   .pain-area-section h2{margin-bottom: 5px;}
