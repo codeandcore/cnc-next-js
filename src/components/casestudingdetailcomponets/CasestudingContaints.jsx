@@ -72,7 +72,7 @@ const CasestudingContaints = ({
             </div>
           )}
         </div>
-        <div className="case_awward d_flex">
+        {CaseStudycptData?.acf?.tag_logo  && <div className="case_awward d_flex">
           <div className="case d_flex">
             {CaseStudycptData?.acf?.tag_logo && (
               <span>
@@ -120,7 +120,7 @@ const CasestudingContaints = ({
               )}
             </div>
           )}
-        </div>
+        </div>}
         {CaseStudycptData?.acf.cases_short_description && (
           <label
             dangerouslySetInnerHTML={{
@@ -130,29 +130,29 @@ const CasestudingContaints = ({
         )}
       
 
-        <div className="about_client ">
-        <div className="industry_col">
+        {CaseStudycptData?.industries && CaseStudycptData?.acf?.case_technology_used && <div className="about_client ">
+          <div className="industry_col">
             <div className="project-details">
               <h3>{CaseStudycptData.acf.about_project_title}</h3>
-          {CaseStudycptData?.industries && CaseStudycptData?.industries?.length!==0 &&    <div className='items-details'>
+              {CaseStudycptData?.industries && CaseStudycptData?.industries?.length !== 0 && <div className='items-details'>
                 <h4>Industry :</h4>
                 <ul className="d_flex industryList">
-                {CaseStudycptData?.industries?.map((caseItem, index) => (
-                  <li key={index}>
-                    <a target='blank'
-                      href={`/industry/${caseItem?.slug}`}
-                    >
-                      {caseItem?.name}
+                  {CaseStudycptData?.industries?.map((caseItem, index) => (
+                    <li key={index}>
+                      <a target='blank'
+                        href={`/industry/${caseItem?.slug}`}
+                      >
+                        {caseItem?.name}
                       </a>
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                </ul>
               </div>}
               {CaseStudycptData?.acf?.sector && <div className='items-details'>
                 <h4>Sector :</h4>
                 <span>{CaseStudycptData?.acf?.sector}</span>
               </div>}
-             {CaseStudycptData?.acf?.niche && <div className='items-details'>
+              {CaseStudycptData?.acf?.niche && <div className='items-details'>
                 <h4>Niche :</h4>
                 <span>{CaseStudycptData?.acf?.niche}</span>
               </div>}
@@ -161,7 +161,7 @@ const CasestudingContaints = ({
                 <div className='map-data'>
                   <img src={CaseStudycptData?.acf?.location_icon?.url} alt={CaseStudycptData?.acf?.location_icon?.title}></img>
                   <span>{CaseStudycptData?.acf?.cases_location}</span>
-              </div>
+                </div>
               </div>}
             </div>
 
@@ -170,7 +170,7 @@ const CasestudingContaints = ({
                 <h4>Technologies:</h4>
                 <ul className="technologyList">
                   {CaseStudycptData.acf.case_technology_used.map(
-                    (technology, index) => (                      
+                    (technology, index) => (
                       <li key={index}>
                         <a href={`/technologies/${technology.technology_link.post_name}`}>
                           {technology?.technology_link?.post_title}
@@ -179,7 +179,7 @@ const CasestudingContaints = ({
                     ),
                   )}
                 </ul>
-               {CaseStudycptData?.acf?.team_size && <div className='teamSize'>
+                {CaseStudycptData?.acf?.team_size && <div className='teamSize'>
                   <h4>Team Size :</h4>
                   <span>{CaseStudycptData?.acf?.team_size}</span>
                 </div>}
@@ -196,7 +196,7 @@ const CasestudingContaints = ({
             )}
           </div> */}
           
-        </div>
+        </div>}
       </div>
     </div>
   );

@@ -77,7 +77,7 @@ const ExploreData = ({
           <div key={index} className="colin">
             <div className="top_col d_flex">
               <h3>{item?.title}</h3>
-              <div className="case d_flex">
+              {item.case_study_tags?.length!==0  && <div className="case d_flex">
                 {item.acf.tag_logo && (
                   <span>
                     <img
@@ -93,7 +93,7 @@ const ExploreData = ({
                     ))}
                   </ul>
                 )}
-              </div>
+              </div>}
             </div>
             <div className="img">
               <Link

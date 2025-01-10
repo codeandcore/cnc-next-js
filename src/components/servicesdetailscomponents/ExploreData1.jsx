@@ -40,7 +40,7 @@ const ExploreData = ({ useSlider = false, Datak }) => {
             <div key={index} className="colin">
               <div className="top_col d_flex">
                 <h3>{item.title}</h3>
-                <div className="case d_flex">
+                {item.cases && item.cases!==0 && <div className="case d_flex">
                   <span>
                     <img src={item.fevicon} alt="" />
                   </span>
@@ -49,7 +49,7 @@ const ExploreData = ({ useSlider = false, Datak }) => {
                       <li key={index}>{caseItem}</li>
                     ))}
                   </ul>
-                </div>
+                </div>}
               </div>
               <div className="img">
                 <Link
