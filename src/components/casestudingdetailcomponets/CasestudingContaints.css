@@ -130,18 +130,18 @@
 .about_client .project-details{width: 100%; max-width: 25%; padding-right: 30px; margin-right: 30px; border-right: 1px dashed rgb(0 0 0 / 20%)}
 .about_client .project-details h3{font-size: 48px; margin-bottom: 15px; color: var(--black); text-transform: uppercase;}
 .about_client .project-details a{color: #9966FF; font-weight: 500; font-size: 21px;}
-.about_client .project-details span{font-weight: 500; font-size: 21px; color: #424242;}
+.about_client .project-details span{font-weight: 500; font-size: 20px; color: #424242;}
 .about_client .project-details ul li{font-size: 21px;}
 .about_client .project-details ul.industryList li{position: relative; margin-right: 5px;}
 .about_client .project-details ul.industryList li:not(:last-child)::after{content: ', ';}
 .about_client .project-details .items-details{display: flex;}
 .about_client .project-details .items-details:not(:last-child){margin-bottom: 12px;}
-.about_client .project-details .items-details h4{font-size: 21px; width: 120px;}
-.about_client .project-details .items-details .map-data{display: flex; align-items: center;}
-.about_client .project-details .items-details .map-data img{width: 15px; margin-right: 5px;}
+.about_client .project-details .items-details h4{font-size: 21px; width: 120px; min-width: 120px;}
+.about_client .project-details .items-details .map-data{display: flex; align-items: baseline;}
+.about_client .project-details .items-details .map-data img{width: 16px; margin-right: 6px; top: 2px; position: relative;}
 .about_client .technology{width: 100%; max-width: calc(75% - 30px);}
 .about_client .technology ul.technologyList{display: flex; flex-wrap: wrap; gap: 20px;}
-.about_client .technology ul.technologyList li:last-child{flex-basis: 100%;}
+/* .about_client .technology ul.technologyList li:last-child{flex-basis: 100%;} */
 .about_client .technology ul.technologyList li a{font-size: 21px; line-height: normal; position: relative; padding: 13px 30px; border-radius: 80px; overflow: hidden; background-color: #fff; color: var(--black);font-weight: 500;}
 .about_client .technology ul.technologyList li a:hover{color: #fff; background-color: #6A65F6;}
 .about_client .technology .teamSize{display: flex; margin-top: 30px; font-size: 21px; color: #424242;}
@@ -589,7 +589,7 @@
   .casestuding_containts h1{width: 100%;}
   .about_client .project-details .items-details h4, .about_client .project-details a, .about_client .project-details span, .about_client .technology ul.technologyList li a, .about_client .technology h4, .about_client .technology .teamSize, .pain-area-section ul li, .developing-section ul li, .challenging-section ul li, .solution-section ul li, .succes-story ul li, .about_client .project-details ul li{font-size: 12px;}
   .casestuding_containts h1{margin-bottom: 5px;}
-  .about_client .project-details .items-details h4{width: 65px; margin-right: 5px;}
+  .about_client .project-details .items-details h4{width: 65px; min-width: 65px; margin-right: 5px;}
   .portfolio-image-section .image-inner {border-radius: 0px; border: 1px solid #e1e1e1; }
   .pain-area-section h2{margin-bottom: 5px;}
 }
