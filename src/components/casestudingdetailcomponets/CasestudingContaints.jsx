@@ -49,7 +49,7 @@ const CasestudingContaints = ({
   return (
     <div className="casestuding_containts">
       <div className="wrapper">
-        {/* <Link
+        <Link
           href={`/portfolio/`}
           // onMouseEnter={() => handleMouseEnter('portfolio')}
           className="btn btnarrow"
@@ -58,7 +58,7 @@ const CasestudingContaints = ({
             <img src={"/assets/images/ellipse_arr.png"} alt="back" />
           </div>
           <em>Back to Portfolio</em>
-        </Link> */}
+        </Link>
 
         <div className='mainProjectHeader'>
           <div className="project_title">
