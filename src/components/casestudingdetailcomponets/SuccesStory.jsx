@@ -10,7 +10,7 @@ const SuccesStory = ({ title, items,content }) => {
             <div className='success-output'>
               {title &&  <h2>{title}</h2>}
                 <div className='success-item-list'>
-                    {items?.map((list,index) => {
+                    {items && items?.length!==0 && items?.map((list,index) => {
                         return (
                             <div className='images-item' key={index}>
                                 <div className='mainItemDiv'>
