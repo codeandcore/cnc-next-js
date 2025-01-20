@@ -1,13 +1,13 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import './ContactForm.css';
+"use client";
+import React, { useState, useEffect } from "react";
+import "./ContactForm.css";
 
-import dynamic from 'next/dynamic';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import BASE_URL from '@/config';
-const MapContainer = dynamic(() => import('./MapContainer'), { ssr: false });
+import dynamic from "next/dynamic";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import BASE_URL from "@/config";
+const MapContainer = dynamic(() => import("./MapContainer"), { ssr: false });
 
 const ContactForm = ({
   // BASE_URL,
@@ -31,31 +31,31 @@ const ContactForm = ({
 }) => {
   const latitude = google_map_latitude; // Example latitude
   const longitude = google_map_longitude; // Example longitude
-  const [captcha, setCaptcha] = useState('');
+  const [captcha, setCaptcha] = useState("");
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    industry: '',
-    website: '',
-    projectDescription: '',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    industry: "",
+    website: "",
+    projectDescription: "",
     service: [],
-    budget: '',
-    code: '',
+    budget: "",
+    code: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [userIp, setUserIp] = useState('');
-  const [userCountry, setUserCountry] = useState('');
+  const [userIp, setUserIp] = useState("");
+  const [userCountry, setUserCountry] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const location = useRouter();
 
   const generateCaptcha = () => {
     const characters =
-      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result = '';
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let result = "";
     for (let i = 0; i < 4; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
       result += characters[randomIndex];
@@ -73,7 +73,7 @@ const ContactForm = ({
   };
   const getUserIp = () => {
     axios
-      .get('https://api.ipify.org?format=json')
+      .get("https://api.ipify.org?format=json")
       .then((response) => {
         if (response && response.data && response.data.ip) {
           setUserIp(response.data.ip);
@@ -93,7 +93,7 @@ const ContactForm = ({
   };
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       const updatedServices = checked
         ? [...formData.service, value]
         : formData.service.filter((service) => service !== value);
@@ -101,12 +101,12 @@ const ContactForm = ({
         ...formData,
         service: updatedServices,
       });
-    } else if (type === 'radio') {
+    } else if (type === "radio") {
       setFormData({
         ...formData,
         budget: value,
       });
-    } else if (name === 'projectDescription') {
+    } else if (name === "projectDescription") {
       // handle projectDescription separately
       setFormData({
         ...formData,
@@ -125,7 +125,7 @@ const ContactForm = ({
     const queryParams1 = new URLSearchParams(location.search);
     formData.ip = userIp;
     formData.country = userCountry;
-    formData.source = queryParams1.get('source');
+    formData.source = queryParams1.get("source");
     formData.from_page = location.pathname;
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
@@ -134,23 +134,23 @@ const ContactForm = ({
         const response = await fetch(
           `${BASE_URL}/wp-json/custom/v1/contact-form`,
           {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
-          },
+          }
         );
         if (!response.ok) {
           setIsSubmit(false);
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setIsSubmit(false);
-        window.location.href = '/thankyou';
+        window.location.href = "/thankyou";
       } catch (error) {
         setIsSubmit(false);
-        console.error('Error submitting form:', error);
+        console.error("Error submitting form:", error);
       }
     }
   };
@@ -158,39 +158,39 @@ const ContactForm = ({
   const validateForm = (data) => {
     let errors = {};
     if (!data.name.trim()) {
-      errors.name = 'Name is required';
+      errors.name = "Name is required";
     }
     if (!data.email.trim()) {
-      errors.email = 'Email is required';
+      errors.email = "Email is required";
     }
     // if (!data.phone.trim()) {
     //     errors.phone = 'Phone is required';
     // }
     if (!data.phone.trim()) {
-      errors.phone = 'Phone is required';
+      errors.phone = "Phone is required";
     } else if (!/^\d{9,10}$/.test(data.phone)) {
-      errors.phone = 'Phone number should be 9 to 10 digits';
+      errors.phone = "Phone number should be 9 to 10 digits";
     }
     if (!data.company.trim()) {
-      errors.company = 'Company is required';
+      errors.company = "Company is required";
     }
     if (!data.industry.trim()) {
-      errors.industry = 'Industry is required';
+      errors.industry = "Industry is required";
     }
     if (!data.website.trim()) {
-      errors.website = 'Website is required';
+      errors.website = "Website is required";
     }
 
     // if (data.service.length === 0) {
     //     errors.checkbox = 'At least one service must be selected';
     // }
     if (!data.budget) {
-      errors.budget = 'Please select a budget option';
+      errors.budget = "Please select a budget option";
     }
     if (!data.code.trim()) {
-      errors.code = 'Captcha code is required';
+      errors.code = "Captcha code is required";
     } else if (data.code !== captcha) {
-      errors.code = 'Captcha code is incorrect';
+      errors.code = "Captcha code is incorrect";
     }
     return errors;
   };
@@ -242,7 +242,17 @@ const ContactForm = ({
           </div>
           {latitude && longitude && (
             <div className="googlemap">
-              <MapContainer latitude={latitude} longitude={longitude} />
+              <div style={{ width: "100%", maxWidth: "600px", margin: "auto" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.2151856884298!2d72.56236427498078!3d23.0892173138386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83c9798b2561%3A0xea359d55ac73c5fd!2sCode%20and%20core%20Tech%20LLP!5e0!3m2!1sen!2sin!4v1737405960700!5m2!1sen!2sin"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           )}
         </div>
@@ -305,7 +315,7 @@ const ContactForm = ({
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`in ${errors.name ? 'error' : ''}`}
+                  className={`in ${errors.name ? "error" : ""}`}
                 />
                 <input
                   type="email"
@@ -314,7 +324,7 @@ const ContactForm = ({
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`in ${errors.email ? 'error' : ''}`}
+                  className={`in ${errors.email ? "error" : ""}`}
                 />
               </div>
               <div className="colin d_flex">
@@ -325,7 +335,7 @@ const ContactForm = ({
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`in ${errors.phone ? 'error' : ''}`}
+                  className={`in ${errors.phone ? "error" : ""}`}
                   pattern="[0-9]{9,10}"
                 />
                 <input
@@ -334,7 +344,7 @@ const ContactForm = ({
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className={`in ${errors.company ? 'error' : ''}`}
+                  className={`in ${errors.company ? "error" : ""}`}
                 />
               </div>
               <div className="colin d_flex">
@@ -344,7 +354,7 @@ const ContactForm = ({
                   name="industry"
                   value={formData.industry}
                   onChange={handleChange}
-                  className={`in ${errors.industry ? 'error' : ''}`}
+                  className={`in ${errors.industry ? "error" : ""}`}
                 />
                 <input
                   type="text"
@@ -352,7 +362,7 @@ const ContactForm = ({
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
-                  className={`in ${errors.website ? 'error' : ''}`}
+                  className={`in ${errors.website ? "error" : ""}`}
                 />
               </div>
               <textarea
@@ -368,7 +378,7 @@ const ContactForm = ({
                   id="code"
                   placeholder="Input this code"
                   name="code"
-                  className={`in ${errors.code ? 'error' : ''}`}
+                  className={`in ${errors.code ? "error" : ""}`}
                   value={formData.code}
                   onChange={handleChange}
                 />
@@ -379,7 +389,7 @@ const ContactForm = ({
                   onClick={handleRegenerateCaptcha}
                 >
                   <img
-                    src={'../../assets/images/rotate-right.png'}
+                    src={"../../assets/images/rotate-right.png"}
                     alt="rotate-right"
                   />
                 </button>
@@ -389,10 +399,10 @@ const ContactForm = ({
                   {isSubmit ? (
                     <span
                       className="loaderdata"
-                      style={{ display: isSubmit ? 'inline-flex' : 'none' }}
+                      style={{ display: isSubmit ? "inline-flex" : "none" }}
                     >
                       <img
-                        src={'../../assets/images/sync.png'}
+                        src={"../../assets/images/sync.png"}
                         alt="rotate-right"
                       />
                     </span>
