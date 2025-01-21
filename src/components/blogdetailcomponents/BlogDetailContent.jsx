@@ -8,21 +8,21 @@ const BlogDetailContent = ({
 }) => {
 
   const [fullUrl, setFullUrl] = useState("");
-  const contentRef = useRef(null); // Ref to access blog content
+  const [htmlRendered, setHtmlRendered] = useState(blogData?.content?.rendered)
+  const contentRef = useRef(null);
   const [tocItems, setTocItems] = useState([]);
   const [activeTocItem, setActiveTocItem] = useState(null);
   useEffect(() => {
     const currentUrl = `${window.location.origin}${window.location.pathname}${window.location.search}${window.location.hash}`;
     setFullUrl(currentUrl);
   }, []);
-
-
   const extractHeadings = () => {
     const content = contentRef.current;
-    const headings = content.querySelectorAll('h2'); // Modify if you need more tags
-
+    const headings = content.querySelectorAll('h2'); 
+    console.log('headings', headings);
+    
     const toc = Array.from(headings)
-      .filter((heading) => heading.innerText.trim() !== '') // Ignore empty headings
+      .filter((heading) => heading.innerText.trim() !== '')
       .map((heading, index) => ({
         id: `heading-${index}`,
         text: heading.innerText.trim(),
@@ -39,12 +39,24 @@ const BlogDetailContent = ({
     });
   };
 
+  const addIdInHeading = (htmlString) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    const headings = doc.querySelectorAll("h2");
+    headings.forEach((heading, index) => {
+      heading.setAttribute("id", `heading-${index}`);
+    });
+    return doc.body.innerHTML;
+  }
 
   useEffect(() => {
     if (contentRef.current) {
-      extractHeadings(); // Call this once content is available
+      setTimeout(() => {
+        extractHeadings();
+        setHtmlRendered(addIdInHeading(blogData?.content?.rendered))
+      }, 200);
     }
-  }, [blogData]); // Run this whenever blogData changes
+  }, [blogData]);
 
   const handleSmoothScroll = (id, index) => {
     setActiveTocItem(index);
@@ -169,11 +181,12 @@ const BlogDetailContent = ({
                 </li>
               </ul>
             </div>
-            <div
+            {<div
               className="blog_detail_content"
+              id='blog_content'
               ref={contentRef}
-              dangerouslySetInnerHTML={{ __html: blogData.content?.rendered }}
-            ></div>
+              dangerouslySetInnerHTML={{ __html: htmlRendered }}
+            ></div>}
           </div>
         </div>
       </div>

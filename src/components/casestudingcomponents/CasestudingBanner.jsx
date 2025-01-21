@@ -37,6 +37,11 @@ const CasestudingBanner = ({
     label: industry.name,
     id: industry.term_id,
   }));
+  options.unshift({
+    value: 'All Industry',
+    label: 'All Industry',
+    id: 'all',
+  })
 
   useEffect(() => {
     setBackgroundhomebanner(
