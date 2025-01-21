@@ -15,7 +15,7 @@
   padding: 29px 25px 0 0;
 }
 .technolist_sec .left_col p {
-  color: var(--black);
+  color: #888;
   font-weight: 500;
 }
 .technolist_sec .all_link {
@@ -58,7 +58,7 @@
 }
 @media only screen and (max-width: 1399px) {
   .technolist_sec .colin {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   .technolist_sec .colin h2 {
     line-height: 1;

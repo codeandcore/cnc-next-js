@@ -77,23 +77,12 @@ const ExploreData = ({
           <div key={index} className="colin">
             <div className="top_col d_flex">
               <h3>{item?.title}</h3>
-              {item.case_study_tags?.length!==0  && <div className="case d_flex">
-                {item.acf.tag_logo && (
-                  <span>
-                    <img
-                      src={item.acf.tag_logo.url}
-                      alt={item.acf.tag_logo.name}
-                    />
-                  </span>
+               {item.acf.cases_location && (
+                  <div className="rcol d_flex">
+                    <img src={"/assets/images/location.svg"} width={20} alt="location" className='mr-4' />
+                    {item.acf.cases_location}
+                  </div>
                 )}
-                {item.case_study_tags && (
-                  <ul className="d_flex">
-                    {item.case_study_tags.map((caseItem, index) => (
-                      <li key={index}>{caseItem.name}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>}
             </div>
             <div className="img">
               <Link
@@ -113,14 +102,14 @@ const ExploreData = ({
             </div>
             <div className="bottom_col d_flex">
               <div className="lcol">
-                {item.acf.c_right_side_logo && (
+                {/* {item.acf.c_right_side_logo && (
                   <div className="lcol_logo">
                     <img
                       src={item.acf.c_right_side_logo.url}
                       alt={item.acf.c_right_side_logo.name}
                     />
                   </div>
-                )}
+                )} */}
                 <ul className="d_flex">
                   {item.acf.case_total_visitors && (
                     <li>
@@ -146,13 +135,24 @@ const ExploreData = ({
                 </ul>
               </div>
               <div className="awward_right_col">
-                {item.acf.cases_location && (
-                  <div className="rcol d_flex">
-                    <img src={"/assets/images/location.svg"} alt="location" />
-                    {item.acf.cases_location}
-                  </div>
+               
+{item.case_study_tags?.length!==0  && <div className="case d_flex">
+                {item.acf.tag_logo && (
+                  <span>
+                    <img
+                      src={item.acf.tag_logo.url}
+                      alt={item.acf.tag_logo.name}
+                    />
+                  </span>
                 )}
-
+                {item.case_study_tags && (
+                  <ul className="d_flex">
+                    {item.case_study_tags.map((caseItem, index) => (
+                      <li key={index}>{caseItem.name}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>}
                 {item.acf &&
                   item.acf.award_small_logo &&
                   item.acf.award_small_logo.url &&

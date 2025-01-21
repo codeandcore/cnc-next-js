@@ -137,7 +137,7 @@ const Footer = ({ ApiData }) => {
       )}
 
       {(ApiData.stay_connected_title || ApiData.social_share_list) && (
-        <div className="col">
+        <div className="col middle-col">
           {ApiData.stay_connected_title && <h3>{ApiData.stay_connected_title}</h3>}
           <div className="social d_flex">
             {ApiData.social_share_list.map((social, index) => (

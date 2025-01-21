@@ -625,6 +625,7 @@ footer .footer_top ul li {
 footer .footer_top ul li a {
   color: var(--black);
   line-height: 25px;
+  font-size: 14px;
 }
 footer .footer_top ul li a:hover,
 footer .footer_top ul li a.current {
@@ -1236,6 +1237,14 @@ body .owl-carousel.owl-theme .owl-nav > button {
   opacity: 1;
   transform: scale(1);
   margin: 0;
+  
+}
+@media only screen and (max-width:1023px) {
+  body .owl-carousel.owl-theme .owl-nav > button {
+    height: 39px;
+    width: 39px;
+    background-size:9px ;
+  }
 }
 body .owl-carousel.owl-theme .owl-nav > button:hover {
   background-image: url(/assets/images/arrow_ss1w.svg) !important;
@@ -1945,6 +1954,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
     top: 22px;
     margin-top: 0;
   }
+  .middle-col{
+    order: 1;
+  }
   header .brand img {
     max-width: 80px;
     position: relative;
@@ -2009,7 +2021,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   }
   footer .col {
     width: 100% !important;
-    margin: 0px 0px 15px;
+    margin: 0px 0px 35px;
   }
   footer .footer_top .wrap {
     align-items: flex-start;
