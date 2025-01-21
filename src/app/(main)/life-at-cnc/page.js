@@ -104,11 +104,11 @@ export default async function portfolioPage() {
       celebration_year_title = {cncData.acf.celebration_year_title}
       />
       }
-      {cncData &&
+      {/* {cncData &&
       <Linkedinlife
         social_media_linkdin_title = {cncData.acf.social_media_linkdin_title}
        />
-      }
+      } */}
       {cncData &&
       <Socialmedialife
                   social_media_title={cncData.acf.social_media_title}
