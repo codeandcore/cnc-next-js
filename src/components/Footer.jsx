@@ -191,14 +191,21 @@ const Footer = ({ ApiData }) => {
             {ApiData.certified_by_title && <h3>{ApiData.certified_by_title}</h3>}
             {ApiData.certified_by_list && (
               <div className="logos d_flex">
-                {ApiData.certified_by_list.map((menuItem, index) => (
-                  <a href={menuItem.url} key={index} target="_blank">
-                    <img
-                      src={menuItem.logo.url}
-                      alt={menuItem.logo.name}
-                    />
-                  </a>
-                ))}
+                      {ApiData.certified_by_list.map((menuItem, index) => {
+                        return (
+                          menuItem.url!=="" ? 
+                          <a href={menuItem.url} key={index} target="_blank">
+                          <img
+                            src={menuItem.logo.url}
+                            alt={menuItem.logo.name}
+                          />
+                        </a> : <div key={index} style={{marginRight:"5%"}}>  <img
+                            src={menuItem.logo.url}
+                            alt={menuItem.logo.name}
+                            />
+                              </div>
+                        )
+                      })}
               </div>
             )}
           </div>
