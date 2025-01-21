@@ -12,6 +12,9 @@
 .blog_detail_section h1 {
   color: var(--balck);
   margin-bottom: 18px;
+  font-size: 58px;  
+  line-height: 1.3;  
+  padding-bottom: 30px;
 }
 .blog_detail_section .blog_info {
   justify-content: flex-start;
