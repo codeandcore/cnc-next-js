@@ -247,7 +247,7 @@
 .delevery-outline h2{text-transform: capitalize; margin-bottom: 50px;}
 .delevery-outline .delevery-content .items-repeter{display: grid; grid-template-columns: repeat(3, 1fr);  gap: 44px;} 
 .delevery-outline .delevery-content .repeterItem p{color: #424242; font-weight: 500; line-height: 1.8;}
-.delevery-outline .delevery-content .repeterItem .countItem{width: 70px; height: 70px; border-radius: 100%; padding: 5px; display: flex; align-items: center; justify-content: center; color: #fff; background-color: #6A65F6; font-size: 36px; font-weight: bold; margin-bottom: 36px;}
+.delevery-outline .delevery-content .repeterItem .countItem{width: 70px; height: 70px; border-radius: 100%; padding: 5px; display: flex; align-items: center; justify-content: center; color: #fff; background-color: #6A65F6; font-size: 36px; font-weight: bold; margin-bottom: 20px;}
 .delevery-outline .imgObj { position: absolute; bottom: 100%; right: 152px; }
 
 /* challenging-section */
