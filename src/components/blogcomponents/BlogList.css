@@ -381,3 +381,29 @@ line-height: normal;
     background-position: -200% 0;
   }
 }
+
+span.react-loading-skeleton {
+  --base-color: #ffffff;
+  --highlight-color: #eff1ff;
+}
+.infinite-loader {
+  text-align: center;
+}
+.load-more-spinner {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #6167f8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

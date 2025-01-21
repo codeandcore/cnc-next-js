@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useState, useRef } from 'react';
 import './BlogList.css';
 import './BlogPageTitle.css';
@@ -6,8 +6,9 @@ import Link from 'next/link';
 import moment from 'moment';
 import Pagination from './Pagination';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'; // Import skeleton styles
+import 'react-loading-skeleton/dist/skeleton.css';
 import { ReplaceDomain } from '@/ReplaceDomain';
+import { useInView } from 'react-intersection-observer';
 
 const BlogList = ({
   blog_heading,
@@ -17,6 +18,7 @@ const BlogList = ({
   catData,
 }) => {
   const [isLoadingk, setisLoadingk] = useState(true);
+  const [isLoadingMore, setIsLoadingMore] = useState(false); // For infinite loading
   const [isClient, setIsClient] = useState(false);
   const [blogData, setBlogsData] = useState([]);
   const [currentCategory, setCurrentCategory] = useState(null);
@@ -28,13 +30,24 @@ const BlogList = ({
   const blogsListRef = useRef(null);
   const [specialIndexOffset, setSpecialIndexOffset] = useState(0);
 
+  const { ref, inView } = useInView({
+    threshold: 1.0,
+    triggerOnce: false,
+  });
+
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const fetchBlogs = async (category = null, page = 1) => {
+  const fetchBlogs = async (category = null, page = 1, isLoadMore = false) => {
     if (loadingRef.current) return;
-    setisLoadingk(true);
+    if (isLoadMore) {
+      setIsLoadingMore(true);
+    }
+    if (page === 1) {
+      setisLoadingk(true);
+    }
+
     loadingRef.current = true;
 
     try {
@@ -55,11 +68,20 @@ const BlogList = ({
       setTotalPages(parseInt(total));
 
       const data = await response.json();
-      setBlogsData(data);
+
+      if (page !== 1) {
+        setBlogsData((prevData) => [...prevData, ...data]); // Append new data
+      } else {
+        setBlogsData(data);
+      }
     } catch (error) {
       console.error('Error fetching data from WordPress API:', error);
     } finally {
-      setisLoadingk(false);
+      if (!isLoadMore) {
+        setisLoadingk(false);
+      } else {
+        setIsLoadingMore(false);
+      }
       loadingRef.current = false;
     }
   };
@@ -83,6 +105,12 @@ const BlogList = ({
   useEffect(() => {
     fetchBlogs(currentCategory, currentPage);
   }, [currentPage, currentCategory]);
+
+  useEffect(() => {
+    if (inView && currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1); // Trigger loading next page
+    }
+  }, [inView]);
 
   const handleCategoryChange = (category) => {
     setCurrentCategory(category);
@@ -135,69 +163,94 @@ const BlogList = ({
           )}
         </div>
       </div>
-      {/* <div
-        className="loader_blog"
-        style={{ display: isLoadingk ? 'block' : 'none' }}
-      >
-        <img
-          src={'../../assets/images/rotate-right.png'}
-          alt="rotate-right"
-        />
-      </div> */}
       <div className="blog_section">
         <div className="wrapper">
           {isLoadingk ? (
-            <div className="skeleton-grid moving-background">
+            <div className="skeleton-grid moving-background" style={{ paddingTop: 50 }}>
               {Array.from({ length: 6 }).map((_, index) => (
                 <div key={index} className="skeleton-item">
                   <Skeleton height={300} width="100%" style={{ marginBottom: 30 }} />
-                  {/* <Skeleton height={30} width="60%" style={{ marginTop: 10 }} /> */}
-                  {/* <Skeleton height={20} width="80%" /> */}
                 </div>
               ))}
             </div>
           ) : (
             <div className="blogItemList">
-              {blogData.map((blog, index) => (
-                <div key={index} className="blog-item">
-                  <Link href={`/blog/${blog.slug}`} className="blog_img">
-                    <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
-                  </Link>
-                  <div className="blog-content">
-                    <div className="blog_info d_flex">
-                      <div className="col-left d_flex">
-                        <a role="button">
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: blog.categories_names,
-                            }}
-                          ></span>
-                        </a>
-                        <div className="date">
-                          <img src="/assets/images/dateIcon.svg" alt="date_icon" />
-                          {moment(blog.date).format('D.M.YYYY')}
-                        </div>
+              {blogData.map((blog, index) => {
+                if ((index + 1) % 6 === 0) {
+                  const specialIndex = (specialIndexOffset + Math.floor(index / 6)) % specialBlogElements.length;
+                  const specialContent = specialBlogElements[specialIndex];
+                  return (
+                    <div
+                      key={index}
+                      className="blog-item special-layout"
+                      style={{ backgroundImage: `url(${specialContent?.background_image?.url})` }}
+                    >
+                      <div className="special-content">
+                        <h3
+                          className="special-blog-title"
+                          style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
+                        >
+                          {specialContent?.title}
+                        </h3>
+                        <p
+                          className="content"
+                          style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
+                        >
+                          {specialContent?.subtitle}
+                        </p>
+                        <Link
+                          href={specialContent?.button?.url || ''}
+                          style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
+                          className={`btn ${specialContent?.button_type === 'Primary' ? '' : 'btn-secondary'}`}
+                        >
+                          <em>{specialContent?.button?.title}</em>
+                        </Link>
                       </div>
                     </div>
-                    <h3>
-                      <Link href={`/blog/${blog.slug}`}>
-                        {blog.title?.rendered?.replace(/<\/?br\s*\/?>/gi, ' ')}
+                  );
+                } else {
+                  return (
+                    <div key={index} className={`blog-item`}>
+                      <Link href={`/blog/${blog.slug}`} className="blog_img">
+                        <img src={blog.featured_image_url} alt={blog?.title?.rendered} />
                       </Link>
-                    </h3>
-                  </div>
-                </div>
-              ))}
+                      <div className="blog-content">
+                        <div className="blog_info d_flex">
+                          <div className="col-left d_flex">
+                            <a href={`/blog/${blog.slug}`}>
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: blog.categories_names,
+                                }}
+                              ></span>
+                            </a>
+                            <div className="date">
+                              <img src={'/assets/images/dateIcon.svg'} alt="date_icon" />
+                              {moment(blog.date).format('D.M.YYYY')}
+                            </div>
+                          </div>
+                        </div>
+                        <h3>
+                          <Link href={`/blog/${blog.slug}`}>
+                            {blog.title?.rendered?.replace(/<\/?br\s*\/?>/gi, ' ')}
+                          </Link>
+                        </h3>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           )}
         </div>
       </div>
-      <div className="pagination-section">
-        <Pagination
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+      <div className="pagination-section" style={{textAlign:'center'}}>
+        {totalPages > currentPage && (
+          <div className="infinite-loader">
+            <span className="load-more-spinner"></span>
+          </div>
+        )}
+        {!isLoadingMore && currentPage < totalPages && <div ref={ref}></div>}
       </div>
     </div>
   );

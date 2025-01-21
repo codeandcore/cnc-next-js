@@ -8,7 +8,6 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 const options = {
   items: 1,
   loop: false,
-  // autoHeight: true, // Part of options object
   margin: 0,
   nav: true,
 };
@@ -24,17 +23,20 @@ const OurEmployeeExperience = ({
   window.$ = window.jQuery = require("jquery");
   }
   
-  // This is for Next.js. On Rect JS remove this line
   const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
   });
-// Ensure this only runs when the employee_experience_detail is updated
-
+const changecorousel = () => {
+  setTimeout(() => {
+    document.querySelector('.our_employee_experience .owl-stage-outer').style.height = `${document.querySelector('.our_employee_experience .owl-item.active').offsetHeight}px`
+  }, 200);
+}
   return (
     <div className="our_employee_experience">
       <h2>{a_left_side_section_title}</h2>
       {employee_experience_detail && (
         <OwlCarousel
+          onChange={changecorousel}
           className="owl-theme"
           {...options}
        >
