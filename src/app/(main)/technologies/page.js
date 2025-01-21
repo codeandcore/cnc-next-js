@@ -91,7 +91,7 @@ export default async function IndustryPage() {
             hireus_title={hireUsData.hireus_title}
             hireus_subtitle={hireUsData.hireus_subtitle}
             hireus_button_text={hireUsData.hireus_button_text}
-            hireus_list={hireUsData.hireus_list}
+            hireus_list={homePage?.acf?.hireus_list}
             contactData={contactData}
           />
         )}

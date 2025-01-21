@@ -10,32 +10,35 @@ import HireUs from "@/components/homecomponents/HireUs";
 import Head from "../../head";
 import Loading from "@/components/Loading";
 import AboutBanner from "@/components/aboutuscomponents/AboutBanner";
-
+const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
-  const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   const apiUrl =
     env !== "development"
       ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/about-us`
       : "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/389"
   
-  
-
   const response = await fetch(apiUrl,{ cache: "no-store" } );
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
   return response.json();
 };
-
+async function fetchHomepageData() {
+  const res = await fetch(
+    env !== "development"
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
+)
+  if (!res.ok) throw new Error('Failed to fetch homepage data');
+  return res.json();
+}
 
 export default async function AboutUsPage() {
   const pageData = await fetchPageData();
-
-  const hireUsData =
-    pageData?.acf?.hireus_title
-      ? pageData.acf
-      : null;
-
+  const homePage = await fetchHomepageData();
+  const hireUsData =  pageData?.acf?.hireus_title
+  ? pageData.acf :  homePage && homePage?.acf
+      ? homePage?.acf : homePage?.acf
   return (
     <Suspense fallback={<Loading />}>
   <Head yoastData={pageData?.yoast_head_json} />
@@ -104,7 +107,7 @@ export default async function AboutUsPage() {
           hireus_title={hireUsData.hireus_title}
           hireus_subtitle={hireUsData.hireus_subtitle}
           hireus_button_text={hireUsData.hireus_button_text}
-          hireus_list={hireUsData.hireus_list}
+          hireus_list={homePage?.acf?.hireus_list}
         />
       )}
       </div>

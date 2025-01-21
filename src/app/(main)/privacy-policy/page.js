@@ -76,7 +76,7 @@ export default async function page() {
             hireus_title={hireUsData.hireus_title}
             hireus_subtitle={hireUsData.hireus_subtitle}
             hireus_button_text={hireUsData.hireus_button_text}
-            hireus_list={hireUsData.hireus_list}
+            hireus_list={homePage?.acf?.hireus_list}
             contactData={contactData}
           />
         )}

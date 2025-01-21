@@ -56,7 +56,6 @@ async function fetchHomeData() {
       console.error("Error fetching homepage data");
       throw new Error("Failed to fetch homepage data");
     }
-
     const data = await response.json(); // Parse the body once here
     return data;
   } catch (error) {
@@ -175,7 +174,7 @@ export default async function Page({ params }) {
               hireus_title={hireUsData.hireus_title}
               hireus_subtitle={hireUsData.hireus_subtitle}
               hireus_button_text={hireUsData.hireus_button_text}
-              hireus_list={hireUsData.hireus_list}
+              hireus_list={HomePage?.acf?.hireus_list}
               contactData={contactData}
             />
           )}
