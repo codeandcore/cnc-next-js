@@ -1,7 +1,6 @@
 
 import React, { Suspense } from 'react';
 import Head from '@/app/head';
-import he from 'he';
 import HireUs from '@/components/homecomponents/HireUs';
 import BASE_URL from '@/config';
 import SitemapList from '@/components/sitemapcomponents/SitemapList';

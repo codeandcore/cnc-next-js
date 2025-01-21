@@ -37,7 +37,7 @@ const SitemapList = ({ pageData }) => {
                              {pageData.custom_json.data[item].map((list, ind) => (
                                  
                                  <Link
-                                 href={item !== 'pages' ? `/${item}/${list.slug}` : `/${list.slug}`} key={ind} className="btn btnarrow" >
+                                 href={item !== 'pages' ? `/${item}/${list.slug}` : `/${list.slug}`} key={ind} className="btn btnarrow sitemapLink" >
                                      <em dangerouslySetInnerHTML={{ __html: list.name }}></em>
                                      <div> <img src={"/assets/images/ellipse_arr.png"} /> </div>
                                  </Link>

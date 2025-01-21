@@ -351,7 +351,9 @@ img {
   position: relative;
   bottom: 2px;
 }
-
+.sitemapLink{
+  text-transform: capitalize !important;
+}
 body {
   overflow: visible !important;
 }
