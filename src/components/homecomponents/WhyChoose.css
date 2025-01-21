@@ -461,6 +461,7 @@
     line-height: 1.5;
   }
   .whyChoose_us .col {
+    padding: 15px !important;
     margin-bottom: 10px !important;
     width: 100% !important;
   }
@@ -480,6 +481,8 @@
   }
   .whyChoose_us .col5 .textin {
     align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   .whyChoose_us .col5 .textin .rightt {
     text-align: right;
@@ -490,6 +493,7 @@
   .whyChoose_us .col5 .textin .rightt {
     position: absolute;
     bottom: 0;
+    width: 60px;
   }
 
   .whyChoose_us .col.col1.big h3 {
@@ -507,7 +511,6 @@
   .whyChoose_us .col.col5 .textin p {
     font-size: 18px;
     line-height: 1.37;
-    max-width: calc(100% - 60px);
   }
   .whyChoose_us .col.col6.small .textin p {
     font-size: 18px;
