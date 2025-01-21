@@ -43,7 +43,11 @@
 .blog_detail_section .blogImg {
   margin-bottom: 20px;
 }
-.blog_detail_section .blogImg img {
+.blog_detail_section  .full_width img {
+  width: 100%;
+  object-fit: cover;
+}
+.blog_detail_section .blogImg  img {
   border-radius: 30px;
 }
 .blog_detail_section .share-icons li {
@@ -244,7 +248,9 @@
 .blog_detail_section .inner .right_col {
   width: calc(100% - 450px);
 }
-
+.blog_detail_section .inner .full_width {
+  width:100%
+}
 @media only screen and (max-width: 1599px) {
   .blog_detail_section {
     padding-top: 150px;

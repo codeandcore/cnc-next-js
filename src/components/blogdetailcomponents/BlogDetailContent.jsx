@@ -19,7 +19,7 @@ const BlogDetailContent = ({
 
   const extractHeadings = () => {
     const content = contentRef.current;
-    const headings = content.querySelectorAll('h2,h3'); // Modify if you need more tags
+    const headings = content.querySelectorAll('h2'); // Modify if you need more tags
 
     const toc = Array.from(headings)
       .filter((heading) => heading.innerText.trim() !== '') // Ignore empty headings
@@ -47,7 +47,6 @@ const BlogDetailContent = ({
   }, [blogData]); // Run this whenever blogData changes
 
   const handleSmoothScroll = (id, index) => {
-    
     setActiveTocItem(index);
 
     const element = document.getElementById(id);
@@ -113,8 +112,8 @@ const BlogDetailContent = ({
               </ul>
             </div>
           ) : null}
-          <div className="right_col">
-            <div className="blogImg">
+          <div className={`right_col ${tocItems?.length=== 0 ? "full_width" : "" }`}>
+            <div className={`blogImg ${tocItems?.length=== 0 ? "full_width" : "" }`}>
               <img
                 src={blogData.featured_image_url}
                 alt={blogData.title.rendered}
