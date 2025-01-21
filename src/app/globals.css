@@ -625,7 +625,7 @@ footer .footer_top ul li {
 footer .footer_top ul li a {
   color: var(--black);
   line-height: 25px;
-  font-size: 14px;
+  font-size: 18px;
 }
 footer .footer_top ul li a:hover,
 footer .footer_top ul li a.current {
@@ -1961,6 +1961,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
     max-width: 80px;
     position: relative;
     top: 2px;
+  }
+  footer .footer_top ul li a {
+    font-size: 14px;
   }
   header {
     padding: 12px 0px !important;
