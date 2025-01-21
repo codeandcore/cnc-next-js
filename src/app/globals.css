@@ -514,6 +514,15 @@ header.fixed .brand img.logoIcon {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+.industry-details_page h2{
+  font-size: 40px !important;
+  line-height: 1.2 !important; 
+}
+.service-details_page h2{
+  font-size: 40px !important;
+  line-height: 1.2 !important; 
+}
 @keyframes marquee {
   0% {
     transform: translate3d(0%, 0, 0);

@@ -196,7 +196,7 @@ const BlogList = ({
                     <div className="blog-content">
                       <div className="blog_info d_flex">
                         <div className="col-left d_flex">
-                          <a href={`/blog/${blog.slug}`}>
+                          <a role="button">
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: blog.categories_names,

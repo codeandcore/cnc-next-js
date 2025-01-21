@@ -66,7 +66,7 @@ export default async function Page({ params }) {
   return (
     <>
   <Head yoastData={yoastData} />
-  <div className='main_wrapper'>
+  <div className='main_wrapper industry-details_page'>
       {industryData && (
         industryData.acf.industry_banner_background_image || 
         industryData.acf.industry_banner_background_image_mobile || 

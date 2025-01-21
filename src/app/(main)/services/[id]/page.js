@@ -65,7 +65,7 @@ export default async function Page({ params }) {
   return (
     <>
   <Head yoastData={yoastData} />
-  <div className='main_wrapper'>
+  <div className='main_wrapper service-details_page'>
       {serviceData && (serviceData.acf.banner_background_image || serviceData.acf.banner_background_image_mobile || serviceData.acf.banner_background_video || serviceData.acf.banner_title || serviceData.acf.banner_subtitle || serviceData.acf.banner_clients_list) && (
           <ServicesDetailsBanner
           industry_banner_background_image = {serviceData.acf.banner_background_image}

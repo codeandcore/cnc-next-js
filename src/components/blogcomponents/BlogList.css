@@ -31,7 +31,9 @@
 .blog-item a{
   color: #424242;
 }
-
+.blog-item a:hover{
+  color: var(--Purple);
+}
 .blog-item .col-left a{display: flex;}
 
 .blog-item .date{
