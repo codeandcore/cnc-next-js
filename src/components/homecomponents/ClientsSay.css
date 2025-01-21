@@ -250,3 +250,6 @@
     margin-top: 10px;
   }
 }
+.autoheightCor {
+  height: auto !important;
+}

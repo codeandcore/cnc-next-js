@@ -34,6 +34,11 @@ const ClientsSay = ({
   const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
   });
+  const changecorousel = () => {
+    setTimeout(() => {
+      document.querySelector('.our_clientssay .owl-stage-outer').style.height = `${document.querySelector('.our_clientssay .owl-item.active').offsetHeight}px`
+    }, 200);
+  }
   const scaleValue = isVisible ? 1 : 0.85;
   return (
     <div
@@ -64,7 +69,7 @@ const ClientsSay = ({
         </div>
         <div className="right_col">
           {our_clients_testimonials && our_clients_testimonials.length > 0 && (
-                   <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
+                   <OwlCarousel {...options} ref={owlCarouselRef} onChange={changecorousel} className="owl-theme">
   {our_clients_testimonials.map((item, index) => (
     <div className="col" key={index}>
       <h2 dangerouslySetInnerHTML={{ __html: item.testimonial }} />

@@ -245,7 +245,7 @@ const ContactForm = ({
               <div style={{ width: "100%", maxWidth: "600px", margin: "auto" }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.2151856884298!2d72.56236427498078!3d23.0892173138386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83c9798b2561%3A0xea359d55ac73c5fd!2sCode%20and%20core%20Tech%20LLP!5e0!3m2!1sen!2sin!4v1737405960700!5m2!1sen!2sin"
-                  width="600"
+                  width="530"
                   height="450"
                   style={{ border: 0 }}
                   allowFullScreen
