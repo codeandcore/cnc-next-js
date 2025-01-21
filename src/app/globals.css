@@ -1965,6 +1965,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   footer .footer_top ul li a {
     font-size: 14px;
   }
+  .saless_list li a {
+    font-size: 14px;
+  }
   header {
     padding: 12px 0px !important;
   }
