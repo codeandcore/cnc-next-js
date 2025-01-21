@@ -101,14 +101,12 @@ export default async function Page({ params }) {
      button = {industryData.acf.software_solution_button}
      ></HealthcareSolution>
     )}
-      {industryData && (industryData.acf.industry_portfolio_title || industryData.acf.industry_portfolio_subtitle || industryData.acf.industry_portfolio_list || industryData.acf.industry_portfolio_button) && (
       <ExploreWork className='white-bg'
       title = {industryData.acf.industry_portfolio_title}
       subtitle = {industryData.acf.industry_portfolio_subtitle}
       button = {industryData.acf.industry_portfolio_button}
       items = {industryData.acf.industry_portfolio_list}
       ></ExploreWork>
-      )}
       {industryData && (industryData.acf.industry_why_choose_title || industryData.acf.industry_why_choose_subtitle || industryData.acf.industry_why_choose_list) && (
           <WhyChooseCompanyDesign
           why_choose_title = {industryData.acf.industry_why_choose_title}

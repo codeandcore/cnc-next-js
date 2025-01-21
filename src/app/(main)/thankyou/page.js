@@ -77,10 +77,10 @@ export default async function terms() {
       </div>
     
       <ExploreWork
-      title = {GeneralSetting.thankyou_portfolio_title}
-      subtitle = {GeneralSetting.thankyou_portfolio_subtitle}
-      button = {GeneralSetting.thankyou_portfolio_button}
-      items = {GeneralSetting.thankyou_portfolio_list}
+      title = {GeneralSetting?.thankyou_portfolio_title}
+      subtitle = {GeneralSetting?.thankyou_portfolio_subtitle}
+      button = {GeneralSetting?.thankyou_portfolio_button}
+      items = {GeneralSetting?.thankyou_portfolio_list}
       ></ExploreWork>
       
       {homepage && (homepage?.acf.hireus_title || homepage?.acf.hireus_subtitle || homepage?.acf.hireus_button_text || homepage?.acf.hireus_list) &&(

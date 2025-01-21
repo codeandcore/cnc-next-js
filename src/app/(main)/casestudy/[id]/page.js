@@ -154,14 +154,12 @@ export default async function Page({ params }) {
           && portfolioData?.acf?.success_story_content
           && <SuccesStory title={portfolioData?.acf?.success_story_title} items={portfolioData?.acf?.success_story_list} content={portfolioData?.acf?.success_story_content} />}
 
-        {portfolioData && (portfolioData?.acf?.portfolio_title || portfolioData?.acf?.portfolio_subtitle || portfolioData?.acf?.case_study_portfolio_list || portfolioData?.acf?.portfolio_button) && (
           <ExploreWork
-            title={portfolioData.acf.portfolio_title}
-            subtitle={portfolioData.acf.portfolio_subtitle}
-            button={portfolioData.acf.portfolio_button}
-            items={portfolioData.acf.case_study_portfolio_list}
+            title={portfolioData?.acf?.portfolio_title}
+            subtitle={portfolioData?.acf?.portfolio_subtitle}
+            button={portfolioData?.acf?.portfolio_button}
+            items={portfolioData?.acf?.case_study_portfolio_list}
           ></ExploreWork>
-        )}
 
       
         {HomePage && (HomePage.acf.banner_clients_list) && (

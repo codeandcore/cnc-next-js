@@ -66,16 +66,13 @@ const Custom404 = async () => {
           </div>
         </div>
       )}
-
-      {(GeneralSetting.portfolio_title || GeneralSetting.portfolio_subtitle || GeneralSetting.portfolio_button || GeneralSetting.industry_portfolio_list) && (
+ 
         <ExploreWork
-          title={GeneralSetting.portfolio_title}
-          subtitle={GeneralSetting.portfolio_subtitle}
-          button={GeneralSetting.portfolio_button}
-          items={GeneralSetting.industry_portfolio_list}
+          title={GeneralSetting?.portfolio_title}
+          subtitle={GeneralSetting?.portfolio_subtitle}
+          button={GeneralSetting?.portfolio_button}
+          items={GeneralSetting?.industry_portfolio_list}
         />
-      )}
-
       {(HomePage?.acf?.hireus_title || HomePage?.acf?.hireus_subtitle || HomePage?.acf?.hireus_button_text || HomePage?.acf?.hireus_list) && (
         <HireUs
           hireus_title={HomePage.acf.hireus_title}

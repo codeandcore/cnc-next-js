@@ -1,17 +1,29 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ExploreWork.css';
 import Link from 'next/link';
+import BASE_URL from '@/config';
 
 const ExploreWork = ({ className, title, subtitle, button, items }) => {
+  const [portfoliodata, setPortfoliodata] = useState(null);
+  useEffect(() => {
+    fetch(`${BASE_URL}/wp-json/custom/v1/case-study-list?page=1&per_page=3`)
+      .then((response) => response.json())
+      .then((data) => setPortfoliodata(data))
+      .catch((error) =>
+        console.error('Error fetching data from WordPress API:', error),
+      );
+  }, [BASE_URL]);
+  const casestudyData= items && items?.length!==0 ? items : portfoliodata?.data
   return (
     <>
       <div className={`explorework_sec  ${className}`}>
         <div className="wrapper">
           <div className="top_title">
             <div className="leftcol">
-              {title && <h2>{title}</h2>}
-              {subtitle && <p>{subtitle}</p>}
+              {title ? <h2>{title}</h2> : <h2>Explore what we have done.</h2>}
+              {subtitle ? <p>{subtitle}</p> : <p>See why over 200+ clients happily return to us to provide dedicated teams to drive their innovations!
+              </p>}
             </div>
             {button && (
               <a className="btn" href={button.url}>
@@ -21,8 +33,8 @@ const ExploreWork = ({ className, title, subtitle, button, items }) => {
           </div>
           <div className="explore_data">
             <div className="inner d_flex">
-              {items && items.length
-                ? items.map((item, index) => (
+              {casestudyData && casestudyData.length
+                ? casestudyData.map((item, index) => (
                     <div key={index} className="colin">
                       <div className="top_col d_flex">
                         <h3>{item.post_title}</h3>

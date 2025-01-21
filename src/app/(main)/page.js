@@ -171,20 +171,12 @@ const Homepage = async ({
             }
           ></WhyChoose>
         )}
-      {HomePage &&
-        (HomePage.acf.case_studies_title ||
-          HomePage.acf.case_studies_subtitle ||
-          HomePage.acf.case_studies_slider) && (
+     
           <CaseStudies
-            case_studies_title={HomePage.acf.case_studies_title}
-            case_studies_subtitle={HomePage.acf.case_studies_subtitle}
-            case_studies_list={HomePage.acf.portfolio_list}
-            BASE_URL={BASE_URL}
-            setIsLoading={setIsLoading}
-            setIsDone={setIsDone}
-            setIsFinish={setIsFinish}
+            case_studies_title={HomePage?.acf?.case_studies_title}
+            case_studies_subtitle={HomePage?.acf?.case_studies_subtitle}
+            case_studies_list={HomePage?.acf?.portfolio_list}
           ></CaseStudies>
-        )}
       {HomePage &&
         (HomePage.acf.life_codeandcore_title ||
           HomePage.acf.life_codeandcore_button_text ||

@@ -62,7 +62,6 @@ export default async function IndustryPage() {
       : homePage && homePage?.acf
       ? homePage?.acf
       : null;
-
   return (
 <Suspense fallback={<Loading />}>
   <Head yoastData={yoastData} />
@@ -97,15 +96,13 @@ export default async function IndustryPage() {
        our_approach_list={IndustryData.acf.our_approach_list}
        ></OurApproach>
       )}
-       {homePage && (homePage.acf.case_studies_title || homePage.acf.case_studies_subtitle || homePage.acf.case_studies_slider) && ( 
         <CaseStudies
-          case_studies_title={homePage.acf.case_studies_title}
-          case_studies_subtitle={homePage.acf.case_studies_subtitle}
-          case_studies_list={homePage.acf.portfolio_list}
+          case_studies_title={homePage?.acf?.case_studies_title}
+          case_studies_subtitle={homePage?.acf?.case_studies_subtitle}
+          case_studies_list={homePage?.acf?.portfolio_list}
           BASE_URL ={BASE_URL}
         >
-        </CaseStudies>
-           )}            
+        </CaseStudies>        
         {(homePage && (homePage.acf.our_clients_title || homePage.acf.our_clients_subtitle || homePage.acf.our_clients_button_text || homePage.acf.our_clients_button_url || homePage.acf.our_clients_testimonials))&& (
         <ClientsSay
         our_clients_title={homePage.acf.our_clients_title} 
