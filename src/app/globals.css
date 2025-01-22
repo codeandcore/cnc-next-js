@@ -377,6 +377,9 @@ header .menucol ul li a {
   cursor: pointer;
   font-weight: 400;
 }
+header .menucol ul li a:hover {
+  opacity: 0.8;
+}
 header .menucol ul li.drop::after {
   content: '';
   position: absolute;
