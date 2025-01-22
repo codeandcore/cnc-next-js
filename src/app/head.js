@@ -1,7 +1,5 @@
 
-const Head = ({ yoastData }) => {
-  console.log("yoastData",yoastData);
-  
+const Head = ({ yoastData }) => {  
     return (
         <>
         <meta
@@ -17,7 +15,7 @@ const Head = ({ yoastData }) => {
         rel="apple-touch-icon"
         href="https://new-cnc-next.vercel.app/favicon.ico"
       />
-      <title>{yoastData?.og_title}</title>
+      <title>{yoastData?.title}</title>
       {yoastData?.og_keywords && (
         <meta name="keywords" content={yoastData.og_keywords} />
       )}
