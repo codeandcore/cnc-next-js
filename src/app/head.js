@@ -4,7 +4,7 @@ const Head = ({ yoastData }) => {
         <>
         <meta
         name="description"
-        content={yoastData?.description}
+        content={yoastData?.description || "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."}
       />
       <link
         rel="icon"
@@ -15,18 +15,18 @@ const Head = ({ yoastData }) => {
         rel="apple-touch-icon"
         href="https://new-cnc-next.vercel.app/favicon.ico"
       />
-      <title>{yoastData?.title}</title>
+      <title>{yoastData?.title || "Codeandcore - Web development studio"}</title>
       {yoastData?.og_keywords && (
         <meta name="keywords" content={yoastData.og_keywords} />
       )}
       <meta
         property="og:title"
-        content={yoastData?.og_title}
+        content={yoastData?.og_title || "Codeandcore - Web development studio"}
       />
       <meta
         property="og:description"
         content={
-          yoastData?.og_description}
+          yoastData?.og_description || "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."}
       />
       <meta property="og:type" content={yoastData?.og_type} />
       <meta
