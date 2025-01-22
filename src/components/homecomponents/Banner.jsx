@@ -28,7 +28,9 @@ const Banner = ({
       const x = ((e.pageX / window.innerWidth) * +60) / 2;
       const y = ((e.pageY / window.innerHeight) * +60) / 2;
       const box = document.querySelector('.ball');
-      box.style.transform = `translate(${x}px, ${y}px)`;
+      if (box) {
+        box.style.transform = `translate(${x}px, ${y}px)`;
+      }
     };
     if (window.innerWidth > 768) {
       document.body.addEventListener('mousemove', handleMouseMove);
