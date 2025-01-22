@@ -35,6 +35,7 @@
 }
 .techno_content > img {
   margin-bottom: 40px;
+  height: auto;
 }
 .techno_content h2 {
   font-size: 42px;
