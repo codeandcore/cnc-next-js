@@ -30,6 +30,7 @@
 }
 .review_awards .marquee_wrap h3 {
   color: var(--white);
+  white-space: pre-wrap;
   font-size: 28px;
   font-weight: bold;
 }

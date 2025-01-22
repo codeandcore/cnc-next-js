@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 import ChatBoard from './ChatBoard';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import dynamic from "next/dynamic";
+const PDFViewer = dynamic(() => import("../components/PDFViewer"), { ssr: false });
 
 const Footer = ({ ApiData }) => {
   const [showBackTop, setShowBackTop] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isPDFOpen, setIsPDFOpen] = useState(false);
   const router = useRouter();
-
-
   const currentYear = new Date().getFullYear();
   const chunkArray = (array, chunkSize) => {
     const result = [];
@@ -193,17 +194,12 @@ const Footer = ({ ApiData }) => {
               <div className="logos d_flex">
                       {ApiData.certified_by_list.map((menuItem, index) => {
                         return (
-                          menuItem.url!=="" ? 
-                          <a href={menuItem.url} key={index} target="_blank">
+                          <a role='button' key={index} target="_blank" onClick={(e)=>{e?.preventDefault(),setIsOpen(true)}} style={{cursor: `${menuItem.url ? "pointer" : ""}`}} >
                           <img
                             src={menuItem.logo.url}
                             alt={menuItem.logo.name}
                           />
-                        </a> : <div key={index} style={{marginRight:"5%"}}>  <img
-                            src={menuItem.logo.url}
-                            alt={menuItem.logo.name}
-                            />
-                              </div>
+                        </a>
                         )
                       })}
               </div>
@@ -283,7 +279,8 @@ const Footer = ({ ApiData }) => {
         )}
       </div>
     )}
-  </div>
+        </div>
+        <PDFViewer isOpen={isPDFOpen} setIsOpen={setIsPDFOpen} pdfUrl={"/ISO-Certificate.pdf"} />
 </footer>
     </>
   ) : null;
