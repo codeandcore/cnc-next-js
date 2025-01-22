@@ -36,13 +36,13 @@ async function fetchData(slug) {
 }
   
   async function fetchContactData() {
-    const res = await  fetch(
+    const fetchContact = await  fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
   )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
+    if (!fetchContact.ok) throw new Error('Failed to fetch contact data');
+    return fetchContact.json();
   }
   
 
