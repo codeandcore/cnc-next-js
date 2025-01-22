@@ -194,7 +194,7 @@ const Footer = ({ ApiData }) => {
               <div className="logos d_flex">
                       {ApiData.certified_by_list.map((menuItem, index) => {
                         return (
-                          <a role='button' key={index} target="_blank" onClick={(e)=>{e?.preventDefault(),setIsOpen(true)}} style={{cursor: `${menuItem.url ? "pointer" : ""}`}} >
+                          <a role='button' key={index} target="_blank" onClick={(e)=>{e?.preventDefault(),setIsPDFOpen(true)}} style={{cursor: `${menuItem.url ? "pointer" : ""}`}} >
                           <img
                             src={menuItem.logo.url}
                             alt={menuItem.logo.name}

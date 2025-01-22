@@ -91,7 +91,7 @@ const BlogDetailContent = ({
         </Link>
         <h1 dangerouslySetInnerHTML={{ __html: blogData.title.rendered }}></h1>
         <div className="blog_info d_flex">
-          <a href="#" className="btnmix">
+          <a role='button' className="btnmix">
             <em
               dangerouslySetInnerHTML={{ __html: blogData.categories_names }}
             ></em>
