@@ -41,7 +41,7 @@ const StackTechnologies = ({
     });
   };
 
-  const scaleValue = isVisible ? 1 : 0.85;
+  const scaleValue = isVisible ? 1 : 1.15;
   return (
     <div
       ref={ref}

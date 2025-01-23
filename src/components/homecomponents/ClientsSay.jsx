@@ -39,7 +39,7 @@ const ClientsSay = ({
       document.querySelector('.our_clientssay .owl-stage-outer').style.height = `${document.querySelector('.our_clientssay .owl-item.active').offsetHeight}px`
     }, 200);
   }
-  const scaleValue = isVisible ? 1 : 0.85;
+  const scaleValue = isVisible ? 1 : 1.15;
   return (
     <div
       className="our_clientssay"
