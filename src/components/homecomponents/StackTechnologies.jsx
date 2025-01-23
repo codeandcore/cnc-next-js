@@ -41,13 +41,10 @@ const StackTechnologies = ({
     });
   };
 
-  const scaleValue = isVisible ? 1 : 0.85;
   return (
     <div
       ref={ref}
-      style={{
-        transform: `scale(${scaleValue})`,
-      }}
+      
       className="stack_technologies"
     >
       <div
