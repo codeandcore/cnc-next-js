@@ -279,6 +279,7 @@
 .solution-section .review .author-details .author-photo{width: 48px; height: 48px; border-radius: 100%; overflow: hidden; margin-right: 15px;}
 .solution-section .review .author-details span{font-size: 21px; font-weight: bold;}
 .solution-section .review .imgObj{position: absolute; bottom: calc(100% - 38px); right: 80px;}
+.solution-section .default-reviewImage {display: flex; align-items: center; justify-content: center;}
 
 .unique-elements{padding: 35px 0;}
 .unique-elements h2{text-transform: capitalize; margin-bottom: 30px;}
