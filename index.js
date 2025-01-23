@@ -11,24 +11,29 @@ console.log("hello");
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use("/api/generateJson", generateJson);
+
+
 app.get("/data/:type?/:fileName", async (req, res) => {
-  const type = req.params.type;
-  const fileName = req.params.fileName;
-  const validTypes = ["posts", "case_study", "job_listing", "pages", "instagram", "youtube", "linkedin"];
-  if (type && !validTypes.includes(type)) {
-    return res.status(400).json({ message: "Invalid type" });
-  }
-  const cachedData = cache.get(fileName);
-  if (cachedData) {
-    return res.send(cachedData);
-  }
-  try {
-    const datajson = await kv.get(fileName);
-    cache.set(fileName, datajson);
-    res.send(datajson);
-  } catch (error) {
-    res.status(500).json({ message: "Internal Server Error" });
-  }
+    const { type, fileName } = req.params;
+    let fileNameForKv;
+    try {
+      fileNameForKv = type === "options" ? "cnc-options" : `cnc-${type}-${fileName}`;
+  
+      const cachedData = cache.get(fileNameForKv);
+      if (cachedData) {
+        return res.send(cachedData);
+      }
+  
+      const datajson = await kv.get(fileNameForKv);
+      if (!datajson) {
+        return res.status(404).json({ message: "Data not found." });
+      }
+      cache.set(fileNameForKv, datajson);
+      res.send(datajson);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      res.status(500).json({ message: "Internal Server Error", error: error.message });
+    }
 });
 
 app.get("*", (req, res) => {
