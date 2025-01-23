@@ -3,7 +3,8 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import './CasestudingExploreData.css';
 import ExploreData from '../servicesdetailscomponents/ExploreData';
-
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 const CasestudingExploreData = ({
   CaseStudycptData,
   onLoadMore,
@@ -17,8 +18,7 @@ const CasestudingExploreData = ({
   const { ref, inView } = useInView({
     threshold: 1.0,
     triggerOnce: false,
-  });
-
+  });  
   React.useEffect(() => {
     if (inView && hasMorePages) {
       onLoadMore();
@@ -27,25 +27,31 @@ const CasestudingExploreData = ({
 
   return (
     <>
-      <div className="casestuding_exploredata">
+        <div className="casestuding_exploredata">
         <div className="wrapper">
-          {CaseStudycptData?.length !== 0 ? (
-            <ExploreData
-              CaseStudycptData={CaseStudycptData}
-              setPrefetchedData={setPrefetchedData}
-              setIsLoading={setIsLoading}
-              setIsDone={setIsDone}
-              setIsFinish={setIsFinish}
-            />
-          ) : (
-            !isLoadk && <p className="no-data-found">No Portfolio Found</p>
-          )}
-          {hasMorePages && (
-            <div ref={ref} className="infinite-loader">
-              <span className='load-more-spinner'></span>
+       {isLoadk ? (
+        <div className="skeleton-grid moving-background " style={{ paddingTop: 50 }}>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="skeleton-item">
+              <Skeleton height={391} width="100%"  />
             </div>
-          )}
-        </div>
+          ))}
+           </div>) :
+            CaseStudycptData?.length !== 0 ?
+              <ExploreData
+                CaseStudycptData={CaseStudycptData}
+                setPrefetchedData={setPrefetchedData}
+                setIsLoading={setIsLoading}
+                setIsDone={setIsDone}
+                setIsFinish={setIsFinish}
+            /> : <p className="no-data-found">No Portfolio Found</p>
+          }
+            {hasMorePages && (
+              <div ref={ref} className="infinite-loader">
+                <span className='load-more-spinner'></span>
+              </div>
+            )}
+          </div>
       </div>
     </>
   );
