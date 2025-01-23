@@ -72,7 +72,7 @@ e.preventDefault()
               toggler={isLightboxOpen}
               types={["video"]}
                 sources={[
-                  "/assets/video/reviewVideo2.mp4?autoplay=1&muted=1&loop=1",
+                  "/assets/video/reviewVideo.mp4?autoplay=1&muted=1&loop=1",
                 ]}
                 options={{
                   slide: {

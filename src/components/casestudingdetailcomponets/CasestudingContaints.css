@@ -33,6 +33,7 @@
 .casestuding_containts .pro_logo img {
   width: 200px;
   max-height: 100%;
+  object-fit: contain;
 }
 
 .casestuding_containts label {
