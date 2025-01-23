@@ -52,13 +52,11 @@ const CasestudingBanner = ({
   }, [casestuding_banner_image, banner_background_image_mobile]);
 
   const fetchData = useCallback(async () => {
-    setIsLoadk(true);
     try {
       const response = await fetch(
         `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${selectedIndustry?.id}&services=${selectedService}`
       );
       const data = await response.json();
-
       setCaseStudycptData((prevData) =>
         page === 1 ? data.data : [...prevData, ...data.data]
       );
@@ -76,7 +74,12 @@ const CasestudingBanner = ({
     fetchData();
   }, [fetchData]);
 
+  useEffect(() => {
+    setIsLoadk(true)
+  },[])
+
   const handleIndustryChange = (value) => {
+    setIsLoadk(true)
     setSelectedIndustry(value);
     setPage(1); // Reset to the first page
     setCaseStudycptData([]); // Clear previous data
