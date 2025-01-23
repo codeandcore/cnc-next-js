@@ -31,7 +31,6 @@ router.post('/', async (req, res) => {
   
       res.status(200).send({
         success: true,
-        slug,
         type,
         message: `Data has been successfully saved for the key ${pathName} in kv storage with json ${JSON.stringify(
           json
