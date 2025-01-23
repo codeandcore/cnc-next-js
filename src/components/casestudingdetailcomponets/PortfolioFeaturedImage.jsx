@@ -12,7 +12,6 @@ const PortfolioFeaturedImage = ({ featured_image_url, videoUrl }) => {
           const element = document.querySelector(".portfolio-image-section");
           if (entry.isIntersecting) {
             if (element) {
-              console.log("element",element);
               setTimeout(() => {
                 element.classList.add("active_video");
               }, 1000);
@@ -21,7 +20,6 @@ const PortfolioFeaturedImage = ({ featured_image_url, videoUrl }) => {
             if (element) {
               element.classList.remove("active_video");
             }
-            console.log('Element is not visible');
           }
         },
         { rootMargin: "-50% 0px -50% 0px", threshold: 0 }

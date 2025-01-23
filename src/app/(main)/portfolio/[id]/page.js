@@ -103,7 +103,6 @@ export default async function Page({ params }) {
       : HomePage && HomePage?.acf
         ? HomePage?.acf
         : null;
-console.log("portfolioData",portfolioData);
 
   return (
     <Suspense fallback={<Loading />}>

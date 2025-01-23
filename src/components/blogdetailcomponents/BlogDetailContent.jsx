@@ -19,7 +19,6 @@ const BlogDetailContent = ({
   const extractHeadings = () => {
     const content = contentRef.current;
     const headings = content.querySelectorAll('h2'); 
-    console.log('headings', headings);
     
     const toc = Array.from(headings)
       .filter((heading) => heading.innerText.trim() !== '')
