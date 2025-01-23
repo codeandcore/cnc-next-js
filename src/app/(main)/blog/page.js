@@ -12,11 +12,11 @@ const fetchPageData = async () => {
             ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/blog`
             : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
   
-    const response = await fetch(apiUrl,{ cache: "no-store" } );
-    if (!response.ok) {
+    const responsePageData = await fetch(apiUrl,{ cache: "no-store" } );
+    if (!responsePageData.ok) {
       throw new Error("Failed to fetch data");
     }
-    return response.json();
+    return responsePageData.json();
 };
   
 const fetchHireUsData = async () => {
@@ -39,11 +39,11 @@ const fetchContactData = async () => {
     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   
-    const response = await fetch(apiUrl, { cache: "no-store" } );
-    if (!response.ok) {
+    const responseContactData = await fetch(apiUrl, { cache: "no-store" } );
+    if (!responseContactData.ok) {
       throw new Error("Failed to fetch data");
     }
-    return response.json();
+    return responseContactData.json();
 };
 
 const fetchCategoryData = async () => {
@@ -52,11 +52,11 @@ const fetchCategoryData = async () => {
     ? `${BASE_URL}/wp-json/wp/v2/categories`
     : `${BASE_URL}/wp-json/wp/v2/categories`
   
-    const response = await fetch(apiUrl, { cache: "no-store" } );
-    if (!response.ok) {
+    const responseCategoryData = await fetch(apiUrl, { cache: "no-store" } );
+    if (!responseCategoryData.ok) {
       throw new Error("Failed to fetch data");
     }
-    return response.json();
+    return responseCategoryData.json();
 };
 
 

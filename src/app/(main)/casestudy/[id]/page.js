@@ -26,16 +26,16 @@ async function fetchData(slug) {
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`;
 
   try {
-    const response = await fetch(apiURL, {
+    const fetchresponse = await fetch(apiURL, {
       cache: "no-store", // Adjust cache as needed
     });
 
-    if (!response.ok) {
+    if (!fetchresponse.ok) {
       console.error(`Error fetching data for slug: ${slug}`);
       throw new Error("Failed to fetch data");
     }
 
-    const data = await response.json(); // Parse the body once here
+    const data = await fetchresponse.json(); // Parse the body once here
     return data;
   } catch (error) {
     console.error("Error in fetchData:", error);
@@ -50,13 +50,13 @@ async function fetchHomeData() {
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   try {
-    const response = await fetch(apiURL, { cache: "no-store" });
+    const fetchHomeresponse = await fetch(apiURL, { cache: "no-store" });
 
-    if (!response.ok) {
+    if (!fetchHomeresponse.ok) {
       console.error("Error fetching homepage data");
       throw new Error("Failed to fetch homepage data");
     }
-    const data = await response.json(); // Parse the body once here
+    const data = await fetchHomeresponse.json(); // Parse the body once here
     return data;
   } catch (error) {
     console.error("Error in fetchHomeData:", error);

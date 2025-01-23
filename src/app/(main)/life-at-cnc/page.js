@@ -16,11 +16,11 @@ const fetchhomePage = async () => {
     env !== "development"
     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/life-at-cnc`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1665`
-    const response = await fetch(apiUrl,{ cache: "no-store" } );
-    if (!response.ok) {
+    const fetchhomeresponse = await fetch(apiUrl,{ cache: "no-store" } );
+    if (!fetchhomeresponse.ok) {
       throw new Error("Failed to fetch data");
     }
-    return response.json();
+    return fetchhomeresponse.json();
 };
 
 

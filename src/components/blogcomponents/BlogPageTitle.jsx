@@ -16,7 +16,7 @@ const BlogPageTitle = ({
 
   useEffect(() => {
     fetch(`${BASE_URL}/wp-json/wp/v2/categories`)
-      .then((response) => response.json())
+      .then((response1) => response1.json())
       .then((data) => setCatData(data))
       .catch((error) =>
         console.error('Error fetching data from WordPress API:', error),

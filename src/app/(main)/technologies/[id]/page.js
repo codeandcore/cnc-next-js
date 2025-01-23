@@ -24,13 +24,13 @@ async function fetchData(slug) {
   }
   
   async function fetchHomeData() {
-    const res = await   fetch(
+    const fetchHomeres = await   fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
   )
-    if (!res.ok) throw new Error('Failed to fetch homepage data');
-    return res.json();
+    if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
+    return fetchHomeres.json();
 }
   
   async function fetchContactData() {

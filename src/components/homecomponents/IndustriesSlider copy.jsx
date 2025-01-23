@@ -58,7 +58,7 @@ const IndustriesSlider = ({
 
     if (!fetchedPages[menuItem]) {
       return fetch(`/data/pages/${menuItem}`)
-        .then((response) => response.json())
+        .then((response1) => response1.json())
         .then((data) => {
           setFetchedPages((prevState) => ({ ...prevState, [menuItem]: data }));
           setHoveredItemData(data);

@@ -20,7 +20,8 @@ const ExploreDone = ({
         console.error('Error fetching data from WordPress API:', error),
       );
   }, [BASE_URL]);
-
+  console.log('portfolio_list', portfolio_list);
+  
   const casestudy_list = portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : portfoliodata  
   return (
     <div className="explore_we_done">
@@ -39,7 +40,7 @@ const ExploreDone = ({
           </Link>
         )}
         {casestudy_list && (
-          <ExploreData CaseStudycptData={casestudy_list?.data}></ExploreData>
+          <ExploreData CaseStudycptData={portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : casestudy_list?.data}></ExploreData>
         )}
       </div>
     </div>
