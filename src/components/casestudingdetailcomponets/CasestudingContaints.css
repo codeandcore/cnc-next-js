@@ -226,7 +226,13 @@
 
 /* Full banner */
 .portfolio-image-section{padding: 35px 0;}
-.portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px;}
+.portfolio-image-section .image-inner{overflow: hidden; border-radius: 40px; height: 640px; position: relative;}
+.portfolio-image-section .image-inner .portfolioImage{position: relative; z-index: 1; height: 100%; width: 100%; object-fit: cover; object-position: center;}
+.portfolio-image-section .image-inner .portfolioVideo{width: 100%; object-fit: cover; object-position: center center; height: 100%; position: absolute; top: 0; left: 0;}
+.portfolio-image-section.active_video .image-inner .portfolioImage {
+opacity: 0;
+visibility: hidden
+}
 
 /* pain-area-section */
 .pain-area-section{  background-image: url(/assets/images/pain-area-bg.webp); color: #fff; padding: 70px 0; background-position: center; background-size: cover; background-repeat: no-repeat; margin: 35px 0;}

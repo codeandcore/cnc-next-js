@@ -103,7 +103,8 @@ export default async function Page({ params }) {
       : HomePage && HomePage?.acf
         ? HomePage?.acf
         : null;
-    
+console.log("portfolioData",portfolioData);
+
   return (
     <Suspense fallback={<Loading />}>
       <Head yoastData={yoastData} />
@@ -120,7 +121,7 @@ export default async function Page({ params }) {
           } title={portfolioData?.acf?.initial_goal_title} image={portfolioData?.acf?.initial_goal_image
           } />} 
         
-        {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} />}
+        {portfolioData?.featured_image_url && <PortfolioFeaturedImage featured_image_url={portfolioData?.featured_image_url} videoUrl={ portfolioData?.acf?.feature_video} />}
         {portfolioData && portfolioData?.acf?.pain_area_title
           && portfolioData?.acf?.pain_area_content && portfolioData?.acf?.pain_area_image && <PainAreaSection content={portfolioData?.acf?.pain_area_content} title={portfolioData?.acf?.pain_area_title} image={portfolioData?.acf?.pain_area_image} />}
 
