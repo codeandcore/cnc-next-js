@@ -12,7 +12,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/career`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/career`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`
   
   
@@ -25,7 +25,7 @@ const fetchPageData = async () => {
   const fetchLifeCNCData = async () => {
     const res = await   fetch(
       env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
         { cache: "no-store" } 
   )

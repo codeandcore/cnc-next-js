@@ -30,7 +30,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   async function fetchHomeData() {
     const fetchHomeres = await   fetch(
       env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
   )
     if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
@@ -40,7 +40,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   async function fetchContactData() {
     const res = await  fetch(
       env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');
@@ -48,7 +48,9 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   }
   
 
-export default async function Page({ params }) {
+export default async function Page({ params, generalSetting }) {
+  console.log('generalSetting', generalSetting);
+  
   const slug = (await params).id
   console.log('slug', slug);
   

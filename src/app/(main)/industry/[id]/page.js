@@ -12,7 +12,7 @@ import { notFound } from "next/navigation";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/${slug}`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
   
     const response = await fetch(apiURL, {
@@ -27,7 +27,7 @@ async function fetchData(slug) {
   async function fetchHomeData() {
     const res = await   fetch(
       env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`, 
           { cache: "no-store" } 
   )
@@ -38,7 +38,7 @@ async function fetchData(slug) {
   async function fetchContactData() {
     const fetchContact = await  fetch(
       env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
           : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
   )
     if (!fetchContact.ok) throw new Error('Failed to fetch contact data');

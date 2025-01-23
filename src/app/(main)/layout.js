@@ -13,7 +13,7 @@ async function fetchGeneralSettings() {
 
   const generalSettingRes = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
       { cache: "no-store" } 
 )
@@ -25,6 +25,7 @@ async function fetchGeneralSettings() {
 
 export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
+  
   return (
     <>
     <ScrollToTop />

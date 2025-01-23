@@ -46,7 +46,7 @@ async function fetchData(slug) {
 async function fetchHomeData() {
   const apiURL =
     env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   try {
@@ -68,7 +68,7 @@ async function fetchHomeData() {
 async function fetchContactData() {
   const apiURL =
     env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
 
   try {

@@ -9,7 +9,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-            ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/blog`
+            ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/blog`
             : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
   
     const responsePageData = await fetch(apiUrl,{ cache: "no-store" } );
@@ -22,7 +22,7 @@ const fetchPageData = async () => {
 const fetchHireUsData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
 
   
@@ -36,7 +36,7 @@ const fetchHireUsData = async () => {
 const fetchContactData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
   
     const responseContactData = await fetch(apiUrl, { cache: "no-store" } );

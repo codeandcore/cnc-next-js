@@ -28,6 +28,7 @@ const Homepage = async ({
   setIsLoading,
   setIsDone,
   setIsFinish,
+  
 }) => {
   const HomePage = await fetchHomepageData();
   const contactData = await fetchContactData();
@@ -265,7 +266,7 @@ const Homepage = async ({
 async function fetchHomepageData() {
   const res = await   fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
          { cache: "no-store" } 
 )
@@ -277,7 +278,7 @@ async function fetchHomepageData() {
 async function fetchContactData() {
   const fetchres = await  fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,
       { cache: "no-store" } 
 )
