@@ -50,7 +50,7 @@ const HireUs = ({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const scaleValue = isVisible ? 1 : 1.15;
+  // const scaleValue = isVisible ? 1 : 1.15;
   return (
     <>
       <div
