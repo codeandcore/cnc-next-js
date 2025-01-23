@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import './ReviewBanner.css';
 import Link from 'next/link';
@@ -31,10 +31,18 @@ e.preventDefault()
     setLightboxOpen(!isLightboxOpen);
   };
 
-  const handleVideoPlay = () => {
-    console.log('Video is playing');
-  };
-  
+  useEffect(() => {
+    if (isLightboxOpen) {
+      const interval = setInterval(() => {
+        const videoElement = document.querySelector(".fslightbox-container video");
+        if (videoElement) {
+          videoElement.setAttribute("autoplay", "true");
+          videoElement.play();
+          clearInterval(interval); // Stop once the video element is found and updated
+        }
+      }, 100); // Retry every 100ms until the video element is available
+    }
+  }, [isLightboxOpen]);
 
   return (
     <div className="review_banner">
@@ -68,11 +76,11 @@ e.preventDefault()
                 </div>
               </div>
             </div>
-              <FsLightbox
+              {/* <FsLightbox
               toggler={isLightboxOpen}
               types={["video"]}
                 sources={[
-                  "/assets/video/reviewVideo.mp4?autoplay=1&muted=1&loop=1",
+                  "/assets/video/reviewVideo.mp4",
                 ]}
                 options={{
                   slide: {
@@ -80,13 +88,18 @@ e.preventDefault()
                       key:modalVideoKey,
                       width: "100vw",  // Full width
                       height: "90vh",
-                      autoplay: 1,
+                      autoplay: true,
                       mute: 1,
                       loop:true                 
                     },
                   },
                 }}
-              />
+              /> */}
+            <FsLightbox
+              toggler={isLightboxOpen}
+              sources={["/assets/video/reviewVideo.mp4?autoplay=1&muted=1&loop=1"]}
+              types={["video"]}
+            />
           </div>
           <div className="col_right">
             {right_side_title && <h3>{right_side_title}</h3>}
