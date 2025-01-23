@@ -123,14 +123,16 @@ const IndustriesSlider = ({
                                 // onMouseEnter={() => handleMouseEnter(item.button_url.post_name)}
                             >
                                 <div className='img'>
-                                    <div className='bg' style={{ backgroundImage: `url(${item.image.url})` }}></div>
+                                    <div className='overflow_animi'>
+                                      <div className='bg' style={{ backgroundImage: `url(${item.image.url})` }}></div>
+                                    </div>
                                     <span className='icon_link'><img src={item.icon.url} alt={item.title} /></span>
                                 </div>
                                 <h3 className='h2' ref={el => titleRefs.current[index] = el} >{item.title}</h3>
                                 <p ref={el => contentRefs.current[index] = el}>{item.content}</p>
                                 <div className='btn btnarrow'>
                                     <em>{item.button_text}</em>
-                                    <div><img src={"/assets/images/ellipse_arr.png"} alt="Read More" /></div>
+                                    <div className='arrow_img'><img src={"/assets/images/ellipse_arr.png"} alt="Read More" /></div>
                                 </div>
                             </Link>
                         </div>
