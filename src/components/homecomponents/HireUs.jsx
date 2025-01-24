@@ -55,9 +55,9 @@ const HireUs = ({
     <>
       <div
         ref={ref}
-        style={{
-          transform: `scale(${scaleValue})`,
-        }}
+        // style={{
+        //   transform: `scale(${scaleValue})`,
+        // }}
         className="hireto_meetyou"
         onMouseLeave={handleParentHoverOut}
       >

@@ -146,7 +146,6 @@ const Life = ({
         <div
           ref={ref}
           style={{
-            transform: `scale(${scaleValue})`,
             backgroundImage: `url(/assets/images/career_bg.jpg)`,
           }}
           className={`life_section ${className}`}
