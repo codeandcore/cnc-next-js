@@ -11,7 +11,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/posts/?slug=${slug}`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/posts/?slug=${slug}`
   
     const response = await fetch(apiURL, {
       cache: 'no-store',
@@ -26,7 +26,7 @@ async function fetchData(slug) {
     const fetchHome = await   fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
+        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,
         { cache: "no-store" } 
   )
     if (!fetchHome.ok) throw new Error('Failed to fetch homepage data');
@@ -37,7 +37,7 @@ async function fetchData(slug) {
     const res = await  fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,
+        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,
         { cache: "no-store" } 
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');

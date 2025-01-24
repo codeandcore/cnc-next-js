@@ -91,7 +91,7 @@ async function fetchHomepageData() {
   const res = await fetch(
     env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
+        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,
          { cache: "no-store" } 
 )
   if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -101,7 +101,7 @@ async function fetchGeneralSettings() {
   const generalSettingRes = await fetch(
     env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`,
       { cache: "no-store" } 
 )
   if (!generalSettingRes.ok) {

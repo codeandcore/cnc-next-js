@@ -12,7 +12,7 @@ const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/review`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2896`
+          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/2896`
   
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {

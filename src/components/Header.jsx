@@ -48,7 +48,7 @@ const Header = ({
     // return fetch(
     //   env !== 'development'
     //     ? `/data/pages/${menuItem}`
-    //     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${menuItem}`,
+    //     : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/?slug=${menuItem}`,
     // )
     //   .then((response) => response.json())
     //   .then((data) => {
