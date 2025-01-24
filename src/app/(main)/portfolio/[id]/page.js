@@ -23,7 +23,7 @@ async function fetchData(slug) {
   const apiURL =
     env !== "development"
       ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/portfolio/?slug=${slug}`;
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/portfolio/?slug=${slug}`;
 
   try {
     const fetchresponse = await fetch(apiURL, {
@@ -47,7 +47,7 @@ async function fetchHomeData() {
   const apiURL =
     env !== "development"
       ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`;
 
   try {
     const fetchHomeresponse = await fetch(apiURL, { cache: "no-store" });
@@ -69,7 +69,7 @@ async function fetchContactData() {
   const apiURL =
     env !== "development"
       ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`;
 
   try {
     const response = await fetch(apiURL, { cache: "no-store" });

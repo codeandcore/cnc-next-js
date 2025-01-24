@@ -57,7 +57,7 @@ const CasestudingBanner = ({
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${typeof selectedIndustry === 'string' ? selectedIndustry : selectedIndustry?.id}&services=${selectedService}&industry_slug=${selectedIndustry}`
+        `${process.env.NEXT_PUBLIC_WP_URL}wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${typeof selectedIndustry === 'string' ? selectedIndustry : selectedIndustry?.id}&services=${selectedService}&industry_slug=${selectedIndustry}`
       );
       const data = await response.json();
       setCaseStudycptData((prevData) =>

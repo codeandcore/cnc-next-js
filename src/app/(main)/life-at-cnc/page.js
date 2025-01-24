@@ -15,7 +15,7 @@ const fetchhomePage = async () => {
     const apiUrl =
     env !== "development"
     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/life-at-cnc`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1665`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1665`
     const fetchhomeresponse = await fetch(apiUrl,{ cache: "no-store" } );
     if (!fetchhomeresponse.ok) {
       throw new Error("Failed to fetch data");
@@ -40,7 +40,7 @@ const fetchYoutubeMedia = async () => {
     const fetchHomehomeres = await fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
+          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
   )
     if (!fetchHomehomeres.ok) throw new Error('Failed to fetch homepage data');
     return fetchHomehomeres.json();
@@ -51,7 +51,7 @@ const fetchYoutubeMedia = async () => {
     const res = await  fetch(
       env !== "development"
           ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
+          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
   )
     if (!res.ok) throw new Error('Failed to fetch contact data');
     return res.json();
