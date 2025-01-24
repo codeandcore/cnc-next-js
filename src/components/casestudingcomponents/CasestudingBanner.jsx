@@ -81,8 +81,14 @@ const CasestudingBanner = ({
   const handleIndustryChange = (value) => {
     setIsLoadk(true)
     setSelectedIndustry(value);
-    setPage(1); // Reset to the first page
-    setCaseStudycptData([]); // Clear previous data
+    setPage(1);
+    setCaseStudycptData([]);
+    const wrapperbox =  document.getElementById('casestudingExploredata');
+    if (wrapperbox) {
+      wrapperbox.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
   };
 
   return (

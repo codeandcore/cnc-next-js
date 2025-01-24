@@ -27,7 +27,7 @@ const CasestudingExploreData = ({
 
   return (
     <>
-        <div className="casestuding_exploredata">
+      <div className="casestuding_exploredata" id='casestudingExploredata'>
         <div className="wrapper">
        {isLoadk ? (
         <div className="skeleton-grid moving-background " style={{ paddingTop: 50 }}>

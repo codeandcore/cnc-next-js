@@ -20,7 +20,6 @@ const ExploreDone = ({
         console.error('Error fetching data from WordPress API:', error),
       );
   }, [BASE_URL]);
-  console.log('portfolio_list', portfolio_list);
   
   const casestudy_list = portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : portfoliodata  
   return (
