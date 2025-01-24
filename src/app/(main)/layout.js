@@ -8,6 +8,7 @@ import Loading from '@/components/Loading';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { setGeneralData } from '@/appStore';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchGeneralSettings() {  
 
@@ -25,7 +26,7 @@ async function fetchGeneralSettings() {
 
 export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
-  
+  setGeneralData(generalSetting);
   return (
     <>
     <ScrollToTop />

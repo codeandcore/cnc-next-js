@@ -11,7 +11,7 @@ import ServicesDetailsBanner from "@/components/servicesdetailscomponents/Servic
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
 import { Suspense } from "react";
-
+import { getGeneralData } from '@/appStore';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   async function fetchData(slug) {
   const apiURL=  env !== "development"
@@ -48,9 +48,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   }
   
 
-export default async function Page({ params, generalSetting }) {
-  console.log('generalSetting', generalSetting);
-  
+export default async function Page({ params }) {
+  console.log('getGeneralData', getGeneralData());
   const slug = (await params).id
   console.log('slug', slug);
   
@@ -102,6 +101,7 @@ export default async function Page({ params, generalSetting }) {
           portfolio_subtitle = {serviceData.acf.portfolio_subtitle}
           portfolio_button = {serviceData.acf.portfolio_button}
           portfolio_list = {serviceData.acf.portfolio_list}
+          commonPortfolio={getGeneralData()}
           ></ExploreDone>
       )}
       {serviceData && (serviceData.acf.why_choose_title || serviceData.acf.why_choose_subtitle || serviceData.acf.why_choose_list) && (

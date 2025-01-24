@@ -28,12 +28,10 @@ const Homepage = async ({
   setIsLoading,
   setIsDone,
   setIsFinish,
-  
 }) => {
   const HomePage = await fetchHomepageData();
   const contactData = await fetchContactData();
   const yoastData = HomePage?.yoast_head_json   
-  
   return (
     <>
   <Head yoastData={yoastData} />

@@ -5,6 +5,7 @@ import AwardsLogo from '../careercomponents/AwardsLogo';
 import he from 'he';
 import CasestudingExploreData from './CasestudingExploreData';
 import dynamic from 'next/dynamic';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 const Select = dynamic(() => import('react-select'), { ssr: false });
 
@@ -19,12 +20,15 @@ const CasestudingBanner = ({
   isLoadingk,
   portfolio_API,
 }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  console.log('pathname', pathname, searchParams.get('industry'));
+  
   const [backgroundhomebanner, setBackgroundhomebanner] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState({
-    value: 'All Industry',
-    label: 'All Industry',
-    id: 'all',
-  });
+  const [selectedIndustry, setSelectedIndustry] = useState(searchParams.get('industry') || 'all');
+  console.log('selectedIndustry', selectedIndustry);
+  
   const [selectedService, setSelectedService] = useState('all');
   const [CaseStudycptData, setCaseStudycptData] = useState([]);
   const [hasMorePages, setHasMorePages] = useState(false);
@@ -40,7 +44,7 @@ const CasestudingBanner = ({
     value: 'All Industry',
     label: 'All Industry',
     id: 'all',
-  })
+  });
 
   useEffect(() => {
     setBackgroundhomebanner(
@@ -53,7 +57,7 @@ const CasestudingBanner = ({
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${selectedIndustry?.id}&services=${selectedService}`
+        `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/custom/v1/${portfolio_API}?page=${page}&per_page=${perPage}&industry=${typeof selectedIndustry === 'string' ? selectedIndustry : selectedIndustry?.id}&services=${selectedService}&industry_slug=${selectedIndustry}`
       );
       const data = await response.json();
       setCaseStudycptData((prevData) =>
@@ -66,6 +70,7 @@ const CasestudingBanner = ({
       setIsLoadk(false);
     }
   }, [portfolio_API, page, perPage, selectedIndustry, selectedService]);
+
   const handleLoadMore = useCallback(() => {
     setPage((prevPage) => prevPage + 1);
   }, []);
@@ -74,19 +79,22 @@ const CasestudingBanner = ({
   }, [fetchData]);
 
   useEffect(() => {
-    setIsLoadk(true)
-  },[])
+    setIsLoadk(true);
+  }, []);
 
   const handleIndustryChange = (value) => {
-    setIsLoadk(true)
+    setIsLoadk(true);
     setSelectedIndustry(value);
     setPage(1);
     setCaseStudycptData([]);
-    const wrapperbox =  document.getElementById('casestudingExploredata');
+    console.log('value', value);
+    
+    router.push(`${pathname}?industry=${value.value}`);
+    const wrapperbox = document.getElementById('casestudingExploredata');
     if (wrapperbox) {
       wrapperbox.scrollIntoView({
-        behavior: 'smooth'
-      })
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -129,7 +137,7 @@ const CasestudingBanner = ({
               <Select
                 isSearchable={false}
                 options={options}
-                value={selectedIndustry}
+                value={options.find((opt) => opt.value === selectedIndustry)}
                 placeholder="All Industry"
                 onChange={handleIndustryChange}
                 classNamePrefix="select2"
