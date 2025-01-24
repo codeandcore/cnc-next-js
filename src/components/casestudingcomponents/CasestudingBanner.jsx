@@ -31,7 +31,6 @@ const CasestudingBanner = ({
   const [page, setPage] = useState(1);
   const [perPage] = useState(8);
   const [isLoadk, setIsLoadk] = useState(false);
-  const videoRef = useRef(null);
   const options = IndustryTaxonomyeData.map((industry) => ({
     value: industry.slug,
     label: industry.name,
@@ -104,7 +103,6 @@ const CasestudingBanner = ({
         {casestuding_banner_video && (
           <video
             autoPlay
-            ref={videoRef}
             loop
             muted
             playsInline
