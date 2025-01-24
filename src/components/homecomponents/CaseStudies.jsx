@@ -83,118 +83,119 @@ const CaseStudies = ({
           </p>
         )}
       </div>
-
-      <div className="inner">
-        {caseStudyData && (
-          <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
-            {caseStudyData.map((item, index) => (
-              <div
-                key={index}
-                className={`colin ${hoveredSlide === item.slug ? "hovered" : ""}`}
-              >
-                <div className="top_col d_flex">
-                  <h3>{item.case_study_post_title}</h3>
-                  <div className="case d_flex">
-                    <span>
-                      <img
-                        src={item.acf.tag_logo.url}
-                        alt={item.case_study_post_title}
-                      />
-                    </span>
-                    <ul className="d_flex">
-                      {item.case_study_tags.map((caseItem, index_tag) => (
-                        <li key={index_tag}>{caseItem.name}</li>
-                      ))}
-                    </ul>
+      <div className="wrapper">
+        <div className="inner">
+          {caseStudyData && (
+            <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
+              {caseStudyData.map((item, index) => (
+                <div
+                  key={index}
+                  className={`colin ${hoveredSlide === item.slug ? "hovered" : ""}`}
+                >
+                  <div className="top_col d_flex">
+                    <h3>{item.case_study_post_title}</h3>
+                    <div className="case d_flex">
+                      <span>
+                        <img
+                          src={item.acf.tag_logo.url}
+                          alt={item.case_study_post_title}
+                        />
+                      </span>
+                      <ul className="d_flex">
+                        {item.case_study_tags.map((caseItem, index_tag) => (
+                          <li key={index_tag}>{caseItem.name}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
 
-                <div className="img">
-                  {item.featured_image_url && (
-                    <Link
-                      href={`/portfolio/${item.slug}`}
-                      onClick={(e) => {
-                        handleSmoothScroll();
-                      }}
-                      className="bg"
-                    >
-                      <img
-                        src={item.featured_image_url}
-                        alt={item.case_study_post_title}
-                      />
-                    </Link>
-                  )}
-                </div>
+                  <div className="img">
+                    {item.featured_image_url && (
+                      <Link
+                        href={`/portfolio/${item.slug}`}
+                        onClick={(e) => {
+                          handleSmoothScroll();
+                        }}
+                        className="bg"
+                      >
+                        <img
+                          src={item.featured_image_url}
+                          alt={item.case_study_post_title}
+                        />
+                      </Link>
+                    )}
+                  </div>
 
-                <div className="bottom_col d_flex">
-                  <div className="lcol test">
-                    {item.acf &&
-                      item.acf.c_right_side_logo &&
-                      item.acf.c_right_side_logo.url && (
-                        <div className="lcol_logo">
+                  <div className="bottom_col d_flex">
+                    <div className="lcol test">
+                      {item.acf &&
+                        item.acf.c_right_side_logo &&
+                        item.acf.c_right_side_logo.url && (
+                          <div className="lcol_logo">
+                            <img
+                              src={item.acf.c_right_side_logo.url}
+                              alt={item.acf.c_right_side_logo.name}
+                            />
+                          </div>
+                        )}
+                      <ul className="d_flex">
+                        {item.acf.case_total_visitors && (
+                          <li>
+                            <h4>{item.acf.case_total_visitors}</h4>
+                            <h5>Visitors a day</h5>
+                          </li>
+                        )}
+                        {item.acf.case_total_orders && (
+                          <li>
+                            <h4>{item.acf.case_total_orders}</h4>
+                            <h5>Order a day website</h5>
+                          </li>
+                        )}
+                        {item.acf.AwwardsIcongoogle_page_speed && (
+                          <li>
+                            <h4>{item.acf.google_page_speed}</h4>
+                            <h5>
+                              <img src={GoogleIcon} alt="Lighthouse speed" />
+                              Lighthouse speed
+                            </h5>
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+
+                    <div className="awward_right_col">
+                      {item.acf.cases_location && (
+                        <div className="rcol d_flex">
                           <img
-                            src={item.acf.c_right_side_logo.url}
-                            alt={item.acf.c_right_side_logo.name}
+                            src={"/assets/images/location.svg"}
+                            alt="Location Icon"
                           />
+                          {item.acf.cases_location}
                         </div>
                       )}
-                    <ul className="d_flex">
-                      {item.acf.case_total_visitors && (
-                        <li>
-                          <h4>{item.acf.case_total_visitors}</h4>
-                          <h5>Visitors a day</h5>
-                        </li>
-                      )}
-                      {item.acf.case_total_orders && (
-                        <li>
-                          <h4>{item.acf.case_total_orders}</h4>
-                          <h5>Order a day website</h5>
-                        </li>
-                      )}
-                      {item.acf.AwwardsIcongoogle_page_speed && (
-                        <li>
-                          <h4>{item.acf.google_page_speed}</h4>
-                          <h5>
-                            <img src={GoogleIcon} alt="Lighthouse speed" />
-                            Lighthouse speed
-                          </h5>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
 
-                  <div className="awward_right_col">
-                    {item.acf.cases_location && (
-                      <div className="rcol d_flex">
-                        <img
-                          src={"/assets/images/location.svg"}
-                          alt="Location Icon"
-                        />
-                        {item.acf.cases_location}
-                      </div>
-                    )}
-
-                    {item.acf &&
-                      item.acf.award_small_logo &&
-                      item.acf.award_small_logo.url &&
-                      item.acf.award_link &&
-                      item.acf.award_text && (
-                        <a href={item.acf.award_link} className="awward">
-                          <span>{item.acf.award_text}</span>
-                          <img
-                            src={item.acf.award_small_logo.url}
-                            alt={item.acf.award_small_logo.name}
-                            className="awwadicon"
-                          />
-                        </a>
-                      )}
+                      {item.acf &&
+                        item.acf.award_small_logo &&
+                        item.acf.award_small_logo.url &&
+                        item.acf.award_link &&
+                        item.acf.award_text && (
+                          <a href={item.acf.award_link} className="awward">
+                            <span>{item.acf.award_text}</span>
+                            <img
+                              src={item.acf.award_small_logo.url}
+                              alt={item.acf.award_small_logo.name}
+                              className="awwadicon"
+                            />
+                          </a>
+                        )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </OwlCarousel>
-        )}
-      </div>
+              ))}
+            </OwlCarousel>
+          )}
+        </div>
+      </div>  
     </div>
   );
 };

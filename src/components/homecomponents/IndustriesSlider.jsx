@@ -109,35 +109,40 @@ const IndustriesSlider = ({
           <p dangerouslySetInnerHTML={{ __html: industries_subtitle }} />
         )}
       </div>
-      <div className="inner">
-      <OwlCarousel    className="owl-theme"
-          {...options}>
-                    {industries_list.map((item, index) => (
-                        <div key={index} className='colin'>
-                            <Link href={`industry/${item.button_url.post_name}`}
-                                title={`${item.button_url.post_name}`}
-                                onClick={(e) =>
-                                    handleLinkClick(`/industry/${item.button_url.post_name}`, item.button_url.post_name, e)
-                                }
-                                className='col'
-                                // onMouseEnter={() => handleMouseEnter(item.button_url.post_name)}
-                            >
-                                <div className='img'>
-                                    <div className='overflow_animi'>
-                                      <div className='bg' style={{ backgroundImage: `url(${item.image.url})` }}></div>
-                                    </div>
-                                    <span className='icon_link'><img src={item.icon.url} alt={item.title} /></span>
-                                </div>
-                                <h3 className='h2' ref={el => titleRefs.current[index] = el} >{item.title}</h3>
-                                <p ref={el => contentRefs.current[index] = el}>{item.content}</p>
-                                <div className='btn btnarrow'>
-                                    <em>{item.button_text}</em>
-                                    <div className='arrow_img'><img src={"/assets/images/ellipse_arr.png"} alt="Read More" /></div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </OwlCarousel>
+      <div className='wrapper'>
+        <div className="inner">
+        <OwlCarousel    className="owl-theme"
+            {...options}>
+                      {industries_list.map((item, index) => (
+                          <div key={index} className='colin'>
+                              <Link href={`industry/${item.button_url.post_name}`}
+                                  title={`${item.button_url.post_name}`}
+                                  onClick={(e) =>
+                                      handleLinkClick(`/industry/${item.button_url.post_name}`, item.button_url.post_name, e)
+                                  }
+                                  className='col'
+                                  // onMouseEnter={() => handleMouseEnter(item.button_url.post_name)}
+                              >
+                                  <div className='img'>
+                                      <div className='overflow_animi'>
+                                        <div className='bg' style={{ backgroundImage: `url(${item.image.url})` }}></div>
+                                      </div>
+                                      <span className='icon_link'><img src={item.icon.url} alt={item.title} /></span>
+                                  </div>
+                                  <h3 className='h2' ref={el => titleRefs.current[index] = el} >{item.title}</h3>
+                                  <p ref={el => contentRefs.current[index] = el}>{item.content}</p>
+                                  <div className='btn btnarrow'>
+                                      <em>{item.button_text}</em>
+                                      <div className='arrow_img'>
+                                        <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
+                                        <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" className='hover_img'/>
+                                      </div>
+                                  </div>
+                              </Link>
+                          </div>
+                      ))}
+                  </OwlCarousel>
+        </div>
       </div>
     </div>
   );
