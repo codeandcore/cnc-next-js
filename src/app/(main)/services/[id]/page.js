@@ -78,7 +78,6 @@ export default async function Page({ params }) {
           portfolio_subtitle = {serviceData.acf.portfolio_subtitle}
           portfolio_button = {serviceData.acf.portfolio_button}
           portfolio_list = {serviceData.acf?.portfolio_list}
-          commonPortfolio={getGeneralData()}
           ></ExploreDone>
       )}
       {serviceData && (serviceData.acf.why_choose_title || serviceData.acf.why_choose_subtitle || serviceData.acf.why_choose_list) && (
