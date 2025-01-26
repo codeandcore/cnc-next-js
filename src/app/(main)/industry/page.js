@@ -12,7 +12,8 @@ import OurApproach from '@/components/servicescomponents/OurApproach';
 import CaseStudies from '@/components/homecomponents/CaseStudies';
 import ClientsSay from '@/components/homecomponents/ClientsSay';
 import Loading from '@/components/Loading';
-
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -27,33 +28,9 @@ const fetchPageData = async () => {
     }
     return response.json();
 };
-  
-  async function fetchHomepageData() {
-    const fetchHomeres = await fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomeres.json();
-  }
-  
-  // Fetch contact data server-side
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,
-        { cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
 
 export default async function IndustryPage() {
     const IndustryData = await fetchPageData();
-    const homePage = await fetchHomepageData();
-    const contactData = await fetchContactData();
     const yoastData =  IndustryData?.yoast_head_json
 
     const hireUsData =

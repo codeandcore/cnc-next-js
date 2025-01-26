@@ -14,7 +14,7 @@ import "@/components/homecomponents/Banner.css"
 import ProjectLogoMarquee from '@/components/homecomponents/ProjectLogoMarquee';
 import TabContaint from '@/components/homecomponents/TabContaint';
 import IndustriesSlider from '@/components/homecomponents/IndustriesSlider';
-
+import contactData from "@/json/contact.json";
 function stripHtmlTags(str) {
   if (!str) return '';
   return str.replace(/<[^>]*>/g, '');
@@ -30,7 +30,8 @@ const Homepage = async ({
   setIsFinish,
 }) => {
   const HomePage = await fetchHomepageData();
-  const contactData = await fetchContactData();
+  console.log('json', contactData);
+  
   const yoastData = HomePage?.yoast_head_json   
   return (
     <>
@@ -61,7 +62,7 @@ const Homepage = async ({
             banner_hireus_form_subtitle={
               HomePage.acf.banner_hireus_form_subtitle
             }
-            contactData={contactData}
+            contactData={contactData[0]}
           />
         )}
       {HomePage && HomePage.acf.banner_clients_list && (
@@ -251,7 +252,7 @@ const Homepage = async ({
             hireus_subtitle={HomePage.acf.hireus_subtitle}
             hireus_button_text={HomePage.acf.hireus_button_text}
             hireus_list={HomePage.acf.hireus_list}
-            contactData={contactData}
+            contactData={contactData[0]}
           ></HireUs>
         )}
     </div>
@@ -270,18 +271,6 @@ async function fetchHomepageData() {
 )
   if (!res.ok) throw new Error('Failed to fetch homepage data');
   return res.json();
-}
-
-// Fetch contact data server-side
-async function fetchContactData() {
-  const fetchres = await  fetch(
-    env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,
-      { cache: "no-store" } 
-)
-  if (!fetchres.ok) throw new Error('Failed to fetch contact data');
-  return fetchres.json();
 }
 
 

@@ -19,34 +19,13 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
     : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/?slug=${slug}`
   
     const response = await fetch(apiURL, {
-      cache: 'no-store', // Adjust cache as needed
+      cache: 'no-store',
     });
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
     return response.json();
   }
-  
-  async function fetchHomeData() {
-    const fetchHomeres = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomeres.json();
-}
-  
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-  
 
 export default async function Page({ params }) {
   console.log('getGeneralData', getGeneralData());
@@ -55,15 +34,10 @@ export default async function Page({ params }) {
   
   const data = await fetchData(slug)  
   const serviceData = data?.id ? data : data[0]   
-  const homePage = await fetchHomeData();
-  const contactData = await fetchContactData();
+  
   const yoastData = serviceData?.yoast_head_json
   const hireUsData =
-  serviceData && serviceData && serviceData?.acf && serviceData?.acf?.hireus_title
-    ? serviceData?.acf
-    : homePage && homePage?.acf
-    ? homePage?.acf
-    : null;
+  serviceData && serviceData && serviceData?.acf && serviceData?.acf?.hireus_title ? serviceData?.acf : homePage && homePage?.acf ? homePage?.acf : null;
   
   return (
     <>
