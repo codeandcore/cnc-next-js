@@ -31,6 +31,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 
 export default async function Page({ params }) {
   console.log('getGeneralData', getGeneralData());
+  const tempData = getGeneralData()
+  
   const slug = (await params).id
   
   const data = await fetchData(slug)  
@@ -78,6 +80,7 @@ export default async function Page({ params }) {
           portfolio_subtitle = {serviceData.acf.portfolio_subtitle}
           portfolio_button = {serviceData.acf.portfolio_button}
           portfolio_list = {serviceData.acf?.portfolio_list}
+          tempData={tempData}
           ></ExploreDone>
       )}
       {serviceData && (serviceData.acf.why_choose_title || serviceData.acf.why_choose_subtitle || serviceData.acf.why_choose_list) && (

@@ -1,4 +1,4 @@
-let generalData = null;
+let generalData = 'null';
 
 export const setGeneralData = (value) => {
     generalData = value;

@@ -11,9 +11,10 @@ const ExploreDone = ({
   portfolio_subtitle,
   portfolio_button,
   portfolio_list,
+  tempData
 }) => {
-  const commonPortfolio = getGeneralData() 
-  console.log('commonPortfolio', commonPortfolio);
+  const commonPortfolio = tempData
+  console.log('commonPortfolio', tempData, commonPortfolio);
 
   const [portfoliodata, setPortfoliodata] = useState(commonPortfolio);
   const casestudy_list = portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : commonPortfolio?.portfolio_list
