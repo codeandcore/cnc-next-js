@@ -12,6 +12,8 @@ import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyCh
 import BASE_URL from "@/config";
 import { Suspense } from "react";
 import { getGeneralData } from '@/appStore';
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   async function fetchData(slug) {
   const apiURL=  env !== "development"
@@ -30,7 +32,6 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 export default async function Page({ params }) {
   console.log('getGeneralData', getGeneralData());
   const slug = (await params).id
-  console.log('slug', slug);
   
   const data = await fetchData(slug)  
   const serviceData = data?.id ? data : data[0]   
