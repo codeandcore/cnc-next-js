@@ -72,12 +72,12 @@ export default async function Page({ params }) {
           help_you_list = {serviceData.acf.help_you_list}
           ></HowWeHelp>
       )}
-      {serviceData && (serviceData.acf.portfolio_title || serviceData.acf.portfolio_subtitle || serviceData.acf.portfolio_button || serviceData.acf.portfolio_list) && (
+      {serviceData && (serviceData.acf.portfolio_title || serviceData.acf.portfolio_subtitle || serviceData.acf.portfolio_button || serviceData.acf?.portfolio_list) && (
           <ExploreDone
           portfolio_title = {serviceData.acf.portfolio_title}
           portfolio_subtitle = {serviceData.acf.portfolio_subtitle}
           portfolio_button = {serviceData.acf.portfolio_button}
-          portfolio_list = {serviceData.acf.portfolio_list}
+          portfolio_list = {serviceData.acf?.portfolio_list}
           commonPortfolio={getGeneralData()}
           ></ExploreDone>
       )}
