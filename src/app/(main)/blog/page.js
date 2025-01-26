@@ -4,6 +4,8 @@ import BASE_URL from '@/config';
 import React, { Suspense } from 'react';
 import Head from '@/app/head';
 import Loading from '@/components/Loading';
+import hireUsData from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -62,10 +64,9 @@ const fetchCategoryData = async () => {
 
 export default async function BlogPage() {
     const pageData = await fetchPageData();
-    const hireUsData= await fetchHireUsData()
-    const contactData = await fetchContactData();
     const catData=await fetchCategoryData()
 const yoastData=pageData?.yoast_head_json
+console.log('home', hireUsData);
 
  
   return (

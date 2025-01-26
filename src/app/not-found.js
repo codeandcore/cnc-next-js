@@ -100,7 +100,7 @@ async function fetchHomepageData() {
 async function fetchGeneralSettings() {
   const generalSettingRes = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
       : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`,
       { cache: "no-store" } 
 )

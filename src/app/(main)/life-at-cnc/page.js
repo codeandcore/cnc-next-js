@@ -9,6 +9,8 @@ import Linkedinlife from '@/components/Lifecomponents/Linkedinlife';
 import Socialmedialife from '@/components/Lifecomponents/Socialmedialife';
 import FestivalCelebration from '@/components/Lifecomponents/FestivalCelebration';
 import Loading from '@/components/Loading';
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchhomePage = async () => {
@@ -35,32 +37,8 @@ const fetchYoutubeMedia = async () => {
     }
     return response.json();
 };
-
-  async function fetchHomehomePage() {
-    const fetchHomehomeres = await fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomehomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomehomeres.json();
-  }
-  
-  // Fetch contact data server-side
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-
 export default async function portfolioPage() {
     const cncData = await fetchhomePage();
-    const homePage = await fetchHomehomePage();
-    const contactData = await fetchContactData();
     const socialData= await fetchYoutubeMedia()
     const yoastData =  cncData?.yoast_head_json
 

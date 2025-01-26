@@ -1,0 +1,2371 @@
+{
+    "id": 1282,
+    "date": "2024-06-03T10:07:03",
+    "date_gmt": "2024-06-03T10:07:03",
+    "guid": {
+        "rendered": "http://192.168.1.109:8003/wordpress/?page_id=1282"
+    },
+    "modified": "2025-01-24T22:55:58",
+    "modified_gmt": "2025-01-24T22:55:58",
+    "slug": "contact-us",
+    "status": "publish",
+    "type": "page",
+    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/",
+    "title": {
+        "rendered": "ContactUs"
+    },
+    "content": {
+        "rendered": "",
+        "protected": false
+    },
+    "excerpt": {
+        "rendered": "",
+        "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+        "_acf_changed": false,
+        "footnotes": ""
+    },
+    "class_list": [
+        "post-1282",
+        "page",
+        "type-page",
+        "status-publish",
+        "hentry"
+    ],
+    "acf": {
+        "banner_background_image": {
+            "ID": 1315,
+            "id": 1315,
+            "title": "contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520",
+            "filename": "contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+            "filesize": 564,
+            "url": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+            "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/contact_bg_layer-2a7e09c87fbb2ac5e617eff34d5a3520/",
+            "alt": "",
+            "author": "1",
+            "description": "",
+            "caption": "",
+            "name": "contact_bg_layer-2a7e09c87fbb2ac5e617eff34d5a3520",
+            "status": "inherit",
+            "uploaded_to": 1282,
+            "date": "2024-06-03 10:58:36",
+            "modified": "2024-06-03 10:58:36",
+            "menu_order": 0,
+            "mime_type": "image/svg+xml",
+            "type": "image",
+            "subtype": "svg+xml",
+            "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+            "width": 1920,
+            "height": 594,
+            "sizes": {
+                "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "thumbnail-width": 1920,
+                "thumbnail-height": 594,
+                "medium": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "medium-width": 1920,
+                "medium-height": 594,
+                "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "medium_large-width": 1920,
+                "medium_large-height": 594,
+                "large": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "large-width": 1920,
+                "large-height": 594,
+                "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "1536x1536-width": 1920,
+                "1536x1536-height": 594,
+                "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/contact_bg_layer.2a7e09c87fbb2ac5e617eff34d5a3520.svg",
+                "2048x2048-width": 1920,
+                "2048x2048-height": 594
+            }
+        },
+        "banner_background_image_mobile": {
+            "ID": 3587,
+            "id": 3587,
+            "title": "contact-us-mobile",
+            "filename": "contact-us-mobile.jpg",
+            "filesize": 82110,
+            "url": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile.jpg",
+            "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/contact-us-mobile/",
+            "alt": "",
+            "author": "1",
+            "description": "",
+            "caption": "",
+            "name": "contact-us-mobile",
+            "status": "inherit",
+            "uploaded_to": 1282,
+            "date": "2024-09-25 12:29:24",
+            "modified": "2024-09-25 12:29:24",
+            "menu_order": 0,
+            "mime_type": "image/jpeg",
+            "type": "image",
+            "subtype": "jpeg",
+            "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+            "width": 767,
+            "height": 1150,
+            "sizes": {
+                "thumbnail": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile-150x150.jpg",
+                "thumbnail-width": 150,
+                "thumbnail-height": 150,
+                "medium": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile-200x300.jpg",
+                "medium-width": 200,
+                "medium-height": 300,
+                "medium_large": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile.jpg",
+                "medium_large-width": 767,
+                "medium_large-height": 1150,
+                "large": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile-683x1024.jpg",
+                "large-width": 683,
+                "large-height": 1024,
+                "1536x1536": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile.jpg",
+                "1536x1536-width": 767,
+                "1536x1536-height": 1150,
+                "2048x2048": "https://codeandcore.b-cdn.net/media/2024/09/contact-us-mobile.jpg",
+                "2048x2048-width": 767,
+                "2048x2048-height": 1150
+            }
+        },
+        "banner_background_video": {
+            "ID": 1316,
+            "id": 1316,
+            "title": "contactvideo.830ade6b980f50f9df85",
+            "filename": "contactvideo.830ade6b980f50f9df85.mp4",
+            "filesize": 33453907,
+            "url": "https://codeandcore.b-cdn.net/media/2024/06/contactvideo.830ade6b980f50f9df85.mp4",
+            "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/contactvideo-830ade6b980f50f9df85/",
+            "alt": "",
+            "author": "1",
+            "description": "",
+            "caption": "",
+            "name": "contactvideo-830ade6b980f50f9df85",
+            "status": "inherit",
+            "uploaded_to": 1282,
+            "date": "2024-06-03 10:59:13",
+            "modified": "2024-06-03 10:59:13",
+            "menu_order": 0,
+            "mime_type": "video/mp4",
+            "type": "video",
+            "subtype": "mp4",
+            "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/video.png",
+            "width": 4096,
+            "height": 2304
+        },
+        "banner_title": "Contact us",
+        "banner_subtitle": "You have come so far… Why stop now? We’re so excited to hear from you!",
+        "banner_statistic_expertise": "<h3>9+</h3><h4>Years of Expertise</h4>",
+        "banner_statistic_industry": "<h3>21+</h3><h4>Industry Expertise</h4>",
+        "banner_statistic_projects": "<h3>1300+</h3><h4>Enacted IT Projects</h4>",
+        "contact_form_location_label": "Our Location:",
+        "contact_form_location_address": "422, 423, 410 S.V. Square Building, New Ranip, Ahmedabad. Gujarat, India 382480",
+        "contact_form_email_label": "Email address:",
+        "contact_form_email_address": "hello@codeandcore.com",
+        "contact_form_social_label": "Stay Connected",
+        "contact_social_links": [
+            {
+                "contact_social_icon": {
+                    "ID": 3916,
+                    "id": 3916,
+                    "title": "twitter-x-icon",
+                    "filename": "twitter-x-icon.svg",
+                    "filesize": 419,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/twitter-x-icon/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "twitter-x-icon",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-10-01 14:05:18",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 23,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "thumbnail-width": 23,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "medium-width": 23,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "medium_large-width": 23,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "large-width": 23,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "1536x1536-width": 23,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/10/twitter-x-icon.svg",
+                        "2048x2048-width": 23,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://x.com/codeandcore"
+            },
+            {
+                "contact_social_icon": {
+                    "ID": 2090,
+                    "id": 2090,
+                    "title": "fs2",
+                    "filename": "fs2.svg",
+                    "filesize": 808,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/fs2/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "fs2",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-08-22 08:11:34",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 25,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "thumbnail-width": 25,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "medium-width": 25,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "medium_large-width": 25,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "large-width": 25,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "1536x1536-width": 25,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/08/fs2.svg",
+                        "2048x2048-width": 25,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://www.linkedin.com/company/code-and-core/"
+            },
+            {
+                "contact_social_icon": {
+                    "ID": 2088,
+                    "id": 2088,
+                    "title": "fs3",
+                    "filename": "fs3.svg",
+                    "filesize": 529,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/fs3/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "fs3",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-08-22 08:11:25",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 13,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "thumbnail-width": 13,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "medium-width": 13,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "medium_large-width": 13,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "large-width": 13,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "1536x1536-width": 13,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/08/fs3.svg",
+                        "2048x2048-width": 13,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://www.facebook.com/codeandcore"
+            },
+            {
+                "contact_social_icon": {
+                    "ID": 2089,
+                    "id": 2089,
+                    "title": "fs4",
+                    "filename": "fs4.svg",
+                    "filesize": 1662,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/fs4/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "fs4",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-08-22 08:11:30",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 24,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "thumbnail-width": 24,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "medium-width": 24,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "medium_large-width": 24,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "large-width": 24,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "1536x1536-width": 24,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/08/fs4.svg",
+                        "2048x2048-width": 24,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://www.instagram.com/codeandcore/"
+            },
+            {
+                "contact_social_icon": {
+                    "ID": 3915,
+                    "id": 3915,
+                    "title": "youtube-icon",
+                    "filename": "youtube-icon.svg",
+                    "filesize": 422,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/youtube-icon/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "youtube-icon",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-10-01 13:37:38",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 33,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "thumbnail-width": 33,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "medium-width": 33,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "medium_large-width": 33,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "large-width": 33,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "1536x1536-width": 33,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/10/youtube-icon.svg",
+                        "2048x2048-width": 33,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://www.youtube.com/@codeandcoreofficial"
+            },
+            {
+                "contact_social_icon": {
+                    "ID": 3921,
+                    "id": 3921,
+                    "title": "dribbble-logo",
+                    "filename": "dribbble-logo.svg",
+                    "filesize": 2002,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/dribbble-logo/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "dribbble-logo",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-10-01 15:43:26",
+                    "modified": "2024-10-02 09:34:07",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 24,
+                    "height": 24,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "thumbnail-width": 24,
+                        "thumbnail-height": 24,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "medium-width": 24,
+                        "medium-height": 24,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "medium_large-width": 24,
+                        "medium_large-height": 24,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "large-width": 24,
+                        "large-height": 24,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "1536x1536-width": 24,
+                        "1536x1536-height": 24,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/10/dribbble-logo.svg",
+                        "2048x2048-width": 24,
+                        "2048x2048-height": 24
+                    }
+                },
+                "contact_social_url": "https://dribbble.com/codeandcore"
+            }
+        ],
+        "google_map_latitude": "23.08966",
+        "google_map_longitude": "72.56519",
+        "contact_form_title": "Let’s create something new for the world together!",
+        "contact_form_service_label": "Choose your own Tech Pool...",
+        "contact_form_service_list": [
+            {
+                "label": "Web development"
+            },
+            {
+                "label": "Web Designing"
+            },
+            {
+                "label": "Site from Scratch"
+            },
+            {
+                "label": "UX/UI Design"
+            },
+            {
+                "label": "Branding"
+            },
+            {
+                "label": "Dashboard"
+            },
+            {
+                "label": "Motion"
+            },
+            {
+                "label": "Graphic Design"
+            },
+            {
+                "label": "Monthly maintenance"
+            },
+            {
+                "label": "RND Team"
+            },
+            {
+                "label": "Hire a quick developer for small tasks"
+            },
+            {
+                "label": "Fixed cost project"
+            }
+        ],
+        "contact_form_budget_label": "Project budget (USD)",
+        "contact_form_budget_list": [
+            {
+                "label": "<$5K"
+            },
+            {
+                "label": "$10K-$20K"
+            },
+            {
+                "label": "$30K-$40K"
+            },
+            {
+                "label": "Hourly based"
+            }
+        ],
+        "developer_title": "Need a job?",
+        "developer_subtitle": "Join our incredible team! We’re always searching for exceptional talents to bolster our productivity and client experience.. ",
+        "developer_button": {
+            "title": "Apply Now",
+            "url": "/career/",
+            "target": ""
+        },
+        "countries_title": "We continue to deliver projects to these countries globally.",
+        "countries_list": [
+            {
+                "country_map": {
+                    "ID": 1408,
+                    "id": 1408,
+                    "title": "italyicon.a2b7ceb8fd2c43163bb1",
+                    "filename": "italyicon.a2b7ceb8fd2c43163bb1.png",
+                    "filesize": 10563,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/italyicon-a2b7ceb8fd2c43163bb1/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "italyicon-a2b7ceb8fd2c43163bb1",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:04:41",
+                    "modified": "2024-06-04 06:04:41",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 398,
+                    "height": 419,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1-285x300.png",
+                        "medium-width": 285,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1.png",
+                        "medium_large-width": 398,
+                        "medium_large-height": 419,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1.png",
+                        "large-width": 398,
+                        "large-height": 419,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1.png",
+                        "1536x1536-width": 398,
+                        "1536x1536-height": 419,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/italyicon.a2b7ceb8fd2c43163bb1.png",
+                        "2048x2048-width": 398,
+                        "2048x2048-height": 419
+                    }
+                },
+                "country_title": "Italy",
+                "country_flag": {
+                    "ID": 1409,
+                    "id": 1409,
+                    "title": "download (23)",
+                    "filename": "download-23.png",
+                    "filesize": 4208,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-23/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-23",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:05:01",
+                    "modified": "2024-06-04 06:05:01",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 191,
+                    "height": 191,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-23-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                        "medium-width": 191,
+                        "medium-height": 191,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                        "medium_large-width": 191,
+                        "medium_large-height": 191,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                        "large-width": 191,
+                        "large-height": 191,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                        "1536x1536-width": 191,
+                        "1536x1536-height": 191,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-23.png",
+                        "2048x2048-width": 191,
+                        "2048x2048-height": 191
+                    }
+                },
+                "country_content": "Italy, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1410,
+                    "id": 1410,
+                    "title": "italymap.ca72f2414f482c2c1a04",
+                    "filename": "italymap.ca72f2414f482c2c1a04.png",
+                    "filesize": 48241,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/italymap-ca72f2414f482c2c1a04/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "italymap-ca72f2414f482c2c1a04",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:05:36",
+                    "modified": "2024-06-04 06:05:36",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 395,
+                    "height": 414,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04-286x300.png",
+                        "medium-width": 286,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04.png",
+                        "medium_large-width": 395,
+                        "medium_large-height": 414,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04.png",
+                        "large-width": 395,
+                        "large-height": 414,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04.png",
+                        "1536x1536-width": 395,
+                        "1536x1536-height": 414,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/italymap.ca72f2414f482c2c1a04.png",
+                        "2048x2048-width": 395,
+                        "2048x2048-height": 414
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Italy:",
+                        "content": "5"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "8"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "55%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Italy:",
+                        "content": "Healthcare, Hospitality, Restaurant, Government, Education"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, HTML5, CSS3, JavaScript, PHP, Laravel, React.js, Angular, Node.js, MySQL, MongoDB, Figma, Adobe XD, Sketch, Lottie, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics, Third-Party API Integrations, Database Management Solutions, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1411,
+                    "id": 1411,
+                    "title": "download (24)",
+                    "filename": "download-24.png",
+                    "filesize": 4521,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-24.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-24/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-24",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:07:00",
+                    "modified": "2024-06-04 06:07:00",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 428,
+                    "height": 428,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-24-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-24-300x300.png",
+                        "medium-width": 300,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-24.png",
+                        "medium_large-width": 428,
+                        "medium_large-height": 428,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-24.png",
+                        "large-width": 428,
+                        "large-height": 428,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-24.png",
+                        "1536x1536-width": 428,
+                        "1536x1536-height": 428,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-24.png",
+                        "2048x2048-width": 428,
+                        "2048x2048-height": 428
+                    }
+                },
+                "country_title": "Australia",
+                "country_flag": {
+                    "ID": 1412,
+                    "id": 1412,
+                    "title": "download (25)",
+                    "filename": "download-25.png",
+                    "filesize": 3242,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-25/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-25",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:07:18",
+                    "modified": "2024-06-04 06:07:18",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 196,
+                    "height": 196,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-25-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                        "medium-width": 196,
+                        "medium-height": 196,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                        "medium_large-width": 196,
+                        "medium_large-height": 196,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                        "large-width": 196,
+                        "large-height": 196,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                        "1536x1536-width": 196,
+                        "1536x1536-height": 196,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-25.png",
+                        "2048x2048-width": 196,
+                        "2048x2048-height": 196
+                    }
+                },
+                "country_content": "Australia, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1413,
+                    "id": 1413,
+                    "title": "australiamap.f5604f0129b3e2d061ec",
+                    "filename": "australiamap.f5604f0129b3e2d061ec.png",
+                    "filesize": 18734,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/australiamap-f5604f0129b3e2d061ec/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "australiamap-f5604f0129b3e2d061ec",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:07:37",
+                    "modified": "2024-06-04 06:07:37",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 425,
+                    "height": 423,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec-300x300.png",
+                        "medium-width": 300,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec.png",
+                        "medium_large-width": 425,
+                        "medium_large-height": 423,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec.png",
+                        "large-width": 425,
+                        "large-height": 423,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec.png",
+                        "1536x1536-width": 425,
+                        "1536x1536-height": 423,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/australiamap.f5604f0129b3e2d061ec.png",
+                        "2048x2048-width": 425,
+                        "2048x2048-height": 423
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Australia:",
+                        "content": "5"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "7"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "50%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Australia:",
+                        "content": "E-commerce, Finance, Education, Early-Learning"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, PHP, WooCommerce, React.js, Angular, HTML5, CSS3, JavaScript, Bootstrap, Node.js, Figma, Adobe XD, Sketch, HubSpot, Lottie, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, E-commerce Platform Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics, SEO Optimization, Third-Party API Integrations, Database Management Solutions, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1390,
+                    "id": 1390,
+                    "title": "download (11)",
+                    "filename": "download-11.png",
+                    "filesize": 3798,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-11.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-11/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-11",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:50:12",
+                    "modified": "2024-06-04 05:50:12",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 321,
+                    "height": 223,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-11-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-11-300x208.png",
+                        "medium-width": 300,
+                        "medium-height": 208,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-11.png",
+                        "medium_large-width": 321,
+                        "medium_large-height": 223,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-11.png",
+                        "large-width": 321,
+                        "large-height": 223,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-11.png",
+                        "1536x1536-width": 321,
+                        "1536x1536-height": 223,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-11.png",
+                        "2048x2048-width": 321,
+                        "2048x2048-height": 223
+                    }
+                },
+                "country_title": "United State",
+                "country_flag": {
+                    "ID": 1391,
+                    "id": 1391,
+                    "title": "download (12)",
+                    "filename": "download-12.png",
+                    "filesize": 4572,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-12/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-12",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:50:35",
+                    "modified": "2024-06-04 05:50:35",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 162,
+                    "height": 162,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-12-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                        "medium-width": 162,
+                        "medium-height": 162,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                        "medium_large-width": 162,
+                        "medium_large-height": 162,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                        "large-width": 162,
+                        "large-height": 162,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                        "1536x1536-width": 162,
+                        "1536x1536-height": 162,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-12.png",
+                        "2048x2048-width": 162,
+                        "2048x2048-height": 162
+                    }
+                },
+                "country_content": "United State, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1392,
+                    "id": 1392,
+                    "title": "unitedstatemap.6bcbfb968612ae4119df",
+                    "filename": "unitedstatemap.6bcbfb968612ae4119df.png",
+                    "filesize": 35765,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/unitedstatemap-6bcbfb968612ae4119df/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "unitedstatemap-6bcbfb968612ae4119df",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:50:56",
+                    "modified": "2024-06-04 05:50:56",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 318,
+                    "height": 218,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df-300x206.png",
+                        "medium-width": 300,
+                        "medium-height": 206,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df.png",
+                        "medium_large-width": 318,
+                        "medium_large-height": 218,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df.png",
+                        "large-width": 318,
+                        "large-height": 218,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df.png",
+                        "1536x1536-width": 318,
+                        "1536x1536-height": 218,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/unitedstatemap.6bcbfb968612ae4119df.png",
+                        "2048x2048-width": 318,
+                        "2048x2048-height": 218
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in the USA:",
+                        "content": "39"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "87"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "89%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across the USA:",
+                        "content": "Real Estate, E-Commerce, Professional Services, Construction, Pharmaceutical, Website Design & Development, Digital Marketing, Fitness & Wellness, Hospitality, Finance, Insurance, Restaurant, Entertainment, Non-Profit Organizations, Software Development, Venture Capital"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, PHP, Node.js, HTML5, CSS3, JavaScript, React.js, Angular, Vue.js, Laravel, CodeIgniter, Custom PHP, WooCommerce, Adobe XD, Figma, Sketch, Photoshop, Illustrator, GitHub, HubSpot, Bootstrap, Zeplin, Lottie, WebGL, jQuery, GSAP, Skrollr, SVG, Particle, Canvas, 3D Rendering"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Web Designing & Development, Responsive & Mobile-Optimized Designs, E-commerce Solutions, Content Management Systems (CMS), Search Engine Optimization (SEO), Interactive Features & Functionalities, Integration of Payment Gateways, Database Management, Performance Optimization, Website Security Enhancements, Monthly Maintenance & Support, Custom Animations & Graphics, Third-Party API Integrations"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 5790,
+                    "id": 5790,
+                    "title": "uae-line-map",
+                    "filename": "uae-line-map.png",
+                    "filesize": 5458,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/uae-line-map/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "uae-line-map",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:09:35",
+                    "modified": "2024-11-28 13:09:35",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 305,
+                    "height": 258,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map-300x254.png",
+                        "medium-width": 300,
+                        "medium-height": 254,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map.png",
+                        "medium_large-width": 305,
+                        "medium_large-height": 258,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map.png",
+                        "large-width": 305,
+                        "large-height": 258,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map.png",
+                        "1536x1536-width": 305,
+                        "1536x1536-height": 258,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/uae-line-map.png",
+                        "2048x2048-width": 305,
+                        "2048x2048-height": 258
+                    }
+                },
+                "country_title": "UAE",
+                "country_flag": {
+                    "ID": 5789,
+                    "id": 5789,
+                    "title": "uae-flag-icon",
+                    "filename": "uae-flag-icon.svg",
+                    "filesize": 1838,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/uae-flag-icon/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "uae-flag-icon",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:07:23",
+                    "modified": "2024-11-28 13:07:23",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 168,
+                    "height": 167,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "thumbnail-width": 168,
+                        "thumbnail-height": 167,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "medium-width": 168,
+                        "medium-height": 167,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "medium_large-width": 168,
+                        "medium_large-height": 167,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "large-width": 168,
+                        "large-height": 167,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "1536x1536-width": 168,
+                        "1536x1536-height": 167,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/uae-flag-icon.svg",
+                        "2048x2048-width": 168,
+                        "2048x2048-height": 167
+                    }
+                },
+                "country_content": "The UAE, strategically positioned at the heart of the Arabian Peninsula, seamlessly combines technological advancements and a dynamic cultural landscape, making it a thriving hub of influence and innovation in the region.",
+                "country_big_map": {
+                    "ID": 5791,
+                    "id": 5791,
+                    "title": "uae-map",
+                    "filename": "uae-map.png",
+                    "filesize": 6697,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/uae-map.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/uae-map/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "uae-map",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:09:37",
+                    "modified": "2024-11-28 13:09:37",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 302,
+                    "height": 253,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/uae-map-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/uae-map-300x251.png",
+                        "medium-width": 300,
+                        "medium-height": 251,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/uae-map.png",
+                        "medium_large-width": 302,
+                        "medium_large-height": 253,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/uae-map.png",
+                        "large-width": 302,
+                        "large-height": 253,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/uae-map.png",
+                        "1536x1536-width": 302,
+                        "1536x1536-height": 253,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/uae-map.png",
+                        "2048x2048-width": 302,
+                        "2048x2048-height": 253
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in the United Arab Emirates:",
+                        "content": "1"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "1"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "0"
+                    },
+                    {
+                        "title": "Our expertise spans industries across the United Arab Emirates:",
+                        "content": "Venture Capital"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "React.js, Angular, React.js, Angular, Node.js, WordPress, MySQL, Figma, Adobe XD, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, Content Management Systems (CMS), Custom Animations & Graphics, SEO Optimization, Database Management Solutions, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1414,
+                    "id": 1414,
+                    "title": "download (26)",
+                    "filename": "download-26.png",
+                    "filesize": 3833,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-26.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-26/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-26",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:08:58",
+                    "modified": "2024-06-04 06:08:58",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 334,
+                    "height": 308,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-26-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-26-300x277.png",
+                        "medium-width": 300,
+                        "medium-height": 277,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-26.png",
+                        "medium_large-width": 334,
+                        "medium_large-height": 308,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-26.png",
+                        "large-width": 334,
+                        "large-height": 308,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-26.png",
+                        "1536x1536-width": 334,
+                        "1536x1536-height": 308,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-26.png",
+                        "2048x2048-width": 334,
+                        "2048x2048-height": 308
+                    }
+                },
+                "country_title": "France",
+                "country_flag": {
+                    "ID": 1415,
+                    "id": 1415,
+                    "title": "download (27)",
+                    "filename": "download-27.png",
+                    "filesize": 1620,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-27/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-27",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:09:16",
+                    "modified": "2024-06-04 06:09:16",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 209,
+                    "height": 209,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-27-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                        "medium-width": 209,
+                        "medium-height": 209,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                        "medium_large-width": 209,
+                        "medium_large-height": 209,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                        "large-width": 209,
+                        "large-height": 209,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                        "1536x1536-width": 209,
+                        "1536x1536-height": 209,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-27.png",
+                        "2048x2048-width": 209,
+                        "2048x2048-height": 209
+                    }
+                },
+                "country_content": "France, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1416,
+                    "id": 1416,
+                    "title": "francemap.faba83e0f80a30c1c86d",
+                    "filename": "francemap.faba83e0f80a30c1c86d.png",
+                    "filesize": 12524,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/francemap-faba83e0f80a30c1c86d/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "francemap-faba83e0f80a30c1c86d",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:09:34",
+                    "modified": "2024-06-04 06:09:34",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 331,
+                    "height": 303,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d-300x275.png",
+                        "medium-width": 300,
+                        "medium-height": 275,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d.png",
+                        "medium_large-width": 331,
+                        "medium_large-height": 303,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d.png",
+                        "large-width": 331,
+                        "large-height": 303,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d.png",
+                        "1536x1536-width": 331,
+                        "1536x1536-height": 303,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/francemap.faba83e0f80a30c1c86d.png",
+                        "2048x2048-width": 331,
+                        "2048x2048-height": 303
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in France:",
+                        "content": " 6"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "85+"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "83"
+                    },
+                    {
+                        "title": "Our expertise spans industries across France:",
+                        "content": "Travel, Medical, E-commerce, Education, Digital agency"
+                    },
+                    {
+                        "title": "Our technology empowers your business",
+                        "content": "WordPress, PHP,HTML5, CSS3, JavaScript, Bootstrap, Laravel, Node.js, Figma, Adobe XD, Sketch, HubSpot, Lottie, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics,  Third-Party API Integrations, Database Management Solutions, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1405,
+                    "id": 1405,
+                    "title": "unitedkinicon.42edbf5f64f22edb1320",
+                    "filename": "unitedkinicon.42edbf5f64f22edb1320.png",
+                    "filesize": 12371,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/unitedkinicon-42edbf5f64f22edb1320/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "unitedkinicon-42edbf5f64f22edb1320",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:02:13",
+                    "modified": "2024-06-04 06:02:13",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 389,
+                    "height": 500,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320-233x300.png",
+                        "medium-width": 233,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320.png",
+                        "medium_large-width": 389,
+                        "medium_large-height": 500,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320.png",
+                        "large-width": 389,
+                        "large-height": 500,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320.png",
+                        "1536x1536-width": 389,
+                        "1536x1536-height": 500,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinicon.42edbf5f64f22edb1320.png",
+                        "2048x2048-width": 389,
+                        "2048x2048-height": 500
+                    }
+                },
+                "country_title": "United kingdom",
+                "country_flag": {
+                    "ID": 1406,
+                    "id": 1406,
+                    "title": "download (22)",
+                    "filename": "download-22.png",
+                    "filesize": 5679,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-22/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-22",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:02:34",
+                    "modified": "2024-06-04 06:02:34",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 175,
+                    "height": 175,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-22-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                        "medium-width": 175,
+                        "medium-height": 175,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                        "medium_large-width": 175,
+                        "medium_large-height": 175,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                        "large-width": 175,
+                        "large-height": 175,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                        "1536x1536-width": 175,
+                        "1536x1536-height": 175,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-22.png",
+                        "2048x2048-width": 175,
+                        "2048x2048-height": 175
+                    }
+                },
+                "country_content": "United kingdom, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1407,
+                    "id": 1407,
+                    "title": "unitedkinmap.d80ba9466892448868c2",
+                    "filename": "unitedkinmap.d80ba9466892448868c2.png",
+                    "filesize": 66076,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/unitedkinmap-d80ba9466892448868c2/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "unitedkinmap-d80ba9466892448868c2",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 06:03:14",
+                    "modified": "2024-06-04 06:03:14",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 386,
+                    "height": 493,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2-235x300.png",
+                        "medium-width": 235,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2.png",
+                        "medium_large-width": 386,
+                        "medium_large-height": 493,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2.png",
+                        "large-width": 386,
+                        "large-height": 493,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2.png",
+                        "1536x1536-width": 386,
+                        "1536x1536-height": 493,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/unitedkinmap.d80ba9466892448868c2.png",
+                        "2048x2048-width": 386,
+                        "2048x2048-height": 493
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in the United Kingdom:",
+                        "content": "24"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "44"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "79%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across the United Kingdom:",
+                        "content": "Tours & Travel, Healthcare, E-Commerce, Construction, Entertainment, Professional Services, Furniture, Software Development, Website Design & Development"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, PHP, Node.js, HTML5, CSS3, JavaScript, React.js, Vue.js, WooCommerce, Laravel, MySQL, PostgreSQL, MongoDB, Figma, Adobe XD, Sketch, HubSpot, Bootstrap, Zeplin, Lottie, WebGL, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, E-commerce Platform Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics, SEO Optimization, Third-Party API Integrations, Database Management Solutions, Performance Optimization, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1396,
+                    "id": 1396,
+                    "title": "download (16)",
+                    "filename": "download-16.png",
+                    "filesize": 4415,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-16.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-16/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-16",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:55:01",
+                    "modified": "2024-06-04 05:55:01",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 292,
+                    "height": 414,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-16-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-16-212x300.png",
+                        "medium-width": 212,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-16.png",
+                        "medium_large-width": 292,
+                        "medium_large-height": 414,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-16.png",
+                        "large-width": 292,
+                        "large-height": 414,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-16.png",
+                        "1536x1536-width": 292,
+                        "1536x1536-height": 414,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-16.png",
+                        "2048x2048-width": 292,
+                        "2048x2048-height": 414
+                    }
+                },
+                "country_title": "Ireland",
+                "country_flag": {
+                    "ID": 1397,
+                    "id": 1397,
+                    "title": "download (17)",
+                    "filename": "download-17.png",
+                    "filesize": 1413,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-17/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-17",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:55:21",
+                    "modified": "2024-06-04 05:55:21",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 187,
+                    "height": 187,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-17-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                        "medium-width": 187,
+                        "medium-height": 187,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                        "medium_large-width": 187,
+                        "medium_large-height": 187,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                        "large-width": 187,
+                        "large-height": 187,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                        "1536x1536-width": 187,
+                        "1536x1536-height": 187,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-17.png",
+                        "2048x2048-width": 187,
+                        "2048x2048-height": 187
+                    }
+                },
+                "country_content": "Ireland, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1398,
+                    "id": 1398,
+                    "title": "irelandmap.9a1d44319268ff32c127",
+                    "filename": "irelandmap.9a1d44319268ff32c127.png",
+                    "filesize": 16174,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/irelandmap-9a1d44319268ff32c127/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "irelandmap-9a1d44319268ff32c127",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:55:37",
+                    "modified": "2024-06-04 05:55:37",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 289,
+                    "height": 409,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127-212x300.png",
+                        "medium-width": 212,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127.png",
+                        "medium_large-width": 289,
+                        "medium_large-height": 409,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127.png",
+                        "large-width": 289,
+                        "large-height": 409,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127.png",
+                        "1536x1536-width": 289,
+                        "1536x1536-height": 409,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/irelandmap.9a1d44319268ff32c127.png",
+                        "2048x2048-width": 289,
+                        "2048x2048-height": 409
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Ireland:",
+                        "content": "11"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "19"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "58%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Ireland:",
+                        "content": "E-commerce, Website Design & Development, Entertainment, Environmental Services, Dropshipping"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, PHP, Node.js, HTML5, CSS3, JavaScript, React.js, Vue.js, WooCommerce, Laravel, MySQL, MongoDB, Figma, Adobe XD, Sketch, HubSpot, Lottie, WebGL, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, E-commerce Platform Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics, SEO Optimization, Third-Party API Integrations, Database Management Solutions, Performance Optimization, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 5792,
+                    "id": 5792,
+                    "title": "canada line map",
+                    "filename": "canada-line-map.png",
+                    "filesize": 6569,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/canada-line-map/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "canada-line-map",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:13:40",
+                    "modified": "2024-11-28 13:13:40",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 280,
+                    "height": 279,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                        "medium-width": 280,
+                        "medium-height": 279,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                        "medium_large-width": 280,
+                        "medium_large-height": 279,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                        "large-width": 280,
+                        "large-height": 279,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                        "1536x1536-width": 280,
+                        "1536x1536-height": 279,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/canada-line-map.png",
+                        "2048x2048-width": 280,
+                        "2048x2048-height": 279
+                    }
+                },
+                "country_title": "Canada",
+                "country_flag": {
+                    "ID": 5794,
+                    "id": 5794,
+                    "title": "canada flag icon",
+                    "filename": "canada-flag-icon.svg",
+                    "filesize": 1081,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/canada-flag-icon/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "canada-flag-icon",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:13:43",
+                    "modified": "2024-11-28 13:13:43",
+                    "menu_order": 0,
+                    "mime_type": "image/svg+xml",
+                    "type": "image",
+                    "subtype": "svg+xml",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 168,
+                    "height": 167,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "thumbnail-width": 168,
+                        "thumbnail-height": 167,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "medium-width": 168,
+                        "medium-height": 167,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "medium_large-width": 168,
+                        "medium_large-height": 167,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "large-width": 168,
+                        "large-height": 167,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "1536x1536-width": 168,
+                        "1536x1536-height": 167,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/canada-flag-icon.svg",
+                        "2048x2048-width": 168,
+                        "2048x2048-height": 167
+                    }
+                },
+                "country_content": "Canada, known for its iconic structures, such as the CN Tower and Niagara Falls. Canada is a major force thriving on innovation and a strong sense of community, making it a key player on the global stage.",
+                "country_big_map": {
+                    "ID": 5793,
+                    "id": 5793,
+                    "title": "canada map",
+                    "filename": "canada-map.png",
+                    "filesize": 8130,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/canada-map/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "canada-map",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-11-28 13:13:42",
+                    "modified": "2024-11-28 13:13:42",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 277,
+                    "height": 274,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/11/canada-map-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                        "medium-width": 277,
+                        "medium-height": 274,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                        "medium_large-width": 277,
+                        "medium_large-height": 274,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                        "large-width": 277,
+                        "large-height": 274,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                        "1536x1536-width": 277,
+                        "1536x1536-height": 274,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/11/canada-map.png",
+                        "2048x2048-width": 277,
+                        "2048x2048-height": 274
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Canada:",
+                        "content": "3"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects",
+                        "content": "5"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "20%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Canada:",
+                        "content": "Healthcare, Website Design & Development, Professional Services, Entertainment"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, PHP, React.js, Angular, HTML5, CSS3, JavaScript, Bootstrap, Laravel, Node.js, Figma, Adobe XD, Sketch, HubSpot, Lottie, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web design, Web Development, Content Management Systems (CMS), Interactive Features & Booking Systems, Custom Animations & Graphics, SEO Optimization, Third-Party API Integrations, Database Management Solutions, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1387,
+                    "id": 1387,
+                    "title": "download (9)",
+                    "filename": "download-9.png",
+                    "filesize": 3211,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-9.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-9/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-9",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:48:10",
+                    "modified": "2024-06-04 05:48:10",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 377,
+                    "height": 332,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-9-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-9-300x264.png",
+                        "medium-width": 300,
+                        "medium-height": 264,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-9.png",
+                        "medium_large-width": 377,
+                        "medium_large-height": 332,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-9.png",
+                        "large-width": 377,
+                        "large-height": 332,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-9.png",
+                        "1536x1536-width": 377,
+                        "1536x1536-height": 332,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-9.png",
+                        "2048x2048-width": 377,
+                        "2048x2048-height": 332
+                    }
+                },
+                "country_title": "Europe (Slovenia)",
+                "country_flag": {
+                    "ID": 1388,
+                    "id": 1388,
+                    "title": "download (10)",
+                    "filename": "download-10.png",
+                    "filesize": 2072,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-10/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-10",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:48:29",
+                    "modified": "2024-06-04 05:48:29",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 157,
+                    "height": 158,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-10-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                        "medium-width": 157,
+                        "medium-height": 158,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                        "medium_large-width": 157,
+                        "medium_large-height": 158,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                        "large-width": 157,
+                        "large-height": 158,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                        "1536x1536-width": 157,
+                        "1536x1536-height": 158,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-10.png",
+                        "2048x2048-width": 157,
+                        "2048x2048-height": 158
+                    }
+                },
+                "country_content": "Europe, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1389,
+                    "id": 1389,
+                    "title": "europemap.c976936b774eb50347e5",
+                    "filename": "europemap.c976936b774eb50347e5.png",
+                    "filesize": 14563,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/europemap-c976936b774eb50347e5/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "europemap-c976936b774eb50347e5",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-04 05:48:55",
+                    "modified": "2024-06-04 05:48:55",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 374,
+                    "height": 327,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5-150x150.png",
+                        "thumbnail-width": 150,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5-300x262.png",
+                        "medium-width": 300,
+                        "medium-height": 262,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5.png",
+                        "medium_large-width": 374,
+                        "medium_large-height": 327,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5.png",
+                        "large-width": 374,
+                        "large-height": 327,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5.png",
+                        "1536x1536-width": 374,
+                        "1536x1536-height": 327,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/europemap.c976936b774eb50347e5.png",
+                        "2048x2048-width": 374,
+                        "2048x2048-height": 327
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Slovenia:",
+                        "content": "2"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "2"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": "0"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Slovenia:",
+                        "content": "Entertainment, Manufacturing"
+                    },
+                    {
+                        "title": "Our technology empowers your business",
+                        "content": " React.js, Vue.js, Node.js, PHP, WordPress, MySQL, HTML5, CSS3, JavaScript, Figma, Adobe XD, Sketch, jQuery, GSAP"
+                    },
+                    {
+                        "title": "Our work involves creating",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Content Management Systems (CMS), Custom Animations & Graphics, SEO Optimization, Third-Party API Integrations, Database Management Solutions, Website Security Enhancements, Monthly Maintenance & Updates"
+                    }
+                ]
+            },
+            {
+                "country_map": {
+                    "ID": 1377,
+                    "id": 1377,
+                    "title": "download (6)",
+                    "filename": "download-6.png",
+                    "filesize": 2238,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-6.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-6-2/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-6-2",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-03 14:48:57",
+                    "modified": "2024-06-03 14:48:57",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 104,
+                    "height": 321,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-6-104x150.png",
+                        "thumbnail-width": 104,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-6-97x300.png",
+                        "medium-width": 97,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-6.png",
+                        "medium_large-width": 104,
+                        "medium_large-height": 321,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-6.png",
+                        "large-width": 104,
+                        "large-height": 321,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-6.png",
+                        "1536x1536-width": 104,
+                        "1536x1536-height": 321,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-6.png",
+                        "2048x2048-width": 104,
+                        "2048x2048-height": 321
+                    }
+                },
+                "country_title": "Israel",
+                "country_flag": {
+                    "ID": 1378,
+                    "id": 1378,
+                    "title": "download (7)",
+                    "filename": "download-7.png",
+                    "filesize": 492,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-7/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-7",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-03 14:49:26",
+                    "modified": "2024-06-03 14:49:26",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 35,
+                    "height": 35,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "thumbnail-width": 35,
+                        "thumbnail-height": 35,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "medium-width": 35,
+                        "medium-height": 35,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "medium_large-width": 35,
+                        "medium_large-height": 35,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "large-width": 35,
+                        "large-height": 35,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "1536x1536-width": 35,
+                        "1536x1536-height": 35,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-7.png",
+                        "2048x2048-width": 35,
+                        "2048x2048-height": 35
+                    }
+                },
+                "country_content": "Israel, nestled at the crossroads of the Middle East, boasts a vibrant blend of ancient history, modern innovation, and diverse cultures, making it a captivating and significant nation in the region.",
+                "country_big_map": {
+                    "ID": 1379,
+                    "id": 1379,
+                    "title": "download (8)",
+                    "filename": "download-8.png",
+                    "filesize": 7793,
+                    "url": "https://codeandcore.b-cdn.net/media/2024/06/download-8.png",
+                    "link": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/download-8/",
+                    "alt": "",
+                    "author": "1",
+                    "description": "",
+                    "caption": "",
+                    "name": "download-8",
+                    "status": "inherit",
+                    "uploaded_to": 1282,
+                    "date": "2024-06-03 14:49:49",
+                    "modified": "2024-06-03 14:49:49",
+                    "menu_order": 0,
+                    "mime_type": "image/png",
+                    "type": "image",
+                    "subtype": "png",
+                    "icon": "https://codeandcore.b-cdn.net/wp-includes/images/media/default.png",
+                    "width": 129,
+                    "height": 321,
+                    "sizes": {
+                        "thumbnail": "https://codeandcore.b-cdn.net/media/2024/06/download-8-129x150.png",
+                        "thumbnail-width": 129,
+                        "thumbnail-height": 150,
+                        "medium": "https://codeandcore.b-cdn.net/media/2024/06/download-8-121x300.png",
+                        "medium-width": 121,
+                        "medium-height": 300,
+                        "medium_large": "https://codeandcore.b-cdn.net/media/2024/06/download-8.png",
+                        "medium_large-width": 129,
+                        "medium_large-height": 321,
+                        "large": "https://codeandcore.b-cdn.net/media/2024/06/download-8.png",
+                        "large-width": 129,
+                        "large-height": 321,
+                        "1536x1536": "https://codeandcore.b-cdn.net/media/2024/06/download-8.png",
+                        "1536x1536-width": 129,
+                        "1536x1536-height": 321,
+                        "2048x2048": "https://codeandcore.b-cdn.net/media/2024/06/download-8.png",
+                        "2048x2048-width": 129,
+                        "2048x2048-height": 321
+                    }
+                },
+                "country_content_list": [
+                    {
+                        "title": "Trusted by numerous clients in Israel:",
+                        "content": "68"
+                    },
+                    {
+                        "title": "Our portfolio showcases completed projects:",
+                        "content": "133"
+                    },
+                    {
+                        "title": "Our client retention success:",
+                        "content": " 83%"
+                    },
+                    {
+                        "title": "Our expertise spans industries across Israel:",
+                        "content": "E-Commerce, Real Estate, Digital Marketing, Manufacturing, Website Design & Development, Education, Software Development, Fitness & Wellness, Cyber Security, Finance, Hospitality, Restaurant, Non-Profit Organizations, Pharmaceutical, Energy, Venture Capital, Tours & Travel"
+                    },
+                    {
+                        "title": "Our technology empowers your business:",
+                        "content": "WordPress, WooCommerce, PHP, Node.js, Laravel, CodeIgniter, Custom PHP, React, Angular, Vue.js, GitHub, Figma, Adobe XD, Sketch, MySQL, MongoDB, PostgreSQL, Google Analytics, HubSpot, Yoast SEO, SEMrush, HTML5, CSS3, JavaScript, Bootstrap, Zeplin, Lottie, WebGL, jQuery, GSAP, Skrollr, SVG, Particle, Canvas, 3D Rendering"
+                    },
+                    {
+                        "title": "Our work involves creating:",
+                        "content": "Sites from Scratch, Custom UX/UI Design, Responsive Web Design, Web Development & Programming, E-commerce Solutions, Content Management Systems (CMS), Interactive Features & Widgets, Payment Gateway Integration, SEO Optimization, Database Integration, Website Maintenance & Support, Performance Optimization, Security Implementations, Analytics Integration"
+                    }
+                ]
+            }
+        ],
+        "hireus_title_contact": "contact hire us",
+        "hireus_subtitle_contact": "",
+        "hireus_button_text_contact": "",
+        "hireus_list_contact": false
+    },
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO Premium plugin v22.6 (Yoast SEO v22.8) - https://yoast.com/wordpress/plugins/seo/ -->\n<title>ContactUs - Codeandcore</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://codeandcore.b-cdn.net/contact-us/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"ContactUs\" />\n<meta property=\"og:url\" content=\"https://codeandcore.b-cdn.net/contact-us/\" />\n<meta property=\"og:site_name\" content=\"Codeandcore\" />\n<meta property=\"article:publisher\" content=\"https://www.facebook.com/codeandcore\" />\n<meta property=\"article:modified_time\" content=\"2025-01-24T22:55:58+00:00\" />\n<meta property=\"og:image\" content=\"https://codeandcore.b-cdn.net/media/2024/11/home-banner-new.jpg\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:site\" content=\"@codeandcore\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://codeandcore.b-cdn.net/contact-us/\",\"url\":\"https://codeandcore.b-cdn.net/contact-us/\",\"name\":\"ContactUs - Codeandcore\",\"isPartOf\":{\"@id\":\"https://codeandcore.b-cdn.net/#website\"},\"datePublished\":\"2024-06-03T10:07:03+00:00\",\"dateModified\":\"2025-01-24T22:55:58+00:00\",\"breadcrumb\":{\"@id\":\"https://codeandcore.b-cdn.net/contact-us/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://codeandcore.b-cdn.net/contact-us/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://codeandcore.b-cdn.net/contact-us/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://codeandcore.b-cdn.net/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"ContactUs\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://codeandcore.b-cdn.net/#website\",\"url\":\"https://codeandcore.b-cdn.net/\",\"name\":\"Codeandcore\",\"description\":\"Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.\",\"publisher\":{\"@id\":\"https://codeandcore.b-cdn.net/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://codeandcore.b-cdn.net/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https://codeandcore.b-cdn.net/#organization\",\"name\":\"Code and core\",\"alternateName\":\"CNC\",\"url\":\"https://codeandcore.b-cdn.net/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://codeandcore.b-cdn.net/#/schema/logo/image/\",\"url\":\"https://codeandcore.b-cdn.net/wp-content/uploads/2024/11/Organization-logo.jpg\",\"contentUrl\":\"https://codeandcore.b-cdn.net/wp-content/uploads/2024/11/Organization-logo.jpg\",\"width\":697,\"height\":696,\"caption\":\"Code and core\"},\"image\":{\"@id\":\"https://codeandcore.b-cdn.net/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/codeandcore\",\"https://x.com/codeandcore\",\"https://linkedin.com/company/code-and-core\",\"https://www.instagram.com/codeandcore/\",\"https://www.youtube.com/@codeandcoreofficial\",\"https://dribbble.com/codeandcore\"],\"description\":\"CodeandCore builds scalable and reliable custom software for businesses of all sizes and industries. We transform your ideas into top-performing digital products that your customers truly value.\",\"email\":\"hello@codeandcore.com\",\"telephone\":\"+91-99981 05422\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"minValue\":\"11\",\"maxValue\":\"50\"}}]}</script>\n<!-- / Yoast SEO Premium plugin. -->",
+    "yoast_head_json": {
+        "title": "ContactUs - Codeandcore",
+        "robots": {
+            "index": "index",
+            "follow": "follow",
+            "max-snippet": "max-snippet:-1",
+            "max-image-preview": "max-image-preview:large",
+            "max-video-preview": "max-video-preview:-1"
+        },
+        "canonical": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/",
+        "og_locale": "en_US",
+        "og_type": "article",
+        "og_title": "ContactUs",
+        "og_url": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/",
+        "og_site_name": "Codeandcore",
+        "article_publisher": "https://www.facebook.com/codeandcore",
+        "article_modified_time": "2025-01-24T22:55:58+00:00",
+        "og_image": [
+            {
+                "width": 1200,
+                "height": 675,
+                "url": "https://codeandcore.b-cdn.net/media/2024/11/home-banner-new.jpg",
+                "type": "image/jpeg"
+            }
+        ],
+        "twitter_card": "summary_large_image",
+        "twitter_site": "@codeandcore",
+        "schema": {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/",
+                    "url": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/",
+                    "name": "ContactUs - Codeandcore",
+                    "isPartOf": {
+                        "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#website"
+                    },
+                    "datePublished": "2024-06-03T10:07:03+00:00",
+                    "dateModified": "2025-01-24T22:55:58+00:00",
+                    "breadcrumb": {
+                        "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/#breadcrumb"
+                    },
+                    "inLanguage": "en-US",
+                    "potentialAction": [
+                        {
+                            "@type": "ReadAction",
+                            "target": [
+                                "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/contact-us/#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://wordpress-1074629-4621962.cloudwaysapps.com/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "ContactUs"
+                        }
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#website",
+                    "url": "https://wordpress-1074629-4621962.cloudwaysapps.com/",
+                    "name": "Codeandcore",
+                    "description": "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.",
+                    "publisher": {
+                        "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#organization"
+                    },
+                    "potentialAction": [
+                        {
+                            "@type": "SearchAction",
+                            "target": {
+                                "@type": "EntryPoint",
+                                "urlTemplate": "https://wordpress-1074629-4621962.cloudwaysapps.com/?s={search_term_string}"
+                            },
+                            "query-input": "required name=search_term_string"
+                        }
+                    ],
+                    "inLanguage": "en-US"
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#organization",
+                    "name": "Code and core",
+                    "alternateName": "CNC",
+                    "url": "https://wordpress-1074629-4621962.cloudwaysapps.com/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "inLanguage": "en-US",
+                        "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#/schema/logo/image/",
+                        "url": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-content/uploads/2024/11/Organization-logo.jpg",
+                        "contentUrl": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-content/uploads/2024/11/Organization-logo.jpg",
+                        "width": 697,
+                        "height": 696,
+                        "caption": "Code and core"
+                    },
+                    "image": {
+                        "@id": "https://wordpress-1074629-4621962.cloudwaysapps.com/#/schema/logo/image/"
+                    },
+                    "sameAs": [
+                        "https://www.facebook.com/codeandcore",
+                        "https://x.com/codeandcore",
+                        "https://linkedin.com/company/code-and-core",
+                        "https://www.instagram.com/codeandcore/",
+                        "https://www.youtube.com/@codeandcoreofficial",
+                        "https://dribbble.com/codeandcore"
+                    ],
+                    "description": "CodeandCore builds scalable and reliable custom software for businesses of all sizes and industries. We transform your ideas into top-performing digital products that your customers truly value.",
+                    "email": "hello@codeandcore.com",
+                    "telephone": "+91-99981 05422",
+                    "numberOfEmployees": {
+                        "@type": "QuantitativeValue",
+                        "minValue": "11",
+                        "maxValue": "50"
+                    }
+                }
+            ]
+        }
+    },
+    "post_name": "contact-us",
+    "_links": {
+        "self": [
+            {
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282",
+                "targetHints": {
+                    "allow": [
+                        "GET"
+                    ]
+                }
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages"
+            }
+        ],
+        "about": [
+            {
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/types/page"
+            }
+        ],
+        "author": [
+            {
+                "embeddable": true,
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/users/1"
+            }
+        ],
+        "replies": [
+            {
+                "embeddable": true,
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/comments?post=1282"
+            }
+        ],
+        "version-history": [
+            {
+                "count": 41,
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282/revisions"
+            }
+        ],
+        "predecessor-version": [
+            {
+                "id": 8030,
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282/revisions/8030"
+            }
+        ],
+        "wp:attachment": [
+            {
+                "href": "https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/media?parent=1282"
+            }
+        ],
+        "curies": [
+            {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+            }
+        ]
+    }
+}

@@ -8,6 +8,8 @@ import ServicesDetailsBanner from "@/components/servicesdetailscomponents/Servic
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
 import { notFound } from "next/navigation";
+import HomePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
@@ -24,27 +26,6 @@ async function fetchData(slug) {
     return response.json();
   }
   
-  async function fetchHomeData() {
-    const res = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`, 
-          { cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch homepage data');
-    return res.json();
-}
-  
-  async function fetchContactData() {
-    const fetchContact = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
-          : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!fetchContact.ok) throw new Error('Failed to fetch contact data');
-    return fetchContact.json();
-  }
-  
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -53,8 +34,7 @@ export default async function Page({ params }) {
       notFound();
     }
   const yoastData = data ? data?.yoast_head_json : data?.[0]?.yoast_head_json
-  const HomePage = await fetchHomeData()
-  const contactData = await fetchContactData();
+
     const industryData= data?.id ? data : data[0]
   const hireUsData =
   industryData && industryData?.acf && industryData?.acf?.hireus_title
