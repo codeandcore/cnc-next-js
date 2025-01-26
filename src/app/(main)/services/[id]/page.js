@@ -37,6 +37,8 @@ export default async function Page({ params }) {
   const serviceData = data?.id ? data : data[0]   
   
   const yoastData = serviceData?.yoast_head_json
+  console.log('asasfttuastasKSGgjhbsc',serviceData );
+  
   const hireUsData =
   serviceData && serviceData && serviceData?.acf && serviceData?.acf?.hireus_title ? serviceData?.acf : homePage && homePage?.acf ? homePage?.acf : null;
   
