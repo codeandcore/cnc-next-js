@@ -257,3 +257,23 @@
 .owl-carousel .owl-stage-outer {
   transition:0.4s ease all
 }
+
+
+.our_clientssay .left_col,.our_clientssay .right_col{
+  opacity: 0;
+  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transition: 0.5s transform cubic-bezier(.645,.045,.355,1);
+  -webkit-transition: 0.5s transform cubic-bezier(.645,.045,.355,1);
+  -moz-transition: 0.5s transform cubic-bezier(.645,.045,.355,1);
+  -o-transition: 0.5s transform cubic-bezier(.645,.045,.355,1);
+}
+.our_clientssay .right_col{
+  transition-delay: 0.2s;
+}
+.our_clientssay.section-visible .left_col,.our_clientssay.section-visible .right_col{
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -25,7 +25,7 @@ const ClientsSay = ({
 };
 
   const owlCarouselRef = useRef(null);
-  const [ref, isVisible] = UseOnScreen({ threshold: 0.1 });
+  const [ref, isVisible] = UseOnScreen({ threshold: 0.3 });
   var $ = require("jquery");
   if (typeof window !== "undefined") {
   window.$ = window.jQuery = require("jquery");
@@ -41,7 +41,7 @@ const ClientsSay = ({
   }
   return (
     <div
-      className="our_clientssay"
+      className={`our_clientssay ${isVisible ? 'section-visible' : ''}`}
       ref={ref}
     >
       <div className="wrapper d_flex">

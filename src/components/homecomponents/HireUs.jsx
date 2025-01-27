@@ -21,7 +21,7 @@ const HireUs = ({
   const [popupContent, setPopupContent] = useState('');
   const [popupTitle, setPopupTitle] = useState('');
   const [isMobile, setIsMobile] = useState(false);
-  const [ref, isVisible] = UseOnScreen({ threshold: 0.1 });
+  const [ref, isVisible] = UseOnScreen({ threshold: 0.3 });
 
   useEffect(() => {
     // Only execute in the client-side (browser)
@@ -50,12 +50,11 @@ const HireUs = ({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const scaleValue = isVisible ? 1 : 1.15;
   return (
     <>
       <div
         ref={ref}
-        className="hireto_meetyou"
+        className={`hireto_meetyou ${isVisible ? 'section-visible' : ''}`}
         onMouseLeave={handleParentHoverOut}
       >
         <div
