@@ -54,6 +54,7 @@
 .services_accordion .top_title span {
   width: 78px;
   height: 78px;
+  min-width: 78px;
   margin-right: 50px;
   display: flex;
   justify-content: center;
@@ -154,7 +155,7 @@
   margin-top: 5px;
 }
 .services_accordion .col .btn div {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .services_accordion .col .btn div img {
   width: 8px;
@@ -201,6 +202,7 @@
   .services_accordion .top_title span {
     width: 40px;
     height: 40px;
+    min-width: 40px;
   }
   .services_accordion .top_title h3 {
     font-size: 35px;
@@ -280,9 +282,11 @@
   }
   .services_accordion .top_title {
     padding: 15px 0px;
+    flex-wrap: nowrap;
   }
   .services_accordion .top_title h3 {
-    font-size: 20px;
+    font-size: 18px;
+    padding-right: 40px;
   }
   .services_accordion .col h4 {
     width: 100%;
@@ -305,6 +309,7 @@
     width: 100%;
     height: 280px;
     margin-bottom: 20px;
+    background-size: contain;
   }
   .services_accordion .text {
     width: 100%;
@@ -335,4 +340,12 @@
   .services_accordion .top_title > .btnsimple img {
     width: 10px;
   }
+}
+
+@media only screen and (max-width: 375px) {
+  
+  .services_accordion .top_title h3 {
+    font-size: 15px;
+  }
+
 }

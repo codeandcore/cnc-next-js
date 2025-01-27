@@ -7,9 +7,9 @@
   margin-bottom: 41px;
 }
 .case_studies .inner {
-  /* max-width: calc(100% - 159px);
+  max-width: calc(100% - 159px);
   margin: 0 auto;
-  margin-right: 0; */
+  margin-right: 0;
   position: relative;
 }
 .case_studies .top_col {
@@ -23,6 +23,7 @@
   color: var(--black);
   line-height: 46px;
   font-weight: 900;
+  width: calc(100% - 330px);
   word-wrap: break-word;
 }
 .case_studies .colin .case {
@@ -45,6 +46,7 @@
   border: none;
 }
 .case_studies .colin .case span {
+  min-width: 34.5px;
   width: 34.5px;
   height: 34.5px;
   border-radius: 50%;
@@ -296,6 +298,10 @@ body .case_studies .img .bg img {
   .case_studies .colin .case li {
     font-size: 12px;
     padding: 0px 5px;
+    border-right: 0;
+  }
+  .case_studies .colin .case li:not(:first-child) {
+    display: none;
   }
   .case_studies .bottom_col ul li + li {
     padding-left: 10px;
@@ -337,9 +343,18 @@ body .case_studies .img .bg img {
   .case_studies h2 {
     margin-bottom: 10px;
   }
+  .case_studies .owl-carousel{
+    padding-top: 50px;
+  }
+  .case_studies .top_col{
+    flex-wrap: nowrap;
+  }
   .case_studies .colin {
     width: 100%;
     margin-right: 0px;
+  }
+  .case_studies .colin .case li{
+    font-size: 10px;
   }
   .case_studies .owl-carousel .owl-item img {
     max-width: 140px;
@@ -357,10 +372,11 @@ body .case_studies .img .bg img {
   }
   .case_studies .owl-carousel .colin {
     margin-right: 0;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
   }
   .case_studies .bottom_col {
     position: relative;
+    margin-top: 5px;
   }
   .case_studies .bottom_col .lcol img {
     max-width: 90px !important;
@@ -375,10 +391,10 @@ body .case_studies .img .bg img {
   }
   .case_studies .bottom_col .rcol {
     font-size: 12px;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
     width: fit-content;
+    margin-left: auto;
+
   }
   .case_studies .bottom_col .rcol img {
     max-width: 20px !important;
@@ -391,9 +407,9 @@ body .case_studies .img .bg img {
     margin-left: 10px;
   }
   .case_studies .colin h3 {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 32px;
-    width: calc(100% - 85px);
+    width: auto;
     word-wrap: break-word;
   }
   .case_studies .nextprev_sec {
@@ -422,18 +438,18 @@ body .case_studies .img .bg img {
     min-height: 160px;
   }
   .case_studies .colin .case {
-    height: 35px;
+    height: 28px;
     padding: 3px;
-    padding-right: 10px;
-    margin: 0 auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-left: 0;
+    padding-right: 4.5px;
+    margin-left: auto;
   }
   .case_studies .colin .case span {
+    min-width: 29.5px;
     width: 29.5px;
     height: 29.5px;
+    display: none;
   }
+
   .case_studies .bottom_col ul li + li::after {
     height: 36px;
   }

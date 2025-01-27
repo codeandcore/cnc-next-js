@@ -218,6 +218,9 @@
     padding-top: 0px;
     border: none;
   }
+  .our_approach .bottom_col .text div {
+    font-size: 12px;
+}
   .our_approach .bottom_col h3 {
     font-size: 24px;
   }

@@ -113,7 +113,10 @@ main {
   margin: 0;
   font-family: var(--manrope);
 }
-
+input, textarea{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 ul,
 ol {
   list-style: none;
@@ -518,14 +521,6 @@ header.fixed .brand img.logoIcon {
   animation-iteration-count: infinite;
 }
 
-.industry-details_page h2{
-  font-size: 40px !important;
-  line-height: 1.2 !important; 
-}
-.service-details_page h2{
-  font-size: 40px !important;
-  line-height: 1.2 !important; 
-}
 @keyframes marquee {
   0% {
     transform: translate3d(0%, 0, 0);
@@ -2383,7 +2378,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
     right: 0;
   }
   body .case_studies .owl-carousel.owl-theme .owl-nav {
-    top: 30px;
+    top: 0;
+    padding-right: 0;
+    margin-top: 0;
   }
   body .our_highlights .owl-carousel.owl-theme .owl-nav {
     margin-top: 0;
@@ -2411,6 +2408,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   .lcol_logo {
     height: 35px;
     max-width: 120px;
+    display: none;
   }
 
   footer .logos a:not(:last-child) {

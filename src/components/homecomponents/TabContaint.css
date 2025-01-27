@@ -121,7 +121,7 @@
     padding-right: 20px;
   }
   .tab_section .tabtitle h2 {
-    font-size: 40px;
+    font-size: 32px;
   }
   .tab_section .tablink .text > a:not(.btn) {
     font-size: 16px;
@@ -286,7 +286,7 @@
 .tab_section .btn.btnarrow em{
   transition: 0.5s cubic-bezier(.645,.045,.355,1);
   left: 0;
-  font-size: 14.5px;
+  font-size: 14px;
 }
 
 .tab_section .btn.btnarrow .arrow_img {

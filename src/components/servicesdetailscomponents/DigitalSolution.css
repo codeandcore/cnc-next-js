@@ -118,9 +118,10 @@
   .digital_solution {
     padding: 30px 0px 30px;
   }
-  .digital_solution h2 {
+  .digital_solution h2, .how_we_help h2, .explore_we_done h2 {
     line-height: 1.2;
     margin-bottom: 20px;
+    font-size: 24px !important;
   }
   .btnanglearrow {
     font-size: 16px;
