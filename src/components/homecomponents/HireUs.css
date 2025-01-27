@@ -443,7 +443,9 @@ body.popup-open {
 .hireto_meetyou .wrapper .allbtn{
   transition-delay: 0.3s;
 }
-.hireto_meetyou.section-visible .wrapper *{
+.hireto_meetyou.section-visible .wrapper h2,
+.hireto_meetyou.section-visible .wrapper h3,
+.hireto_meetyou.section-visible .wrapper .allbtn{
   opacity: 1;
   transform: translateY(0);
 }
