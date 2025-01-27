@@ -34,9 +34,9 @@ const StackTechnologies = ({
     const rect = sectionRef.current.getBoundingClientRect();
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
-    const whyearlyOffset = 70;
+    const whyearlyOffset = 350;
 
-    if (rect.top <= windowHeight && rect.bottom >= -whyearlyOffset) {
+    if (rect.top <= windowHeight - whyearlyOffset && rect.bottom >= -whyearlyOffset) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

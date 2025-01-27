@@ -2527,3 +2527,46 @@ body .owl-carousel.owl-theme .owl-nav > button span {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+
+
+
+
+/* dark button css */
+.dark.btn.btnarrow{
+  overflow: hidden;
+  z-index: 9;
+}
+.dark.btn.btnarrow .arrow_img{
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.dark.btn.btnarrow em{
+  transition: 0.5s cubic-bezier(.645,.045,.355,1);
+  left: 0;
+  font-size: 14.5px;
+}
+.dark.btn.btnarrow:hover .arrow_img img{
+  filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%)
+  hue-rotate(17deg) brightness(97%) contrast(103%);
+}
+.dark.btn.btnarrow:hover .arrow_img{
+  background-color: var(--white);
+}
+.dark.btn.btnarrow .arrow_img .hover_img{
+  opacity: 0 !important;
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.dark.btn.btnarrow:hover .arrow_img img:first-child{
+  transform: translate(230%, 0%);
+}
+.dark.btn.btnarrow .arrow_img img.hover_img{
+  transform: translate(-230%, 0%);
+}
+.dark.btn.btnarrow:hover .arrow_img img.hover_img{
+  opacity: 1 !important;
+  transform: translate(0%, 0%);
+  filter: none;
+}
+.dark.btn.btnarrow:hover .arrow_img {
+  background-color: var(--black);
+}

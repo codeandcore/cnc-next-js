@@ -51,14 +51,12 @@ const ClientsSay = ({
           )}
           {our_clients_subtitle && <p>{our_clients_subtitle}</p>}
           {our_clients_button_text && our_clients_button_url && (
-            <a href={our_clients_button_url} className="btn btnarrow ">
+            <a href={our_clients_button_url} className="btn btnarrow dark">
               <span></span>
               <em>{our_clients_button_text}</em>
-              <div>
-                <img
-                  src={'/assets/images/ellipse_arr.png'}
-                  alt="Double Quote"
-                />
+              <div className='arrow_img'>
+                <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" />
+                <img src={"/assets/images/ellipse_arr.png"} alt="Read More"  className='hover_img'/>
               </div>
             </a>
           )}

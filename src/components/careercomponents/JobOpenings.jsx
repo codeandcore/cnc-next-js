@@ -102,14 +102,15 @@ const JobOpenings = ({
                       </div>
                     </div>
                     <span
-                      className="btn btnarrow "
+                      className="btn btnarrow dark"
                       onClick={() =>
                         handlePopupToggle(job.post_acf.job_details_title)
                       }
                     >
                       <em>APPLY NOW</em>
-                      <div>
-                        <img src={"/assets/images/ellipse_arr.png"} />
+                      <div className='arrow_img'>
+                        <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" />
+                        <img src={"/assets/images/ellipse_arr.png"} alt="Read More"  className='hover_img'/>
                       </div>
                     </span>
                   </div>
@@ -207,14 +208,15 @@ const JobOpenings = ({
                       </div>
                     )}
                     <span
-                      className="btn btnarrow "
+                      className="btn btnarrow  dark"
                       onClick={() =>
                         handlePopupToggle(job.post_acf.job_details_title)
                       }
                     >
                       <em>APPLY NOW</em>
-                      <div>
-                        <img src={"/assets/images/ellipse_arr.png"} />
+                      <div className='arrow_img'>
+                        <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" />
+                        <img src={"/assets/images/ellipse_arr.png"} alt="Read More"  className='hover_img'/>
                       </div>
                     </span>
                   </div>
