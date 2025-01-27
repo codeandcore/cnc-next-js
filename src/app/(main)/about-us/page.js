@@ -28,8 +28,6 @@ const fetchPageData = async () => {
 
 export default async function AboutUsPage() {
   const pageData = await fetchPageData();
-console.log('home', homePage);
-
   const hireUsData = pageData?.acf?.hireus_title
     ? pageData.acf
     : homePage && homePage?.acf

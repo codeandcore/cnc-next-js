@@ -30,7 +30,6 @@ const Homepage = async ({
   setIsFinish,
 }) => {
   const HomePage = await fetchHomepageData();
-  console.log('json', contactData);
   
   const yoastData = HomePage?.yoast_head_json   
   return (
