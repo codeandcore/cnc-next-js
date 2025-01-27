@@ -1359,7 +1359,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 999999999;
   background-color: #a5a5a5;
   background-color: rgba(31, 31, 31, 0.4);
 }
@@ -1982,6 +1982,10 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   }
   header {
     padding: 12px 0px !important;
+  }
+  .calendly-overlay .calendly-popup-close {
+    top: 22px;
+    right: 9px;
   }
   p {
     font-size: 14px;
