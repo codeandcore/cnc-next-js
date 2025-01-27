@@ -113,10 +113,7 @@ const generateSitemap = async (type) => {
     type === "sitemap"
       ? `${process.env.NEXT_PUBLIC_WP_URL}sitemap.xml`
       : `${process.env.NEXT_PUBLIC_WP_URL}${type}.xml`;
-      console.log('---------------------------------------------------------------------------', sitemapUrl);
   try {
-    
-    
     const mainSitemap = await axios.get(sitemapUrl);
     let filteredSitemap = mainSitemap.data.replace(
       '<?xml-stylesheet type="text/xsl" href="//wordpress-1074629-4621962.cloudwaysapps.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>',
