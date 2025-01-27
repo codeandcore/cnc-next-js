@@ -6,6 +6,7 @@ import HireUs from '@/components/homecomponents/HireUs';
 import Head from './head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import contactData from "@/json/contact.json";
 
 const Custom404 = async () => {
   const HomePage = await fetchHomepageData()
@@ -79,6 +80,7 @@ const Custom404 = async () => {
           hireus_subtitle={HomePage.acf.hireus_subtitle}
           hireus_button_text={HomePage.acf.hireus_button_text}
           hireus_list={HomePage.acf.hireus_list}
+          contactData={contactData}
         />
       )}
       </div>
@@ -90,8 +92,8 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchHomepageData() {
   const res = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
+        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,
          { cache: "no-store" } 
 )
   if (!res.ok) throw new Error('Failed to fetch homepage data');
@@ -100,8 +102,8 @@ async function fetchHomepageData() {
 async function fetchGeneralSettings() {
   const generalSettingRes = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`,
       { cache: "no-store" } 
 )
   if (!generalSettingRes.ok) {

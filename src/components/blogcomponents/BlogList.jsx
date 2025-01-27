@@ -9,6 +9,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { ReplaceDomain } from '@/ReplaceDomain';
 import { useInView } from 'react-intersection-observer';
+import { getGeneralData } from '@/appStore';
 
 const BlogList = ({
   blog_heading,
@@ -87,7 +88,10 @@ const BlogList = ({
   };
 
   const fetchspecialBlogs = () => {
-    fetch('https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all', { cache: 'no-store' })
+    fetch( process.env.NEXT_PUBLIC_REACT_APP_ENV !== "development"
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`,
+    { cache: "no-store" } )
       .then((respons) => respons.json())
       .then((data) => {
         setSpecialBlogElements(data?.advertise_repeater);
@@ -96,6 +100,7 @@ const BlogList = ({
 
   useEffect(() => {
     fetchBlogs();
+    
   }, [BASE_URL]);
 
   useEffect(() => {

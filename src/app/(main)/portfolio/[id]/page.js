@@ -17,13 +17,14 @@ import SolutionSection from "@/components/casestudingdetailcomponets/SolutionSec
 import UniqueElements from "@/components/casestudingdetailcomponets/UniqueElements";
 import SuccesStory from "@/components/casestudingdetailcomponets/SuccesStory";
 import DavelopmentApproach from "@/components/casestudingdetailcomponets/DavelopmentApproach";
-
+import HomePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL =
     env !== "development"
       ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/portfolio/?slug=${slug}`;
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/portfolio/?slug=${slug}`;
 
   try {
     const fetchresponse = await fetch(apiURL, {
@@ -43,48 +44,6 @@ async function fetchData(slug) {
   }
 }
 
-async function fetchHomeData() {
-  const apiURL =
-    env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
-
-  try {
-    const fetchHomeresponse = await fetch(apiURL, { cache: "no-store" });
-
-    if (!fetchHomeresponse.ok) {
-      console.error("Error fetching homepage data");
-      throw new Error("Failed to fetch homepage data");
-    }
-
-    const data = await fetchHomeresponse.json(); // Parse the body once here
-    return data;
-  } catch (error) {
-    console.error("Error in fetchHomeData:", error);
-    throw error;
-  }
-}
-
-async function fetchContactData() {
-  const apiURL =
-    env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
-
-  try {
-    const response = await fetch(apiURL, { cache: "no-store" });
-    if (!response.ok) {
-      console.error("Error fetching contact data");
-      throw new Error("Failed to fetch contact data");
-    }
-
-    const data = await response.json(); // Parse the body once here
-    return data;
-  } catch (error) {
-    console.error("Error in fetchContactData:", error);
-    throw error;
-  }
-}
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -95,8 +54,6 @@ export default async function Page({ params }) {
   const portfolioData = data?.id ? data : data[0]
 
   const yoastData = data ? data?.yoast_head_json : data?.[0]?.yoast_head_json
-  const HomePage = await fetchHomeData()
-  const contactData = await fetchContactData();
   const hireUsData =
     portfolioData && portfolioData?.acf && portfolioData?.acf?.hireus_title
       ? portfolioData?.acf

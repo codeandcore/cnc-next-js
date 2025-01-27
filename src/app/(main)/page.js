@@ -14,7 +14,7 @@ import "@/components/homecomponents/Banner.css"
 import ProjectLogoMarquee from '@/components/homecomponents/ProjectLogoMarquee';
 import TabContaint from '@/components/homecomponents/TabContaint';
 import IndustriesSlider from '@/components/homecomponents/IndustriesSlider';
-
+import contactData from "@/json/contact.json";
 function stripHtmlTags(str) {
   if (!str) return '';
   return str.replace(/<[^>]*>/g, '');
@@ -30,9 +30,8 @@ const Homepage = async ({
   setIsFinish,
 }) => {
   const HomePage = await fetchHomepageData();
-  const contactData = await fetchContactData();
-  const yoastData = HomePage?.yoast_head_json   
   
+  const yoastData = HomePage?.yoast_head_json   
   return (
     <>
   <Head yoastData={yoastData} />
@@ -62,7 +61,7 @@ const Homepage = async ({
             banner_hireus_form_subtitle={
               HomePage.acf.banner_hireus_form_subtitle
             }
-            contactData={contactData}
+            contactData={contactData[0]}
           />
         )}
       {HomePage && HomePage.acf.banner_clients_list && (
@@ -265,24 +264,12 @@ const Homepage = async ({
 async function fetchHomepageData() {
   const res = await   fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
+        : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`,
          { cache: "no-store" } 
 )
   if (!res.ok) throw new Error('Failed to fetch homepage data');
   return res.json();
-}
-
-// Fetch contact data server-side
-async function fetchContactData() {
-  const fetchres = await  fetch(
-    env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,
-      { cache: "no-store" } 
-)
-  if (!fetchres.ok) throw new Error('Failed to fetch contact data');
-  return fetchres.json();
 }
 
 

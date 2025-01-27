@@ -4,42 +4,44 @@ import './ExploreDone.css';
 import ExploreData from './ExploreData';
 import Link from 'next/link';
 import BASE_URL from '@/config';
+import { getGeneralData } from '@/appStore';
 
 const ExploreDone = ({
   portfolio_title,
   portfolio_subtitle,
   portfolio_button,
   portfolio_list,
+  tempData
 }) => {
-  const [portfoliodata, setPortfoliodata] = useState(null);
-  useEffect(() => {
-    fetch(`${BASE_URL}/wp-json/custom/v1/case-study-list?page=1&per_page=2`)
-      .then((response) => response.json())
-      .then((data) => setPortfoliodata(data))
-      .catch((error) =>
-        console.error('Error fetching data from WordPress API:', error),
-      );
-  }, [BASE_URL]);
-  
-  const casestudy_list = portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : portfoliodata  
+  const commonPortfolio = tempData
+  console.log('commonPortfolio', tempData, commonPortfolio);
+
+  const [portfoliodata, setPortfoliodata] = useState(commonPortfolio);
+  const casestudy_list = portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : commonPortfolio?.portfolio_list
+  const portfolioButton = portfolio_button && Object.keys(portfolio_button).length > 0 ? portfolio_button : commonPortfolio?.portfolio_button
+
+  useEffect(()=> {
+
+  })
+
   return (
     <div className="explore_we_done">
       <div className="wrapper d_flex">
         <div className="left_col">
           {portfolio_title && (
-            <h2 dangerouslySetInnerHTML={{ __html: portfolio_title }}></h2>
+            <h2 dangerouslySetInnerHTML={{ __html: portfolio_title ? portfolio_title : commonPortfolio?.portfolio_title }}></h2>
           )}
           {portfolio_subtitle && (
-            <p dangerouslySetInnerHTML={{ __html: portfolio_subtitle }}></p>
+            <p dangerouslySetInnerHTML={{ __html: portfolio_subtitle ? portfolio_subtitle : commonPortfolio?.portfolio_subtitle }}></p>
           )}
         </div>
-        {portfolio_button && (
-          <Link href={portfolio_button.url} className="btn">
-            {portfolio_button.title}
+        {portfolioButton && (
+          <Link href={portfolioButton.url} className="btn">
+            {portfolioButton.title}
           </Link>
         )}
         {casestudy_list && (
-          <ExploreData CaseStudycptData={portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : casestudy_list?.data}></ExploreData>
+          <ExploreData CaseStudycptData={portfolio_list && portfolio_list?.length !== 0 ? portfolio_list : casestudy_list}></ExploreData>
         )}
       </div>
     </div>

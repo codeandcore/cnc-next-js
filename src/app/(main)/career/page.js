@@ -8,12 +8,14 @@ import Life from '@/components/homecomponents/Life';
 import Head from '@/app/head';
 import Loading from '@/components/Loading';
 import "../../../components/homecomponents/Banner.css"
+import CNCLifeData from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/career`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/career`
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/655`
   
   
     const response = await fetch(apiUrl,   { cache: "no-store" } );
@@ -22,21 +24,8 @@ const fetchPageData = async () => {
     }
     return response.json();
   };
-  const fetchLifeCNCData = async () => {
-    const res = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,
-        { cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch homepage data');
-    return res.json();
-  }
-  
-
 export default async function CareerPage() {
     const CareerpageData = await fetchPageData();
-    const CNCLifeData = await fetchLifeCNCData();
     const yoastData =  CareerpageData?.yoast_head_json
     return (
       <Suspense fallback={<Loading />}>
