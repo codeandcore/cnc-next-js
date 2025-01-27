@@ -87,7 +87,7 @@ const BlogList = ({
   };
 
   const fetchspecialBlogs = () => {
-    fetch('${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all', { cache: 'no-store' })
+    fetch(`${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`, { cache: 'no-store' })
       .then((respons) => respons.json())
       .then((data) => {
         setSpecialBlogElements(data?.advertise_repeater);
@@ -175,36 +175,36 @@ const BlogList = ({
             </div>
           ) : (
             <div className="blogItemList">
-              {blogData.map((blog, index) => {
+              {specialBlogElements?.length!==0 && blogData.map((blog, index) => {
                 if ((index + 1) % 6 === 0) {
                   const specialIndex = (specialIndexOffset + Math.floor(index / 6)) % specialBlogElements.length;
                   const specialContent = specialBlogElements[specialIndex];
                   return (
-                    <div
+                   specialContent?.background_image?.url && <div
                       key={index}
                       className="blog-item special-layout"
                       style={{ backgroundImage: `url(${specialContent?.background_image?.url})` }}
                     >
                       <div className="special-content">
-                        <h3
+                       {specialContent?.title && <h3
                           className="special-blog-title"
                           style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
                         >
                           {specialContent?.title}
-                        </h3>
-                        <p
+                        </h3>}
+                       {specialContent?.subtitle && <p
                           className="content"
                           style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
                         >
                           {specialContent?.subtitle}
-                        </p>
-                        <Link
+                        </p>}
+                        {specialContent?.button?.title && <Link
                           href={specialContent?.button?.url || ''}
                           style={{ color: specialContent?.button_type === 'Primary' ? '#ffff' : '#424242' }}
                           className={`btn ${specialContent?.button_type === 'Primary' ? '' : 'btn-secondary'}`}
                         >
                           <em>{specialContent?.button?.title}</em>
-                        </Link>
+                        </Link>}
                       </div>
                     </div>
                   );
