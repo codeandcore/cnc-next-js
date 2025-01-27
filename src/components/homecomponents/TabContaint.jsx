@@ -100,11 +100,9 @@ const TabContaint = ({ service_list }) => {
                       // onMouseEnter={() => handleMouseEnter(`/${item.button_url.post_name}`)}
                     >
                       <em>{item.button_text}</em>
-                      <div>
-                        <img
-                          src={'/assets/images/ellipse_arr.png'}
-                          alt={item.title}
-                        />
+                      <div className='arrow_img'>
+                        <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
+                        <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" className='hover_img'/>
                       </div>
                     </Link>
                   )}

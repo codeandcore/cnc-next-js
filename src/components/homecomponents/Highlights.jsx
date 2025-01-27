@@ -92,43 +92,45 @@ const Highlights = ({
           </div>
         </div> */}
       </div>
-      <div className="inner">
-        {our_blogs && our_blogs.length > 0 ? (
-          <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
-            {our_blogs.map((item, index) => (
-              <div className="col" key={index}>
-                <Link href={`/blog/${item.post_name}`} className="img">
-                  <img src={item.featured_image_url} alt={item?.title?.rendered} />
-                </Link>
-                <div className="text">
-                  <div className="btn_col d_flex">
-                    <div className="col-left d_flex">
-                      <a href={`/blog/${item.post_name}`}>
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: item?.categories_names,
-                          }}
-                        ></span>
-                      </a>
-                      <div className="date">
-                        <img src={"/assets/images/dateIcon.svg"} alt="date_icon" />{moment(item?.date).format('D.M.YYYY')}
+      <div className="wrapper">
+        <div className="inner">
+          {our_blogs && our_blogs.length > 0 ? (
+            <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
+              {our_blogs.map((item, index) => (
+                <div className="col" key={index}>
+                  <Link href={`/blog/${item.post_name}`} className="img">
+                    <img src={item.featured_image_url} alt={item?.title?.rendered} />
+                  </Link>
+                  <div className="text">
+                    <div className="btn_col d_flex">
+                      <div className="col-left d_flex">
+                        <a href={`/blog/${item.post_name}`}>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: item?.categories_names,
+                            }}
+                          ></span>
+                        </a>
+                        <div className="date">
+                          <img src={"/assets/images/dateIcon.svg"} alt="date_icon" />{moment(item?.date).format('D.M.YYYY')}
+                        </div>
                       </div>
                     </div>
+                    <h3>
+                    <Link href={`/blog/${item.post_name}`}>
+                        {item.post_title}
+                      </Link>
+                    </h3>
+    
                   </div>
-                  <h3>
-                  <Link href={`/blog/${item.post_name}`}>
-                      {item.post_title}
-                    </Link>
-                  </h3>
-   
                 </div>
-              </div>
 
-            ))}
-          </OwlCarousel>
-        ) : (
-          <div>No blogs available</div>
-        )}
+              ))}
+            </OwlCarousel>
+          ) : (
+            <div>No blogs available</div>
+          )}
+        </div>
       </div>
     </div>
   );
