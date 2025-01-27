@@ -284,7 +284,24 @@ body .explore_project_intersterd .img .awward {
   }
   .explore_data .colin {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction:column;
   }
+  /* .explore_data .colin .top_col{
+    order: 3;
+    margin-top: 8px;
+  } */
+  .explore_data .colin .top_col h3:empty{
+    display: none;
+  }
+  /* .explore_data .img{
+    order: 2;
+  } */
+  /* .explore_data .bottom_col{
+    order: 1;
+    margin-right: auto;
+    margin-top: 0;
+  } */
   .explore_we_done .wrapper > a {
     margin: 10px auto;
     margin-right: auto;
@@ -324,6 +341,14 @@ body .explore_project_intersterd .img .awward {
     font-size: 16px;
     margin: 20px auto -20px !important;
   }
+
+  .explore_data .colin .case span{display: none;}
+  .explore_data .colin .case li{border: none; margin: 0;}
+  .explore_data .colin .case li + li{display: none;}
+  .explore_data .colin .case{padding-right: 3.5px;}
+  .explore_data .colin .rcol { font-size: 12px;flex-wrap: nowrap;}
+  .explore_data .img{min-height:190px;}
+
 }
 .mr-4 {
   margin-right: 4px;

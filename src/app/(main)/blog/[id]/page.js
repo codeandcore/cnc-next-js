@@ -12,7 +12,7 @@ import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/blog/${slug}`
     : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/posts/?slug=${slug}`
   
     const response = await fetch(apiURL, {
