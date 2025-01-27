@@ -1,11 +1,11 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import './StackTechnologies.css';
-import he from 'he';
-import UseOnScreen from '../UseOnScreen';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React, { useState, useEffect , useRef } from "react";
+import "./StackTechnologies.css";
+import he from "he";
+import UseOnScreen from "../UseOnScreen";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 
 const StackTechnologies = ({
   technologies_title,
@@ -25,7 +25,51 @@ const StackTechnologies = ({
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [resetChildMenu, setResetChildMenu] = useState(false);
 
-  const [ref, isVisible] = UseOnScreen({ threshold: 0.1 });
+  const sectionRef = useRef(null); // Ref for the section
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Function to check visibility of the element
+  const checkVisibility = () => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const whyearlyOffset = 70;
+
+    if (rect.top <= windowHeight && rect.bottom >= -whyearlyOffset) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkVisibility);
+    window.addEventListener("resize", checkVisibility);
+
+    checkVisibility();
+
+    return () => {
+      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener("resize", checkVisibility);
+    };
+  }, []);
+  useEffect(() => {
+    if (isVisible) {
+      const colinElements = document.querySelectorAll('.stack_technologies .colin');
+      colinElements.forEach((colin, index) => {
+        setTimeout(() => {
+          colin.classList.add('active');
+        }, index * 80);
+      });
+      const colinElements_bg = document.querySelector('.stack_technologies');
+      if (colinElements_bg) {
+        setTimeout(() => {
+          colinElements_bg.classList.add('active_bg');
+        }, 150);
+      }
+    }
+  }, [isVisible]);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -37,16 +81,12 @@ const StackTechnologies = ({
   const handleSmoothScroll = () => {
     window.scrollTo({
       top: 0, // Adjust the value as needed
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
 
   return (
-    <div
-      ref={ref}
-      
-      className="stack_technologies"
-    >
+    <div ref={sectionRef} className="stack_technologies">
       <div
         className="bg"
         style={

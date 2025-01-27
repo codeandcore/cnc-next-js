@@ -1,8 +1,8 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import './WhyChoose.css';
-import HirePopup from './HirePopup';
-import he from 'he';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import "./WhyChoose.css";
+import HirePopup from "./HirePopup";
+import he from "he";
 
 const WhyChoose = ({
   chooseus_title,
@@ -41,19 +41,59 @@ const WhyChoose = ({
   chooseus_pagespeed_button_url,
 }) => {
   const [popupVisible, setPopupVisible] = useState(false);
-  const [popupContent, setPopupContent] = useState('');
-  const [popupTitle, setPopupTitle] = useState('');
+  const [popupContent, setPopupContent] = useState("");
+  const [popupTitle, setPopupTitle] = useState("");
+
+  const whysectionRef = useRef(null); // Ref for the section
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Function to check visibility of the element
+  const checkVisibility = () => {
+    if (!whysectionRef.current) return;
+    const rect = whysectionRef.current.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const earlyOffset = 250;
+
+    if (rect.top <= windowHeight && rect.bottom >= -earlyOffset) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
-    const cols = document.querySelectorAll('.col');
+    window.addEventListener("scroll", checkVisibility);
+    window.addEventListener("resize", checkVisibility);
+
+    checkVisibility();
+
+    return () => {
+      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener("resize", checkVisibility);
+    };
+  }, []);
+  useEffect(() => {
+    if (isVisible) {
+      const colinElements = document.querySelectorAll(".whyChoose_us .colin .col");
+      colinElements.forEach((colin, index) => {
+        setTimeout(() => {
+          colin.classList.add("animi");
+        }, index * 150);
+      });
+    }
+  }, [isVisible]);
+
+  useEffect(() => {
+    const cols = document.querySelectorAll(".col");
 
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * cols.length); // Generate a random index
       cols.forEach((col, index) => {
         if (index === randomIndex) {
-          col.classList.add('active'); // Add 'active' class to the randomly selected col
+          col.classList.add("active"); // Add 'active' class to the randomly selected col
         } else {
-          col.classList.remove('active'); // Remove 'active' class from all other cols
+          col.classList.remove("active"); // Remove 'active' class from all other cols
         }
       });
     }, 500); // Repeat every 2 seconds
@@ -72,18 +112,18 @@ const WhyChoose = ({
   };
   useEffect(() => {
     if (popupVisible) {
-      document.body.classList.add('popup-open');
+      document.body.classList.add("popup-open");
     } else {
-      document.body.classList.remove('popup-open');
+      document.body.classList.remove("popup-open");
     }
     return () => {
-      document.body.classList.remove('popup-open');
+      document.body.classList.remove("popup-open");
     };
   }, [popupVisible]);
 
   return (
     <>
-      <div className="whyChoose_us">
+      <div className="whyChoose_us"  ref={whysectionRef} >
         <div className="wrapper">
           <div className="top_title d_flex">
             {chooseus_title && (
