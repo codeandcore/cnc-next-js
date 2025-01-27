@@ -2320,6 +2320,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   .rsc-content{
     height: calc(395px - 159px) !important;
   }
+     .chat-board .chat-logo {
+    margin-bottom: 17px;
+  }
   .chat-board h3{
     font-size: 25px;
     margin-bottom: 0px;
@@ -2418,6 +2421,22 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   }
 }
 @media only screen and (max-width: 359px) {
+  .chat-board{
+    height: 457px;
+    right: 9px;
+  }
+  .chat-board h3 {
+    font-size: 23px;
+  }
+  .rsc {
+    margin-top: 5px;
+  }
+  .rsc-content {
+    height: calc(395px - 167px) !important;
+  }
+  .chat-board .peragrapth {
+    top: 116px;
+}
   p {
     font-size: 12px;
     line-height: 18px;
