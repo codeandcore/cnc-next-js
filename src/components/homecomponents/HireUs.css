@@ -421,3 +421,29 @@ body.popup-open {
     padding: 5px 30px;
   }
 }
+
+
+.hireto_meetyou .wrapper h2,.hireto_meetyou .wrapper h3,.hireto_meetyou .wrapper .allbtn{
+  opacity: 0;
+  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transition: 0.5s cubic-bezier(.645,.045,.355,1);
+  -webkit-transition: 0.5s cubic-bezier(.645,.045,.355,1);
+  -moz-transition: 0.5s cubic-bezier(.645,.045,.355,1);
+  -o-transition: 0.5s cubic-bezier(.645,.045,.355,1);
+}
+.hireto_meetyou .wrapper h2{
+  transition-delay: 0.1s;
+}
+.hireto_meetyou .wrapper h3{
+  transition-delay: 0.2s;
+}
+.hireto_meetyou .wrapper .allbtn{
+  transition-delay: 0.3s;
+}
+.hireto_meetyou.section-visible .wrapper *{
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -52,10 +52,16 @@ const ExploreWork = ({ className, title, subtitle, button, items }) => {
                         <Link
                           href={`/portfolio/${item.slug}`}
                           className="bg"
-                          style={{
-                            backgroundImage: `url(${item.featured_image_url})`,
-                          }}
-                        ></Link>
+                          
+                        >
+                          <div className='bg_img'
+                            style={
+                              item.featured_image_url
+                                ? { backgroundImage: `url(${item.featured_image_url})` }
+                                : {}
+                            }>
+                            </div>
+                        </Link>
                       </div>
                       <div className="bottom_col d_flex">
                         <div className="lcol test">
