@@ -3,7 +3,11 @@ const path = require("path");
 const { kv } = require("@vercel/kv");
 const cache = require("./cache");
 const generateJson = require("./api/generateJson");
-const axios = require('axios');
+const axios = require("axios");
+const xml2js = require("xml2js");
+const dotenv = require("dotenv");
+dotenv.config()
+
 
 const app = express();
 console.log("hello");
@@ -107,10 +111,12 @@ app.get("/data/:type?/:fileName", async (req, res) => {
 const generateSitemap = async (type) => {
   const sitemapUrl =
     type === "sitemap"
-      ? `${process.env.NEXT_PUBLIC_WP_URL}/sitemap.xml`
-      : `${process.env.NEXT_PUBLIC_WP_URL}/${type}.xml`;
-
+      ? `${process.env.NEXT_PUBLIC_WP_URL}sitemap.xml`
+      : `${process.env.NEXT_PUBLIC_WP_URL}${type}.xml`;
+      console.log('---------------------------------------------------------------------------', sitemapUrl);
   try {
+    
+    
     const mainSitemap = await axios.get(sitemapUrl);
     let filteredSitemap = mainSitemap.data.replace(
       '<?xml-stylesheet type="text/xsl" href="//wordpress-1074629-4621962.cloudwaysapps.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>',
@@ -141,7 +147,7 @@ const generateSitemap = async (type) => {
 
     return beautifiedXml;
   } catch (error) {
-    console.error("Error generating sitemap:", error);
+    console.error("Error generating sitemap:", error, sitemapUrl);
     throw error;
   }
 };
