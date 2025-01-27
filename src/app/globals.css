@@ -2315,6 +2315,22 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
     padding: 25px 20px 15px;
     right: 20px;
     width: 280px;
+    height: 500px;
+  }
+  .rsc-content{
+    height: calc(395px - 159px) !important;
+  }
+  .chat-board h3{
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+  .chat-board .peragrapth{
+    top: 151px;
+  }
+  .chat-board .threebtn{
+    width: calc(100% - 35px);
+    bottom: 5px;
+    padding: 10px 14px;
   }
   .chat-board .inner {
     border-radius: 15px;
