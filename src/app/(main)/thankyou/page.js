@@ -15,7 +15,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchGeneralSetting = async () => {
     const apiUrl =
     env !== "development"
-    ? `/data/general-setting`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
     : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {
