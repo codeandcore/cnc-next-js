@@ -93,12 +93,15 @@ const ExploreData = ({
                 }}
                 //  onMouseEnter={() => handleMouseEnter(item.slug)}
                 className="bg"
+              >
+                <div className='bg_img'
                 style={
                   item.featured_image_url
                     ? { backgroundImage: `url(${item.featured_image_url})` }
                     : {}
-                }
-              ></Link>
+                }>
+                </div>
+              </Link>
             </div>
             <div className="bottom_col d_flex">
               <div className="lcol">
