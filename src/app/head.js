@@ -1,4 +1,3 @@
-
 const Head = ({ yoastData }) => {  
     return (
         <>
@@ -23,6 +22,12 @@ const Head = ({ yoastData }) => {
         property="og:title"
         content={yoastData?.og_title || "Codeandcore - Web development studio"}
       />
+      {yoastData?.robots && (
+            <meta
+              name="robots"
+              content={`${yoastData?.robots?.index}, ${yoastData?.robots?.follow}, ${yoastData?.robots["max-image-preview"]}, ${yoastData?.robots["max-snippet"]}, ${yoastData?.robots["max-video-preview"]}`}
+            />
+          )}
       <meta
         property="og:description"
         content={
@@ -45,6 +50,20 @@ const Head = ({ yoastData }) => {
       {yoastData?.og_locale && (
         <meta property="og:locale" content={yoastData?.og_locale} />
       )}
+      {/* Schema JSON-LD */}
+      {yoastData?.schema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(yoastData?.schema).replaceAll(process.env.NEXT_PUBLIC_WP_URL, process.env.NEXT_PUBLIC_VERCEL_URL) }}
+            />
+          )}
+          {/* FAQ Schema */}
+          {yoastData?.faq_schema?.length > 0 && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON.parse(yoastData?.faq_schema[0])) }}
+            />
+          )}   
     </>
   );
 };
