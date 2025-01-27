@@ -11,7 +11,7 @@ import Head from "../../head";
 import Loading from "@/components/Loading";
 import AboutBanner from "@/components/aboutuscomponents/AboutBanner";
 import homePage from "@/json/homePage.json";
-
+import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
   const apiUrl =
@@ -27,9 +27,7 @@ const fetchPageData = async () => {
 };
 
 export default async function AboutUsPage() {
-  const pageData = await fetchPageData();
-console.log('home', homePage);
-
+  const pageData = await fetchPageData();  
   const hireUsData = pageData?.acf?.hireus_title
     ? pageData.acf
     : homePage && homePage?.acf
@@ -114,6 +112,7 @@ console.log('home', homePage);
             hireus_subtitle={hireUsData.hireus_subtitle}
             hireus_button_text={hireUsData.hireus_button_text}
             hireus_list={homePage?.acf?.hireus_list}
+            contactData={contactData}
           />
         )}
       </div>

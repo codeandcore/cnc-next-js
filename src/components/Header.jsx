@@ -257,12 +257,11 @@ const Header = ({
       top: 0, 
       behavior: "auto",
     });
-
+    closeMenu()
     if (!keepMenuOpen) {
       setMenuOpen(false);
       setOpenSubmenu(null);
     }
-
     const cleanUrl = url.replace(/\/+/g, '/').replace(/^\/|\/$/g, '');
     router.push(`/${cleanUrl}`);
   };

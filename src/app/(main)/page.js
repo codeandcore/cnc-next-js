@@ -30,7 +30,6 @@ const Homepage = async ({
   setIsFinish,
 }) => {
   const HomePage = await fetchHomepageData();
-  console.log('json', contactData);
   
   const yoastData = HomePage?.yoast_head_json   
   return (
@@ -252,7 +251,7 @@ const Homepage = async ({
             hireus_subtitle={HomePage.acf.hireus_subtitle}
             hireus_button_text={HomePage.acf.hireus_button_text}
             hireus_list={HomePage.acf.hireus_list}
-            contactData={contactData[0]}
+            contactData={contactData}
           ></HireUs>
         )}
     </div>

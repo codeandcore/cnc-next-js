@@ -224,7 +224,7 @@
   margin-bottom: 0px !important;
 }
 .captcha-container .captcha {
-  position: absolute;
+  /* position: absolute; */
   right: auto;
   bottom: 0;
   width: 57px;
