@@ -29,7 +29,7 @@ const fetchhomePage = async () => {
 const fetchYoutubeMedia = async () => {
     const apiUrl =
     env !== "development"
-    ? `https://cnc-website-new.vercel.app/data/youtube-feeds`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/youtube/youtube`
     : `https://cnc-website-new.vercel.app/data/youtube-feeds`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {

@@ -4,8 +4,8 @@ const nextConfig = {
 
   images: {
     domains: [
-      'wordpress-1074629-4621962.cloudwaysapps.com', // Add your image hostname here
-      'https://cnc-website-new.vercel.app', // Example: another domain for images
+      'wordpress-1074629-4621962.cloudwaysapps.com',
+      'https://cnc-website-new.vercel.app',
     ],
   },
   webpack: (config, {
@@ -26,7 +26,7 @@ const nextConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[hash].[ext]',
-          outputPath: './src/assets/video', // Where to store the video files
+          outputPath: './src/assets/video',
         },
       },
     });
