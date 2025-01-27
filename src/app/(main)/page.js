@@ -37,11 +37,11 @@ const Homepage = async ({
   <Head yoastData={yoastData} />
     <div className="main_wrapper">
       {HomePage &&
-        (HomePage?.acf.banner_background_image ||
-          HomePage?.acf.banner_background_mobile_image ||
-          HomePage.acf.banner_background_video ||
-          HomePage.acf.banner_title ||
-          HomePage.acf.banner_button_text) && (
+        (HomePage?.acf?.banner_background_image ||
+          HomePage?.acf?.banner_background_mobile_image ||
+          HomePage?.acf?.banner_background_video ||
+          HomePage?.acf?.banner_title ||
+          HomePage?.acf?.banner_button_text) && (
           <Banner
             BASE_URL="BASE_URL"
             banner_background_image={HomePage.acf.banner_background_image}
@@ -61,7 +61,7 @@ const Homepage = async ({
             banner_hireus_form_subtitle={
               HomePage.acf.banner_hireus_form_subtitle
             }
-            contactData={contactData[0]}
+            contactData={contactData}
           />
         )}
       {HomePage && HomePage.acf.banner_clients_list && (
