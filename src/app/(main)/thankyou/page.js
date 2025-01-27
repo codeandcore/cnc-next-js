@@ -7,46 +7,24 @@ import BASE_URL from '@/config';
 import Loading from '@/components/Loading';
 import Link from 'next/link';
 import ExploreWork from '@/components/homecomponents/ExploreWork';
-
+import homepage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
-
-async function fetchhomePage() {
-  const fetchhomeres = await fetch(
-    env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-)
-  if (!fetchhomeres.ok) throw new Error('Failed to fetch homepage data');
-  return fetchhomeres.json();
-}
 
 const fetchGeneralSetting = async () => {
     const apiUrl =
     env !== "development"
     ? `/data/general-setting`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
     return response.json();
 };
-
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-
 export default async function terms() {
-  const homepage= await fetchhomePage()
     const GeneralSetting = await fetchGeneralSetting();
-    const contactData = await fetchContactData();
     const yoastData =  GeneralSetting?.yoast_head_json
 
   return (

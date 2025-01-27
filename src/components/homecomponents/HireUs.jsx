@@ -50,7 +50,7 @@ const HireUs = ({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const scaleValue = isVisible ? 1 : 1.15;
+  // const scaleValue = isVisible ? 1 : 1.15;
   return (
     <>
       <div
@@ -87,7 +87,7 @@ const HireUs = ({
             <div className="allbtn">
               {hireus_button_text && (
                 <a
-                  href="javascript:void(0)"
+                  // href="javascript:void(0)"
                   className={`btn ${addUlClass ? 'hide' : ''}`}
                   onMouseEnter={handleBtnHover}
                 >

@@ -11,58 +11,38 @@ import ServicesDetailsBanner from "@/components/servicesdetailscomponents/Servic
 import WhyChooseCompanyDesign from "@/components/servicesdetailscomponents/WhyChooseCompanyDesign";
 import BASE_URL from "@/config";
 import { Suspense } from "react";
-
+import { getGeneralData } from '@/appStore';
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
   async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/${slug}`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/?slug=${slug}`
   
     const response = await fetch(apiURL, {
-      cache: 'no-store', // Adjust cache as needed
+      cache: 'no-store',
     });
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
     return response.json();
   }
-  
-  async function fetchHomeData() {
-    const fetchHomeres = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomeres.json();
-}
-  
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-  
 
 export default async function Page({ params }) {
+  console.log('getGeneralData', getGeneralData());
+  const tempData = getGeneralData()
+  
   const slug = (await params).id
-  console.log('slug', slug);
   
   const data = await fetchData(slug)  
   const serviceData = data?.id ? data : data[0]   
-  const homePage = await fetchHomeData();
-  const contactData = await fetchContactData();
+  
   const yoastData = serviceData?.yoast_head_json
+  console.log('asasfttuastasKSGgjhbsc',serviceData );
+  
   const hireUsData =
-  serviceData && serviceData && serviceData?.acf && serviceData?.acf?.hireus_title
-    ? serviceData?.acf
-    : homePage && homePage?.acf
-    ? homePage?.acf
-    : null;
+  serviceData && serviceData && serviceData?.acf && serviceData?.acf?.hireus_title ? serviceData?.acf : homePage && homePage?.acf ? homePage?.acf : null;
   
   return (
     <>
@@ -94,12 +74,13 @@ export default async function Page({ params }) {
           help_you_list = {serviceData.acf.help_you_list}
           ></HowWeHelp>
       )}
-      {serviceData && (serviceData.acf.portfolio_title || serviceData.acf.portfolio_subtitle || serviceData.acf.portfolio_button || serviceData.acf.portfolio_list) && (
+      {serviceData && (serviceData.acf.portfolio_title || serviceData.acf.portfolio_subtitle || serviceData.acf.portfolio_button || serviceData.acf?.portfolio_list) && (
           <ExploreDone
           portfolio_title = {serviceData.acf.portfolio_title}
           portfolio_subtitle = {serviceData.acf.portfolio_subtitle}
           portfolio_button = {serviceData.acf.portfolio_button}
-          portfolio_list = {serviceData.acf.portfolio_list}
+          portfolio_list = {serviceData.acf?.portfolio_list}
+          tempData={tempData}
           ></ExploreDone>
       )}
       {serviceData && (serviceData.acf.why_choose_title || serviceData.acf.why_choose_subtitle || serviceData.acf.why_choose_list) && (

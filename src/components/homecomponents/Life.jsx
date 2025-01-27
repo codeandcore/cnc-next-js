@@ -134,7 +134,7 @@ const Life = ({
     }
   };
 
-  const scaleValue = isVisible ? 1 : 1.15;
+  // const scaleValue = isVisible ? 1 : 1.15;
   return (
     <>
       {(life_codeandcore_title ||

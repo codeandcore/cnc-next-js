@@ -7,12 +7,14 @@ import Technodetailcontaints from "@/components/technologiescomponents/Technodet
 import BASE_URL from "@/config";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import HomePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/${slug}`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/?slug=${slug}`
   
     const response = await fetch(apiURL, {
       cache: 'no-store', // Adjust cache as needed
@@ -22,27 +24,7 @@ async function fetchData(slug) {
     }
     return response.json();
   }
-  
-  async function fetchHomeData() {
-    const fetchHomeres = await   fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomeres.json();
-}
-  
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-  
+
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -52,8 +34,6 @@ export default async function Page({ params }) {
     }
   const technoData=data?.id ? data : data[0]
   const yoastData =technoData?.yoast_head_json
-  const HomePage = await fetchHomeData()
-  const contactData = await fetchContactData();
   const hireUsData =
   data &&  technoData?.acf && technoData?.acf?.hireus_title
     ? technoData?.acf

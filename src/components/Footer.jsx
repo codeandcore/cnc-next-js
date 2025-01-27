@@ -4,7 +4,7 @@ import ChatBoard from './ChatBoard';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import dynamic from "next/dynamic";
-const PDFViewer = dynamic(() => import("../components/PDFViewer"), { ssr: false });
+import FsLightbox from 'fslightbox-react';
 
 const Footer = ({ ApiData }) => {
   const [showBackTop, setShowBackTop] = useState(false);
@@ -194,7 +194,7 @@ const Footer = ({ ApiData }) => {
               <div className="logos d_flex">
                       {ApiData.certified_by_list.map((menuItem, index) => {
                         return (
-                          <a role='button' key={index} target="_blank" onClick={(e)=>{e?.preventDefault(),setIsPDFOpen(true)}} style={{cursor: `${menuItem.url ? "pointer" : ""}`}} >
+                          <a role='button' key={index} target="_blank" onClick={(e)=>{e?.preventDefault(),setIsPDFOpen(!isPDFOpen)}} style={{cursor: `${menuItem.url ? "pointer" : ""}`}} >
                           <img
                             src={menuItem.logo.url}
                             alt={menuItem.logo.name}
@@ -280,7 +280,11 @@ const Footer = ({ ApiData }) => {
       </div>
     )}
         </div>
-        <PDFViewer isOpen={isPDFOpen} setIsOpen={setIsPDFOpen} pdfUrl={"/ISO-Certificate.pdf"} />
+                    <FsLightbox
+                      toggler={isPDFOpen}
+                      sources={["/assets/images/ISO-Certificate.jpg"]}
+                      types={["image"]}
+                    />
 </footer>
     </>
   ) : null;

@@ -8,13 +8,14 @@ import Loading from '@/components/Loading';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { setGeneralData } from '@/appStore';
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchGeneralSettings() {  
 
   const generalSettingRes = await fetch(
     env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`,
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/options/general-setting`
+      : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/options/all`,
       { cache: "no-store" } 
 )
   if (!generalSettingRes.ok) {
@@ -25,6 +26,7 @@ async function fetchGeneralSettings() {
 
 export default async function RootLayout({ children }) {
   const generalSetting = await fetchGeneralSettings();
+  setGeneralData(generalSetting);
   return (
     <>
     <ScrollToTop />

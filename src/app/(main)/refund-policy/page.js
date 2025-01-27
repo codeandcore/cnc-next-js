@@ -5,45 +5,23 @@ import he from 'he';
 import HireUs from '@/components/homecomponents/HireUs';
 import BASE_URL from '@/config';
 import Loading from '@/components/Loading';
-
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/refund-policy`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2191`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/refund-policy`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/2191`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
     return response.json();
 };
-async function fetchhomePage() {
-    const fetchhomeres = await fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchhomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchhomeres.json();
-  }
-  
-  // Fetch contact data server-side
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-
 export default async function page() {
     const pageData = await fetchPageData();
-    const homePage = await fetchhomePage();
-    const contactData = await fetchContactData();
     const yoastData =  pageData?.yoast_head_json
     const hireUsData =
     pageData && pageData?.acf && pageData?.acf.hireus_title

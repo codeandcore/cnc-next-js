@@ -9,13 +9,15 @@ import Linkedinlife from '@/components/Lifecomponents/Linkedinlife';
 import Socialmedialife from '@/components/Lifecomponents/Socialmedialife';
 import FestivalCelebration from '@/components/Lifecomponents/FestivalCelebration';
 import Loading from '@/components/Loading';
+import homePage from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchhomePage = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/life-at-cnc`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1665`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/life-at-cnc`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1665`
     const fetchhomeresponse = await fetch(apiUrl,{ cache: "no-store" } );
     if (!fetchhomeresponse.ok) {
       throw new Error("Failed to fetch data");
@@ -27,40 +29,16 @@ const fetchhomePage = async () => {
 const fetchYoutubeMedia = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/youtube-feeds`
-    : `https://cnc-website-new.vercel.app/data/youtube-feeds`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/youtube/youtube`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/custom/v1/youtube-feeds`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
     return response.json();
 };
-
-  async function fetchHomehomePage() {
-    const fetchHomehomeres = await fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`,{ cache: "no-store" } 
-  )
-    if (!fetchHomehomeres.ok) throw new Error('Failed to fetch homepage data');
-    return fetchHomehomeres.json();
-  }
-  
-  // Fetch contact data server-side
-  async function fetchContactData() {
-    const res = await  fetch(
-      env !== "development"
-          ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-          : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`,{ cache: "no-store" } 
-  )
-    if (!res.ok) throw new Error('Failed to fetch contact data');
-    return res.json();
-  }
-
 export default async function portfolioPage() {
     const cncData = await fetchhomePage();
-    const homePage = await fetchHomehomePage();
-    const contactData = await fetchContactData();
     const socialData= await fetchYoutubeMedia()
     const yoastData =  cncData?.yoast_head_json
 

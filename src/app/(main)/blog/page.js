@@ -4,13 +4,15 @@ import BASE_URL from '@/config';
 import React, { Suspense } from 'react';
 import Head from '@/app/head';
 import Loading from '@/components/Loading';
+import hireUsData from "@/json/homePage.json";
+import contactData from "@/json/contact.json";
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
     const apiUrl =
     env !== "development"
-            ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/blog`
-            : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
+            ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/blog`
+            : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1219`
   
     const responsePageData = await fetch(apiUrl,{ cache: "no-store" } );
     if (!responsePageData.ok) {
@@ -22,8 +24,8 @@ const fetchPageData = async () => {
 const fetchHireUsData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/home`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/7`
 
   
     const response = await fetch(apiUrl,{ cache: "no-store" } );
@@ -36,8 +38,8 @@ const fetchHireUsData = async () => {
 const fetchContactData = async () => {
     const apiUrl =
     env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/page/contactus`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/pages/1282`
   
     const responseContactData = await fetch(apiUrl, { cache: "no-store" } );
     if (!responseContactData.ok) {
@@ -62,10 +64,9 @@ const fetchCategoryData = async () => {
 
 export default async function BlogPage() {
     const pageData = await fetchPageData();
-    const hireUsData= await fetchHireUsData()
-    const contactData = await fetchContactData();
     const catData=await fetchCategoryData()
 const yoastData=pageData?.yoast_head_json
+console.log('home', hireUsData);
 
  
   return (
