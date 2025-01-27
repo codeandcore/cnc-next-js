@@ -203,6 +203,7 @@
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 10px;
+    padding-bottom: 0 !important;
   }
   .tab_section .tablink {
     padding-left: 40px;
@@ -289,9 +290,9 @@
   font-size: 14px;
 }
 
-.tab_section .btn.btnarrow .arrow_img {
+/* .tab_section .btn.btnarrow:hover .arrow_img {
   transform: rotate(-45deg);
-}
+} */
 .tab_section .btn.btnarrow:hover .arrow_img img{
   filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%)
   hue-rotate(17deg) brightness(97%) contrast(103%);

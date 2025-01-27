@@ -50,7 +50,7 @@
 .digital_solution .btnanglearrow {
 }
 .digital_solution .btnanglearrow:hover {
-  background-color: var(--Purple);
+  /* background-color: var(--Purple); */
   border-color: var(--Purple);
   color: var(--white);
 }
@@ -155,4 +155,26 @@
     margin-top: 15px;
     border-radius: 10px;
   }
+}
+
+
+.digital_solution .btnanglearrow{
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+}
+.digital_solution .btnanglearrow:before {
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  background: var(--Purple);
+  transition: 0.3s cubic-bezier(.645,.045,.355,1);
+  /* border-radius: 50px; */
+  z-index: -1;
+}
+.digital_solution .btnanglearrow:hover:before {
+  height: 100%;
 }
