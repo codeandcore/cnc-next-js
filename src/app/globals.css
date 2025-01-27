@@ -1359,7 +1359,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 999999999;
   background-color: #a5a5a5;
   background-color: rgba(31, 31, 31, 0.4);
 }
@@ -1983,6 +1983,10 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   header {
     padding: 12px 0px !important;
   }
+  .calendly-overlay .calendly-popup-close {
+    top: 22px;
+    right: 9px;
+  }
   p {
     font-size: 14px;
     line-height: 20px;
@@ -2315,6 +2319,25 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
     padding: 25px 20px 15px;
     right: 20px;
     width: 280px;
+    height: 500px;
+  }
+  .rsc-content{
+    height: calc(395px - 159px) !important;
+  }
+     .chat-board .chat-logo {
+    margin-bottom: 17px;
+  }
+  .chat-board h3{
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+  .chat-board .peragrapth{
+    top: 151px;
+  }
+  .chat-board .threebtn{
+    width: calc(100% - 35px);
+    bottom: 5px;
+    padding: 10px 14px;
   }
   .chat-board .inner {
     border-radius: 15px;
@@ -2402,6 +2425,22 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav > button:hover {
   }
 }
 @media only screen and (max-width: 359px) {
+  .chat-board{
+    height: 457px;
+    right: 9px;
+  }
+  .chat-board h3 {
+    font-size: 23px;
+  }
+  .rsc {
+    margin-top: 5px;
+  }
+  .rsc-content {
+    height: calc(395px - 167px) !important;
+  }
+  .chat-board .peragrapth {
+    top: 116px;
+}
   p {
     font-size: 12px;
     line-height: 18px;

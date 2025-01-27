@@ -6,6 +6,7 @@ import HireUs from '@/components/homecomponents/HireUs';
 import Head from './head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import contactData from "@/json/contact.json";
 
 const Custom404 = async () => {
   const HomePage = await fetchHomepageData()
@@ -79,6 +80,7 @@ const Custom404 = async () => {
           hireus_subtitle={HomePage.acf.hireus_subtitle}
           hireus_button_text={HomePage.acf.hireus_button_text}
           hireus_list={HomePage.acf.hireus_list}
+          contactData={contactData}
         />
       )}
       </div>

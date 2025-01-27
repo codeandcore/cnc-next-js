@@ -30,7 +30,6 @@ const Homepage = async ({
   setIsFinish,
 }) => {
   const HomePage = await fetchHomepageData();
-  console.log('json', contactData);
   
   const yoastData = HomePage?.yoast_head_json   
   return (
@@ -38,11 +37,11 @@ const Homepage = async ({
   <Head yoastData={yoastData} />
     <div className="main_wrapper">
       {HomePage &&
-        (HomePage?.acf.banner_background_image ||
-          HomePage?.acf.banner_background_mobile_image ||
-          HomePage.acf.banner_background_video ||
-          HomePage.acf.banner_title ||
-          HomePage.acf.banner_button_text) && (
+        (HomePage?.acf?.banner_background_image ||
+          HomePage?.acf?.banner_background_mobile_image ||
+          HomePage?.acf?.banner_background_video ||
+          HomePage?.acf?.banner_title ||
+          HomePage?.acf?.banner_button_text) && (
           <Banner
             BASE_URL="BASE_URL"
             banner_background_image={HomePage.acf.banner_background_image}
@@ -62,7 +61,7 @@ const Homepage = async ({
             banner_hireus_form_subtitle={
               HomePage.acf.banner_hireus_form_subtitle
             }
-            contactData={contactData[0]}
+            contactData={contactData}
           />
         )}
       {HomePage && HomePage.acf.banner_clients_list && (
@@ -252,7 +251,7 @@ const Homepage = async ({
             hireus_subtitle={HomePage.acf.hireus_subtitle}
             hireus_button_text={HomePage.acf.hireus_button_text}
             hireus_list={HomePage.acf.hireus_list}
-            contactData={contactData[0]}
+            contactData={contactData}
           ></HireUs>
         )}
     </div>

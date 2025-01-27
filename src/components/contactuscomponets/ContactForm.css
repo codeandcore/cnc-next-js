@@ -177,7 +177,9 @@
   width: 100%;
   text-align: center;
 }
-
+.loaderdata img {
+  animation: rotate-animation 0.8s linear infinite;
+}
 @media only screen and (max-width: 1599px) {
   .contact_form .left_col .col {
     margin-bottom: 20px;

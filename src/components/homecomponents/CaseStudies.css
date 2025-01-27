@@ -7,9 +7,9 @@
   margin-bottom: 41px;
 }
 .case_studies .inner {
-  max-width: calc(100% - 159px);
+  /* max-width: calc(100% - 159px);
   margin: 0 auto;
-  margin-right: 0;
+  margin-right: 0; */
   position: relative;
 }
 .case_studies .top_col {
@@ -23,7 +23,6 @@
   color: var(--black);
   line-height: 46px;
   font-weight: 900;
-  width: calc(100% - 330px);
   word-wrap: break-word;
 }
 .case_studies .colin .case {

@@ -37,7 +37,7 @@ const Head = ({ yoastData }) => {
         <meta property="og:image" content={yoastData?.og_image[0]?.url} />
       )}
       {yoastData?.canonical && (
-        <link rel="canonical" href={yoastData?.canonical} />
+        <link rel="canonical" href={yoastData?.canonical?.replace(process.env.NEXT_PUBLIC_WP_URL, process.env.NEXT_PUBLIC_VERCEL_URL)} />
       )}
       {yoastData?.twitter_card && (
         <meta name="twitter:card" content={yoastData?.twitter_card} />

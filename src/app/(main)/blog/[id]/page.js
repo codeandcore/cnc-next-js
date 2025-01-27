@@ -22,7 +22,7 @@ async function fetchData(slug) {
       throw new Error('Failed to fetch data');
     }
     return response.json();
-  }
+}
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -38,11 +38,9 @@ export default async function Page({ params }) {
     ? HomePage?.acf
     : null;
   
-
-  
   return (
     <Suspense fallback={<Loading />}>
-  <Head yoastData={yoastData} />
+    <Head yoastData={yoastData} />
         <div className='main_wrapper'>
           {blogData && (
             <BlogDetailContent blogData={blogData?.content ? blogData : blogData[0]} />

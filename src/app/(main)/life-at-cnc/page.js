@@ -29,8 +29,8 @@ const fetchhomePage = async () => {
 const fetchYoutubeMedia = async () => {
     const apiUrl =
     env !== "development"
-    ? `https://cnc-website-new.vercel.app/data/youtube-feeds`
-    : `https://cnc-website-new.vercel.app/data/youtube-feeds`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/youtube/youtube`
+    : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/custom/v1/youtube-feeds`
     const response = await fetch(apiUrl,{ cache: "no-store" } );
     if (!response.ok) {
       throw new Error("Failed to fetch data");

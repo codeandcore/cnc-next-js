@@ -55,9 +55,6 @@ const HireUs = ({
     <>
       <div
         ref={ref}
-        // style={{
-        //   transform: `scale(${scaleValue})`,
-        // }}
         className="hireto_meetyou"
         onMouseLeave={handleParentHoverOut}
       >
@@ -90,7 +87,7 @@ const HireUs = ({
             <div className="allbtn">
               {hireus_button_text && (
                 <a
-                  href="javascript:void(0)"
+                  // href="javascript:void(0)"
                   className={`btn ${addUlClass ? 'hide' : ''}`}
                   onMouseEnter={handleBtnHover}
                 >
