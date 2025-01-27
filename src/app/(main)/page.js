@@ -251,7 +251,7 @@ const Homepage = async ({
             hireus_subtitle={HomePage.acf.hireus_subtitle}
             hireus_button_text={HomePage.acf.hireus_button_text}
             hireus_list={HomePage.acf.hireus_list}
-            contactData={contactData[0]}
+            contactData={contactData}
           ></HireUs>
         )}
     </div>
