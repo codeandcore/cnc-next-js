@@ -175,7 +175,7 @@ const HirePopup = ({
   const validateForm = (data) => {
     const newErrors = {};
     Object.keys(data).forEach(field => {
-      const value = field === 'service' ? data[field] : data[field].toString();
+      const value = field === 'service' ? data[field] : data[field]?.toString();
       const errorMessage = getErrorMessage(field, value);
       if (errorMessage) {
         newErrors[field] = errorMessage;
@@ -425,19 +425,14 @@ const HirePopup = ({
                  style={{marginTop:'15px'}}
                >
                  {loading ? (
-                   <span className="loaderdata" style={{ display: "inline-flex",padding:'17px 0px' }}>
-                     <Image  
-                       className='hp_rotate_img'
-                       width={25}  
-                       height={25} 
-                       src={syncIcon} 
-                       alt="rotate-right" 
-                     />
-                   </span>
+                <div className="infinite-loader">
+                <span className="load-spinner"></span>
+              </div>
                  ) : (
                    <em>Submit</em>
                  )}
-               </button>
+                </button>
+             
              </div>
            )}
          </div>

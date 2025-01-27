@@ -277,7 +277,7 @@ const Header = ({
         } ${headerClass}`}
       >
         <a
-          href="#"
+          role='button'
           className={`togglemenu ${isMenuOpen ? 'on' : ''}`}
           onClick={handleMenuToggle}
         >
