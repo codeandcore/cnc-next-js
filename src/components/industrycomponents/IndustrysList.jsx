@@ -108,7 +108,7 @@ const IndustrysList = ({
                 <h3>{service.title}</h3>
                 <div className="btnsimple">
                   <img src={"/assets/images/arrow_ss1.svg"} alt="Read More" />
-                  <img src="/assets/images/arrow_ss1_white.svg" alt="Read More" class="hover_img" />
+                  <img src="/assets/images/arrow_ss1_white.svg" alt="Read More" className="hover_img" />
                 </div>
               </div>
               <div
