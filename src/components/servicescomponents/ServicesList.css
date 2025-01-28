@@ -92,13 +92,10 @@
 .services_accordion .top_title.active > .btnsimple {
   transform: rotate(90deg);
 }
-.services_accordion .top_title > .btnsimple:hover {
+.services_accordion .top_title:hover > .btnsimple {
   background-color: var(--black);
 }
-.services_accordion .top_title > .btnsimple:hover img {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5675%)
-    hue-rotate(246deg) brightness(107%) contrast(101%);
-}
+
 .services_accordion .wrap {
   align-items: flex-start;
   max-height: 0px;

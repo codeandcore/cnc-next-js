@@ -61,7 +61,7 @@ const ClientsSay = ({
             </a>
           )}
         </div>
-        <div className="right_col">
+        <div className="right_col dark_carousel">
           {our_clients_testimonials && our_clients_testimonials.length > 0 && (
                    <OwlCarousel {...options} ref={owlCarouselRef} onChange={changecorousel} className="owl-theme">
   {our_clients_testimonials.map((item, index) => (
