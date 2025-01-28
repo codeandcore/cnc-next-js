@@ -117,7 +117,7 @@ const Banner = ({
               >
                 <em
                   dangerouslySetInnerHTML={{
-                    __html: `${banner_button_text}<br/><img src='/assets/images/arrow_a.png' alt='arrow' />`,
+                    __html: `${banner_button_text}<br/><img src='/assets/images/arrow_a.svg' alt='arrow' />`,
                   }}
                 ></em>
               </a>

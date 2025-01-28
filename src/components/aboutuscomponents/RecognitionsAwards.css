@@ -148,10 +148,12 @@ body .recognitions_awards .owl-carousel.owl-theme .owl-nav {
     margin-top: 20px;
     padding: 0px 10px;
   }
-  .indastry_slider.inner .col > span {
+  .indastry_slider.inner .col > span,.Award_slider.inner .col > span {
     height: 70px;
     width: 70px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
   }
   .recognitions_awards .inner img {
@@ -159,15 +161,15 @@ body .recognitions_awards .owl-carousel.owl-theme .owl-nav {
     width: 100px;
     display: block;
     margin: 0 auto;
+    max-height: 100%;
   }
-  .recognitions_awards .inner p {
-    line-height: 20px;
+  .recognitions_awards .inner p, .recognitions_awards .Award_slider.inner p  {
+    font-size: 12px;
+    line-height: 1.5;
     max-width: 150px;
     margin: 10px auto 0;
   }
-  .recognitions_awards .Award_slider.inner p {
-    line-height: 20px;
-    max-width: 170px;
-    margin: 0 auto 0;
+  .recognitions_awards .inner p br, .recognitions_awards .Award_slider.inner p br{
+    display: none;
   }
 }
