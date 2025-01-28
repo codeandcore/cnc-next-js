@@ -3106,7 +3106,7 @@ body .owl-carousel.owl-theme .owl-nav>button {
 
 body .owl-carousel.owl-theme .owl-nav>button {
   position: relative;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow: hidden;
 }
 
@@ -3120,7 +3120,7 @@ body .owl-carousel.owl-theme .owl-nav>button:after {
   background-image: url(/assets/images/arrow_ss1.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 body .owl-carousel.owl-theme .owl-nav>button:before {
@@ -3133,7 +3133,7 @@ body .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1_white.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   transform: translateX(100%);
 }
 
@@ -3179,7 +3179,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   left: 0;
   right: 0;
   margin: auto;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .services_accordion .top_title>.btnsimple img.hover_img {
@@ -3268,7 +3268,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
 
 .year_of_growing .nextprev_sec .next,.year_of_growing .nextprev_sec .prev {
   position: relative;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow: hidden;
 }
 .year_of_growing .nextprev_sec > div img{
@@ -3284,7 +3284,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1_white.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .year_of_growing .nextprev_sec .next:before,.year_of_growing .nextprev_sec .prev:before {
   position: absolute;
@@ -3296,7 +3296,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   transform: translateX(100%);
 }
 .year_of_growing .nextprev_sec .next:hover,.year_of_growing .nextprev_sec .prev:hover {
