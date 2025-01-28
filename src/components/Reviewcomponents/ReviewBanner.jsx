@@ -15,8 +15,8 @@ const ReviewBanner = React.memo(({
   const [isLightboxOpen, setLightboxOpen] = useState(false);
   const [videoKey, setVideoKey] = useState(Date.now());
   const [modalVideoKey, setModalVideoKey] = useState();
-const handleSmoothScroll = (e) => {
-e.preventDefault()
+  const handleSmoothScroll = (e) => {
+    e.preventDefault()
     const jobOpeningsSection = document.querySelector('.review_contant');    
     if (jobOpeningsSection) {
       window.scrollTo({
@@ -32,7 +32,6 @@ e.preventDefault()
   };
 
   useEffect(() => {
-    if (isLightboxOpen) {
       const interval = setInterval(() => {
         const videoElement = document.querySelector(".fslightbox-container video");
         if (videoElement) {
@@ -41,7 +40,7 @@ e.preventDefault()
           clearInterval(interval); // Stop once the video element is found and updated
         }
       }, 100); // Retry every 100ms until the video element is available
-    }
+    
   }, [isLightboxOpen]);
 
   return (
