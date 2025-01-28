@@ -7,7 +7,7 @@
   margin-bottom: 41px;
 }
 .case_studies .inner {
-  max-width: calc(100% - 159px);
+  /* max-width: calc(100% - 159px); */
   margin: 0 auto;
   margin-right: 0;
   position: relative;
