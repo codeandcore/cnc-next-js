@@ -647,7 +647,9 @@ header.fixed .brand img.logoIcon {
   justify-content: center;
   cursor: pointer;
 }
-
+.project_logo_marquee .item.active img{
+  filter: grayscale(0);
+}
 .project_logo_marquee .item img {
   margin-right: 0px;
   max-height: 38px;
@@ -3363,4 +3365,33 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
 }
 .project_contries .nextprev_sec > div.next:hover,.project_contries .nextprev_sec > div.prev:hover{
   background-color: var(--white) !important;
+}
+
+
+.case_studies .owl-carousel:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.industries_lider .inner{
+  position: relative;
+}
+.industries_lider .inner:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
 }
