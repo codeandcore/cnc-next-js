@@ -369,6 +369,7 @@ body .case_studies .img .bg img {
   }
   .case_studies .inner {
     max-width: 100%;
+    padding: 0px 20px !important;
   }
   .case_studies .owl-carousel .colin {
     margin-right: 0;

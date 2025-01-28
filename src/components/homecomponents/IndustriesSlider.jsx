@@ -93,76 +93,99 @@ const IndustriesSlider = ({
     },
   };
 
+  const [sliderStyles, setSliderStyles] = useState({});
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const adjustSliderPosition = () => {
+      if (wrapperRef.current) {
+        const wrapperWidth = wrapperRef.current.offsetWidth; // Wrapper width in pixels
+        const screenWidth = window.innerWidth; // Full screen width in pixels
+        const sliderLeft = (screenWidth - wrapperWidth) / 2;
+
+        console.log(sliderLeft);
+        // Set styles to align the slider
+        setSliderStyles({
+          paddingLeft: `${sliderLeft}px`, // Offset slider to start from the left edge
+        });
+      }
+    };
+
+    adjustSliderPosition();
+    window.addEventListener("resize", adjustSliderPosition); // Recalculate on window resize
+
+    return () => {
+      window.removeEventListener("resize", adjustSliderPosition);
+    };
+  }, []);
+
   return (
     <div
-      // ref={ref}
       className="industries_lider"
       // className={`industries_lider ${isVisible ? 'On-screen' : ''}`}
     >
-      <div className="wrapper d_flex">
+      <div className="wrapper d_flex" ref={wrapperRef}>
         {industries_title && <h2>{industries_title}</h2>}
         {industries_subtitle && (
           <p dangerouslySetInnerHTML={{ __html: industries_subtitle }} />
         )}
       </div>
-      <div className="wrapper">
-        <div className="inner">
-          <OwlCarousel className="owl-theme" {...options}>
-            {industries_list.map((item, index) => (
-              <div key={index} className="colin">
-                <Link
-                  href={`industry/${item.button_url.post_name}`}
-                  title={`${item.button_url.post_name}`}
-                  onClick={(e) =>
-                    handleLinkClick(
-                      `/industry/${item.button_url.post_name}`,
-                      item.button_url.post_name,
-                      e
-                    )
-                  }
-                  className="col"
-                  // onMouseEnter={() => handleMouseEnter(item.button_url.post_name)}
+      <div className="inner" style={sliderStyles}>
+        <OwlCarousel className="owl-theme" {...options}>
+          {industries_list.map((item, index) => (
+            <div key={index} className="colin">
+              <Link
+                href={`industry/${item.button_url.post_name}`}
+                title={`${item.button_url.post_name}`}
+                onClick={(e) =>
+                  handleLinkClick(
+                    `/industry/${item.button_url.post_name}`,
+                    item.button_url.post_name,
+                    e
+                  )
+                }
+                className="col"
+                // onMouseEnter={() => handleMouseEnter(item.button_url.post_name)}
+              >
+                <div className="img">
+                  <div className="overflow_animi">
+                    <div
+                      className="bg"
+                      style={{ backgroundImage: `url(${item.image.url})` }}
+                    ></div>
+                  </div>
+                  <span className="icon_link">
+                    <img src={item.icon.url} alt={item.title} />
+                  </span>
+                </div>
+                <h3
+                  className="h2"
+                  ref={(el) => (titleRefs.current[index] = el)}
                 >
-                  <div className="img">
-                    <div className="overflow_animi">
-                      <div
-                        className="bg"
-                        style={{ backgroundImage: `url(${item.image.url})` }}
-                      ></div>
-                    </div>
-                    <span className="icon_link">
-                      <img src={item.icon.url} alt={item.title} />
-                    </span>
+                  {item.title}
+                </h3>
+                <p ref={(el) => (contentRefs.current[index] = el)}>
+                  {item.content}
+                </p>
+                <div className="btn btnarrow">
+                  <em>{item.button_text}</em>
+                  <div className="arrow_img">
+                    <img
+                      src={"/assets/images/ellipse_arr.png"}
+                      alt="Read More"
+                    />
+                    <img
+                      src={"/assets/images/ellipse_arr_hover.png"}
+                      alt="Read More"
+                      className="hover_img"
+                    />
                   </div>
-                  <h3
-                    className="h2"
-                    ref={(el) => (titleRefs.current[index] = el)}
-                  >
-                    {item.title}
-                  </h3>
-                  <p ref={(el) => (contentRefs.current[index] = el)}>
-                    {item.content}
-                  </p>
-                  <div className="btn btnarrow">
-                    <em>{item.button_text}</em>
-                    <div className="arrow_img">
-                      <img
-                        src={"/assets/images/ellipse_arr.png"}
-                        alt="Read More"
-                      />
-                      <img
-                        src={"/assets/images/ellipse_arr_hover.png"}
-                        alt="Read More"
-                        className="hover_img"
-                      />
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </OwlCarousel>
-        </div>
-      </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </OwlCarousel>
+      </div>      
     </div>
   );
 };
