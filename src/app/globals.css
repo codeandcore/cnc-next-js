@@ -3395,3 +3395,6 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-size: 100% 100%;
   z-index: 2;
 }
+.sitemapLink.light.btn.btnarrow:hover .arrow_img img.hover_img{
+  filter: invert(1);
+}
