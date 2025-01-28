@@ -22,6 +22,10 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+.submenu .link.active{
+color: black;
+font-weight: 700;
+}
 .submenu .left_col .link:hover {
   color: var(--Purple);
 }
@@ -244,7 +248,16 @@ header .servicesmenu .colin .drop-icon {
   }
 }
 
+@media only screen and (min-width: 1279px) {
+  .industrymenu.menu-hide, .servicesmenu.menu-hide{
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1279px) {
+  .submenu .link.active{
+    color: var(--white);
+  }
   .submenu {
     background-color: var(--black);
     width: 400px;
