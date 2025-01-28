@@ -440,6 +440,7 @@
   .whyChoose_us {
     padding: 30px 0px 20px;
   }
+  
   .whyChoose_us .top_title h2 {
     width: 100%;
     margin-bottom: 10px;
@@ -456,9 +457,15 @@
   .whyChoose_us .col.small {
     height: auto;
   }
+  .whyChoose_us .col.small.col9 .textin p br{
+    display: none;
+  }
   .whyChoose_us .col p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
+  }
+  .whyChoose_us .col.col4 .textin p{
+    font-size: 15px;
   }
   .whyChoose_us .col {
     padding: 15px !important;
@@ -508,12 +515,9 @@
     right: 0;
     text-align: right;
   }
-  .whyChoose_us .col.col5 .textin p {
-    font-size: 18px;
+  .whyChoose_us .col.col5 .textin p,.whyChoose_us .col.col6.small .textin p,.whyChoose_us .bottom_inner .col .textin p,.whyChoose_us .col.col10 .textin h4  {
+    font-size: 15px;
     line-height: 1.37;
-  }
-  .whyChoose_us .col.col6.small .textin p {
-    font-size: 18px;
   }
   .whyChoose_us .bottom_inner .col .textin {
     flex-wrap: wrap;
@@ -524,12 +528,10 @@
     width: 100%;
   }
   .whyChoose_us .btn {
+    font-size: 14px;
+    line-height: 40px;
     right: 0;
     position: relative;
-  }
-  .whyChoose_us .bottom_inner .col .textin p {
-    font-size: 18px;
-    line-height: 1.4;
   }
   .whyChoose_us .col3 .textin img {
     max-width: 70px !important;

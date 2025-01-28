@@ -12,6 +12,7 @@ import Loading from '@/components/Loading';
 import Head from '@/app/head';
 import homePage from "@/json/homePage.json";
 import contactData from "@/json/contact.json";
+import { getGeneralData } from '@/appStore';
 
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 const fetchPageData = async () => {
@@ -27,6 +28,8 @@ const fetchPageData = async () => {
     return response.json();
   };
 export default async function ServicePage() {
+  console.log('getGeneralDatagetGeneralDatagetGeneralData', getGeneralData());
+  const generalSettingData = getGeneralData()
   const serviceData = await fetchPageData();
   const yoastData =  serviceData?.yoast_head_json
 
@@ -83,9 +86,9 @@ export default async function ServicePage() {
         )}
         {(homePage && (homePage.acf.our_awards_title || homePage.acf.our_awards_subtitle || homePage.acf.our_awards_list))&& (
           <OurAwards
-            title={homePage.acf.our_awards_title} 
-            content={homePage.acf.our_awards_subtitle}
-            our_awards_images={homePage.acf.our_awards_list}
+            title={generalSettingData.our_awards_title}
+            content={generalSettingData.our_awards_subtitle}
+            our_awards_images={generalSettingData.our_awards_list}
           />
         )}
        {hireUsData &&

@@ -24,6 +24,34 @@
       "destination": "/index.js"
     },
     {
+      "source": "/(.*)\\.php",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)\\.bk",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)\\.alfa",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)\\.ini",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/wp-content/",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/wp-admin/",
+      "destination": "/index.js"
+    },
+    {
       "source": "/(.*)",
       "destination": "/$1"
     }

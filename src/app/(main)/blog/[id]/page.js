@@ -12,7 +12,7 @@ import contactData from "@/json/contact.json";
 const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL=  env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
+  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/blog/${slug}`
     : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/posts/?slug=${slug}`
   
     const response = await fetch(apiURL, {
@@ -22,7 +22,7 @@ async function fetchData(slug) {
       throw new Error('Failed to fetch data');
     }
     return response.json();
-  }
+}
 
 export default async function Page({ params }) {
   const slug = (await params).id
@@ -38,11 +38,9 @@ export default async function Page({ params }) {
     ? HomePage?.acf
     : null;
   
-
-  
   return (
     <Suspense fallback={<Loading />}>
-  <Head yoastData={yoastData} />
+    <Head yoastData={yoastData} />
         <div className='main_wrapper'>
           {blogData && (
             <BlogDetailContent blogData={blogData?.content ? blogData : blogData[0]} />

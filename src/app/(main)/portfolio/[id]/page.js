@@ -23,7 +23,7 @@ const env = process.env.NEXT_PUBLIC_REACT_APP_ENV;
 async function fetchData(slug) {
   const apiURL =
     env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/posts/${slug}`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/portfolio/${slug}`
       : `${process.env.NEXT_PUBLIC_WP_URL}wp-json/wp/v2/portfolio/?slug=${slug}`;
 
   try {

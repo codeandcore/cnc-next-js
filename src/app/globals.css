@@ -117,7 +117,10 @@ main {
   margin: 0;
   font-family: var(--manrope);
 }
-
+input, textarea{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 ul,
 ol {
   list-style: none;
@@ -259,7 +262,27 @@ img {
   width: 300px;
   height: 300px;
 }
-
+.infinite-loader {
+  text-align: center;
+  display: flex;
+}
+.load-spinner {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #fff;
+  border-top: 4px solid #6167f8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes rotate-animation {
   0% {
     transform: rotate(0deg) scale(1);
@@ -1553,7 +1576,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 999999999;
   background-color: #a5a5a5;
   background-color: rgba(31, 31, 31, 0.4);
 }
@@ -2271,6 +2294,10 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
 }
 
 @media only screen and (max-width: 767px) {
+  .load-spinner {
+    width: 25px;
+    height: 25px;
+  }
   body .togglemenu {
     right: 16px;
     top: 22px;
@@ -2298,7 +2325,10 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   header {
     padding: 12px 0px !important;
   }
-
+  .calendly-overlay .calendly-popup-close {
+    top: 22px;
+    right: 9px;
+  }
   p {
     font-size: 14px;
     line-height: 20px;
@@ -2696,31 +2726,29 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   .sticky-btn span.back-top img {
     width: 19px;
   }
-
+  .rsc {
+    margin-top: 5px;
+  }
   .chat-board {
     border-radius: 15px;
     bottom: 20px;
     padding: 25px 20px 15px;
-    right: 20px;
+    right: 9px;
     width: 280px;
-    height: 500px;
+    height: 457px;
   }
-
-  .rsc-content {
-    height: calc(395px - 159px) !important;
+  .rsc-content{
+    height: calc(395px - 167px) !important;
   }
 
   .chat-board .chat-logo {
     margin-bottom: 17px;
   }
-
-  .chat-board h3 {
-    font-size: 25px;
-    margin-bottom: 0px;
+  .chat-board h3{
+    font-size: 23px;
   }
-
-  .chat-board .peragrapth {
-    top: 151px;
+  .chat-board .peragrapth{
+    top: 116px;
   }
 
   .chat-board .threebtn {
@@ -2781,7 +2809,9 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   }
 
   body .case_studies .owl-carousel.owl-theme .owl-nav {
-    top: 30px;
+    top: 0;
+    padding-right: 0;
+    margin-top: 0;
   }
 
   body .our_highlights .owl-carousel.owl-theme .owl-nav {
@@ -2816,6 +2846,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   .lcol_logo {
     height: 35px;
     max-width: 120px;
+    display: none;
   }
 
   footer .logos a:not(:last-child) {

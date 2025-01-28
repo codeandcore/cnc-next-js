@@ -253,10 +253,6 @@ const Header = ({
   }
 
   const handleNavigation = (url, e, keepMenuOpen = false) => {
-    window.scrollTo({
-      top: 0, 
-      behavior: "auto",
-    });
     closeMenu()
     if (!keepMenuOpen) {
       setMenuOpen(false);
@@ -277,7 +273,7 @@ const Header = ({
         } ${headerClass}`}
       >
         <a
-          href="#"
+          role='button'
           className={`togglemenu ${isMenuOpen ? 'on' : ''}`}
           onClick={handleMenuToggle}
         >
