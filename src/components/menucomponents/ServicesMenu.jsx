@@ -51,26 +51,19 @@ const ServicesMenu = ({
            normalizedPathname.startsWith(normalizedUrl + '/');
   };
 
-  const getActiveLinkStyle = (url) => ({
-    color: isLinkActive(url) ? 'black' : '',
-    fontWeight: isLinkActive(url) ? '700' : '',
-  });
-
   const handleNavigation = async (url, e) => {
-    const submenus = document.getElementsByClassName("submenu");
-    Array.from(submenus).forEach(submenu => {
-      submenu.style.display = 'none';
-    });
-    
+    const submenus = document.querySelector(".servicesmenu");
+    if (submenus) {
+      submenus.classList.add("menu-hide");
+    }
     if (handleLinkClick) {
       handleLinkClick(e);
     }
-    
     setTimeout(() => {
-      Array.from(submenus).forEach(submenu => {
-        submenu.style.display = 'flex';
-      });
-    }, 100);
+      if (submenus) {
+        submenus.classList.remove("menu-hide");
+    }
+    }, 1000);
   };
 
   return (
@@ -88,12 +81,11 @@ const ServicesMenu = ({
           </div>
           {menuTitle}
         </div>
-        <div className="left_col">
+        <div className="left_col gh">
           {services_menu.technology_title && (
             <Link
               href={`${services_menu.technology_title.url}`}
-              className="link"
-              style={getActiveLinkStyle(`/services${services_menu.technology_title.url}`)}
+              className={`link ${isLinkActive(`/technologies${services_menu.technology_title.url}`) ? "active" : "" }`}
               onClick={(e) => {
                 closeSubmenu();
                 closeMenu();
@@ -112,7 +104,7 @@ const ServicesMenu = ({
                 <li key={index}>
                   <Link
                     href={`/technologies/${menu.link.post_name}`}
-                    style={getActiveLinkStyle(`/technologies/${menu.link.post_name}`)}
+                    className={`link ${isLinkActive(`/technologies/${menu.link.post_name}`) ? "active" : "" }`}
                     onClick={(e) => {
                       closeSubmenu();
                       closeMenu();
@@ -132,11 +124,10 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.first_menu_title.url}`}
-                  style={getActiveLinkStyle(`/services${services_menu.first_menu_title.url}`)}
+                  className={`link ${isLinkActive(`/services${services_menu.first_menu_title.url}`) ? "active" : "" }`}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
-                    handleSmoothScroll();
                     handleNavigation(`/services${services_menu.first_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
@@ -171,11 +162,10 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
-                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
+                        className={`link ${isLinkActive(`/services${menu.menu_item.url}`) ? "active" : "" }`}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
-                          handleSmoothScroll();
                           handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
@@ -196,11 +186,10 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.second_menu_title.url}`}
-                  style={getActiveLinkStyle(`/services${services_menu.second_menu_title.url}`)}
+                  className={`link ${isLinkActive(`/services${services_menu.second_menu_title.url}`) ? "active" : "" }`}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
-                    handleSmoothScroll();
                     handleNavigation(`/services${services_menu.second_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
@@ -235,11 +224,10 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
-                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
+                        className={`link ${isLinkActive(`/services${menu.menu_item.url}`) ? "active" : "" }`}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
-                          handleSmoothScroll();
                           handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
@@ -260,11 +248,10 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.third_menu_title.url}`}
-                  style={getActiveLinkStyle(`/services${services_menu.third_menu_title.url}`)}
+                  className={`link ${isLinkActive(`/services${services_menu.third_menu_title.url}`) ? "active" : "" }`}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
-                    handleSmoothScroll();
                     handleNavigation(`/services${services_menu.third_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
@@ -299,11 +286,10 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
-                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
+                        className={`link ${isLinkActive(`/services${menu.menu_item.url}`) ? "active" : "" }`}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
-                          handleSmoothScroll();
                           handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
@@ -324,11 +310,10 @@ const ServicesMenu = ({
               <h3>
                 <Link
                   href={`/services${services_menu.fourth_menu_title.url}`}
-                  style={getActiveLinkStyle(`/services${services_menu.fourth_menu_title.url}`)}
+                  className={`link ${isLinkActive(`/services${services_menu.fourth_menu_title.url}`) ? "active" : "" }`}
                   onClick={(e) => {
                     closeSubmenu();
                     closeMenu();
-                    handleSmoothScroll();
                     handleNavigation(`/services${services_menu.fourth_menu_title.url}`, e)
                   }}
                   dangerouslySetInnerHTML={{
@@ -363,11 +348,10 @@ const ServicesMenu = ({
                     <li key={index}>
                       <Link
                         href={`/services${menu.menu_item.url}`}
-                        style={getActiveLinkStyle(`/services${menu.menu_item.url}`)}
+                        className={`link ${isLinkActive(`/services${menu?.menu_item?.url}`) ? "active" : "" }`}
                         onClick={(e) => {
                           closeSubmenu();
                           closeMenu();
-                          handleSmoothScroll();
                           handleNavigation(`/services${menu.menu_item.url}`, e)
                         }}
                         dangerouslySetInnerHTML={{
