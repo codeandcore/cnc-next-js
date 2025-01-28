@@ -237,6 +237,10 @@
   .review_banner .col_right .project_colanimate img {
     max-width: 90px;
   }
+  .review_banner .video_area .play_button {
+    display: block; /* Show button when hovering */
+    font-size: 12px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .review_banner {
