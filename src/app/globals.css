@@ -647,7 +647,9 @@ header.fixed .brand img.logoIcon {
   justify-content: center;
   cursor: pointer;
 }
-
+.project_logo_marquee .item.active img{
+  filter: grayscale(0);
+}
 .project_logo_marquee .item img {
   margin-right: 0px;
   max-height: 38px;
@@ -3312,3 +3314,87 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-color: var(--white) !important;
 }
 
+
+/* contact arrow */
+
+.project_contries .nextprev_sec .next,.project_contries .nextprev_sec .prev {
+  background-image: none !important;
+}
+
+.project_contries .nextprev_sec .next,.project_contries .nextprev_sec .prev {
+  position: relative;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  overflow: hidden;
+}
+.project_contries .nextprev_sec > div img{
+  display: none;
+}
+.project_contries .nextprev_sec .next:after,.project_contries .nextprev_sec .prev:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(/assets/images/arrow_ss1_white.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.project_contries .nextprev_sec .next:before,.project_contries .nextprev_sec .prev:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(/assets/images/arrow_ss1.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transform: translateX(100%);
+}
+.project_contries .nextprev_sec .next:hover,.project_contries .nextprev_sec .prev:hover {
+  background-color: var(--black) !important;
+}
+.project_contries .nextprev_sec .next:hover:after, .project_contries .nextprev_sec .prev:hover:after{
+  transform: translateX(-100%);
+}
+.project_contries .nextprev_sec .next:hover:before,.project_contries .nextprev_sec .prev:hover:before {
+  transform: translateX(0);
+}
+.project_contries .nextprev_sec > div.next:hover,.project_contries .nextprev_sec > div.prev:hover{
+  background-color: var(--white) !important;
+}
+
+
+.case_studies .owl-carousel:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.industries_lider .inner{
+  position: relative;
+}
+.industries_lider .inner:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.sitemapLink.light.btn.btnarrow:hover .arrow_img img.hover_img{
+  filter: invert(1);
+}

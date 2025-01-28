@@ -3,7 +3,7 @@
 
 .our_highlights p { color: var(--darktheme); max-width: calc(100% - 135px); }
 .our_highlights .inner{position: relative;margin-top: 34px;}
-.our_highlights .inner::after{content: '';position: absolute;right: -1px;top: 0;height: 100%;width: 114px;background-image: url(/assets/images/white_show.png);background-repeat: no-repeat;background-size: 100% 100%;z-index: 2;}
+.our_highlights .inner::after{content: '';position: absolute;right: 0px;top: 0;height: 100%;width: 114px;background-image: url(/assets/images/white_show.png);background-repeat: no-repeat;background-size: 100% 100%;z-index: 2;}
 .our_highlights .col{
     width: 430px;    border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
