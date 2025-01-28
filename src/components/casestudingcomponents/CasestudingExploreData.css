@@ -62,7 +62,9 @@
   }
 }
 .infinite-loader {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
 }
 .load-more-spinner {
   display: inline-block;

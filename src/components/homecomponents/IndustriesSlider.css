@@ -229,6 +229,7 @@
   }
   .industries_lider .inner {
     max-width: 100%;
+    padding: 0px 20px !important;
   }
   .industries_lider .col .img {
     min-height: 150px;
@@ -360,3 +361,5 @@
   transform: rotate(35deg);
   transform-origin: center center;
 }
+
+

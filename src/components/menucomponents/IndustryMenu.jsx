@@ -53,34 +53,27 @@ const IndustryMenu = ({
     return normalizedPathname === fullPath;
   };
 
-  const getActiveLinkStyle = (url) => ({
-    color: isLinkActive(url) ? 'black' : '',
-    fontWeight: isLinkActive(url) ? '700' : '',
-  });
 
   const handleNavigation = async (url, e) => {
     e.preventDefault(); 
-    
     closeSubmenu();
     closeMenu();
     
     const cleanUrl = url.startsWith('/industry') ? url : `/industry${url}`;
-    
-    const submenus = document.getElementsByClassName("submenu");
-    Array.from(submenus).forEach(submenu => {
-      submenu.style.display = 'none';
-    });    
+    const submenus = document.querySelector(".industrymenu");
+    console.log("submenus",submenus);
+    if (submenus) {
+      submenus.classList.add("menu-hide");
+    }
     await router.push(cleanUrl);
-    
     if (handleLinkClick) {
       handleLinkClick(cleanUrl, e);
     }
-    
     setTimeout(() => {
-      Array.from(submenus).forEach(submenu => {
-        submenu.style.display = 'flex';
-      });
-    }, 100);
+      if (submenus) {
+        submenus.classList.remove("menu-hide");
+    }
+    }, 1000);
   };
 
   return (
@@ -116,7 +109,7 @@ const IndustryMenu = ({
                   <li key={index}>
                     <Link
                       href={fullUrl}
-                      style={getActiveLinkStyle(fullUrl)}
+                      className={`link ${isLinkActive(fullUrl) ? "active" : "" }`}
                       onClick={(e) => handleNavigation(menu.menu_item.url, e)}
                     >
                       <span>

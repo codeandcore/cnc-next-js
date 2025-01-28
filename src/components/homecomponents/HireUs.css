@@ -224,10 +224,20 @@
   font-size: 18px;
   color: var(--white);
   width: 191px;
+  height: 60px;
   border: none;
   margin: 0 auto;
   cursor: pointer;
 }
+.error-form{
+  text-align: center;
+  width: 100%;
+  margin-top: 6px;
+  }
+.error-form p{
+  color: #f00;
+  font-size: 16px;
+    }
 .hire_popup .col {
   position: relative;
   padding-bottom: 25px;
@@ -364,6 +374,14 @@ body.popup-open {
     line-height: 38px;
     margin-bottom: 8px;
   }
+  .hire_popup .sub {
+    height: 45px;
+    width: 128px;
+  }
+  .error-form p{
+    font-size: 12px;
+      }
+
   .hire_popup .contents {
     width: 100%;
     max-height: 45vh;
@@ -403,6 +421,8 @@ body.popup-open {
   }
   .hire_popup .close {
     right: -5px;
+    height: 34px;
+    width: 34px;
   }
   .hireto_meetyou .allbtn > .btn {
     padding: 0px 25px;

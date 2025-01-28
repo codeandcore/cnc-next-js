@@ -394,23 +394,22 @@ const ContactForm = ({
                   />
                 </button>
               </div>
+              
               <div className="submit_col">
                 <button type="submit" className="btn sub" disabled={isSubmit}>
                   {isSubmit ? (
-                    <span
-                      className="loaderdata"
-                      style={{ display: isSubmit ? "inline-flex" : "none" }}
-                    >
-                      <img
-                        src={"../../assets/images/sync.png"}
-                        alt="rotate-right"
-                      />
-                    </span>
+                      <div className="infinite-loader">
+                      <span className="load-spinner"></span>
+                    </div>
                   ) : (
                     <em>Submit</em>
                   )}
                 </button>
               </div>
+              {Object.keys(errors).length !== 0 &&
+                <div className="error-container">
+                <p>*Some fields have error, please check</p>
+              </div>}
             </div>
           </form>
         </div>
