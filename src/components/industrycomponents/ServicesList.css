@@ -351,3 +351,7 @@
   }
 
 }
+
+.services_accordion .top_title:hover > .btnsimple {
+  background-color: var(--black);
+}
