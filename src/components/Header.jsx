@@ -253,10 +253,6 @@ const Header = ({
   }
 
   const handleNavigation = (url, e, keepMenuOpen = false) => {
-    window.scrollTo({
-      top: 0, 
-      behavior: "auto",
-    });
     closeMenu()
     if (!keepMenuOpen) {
       setMenuOpen(false);

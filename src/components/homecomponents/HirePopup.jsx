@@ -338,6 +338,11 @@ const HirePopup = ({
                   <span  style={{color: 'red',fontSize:'12px',lineHeight:'0px'}}>{errors.projectDescription}</span>
                 )} */}
               </div>
+               {!showChooseYour && (Object.values(errors).some(value => value !== "")) && (
+                <div className="error-form">
+                  <p>*Some fields have error, please check</p>
+                </div>
+              )}
             </div>
             {contact_form_service_list && showChooseYour && (
               <div className="choose_your">
@@ -432,7 +437,12 @@ const HirePopup = ({
                    <em>Submit</em>
                  )}
                 </button>
-             
+                {Object.values(errors).some(value => value !== "") && (
+  <div className="error-form">
+    <p>*Some fields have error, please check</p>
+  </div>
+)}
+
              </div>
            )}
          </div>

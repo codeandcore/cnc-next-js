@@ -369,7 +369,7 @@ body.popup-open {
     background-size: 100% 100%;
   }
   .hire_popup h2 {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 38px;
     margin-bottom: 8px;
   }
@@ -377,9 +377,9 @@ body.popup-open {
     height: 45px;
     width: 128px;
   }
-  /* .error-form{
-
-  } */
+  .error-form p{
+    font-size: 12px;
+      }
 
   .hire_popup .contents {
     width: 100%;
@@ -420,6 +420,8 @@ body.popup-open {
   }
   .hire_popup .close {
     right: -5px;
+    height: 34px;
+    width: 34px;
   }
   .hireto_meetyou .allbtn > .btn {
     padding: 6px 45px;
