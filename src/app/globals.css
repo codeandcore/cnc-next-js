@@ -591,24 +591,27 @@ header.fixed .brand img.logoIcon {
   -moz-transform: translate3d(0%, 0, 0);
   -webkit-transform: translate3d(0%, 0, 0);
   -o-transform: translate3d(0%, 0, 0); */
-  animation-name: marquee;
+  /* animation-name: marquee;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
   0% {
-    transform: translate3d(0%, 0, 0);
+    /* transform: translate3d(0%, 0, 0);
     -moz-transform: translate3d(0%, 0, 0);
     -webkit-transform: translate3d(0%, 0, 0);
-    -o-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0); */
+    transform: translateX(0);
   }
 
   100% {
-    transform: translate3d(-100%, 0, 0);
+    /* transform: translate3d(-100%, 0, 0);
     -moz-transform: translate3d(-100%, 0, 0);
     -webkit-transform: translate3d(-100%, 0, 0);
-    -o-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0); */
+    transform: translateX(calc(-100% - 30px));
   }
 }
 
@@ -2361,7 +2364,7 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
 
   .project_logo_marquee .item {
     margin: 0px 15px;
-    min-width: fit-content;
+    min-width: auto;
   }
 
   .client_plateform {
