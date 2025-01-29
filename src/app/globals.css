@@ -587,10 +587,10 @@ header.fixed .brand img.logoIcon {
   display: flex;
   white-space: nowrap;
   position: relative;
-  transform: translate3d(0%, 0, 0);
+  /* transform: translate3d(0%, 0, 0);
   -moz-transform: translate3d(0%, 0, 0);
   -webkit-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0); */
   animation-name: marquee;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
