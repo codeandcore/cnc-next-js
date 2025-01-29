@@ -594,7 +594,7 @@ header.fixed .brand img.logoIcon {
   /* animation-name: marquee;
   animation-timing-function: linear;
   animation-iteration-count: infinite; */
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 @keyframes marquee {
@@ -611,7 +611,7 @@ header.fixed .brand img.logoIcon {
     -moz-transform: translate3d(-100%, 0, 0);
     -webkit-transform: translate3d(-100%, 0, 0);
     -o-transform: translate3d(-100%, 0, 0); */
-    transform: translateX(calc(-100% - 30px));
+    transform: translateX(-100%);
   }
 }
 

@@ -6,7 +6,7 @@ const ClientPlateformMarquee = ({ banner_ratitest }) => {
       {banner_ratitest && (
         <div className="client_plateform">
           <div className="marquee_wrap">
-            <div className="marquee" style={{ animationDuration: '50s' }}>
+            <div className="marquee" style={{ animationDuration: '20s' }}>
               {banner_ratitest &&
                 banner_ratitest.map((item, idx) => (
                   <div className="item" key={idx}>
@@ -15,7 +15,7 @@ const ClientPlateformMarquee = ({ banner_ratitest }) => {
                   </div>
                 ))}
             </div>
-            <div className="marquee" style={{ animationDuration: '50s' }}>
+            <div className="marquee" style={{ animationDuration: '20s' }}>
               {banner_ratitest &&
                 banner_ratitest.map((item, idx) => (
                   <div className="item" key={idx}>
