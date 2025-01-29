@@ -69,6 +69,11 @@
   text-transform: uppercase;
   margin-bottom: 15px;
   transition: 0.2s ease all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .industries_lider .col:hover h3 {
   color: var(--Purple);
@@ -82,6 +87,7 @@
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
+  min-height: 66px;
 }
 .industries_lider .col .btn.btnarrow {
   line-height: 30px;
