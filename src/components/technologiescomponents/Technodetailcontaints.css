@@ -16,7 +16,15 @@
   border: 1px solid var(--black);
   border-radius: 100px;
   line-height: 92px;
-  padding: 25px 70px;
+  padding: 15px 30px;
+  height: 90px;
+  width: 100%;
+  max-width: 200px;
+}
+.technodetail_sec .pro_logo img {
+  width: 60px;
+  max-height: 100%;
+  object-fit: contain;
 }
 .technodetail_sec .left_col {
   max-width: 750px;

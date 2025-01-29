@@ -87,7 +87,7 @@ const CareerBanner = ({
             preload="metadata"
             className="video"
             >
-            <source src={"/assets/video/career_review_video.mp4"} type="video/mp4" />
+            <source src={"/assets/video/career_new_video.mp4"} type="video/mp4" />
             </video>
             <div className="play_button" onClick={handlePlayClick}>
                   PLAY
