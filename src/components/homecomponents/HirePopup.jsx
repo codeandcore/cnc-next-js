@@ -41,6 +41,21 @@ const HirePopup = ({
   const [captcha, setCaptcha] = useState('');
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape') {
+        onClose()
+      }
+    };
+    // Add event listener for the ESC key
+    window.addEventListener('keydown', handleEscKey);
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('keydown', handleEscKey);
+    };
+  }, []);
+
   const validateField = (name, value) => {
     switch (name) {
       case 'email':
@@ -340,7 +355,7 @@ const HirePopup = ({
               </div>
                {!showChooseYour && (Object.values(errors).some(value => value !== "")) && (
                 <div className="error-form">
-                  <p>*Some fields have error, please check</p>
+                  <p>*Some required fields are missing or contain errors. Please complete all fields.</p>
                 </div>
               )}
             </div>
@@ -439,7 +454,7 @@ const HirePopup = ({
                 </button>
                 {Object.values(errors).some(value => value !== "") && (
   <div className="error-form">
-    <p>*Some fields have error, please check</p>
+    <p>*Some required fields are missing or contain errors. Please complete all fields.</p>
   </div>
 )}
 
