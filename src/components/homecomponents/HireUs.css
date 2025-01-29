@@ -135,10 +135,11 @@
 .hire_popup .contents {
   width: 100%;
   min-height: 35vh;
-  max-width: calc(100% - 100px);
+  /* max-width: calc(100% - 100px); */
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
+  padding:0 50px
   /* height: 35vh; */
 }
 .hire_popup .top_ban {
@@ -386,9 +387,9 @@ body.popup-open {
     width: 100%;
     max-height: 45vh;
     overflow-y: auto;
-    max-width: calc(100% - 30px);
+    /* max-width: calc(100% - 30px); */
     margin: 0 auto;
-    padding-right: 5px;
+    padding: 0 15px;
   }
   .hire_popup .colin .in {
     width: 100%;

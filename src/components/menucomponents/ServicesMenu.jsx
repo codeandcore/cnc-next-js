@@ -104,7 +104,7 @@ const ServicesMenu = ({
                 <li key={index}>
                   <Link
                     href={`/technologies/${menu.link.post_name}`}
-                    className={`link ${isLinkActive(`/technologies/${menu.link.post_name}`) ? "active" : "" }`}
+                    className={` ${isLinkActive(`/technologies/${menu.link.post_name}`) ? "active" : "" }`}
                     onClick={(e) => {
                       closeSubmenu();
                       closeMenu();
