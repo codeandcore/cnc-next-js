@@ -136,11 +136,12 @@ const IndustrysList = ({
                         {item.link && (
                           <Link
                             href={`/industry/${item.link.post_name}`}
-                            className="btnarrow btn"
+                            className="btnarrow btn light"
                           >
                             <em>Read More</em>
-                            <div>
+                            <div className='arrow_img'>
                               <img src={"/assets/images/ellipse_arr.png"} alt="Read More" />
+                              <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" className='hover_img' />
                             </div>
                           </Link>
                         )}

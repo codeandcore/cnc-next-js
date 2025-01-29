@@ -587,16 +587,14 @@ header.fixed .brand img.logoIcon {
   display: flex;
   white-space: nowrap;
   position: relative;
-  transform: translate3d(0%, 0, 0);
+  /* transform: translate3d(0%, 0, 0);
   -moz-transform: translate3d(0%, 0, 0);
   -webkit-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0); */
   animation-name: marquee;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
-
 
 @keyframes marquee {
   0% {
@@ -639,7 +637,9 @@ header.fixed .brand img.logoIcon {
   justify-content: center;
   cursor: pointer;
 }
-
+.project_logo_marquee .item.active img{
+  filter: grayscale(0);
+}
 .project_logo_marquee .item img {
   margin-right: 0px;
   max-height: 38px;
@@ -3104,7 +3104,7 @@ body .owl-carousel.owl-theme .owl-nav>button {
 
 body .owl-carousel.owl-theme .owl-nav>button {
   position: relative;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow: hidden;
 }
 
@@ -3118,7 +3118,7 @@ body .owl-carousel.owl-theme .owl-nav>button:after {
   background-image: url(/assets/images/arrow_ss1.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 body .owl-carousel.owl-theme .owl-nav>button:before {
@@ -3131,7 +3131,7 @@ body .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1_white.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   transform: translateX(100%);
 }
 
@@ -3177,7 +3177,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   left: 0;
   right: 0;
   margin: auto;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .services_accordion .top_title>.btnsimple img.hover_img {
@@ -3266,7 +3266,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
 
 .year_of_growing .nextprev_sec .next,.year_of_growing .nextprev_sec .prev {
   position: relative;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow: hidden;
 }
 .year_of_growing .nextprev_sec > div img{
@@ -3282,7 +3282,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1_white.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .year_of_growing .nextprev_sec .next:before,.year_of_growing .nextprev_sec .prev:before {
   position: absolute;
@@ -3294,7 +3294,7 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-image: url(/assets/images/arrow_ss1.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   transform: translateX(100%);
 }
 .year_of_growing .nextprev_sec .next:hover,.year_of_growing .nextprev_sec .prev:hover {
@@ -3310,3 +3310,110 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
   background-color: var(--white) !important;
 }
 
+
+/* contact arrow */
+
+.project_contries .nextprev_sec .next,.project_contries .nextprev_sec .prev {
+  background-image: none !important;
+}
+
+.project_contries .nextprev_sec .next,.project_contries .nextprev_sec .prev {
+  position: relative;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  overflow: hidden;
+}
+.project_contries .nextprev_sec > div img{
+  display: none;
+}
+.project_contries .nextprev_sec .next:after,.project_contries .nextprev_sec .prev:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(/assets/images/arrow_ss1_white.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.project_contries .nextprev_sec .next:before,.project_contries .nextprev_sec .prev:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(/assets/images/arrow_ss1.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transform: translateX(100%);
+}
+.project_contries .nextprev_sec .next:hover,.project_contries .nextprev_sec .prev:hover {
+  background-color: var(--black) !important;
+}
+.project_contries .nextprev_sec .next:hover:after, .project_contries .nextprev_sec .prev:hover:after{
+  transform: translateX(-100%);
+}
+.project_contries .nextprev_sec .next:hover:before,.project_contries .nextprev_sec .prev:hover:before {
+  transform: translateX(0);
+}
+.project_contries .nextprev_sec > div.next:hover,.project_contries .nextprev_sec > div.prev:hover{
+  background-color: var(--white) !important;
+}
+
+
+.case_studies .owl-carousel:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.industries_lider .inner{
+  position: relative;
+}
+.industries_lider .inner:after{
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 114px;
+  background-image: url(/assets/images/gray_show.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.sitemapLink.light.btn.btnarrow:hover .arrow_img img.hover_img{
+  filter: invert(1);
+}
+
+
+
+@media only screen and (max-width:1460px) 
+{
+  .industries_lider .inner:after{
+    width: 34px;
+    right: -1px;
+  }
+  .case_studies .owl-carousel:after{
+    width: 34px;
+  }
+
+}
+@media only screen and (max-width:767px) 
+{
+  .industries_lider .inner:after{
+    display: none;
+  }
+  .case_studies .owl-carousel:after{
+    display: none;
+  }  
+}

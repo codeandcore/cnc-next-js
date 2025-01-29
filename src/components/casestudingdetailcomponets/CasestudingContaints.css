@@ -54,7 +54,6 @@
 }
 .casestuding_containts .case ul {
   justify-content: flex-start;
-  width:calc(100% - 46px);
 }
 .casestuding_containts .case li {
   color: var(--darktheme);
@@ -139,8 +138,8 @@
 .about_client .project-details .items-details{display: flex;}
 .about_client .project-details .items-details:not(:last-child){margin-bottom: 12px;}
 .about_client .project-details .items-details h4{font-size: 16px; width: 120px; min-width: 120px;}
-.about_client .project-details .items-details .map-data{display: flex; align-items: baseline;}
-.about_client .project-details .items-details .map-data img{width: 16px; margin-right: 6px; top: 2px; position: relative;}
+.about_client .project-details .items-details .map-data{display: flex; align-items: center;}
+.about_client .project-details .items-details .map-data img{width: 16px; margin-right: 6px; top: 0; position: relative;}
 .about_client .technology{width: 100%; max-width: calc(75% - 30px);}
 .about_client .technology ul.technologyList{display: flex; flex-wrap: wrap; gap: 20px;}
 .about_client .technology ul.technologyList li a{font-size: 16px; line-height: normal; position: relative; padding: 13px 30px; border-radius: 80px; overflow: hidden; background-color: #fff; color: var(--black);font-weight: 500;}
@@ -550,6 +549,7 @@ visibility: hidden
     margin-bottom: 20px;
     border-bottom: 1px dashed rgb(0 0 0 / 20%);
   }
+  .about_client .technology .teamSize span{font-size: 12px;}
   .about_client .technology{max-width: 100%;}
   .about_client .technology .teamSize{margin-top: 15px;}
   .intial-goal .intial-goal-content, .intial-goal .intial-goal-img{width: 100%;}

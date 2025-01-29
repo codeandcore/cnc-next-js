@@ -27,9 +27,11 @@
   border-top: 1px solid var(--black);
   opacity: 0;
   transition: 0.3s ease all;
+  transform: scale(0.8);
 }
 .services_accordion .colin.fade-in {
   opacity: 1;
+  transform: scale(1);
 }
 .services_accordion .colin:last-child {
   border-bottom: 1px solid var(--black);

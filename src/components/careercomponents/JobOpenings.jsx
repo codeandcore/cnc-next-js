@@ -33,23 +33,16 @@ const JobOpenings = ({
   };
   //Function to handle smooth scrolling
   const handleSmoothScroll = (index) => {
-    const sections = document.querySelectorAll('.jobopenings .colin'); // Get all sections
-    const section = sections[index]; // Target the section based on the index
-
+    const sections = document.querySelectorAll('.jobopenings .colin');
+    const section = sections[index];
+  
     if (section) {
-      // Scroll to the section smoothly
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+      const offset = 100;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'instant',
       });
-
-      // After the scroll is completed, offset the position by -150px
-      setTimeout(() => {
-        window.scrollBy({
-          top: -150,
-          behavior: 'smooth',
-        });
-      }, 0.01); // Adjust delay as needed
     }
   };
 

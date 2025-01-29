@@ -167,8 +167,9 @@
   transition: 0.2s ease all;
 }
 .project_contries .nextprev_sec > div.hide {
-  opacity: 0;
-  transform: scale(0) !important;
+  opacity: 0.5 !important;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .project_contries .nextprev_sec > div img {
   filter: brightness(0) saturate(100%) invert(99%) sepia(55%) saturate(2%)
