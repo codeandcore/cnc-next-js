@@ -118,7 +118,7 @@ const CaseStudies = ({
                 className={`colin ${hoveredSlide === item.slug ? "hovered" : ""}`}
               >
                 <div className="top_col d_flex">
-                  <h3>{item.case_study_post_title}</h3>
+                  <h3>{String(index + 1).padStart(2, "0")} {item.case_study_post_title}</h3>
                   <div className="case d_flex">
                     <span>
                       <img
