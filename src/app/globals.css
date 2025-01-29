@@ -596,7 +596,6 @@ header.fixed .brand img.logoIcon {
   animation-iteration-count: infinite;
 }
 
-
 @keyframes marquee {
   0% {
     transform: translate3d(0%, 0, 0);
@@ -1825,8 +1824,14 @@ body .year_of_contants .owl-carousel.owl-theme .owl-nav>button:hover {
   }
 }
 
-@media only screen and (max-width: 1599px) {
+@media only screen and (min-width: 1599px) {
+  .industry-details_page h2, .service-details_page h2 {
+    font-size: 40px !important;
+    line-height: 1.2 !important;
+  }
+}
 
+@media only screen and (max-width: 1599px) {
   .policy-page .blog_detail_content p,
   .blog_detail_section .blog_detail_content code,
   .blog_detail_section .blog_detail_content a {
