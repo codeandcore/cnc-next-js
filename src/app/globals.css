@@ -3398,3 +3398,26 @@ body .our_clientssay .owl-carousel.owl-theme .owl-nav>button:before {
 .sitemapLink.light.btn.btnarrow:hover .arrow_img img.hover_img{
   filter: invert(1);
 }
+
+
+
+@media only screen and (max-width:1460px) 
+{
+  .industries_lider .inner:after{
+    width: 34px;
+    right: -1px;
+  }
+  .case_studies .owl-carousel:after{
+    width: 34px;
+  }
+
+}
+@media only screen and (max-width:767px) 
+{
+  .industries_lider .inner:after{
+    display: none;
+  }
+  .case_studies .owl-carousel:after{
+    display: none;
+  }  
+}
