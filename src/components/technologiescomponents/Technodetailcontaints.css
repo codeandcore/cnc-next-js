@@ -158,21 +158,23 @@
     margin-bottom: 10px;
   }
   .technodetail_sec .pro_logo {
-    padding: 10px 30px;
-    margin-top: 10px;
+    padding: 5px 30px;
+    margin-bottom: 10px;
+    order: -1;
+    min-height: 35px;
   }
   .technodetail_sec .pro_logo img {
-    max-width: 40px;
+    max-width: 60px;
+    max-height: 25px;
   }
   .technodetail_sec .project_title {
     margin: 15px 0 15px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .techno_content > img {
     margin-bottom: 15px;
-    width: calc(100% + 40px);
     display: block;
-    max-width: max-content;
-    margin-left: -20px;
     height: auto !important;
   }
   .techno_content h2 {

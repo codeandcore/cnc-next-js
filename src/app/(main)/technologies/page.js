@@ -22,7 +22,7 @@ async function fetchPageData() {
 
 export default async function IndustryPage() {
     const pageData = await fetchPageData();
-    const yoastData =  contactData?.yoast_head_json
+    const yoastData =  pageData?.yoast_head_json
 
     const hireUsData =
     pageData && pageData?.acf && pageData?.acf?.hireus_title

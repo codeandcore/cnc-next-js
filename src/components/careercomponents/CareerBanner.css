@@ -34,7 +34,6 @@
   padding: 55px 0px;
   font-size: 15px;
   font-weight: bold;
-  margin-top: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +54,47 @@
   transition: all 0.2s ease;
   width: 190px;
   z-index: -1;
+}
+.career_banner  .all_items{
+  display: flex;
+  align-items: center;
+  margin-top: 42px;
+  gap: 20px;
+}
+.career_banner  .video_area{
+  width: 163px;
+  height: 163px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.video_area:hover .video {
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+.career_banner .video_area .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the area without distortion */
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.career_banner  .video_area .play_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+  cursor: pointer;
+  font-weight:500 ;
+}
+
+.career_banner .video_area:hover .play_button {
+  display: block; /* Show button when hovering */
 }
 .career_banner .col_left .see_all em {
   font-style: normal;
@@ -106,7 +146,13 @@
     height: 123px;
     padding: 43px 0px;
     font-size: 13px;
+  }
+  .career_banner  .all_items{
     margin-top: 30px;
+  }
+  .career_banner  .video_area{
+    width: 123px;
+    height: 123px;
   }
   .career_banner .col_right .project_colanimate {
     width: 155px;
@@ -164,7 +210,14 @@
     height: 90px;
     padding: 28px 0px;
     font-size: 10px;
-    margin-top: 20px;
+  }
+  .career_banner  .video_area{
+    width: 90px;
+    height: 90px;
+  }
+  .career_banner .video_area .play_button {
+    display: block; /* Show button when hovering */
+    font-size: 13px;
   }
   .career_banner .col_right {
     width: 100%;

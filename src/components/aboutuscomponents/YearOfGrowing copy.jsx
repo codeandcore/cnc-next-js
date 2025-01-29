@@ -155,7 +155,7 @@ const YearOfGrowing = () => {
       </div>
       <div className="client_plateform">
         <div className="marquee_wrap">
-          <div className="marquee" style={{ animationDuration: '50s' }}>
+          <div className="marquee" style={{ animationDuration: '80s' }}>
             <div className="item">
               <img src={EllipseIcon} alt="circle" />
               Yes! we are party animals.
