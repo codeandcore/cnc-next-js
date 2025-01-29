@@ -81,10 +81,11 @@ const BlogDetailContent = ({
       <div className="wrapper">
         <Link
           href="/blog"
-          className="btn btnarrow"
+          className="btn btnarrow light"
         >
-          <div>
+          <div className='arrow_img'>
             <img src={"/assets/images/ellipse_arr.png"} alt="back_icon" />
+            <img src={"/assets/images/ellipse_arr_hover.png"} alt="Read More" className='hover_img' />
           </div>
           <em>Back to blog page</em>
         </Link>

@@ -38,7 +38,7 @@ const Highlights = ({
     }
   };
   const options = {
-    items: 4,
+    items: 5,
     loop: false,
     nav: true,
     dots: false,
@@ -63,6 +63,30 @@ const Highlights = ({
   //     handleTranslated();
   //   }
   // };
+  const [sliderStyles, setSliderStyles] = useState({});
+  const wrapperRef = useRef(null);
+  useEffect(() => {
+      const adjustSliderPosition = () => {
+        if (wrapperRef.current) {
+          const wrapperWidth = wrapperRef.current.offsetWidth; // Wrapper width in pixels
+          const screenWidth = window.innerWidth; // Full screen width in pixels
+          const sliderLeft = (screenWidth - wrapperWidth) / 2;
+  
+          console.log(sliderLeft);
+          // Set styles to align the slider
+          setSliderStyles({
+            paddingLeft: `${sliderLeft}px`, // Offset slider to start from the left edge
+          });
+        }
+      };
+  
+      adjustSliderPosition();
+      window.addEventListener("resize", adjustSliderPosition); // Recalculate on window resize
+  
+      return () => {
+        window.removeEventListener("resize", adjustSliderPosition);
+      };
+    }, []);
 
   useEffect(() => {
     handleTranslated();
@@ -74,7 +98,7 @@ const Highlights = ({
     //  ref={ref}
     //  className={`our_highlights ${className} ${isVisible ? 'On-screen' : ''}`}
     >
-      <div className="wrapper">
+      <div className="wrapper" ref={wrapperRef}>
         {our_blogs_title && <h2>{our_blogs_title}</h2>}
         {our_blogs_subtitle && <p>{our_blogs_subtitle}</p>}
         {/* <div className='nextprev_sec d_flex'>
@@ -92,46 +116,46 @@ const Highlights = ({
           </div>
         </div> */}
       </div>
-      <div className="wrapper">
-        <div className="inner">
-          {our_blogs && our_blogs.length > 0 ? (
-            <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
-              {our_blogs.map((item, index) => (
-                <div className="col" key={index}>
-                  <Link href={`/blog/${item.post_name}`} className="img">
-                    <img src={item.featured_image_url} alt={item?.title?.rendered} />
-                  </Link>
-                  <div className="text">
-                    <div className="btn_col d_flex">
-                      <div className="col-left d_flex">
-                        <a href={`/blog/${item.post_name}`}>
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: item?.categories_names,
-                            }}
-                          ></span>
-                        </a>
-                        <div className="date">
-                          <img src={"/assets/images/dateIcon.svg"} alt="date_icon" />{moment(item?.date).format('D.M.YYYY')}
-                        </div>
+      <div className="inner" style={sliderStyles}>
+        {our_blogs && our_blogs.length > 0 ? (
+          <OwlCarousel {...options} ref={owlCarouselRef} className="owl-theme">
+            {our_blogs.map((item, index) => (
+              <div className="col" key={index}>
+                <Link href={`/blog/${item.post_name}`} className="img">
+                  <img src={item.featured_image_url} alt={item?.title?.rendered} />
+                </Link>
+                <div className="text">
+                  <div className="btn_col d_flex">
+                    <div className="col-left d_flex">
+                      <a href={`/blog/${item.post_name}`}>
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: item?.categories_names,
+                          }}
+                        ></span>
+                      </a>
+                      <div className="date">
+                        <img src={"/assets/images/dateIcon.svg"} alt="date_icon" />{moment(item?.date).format('D.M.YYYY')}
                       </div>
                     </div>
-                    <h3>
-                    <Link href={`/blog/${item.post_name}`}>
-                        {item.post_title}
-                      </Link>
-                    </h3>
-    
                   </div>
+                  <h3>
+                  <Link href={`/blog/${item.post_name}`}>
+                      {item.post_title}
+                    </Link>
+                  </h3>
+  
                 </div>
+              </div>
 
-              ))}
-            </OwlCarousel>
-          ) : (
-            <div>No blogs available</div>
-          )}
-        </div>
+            ))}
+          </OwlCarousel>
+        ) : (
+          <div>No blogs available</div>
+        )}
       </div>
+      {/* <div className="wrapper">
+      </div> */}
     </div>
   );
 };

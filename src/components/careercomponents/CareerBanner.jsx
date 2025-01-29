@@ -1,9 +1,10 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AwardsLogo from '../careercomponents/AwardsLogo';
 import './CareerBanner.css';
 import he from 'he';
 import Link from 'next/link';
+import FsLightbox from 'fslightbox-react';
 
 const CareerBanner = ({
   career_banner_background_image,
@@ -16,6 +17,8 @@ const CareerBanner = ({
   learn_more_about_codeandcore,
   career_awards_logo,
 }) => {
+
+  const [isLightboxOpen, setLightboxOpen] = useState(false);
   const handleSmoothScroll = () => {
     const jobOpeningsSection = document.querySelector('.jobopenings');
     if (jobOpeningsSection) {
@@ -25,6 +28,22 @@ const CareerBanner = ({
       });
     }
   };
+    const handlePlayClick = () => {
+      setLightboxOpen(!isLightboxOpen);
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          const videoElement = document.querySelector(".fslightbox-container video");
+          if (videoElement) {
+            
+            videoElement.setAttribute("autoplay", "true");
+            videoElement.play();
+            clearInterval(interval); // Stop once the video element is found and updated
+          }
+        }, 100); // Retry every 100ms until the video element is available
+      
+    }, [isLightboxOpen,setLightboxOpen]);
   return (
     <div
       className="career_banner"
@@ -45,6 +64,7 @@ const CareerBanner = ({
                 }}
               ></p>
             )}
+            <div className='all_items'>
             {career_openings_label && (
               <a
                 className="see_all"
@@ -58,7 +78,25 @@ const CareerBanner = ({
                 }}
               />
             )}
+            <div className='video_area'>
+            <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="video"
+            >
+            <source src={"/assets/video/career_review_video.mp4"} type="video/mp4" />
+            </video>
+            <div className="play_button" onClick={handlePlayClick}>
+                  PLAY
+              </div>
+              </div>
+            </div>
+           
           </div>
+      
           <div className="col_right">
             {career_right_side_banner_title && (
               <h3>{career_right_side_banner_title}</h3>
@@ -90,6 +128,11 @@ const CareerBanner = ({
             )}
           </div>
         </div>
+             <FsLightbox
+              toggler={isLightboxOpen}
+              sources={["/assets/video/career_full_video.mp4?autoplay=1&muted=1&loop=1&controls=1"]}
+              types={["video"]}
+              />
         {career_awards_logo && (
           <AwardsLogo career_awards_logo={career_awards_logo}></AwardsLogo>
         )}

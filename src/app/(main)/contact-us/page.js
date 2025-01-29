@@ -65,7 +65,7 @@ export default async function IndustryPage() {
           {contactData.acf.developer_title && ( <h2>{contactData.acf.developer_title}</h2> )}
           {contactData.acf.developer_subtitle && ( <p>{contactData.acf.developer_subtitle}</p> )}
           </div>
-          {contactData.acf.developer_button && (<Link href={contactData.acf.developer_button.url} className="btn btnarrow"><em>{contactData.acf.developer_button.title}</em> <div><img src={"/assets/images/ellipse_arr.png"} alt={contactData.acf.developer_button.title}/></div></Link>)}
+          {contactData.acf.developer_button && (<Link href={contactData.acf.developer_button.url} className="btn btnarrow light"><em>{contactData.acf.developer_button.title}</em> <div className='arrow_img'><img src={"/assets/images/ellipse_arr.png"} alt={contactData.acf.developer_button.title}/><img src={"/assets/images/ellipse_arr_hover.png"} alt={contactData.acf.developer_button.title} className='hover_img'/></div></Link>)}
         </div>
       </div>
   )}

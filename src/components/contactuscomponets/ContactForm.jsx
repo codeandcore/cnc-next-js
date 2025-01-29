@@ -91,43 +91,105 @@ const ContactForm = ({
         console.log(err);
       });
   };
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      const updatedServices = checked
-        ? [...formData.service, value]
-        : formData.service.filter((service) => service !== value);
-      setFormData({
-        ...formData,
-        service: updatedServices,
-      });
-    } else if (type === "radio") {
-      setFormData({
-        ...formData,
-        budget: value,
-      });
-    } else if (name === "projectDescription") {
-      // handle projectDescription separately
-      setFormData({
-        ...formData,
-        projectDescription: value,
+  const validateField = (name, value) => {
+    const errors = {};
+    switch (name) {
+      case "name":
+        if (!value.trim()) {
+          errors.name = "Name is required";
+        }
+        break;
+      case "email":
+        if (!value.trim()) {
+          errors.email = "Email is required";
+        }else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          errors.email = "Invalid email format";
+        }
+        break;
+      case "phone":
+        if (!value.trim()) {
+          errors.phone = "Phone is required";
+        } else if (!/^\d{9,10}$/.test(value)) {
+          errors.phone = "Phone number should be 9 to 10 digits";
+        }
+        break;
+      case "company":
+        if (!value.trim()) {
+          errors.company = "Company is required";
+        }
+        break;
+      case "industry":
+        if (!value.trim()) {
+          errors.industry = "Industry is required";
+        }
+        break;
+      case "website":
+        if (!value.trim()) {
+          errors.website = "Website is required";
+        } else if (!/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/.*)?$/.test(value)) {
+          errors.website = "Invalid website format ";
+        }
+        break;
+      case "budget":
+        if (!value) {
+          errors.budget = "Please select a budget option";
+        }
+        break;
+      case "code":
+        if (!value.trim()) {
+          errors.code = "Captcha code is required";
+        } else if (value !== captcha) {
+          errors.code = "Captcha code is incorrect";
+        }
+        break;
+      default:
+        break;
+    }
+    return errors;
+  };
+  const validateForm = (data) => {
+    const errors = {};
+    Object.keys(data).forEach((key) => {
+      const fieldErrors = validateField(key, data[key]);
+      Object.assign(errors, fieldErrors);
+    });
+    return errors;
+  };
+  const validateAndSetErrors = (updatedFormData, fieldName = null) => {
+    let validationErrors = {};
+    if (fieldName) {
+      validationErrors = validateField(fieldName, updatedFormData[fieldName]);
+      setErrors((prevErrors) => {
+        const { [fieldName]: removedError, ...remainingErrors } = prevErrors;
+        return { ...remainingErrors, ...validationErrors };
       });
     } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
+      validationErrors = validateForm(updatedFormData);
+      setErrors(validationErrors);
     }
+    return validationErrors;
   };
+  
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const updatedFormData = { ...formData };
+    if (type === "checkbox") {
+      updatedFormData.service = checked
+        ? [...formData.service, value]
+        : formData.service.filter((service) => service !== value);
+    } else if (type === "radio") {
+      updatedFormData.budget = value;
+    } else {
+      updatedFormData[name] = value;
+    }
+    setFormData(updatedFormData);
+    validateAndSetErrors(updatedFormData, name);
+  };
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm(formData);
-    const queryParams1 = new URLSearchParams(location.search);
-    formData.ip = userIp;
-    formData.country = userCountry;
-    formData.source = queryParams1.get("source");
-    formData.from_page = location.pathname;
-    setErrors(validationErrors);
+    const validationErrors = validateAndSetErrors(formData);
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmit(true);
       try {
@@ -155,45 +217,7 @@ const ContactForm = ({
     }
   };
 
-  const validateForm = (data) => {
-    let errors = {};
-    if (!data.name.trim()) {
-      errors.name = "Name is required";
-    }
-    if (!data.email.trim()) {
-      errors.email = "Email is required";
-    }
-    // if (!data.phone.trim()) {
-    //     errors.phone = 'Phone is required';
-    // }
-    if (!data.phone.trim()) {
-      errors.phone = "Phone is required";
-    } else if (!/^\d{9,10}$/.test(data.phone)) {
-      errors.phone = "Phone number should be 9 to 10 digits";
-    }
-    if (!data.company.trim()) {
-      errors.company = "Company is required";
-    }
-    if (!data.industry.trim()) {
-      errors.industry = "Industry is required";
-    }
-    if (!data.website.trim()) {
-      errors.website = "Website is required";
-    }
 
-    // if (data.service.length === 0) {
-    //     errors.checkbox = 'At least one service must be selected';
-    // }
-    if (!data.budget) {
-      errors.budget = "Please select a budget option";
-    }
-    if (!data.code.trim()) {
-      errors.code = "Captcha code is required";
-    } else if (data.code !== captcha) {
-      errors.code = "Captcha code is incorrect";
-    }
-    return errors;
-  };
 
   return (
     <div className="contact_form">
